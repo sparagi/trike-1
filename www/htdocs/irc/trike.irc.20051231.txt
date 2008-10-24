@@ -1,0 +1,17 @@
+[03:03] Action: Dymaxion pokes around on delicious and a few other places for threat modeling stuff and sighs.
+[03:04] <Dymaxion> I'm seeing the MS guys using definitions that sound almost identical to stuff that I wrote and published a while ago, and they and others are starting to finally get their shit together.
+[03:04] <Dymaxion> And we've got far, far better ideas.
+[03:05] Action: Dymaxion is starting to feel a bit bitter about not having time to work on trike stuff and letting all these other idiots get the jump on us.
+[03:30] <Dymaxion> hey, for the paper'
+[03:31] <Dymaxion> er, papers page, my name shouldn't be in last, first format -- that's really only for formal journal references.
+[03:32] Action: Dymaxion pokes around online at research grant stuff again.
+[22:15] <ar4chne> 2howdy :)
+[22:15] <asparagi> hiya!
+[23:12] <asparagi> it's kind of big, sorry about the pdfs.  that's what i've got, not text files.
+[23:33] <ar4chne> no worries :)
+[00:00] --- Sun Jan  1 2006
+[00:47] <asparagi> Fork.
+[00:47] <asparagi> I don't think I can do it.  January 3 is just too soon.
+[00:48] <asparagi> I'm going to bed, and then I'm going to see how it looks in the morning.
+[01:13] <ar4chne> gnite!  It'll be oki
+[01:13] <ar4chne> :) Happy new years

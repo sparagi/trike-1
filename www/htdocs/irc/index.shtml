@@ -1,0 +1,10 @@
+<!--#set var="pageTitle" value="IRC" -->
+<!--#set var="pageDescription" value="IRC logs from #trike on irc.freenode.net." -->
+<!--#include file="header.shtml" -->
+
+<div id="contenthdr">IRC Logs by Date</div>
+<p>Logs originate from the #trike irc channel on irc.freenode.net.</p>
+
+<!--#include file="toc.html" -->
+
+<!--#include file="footer.shtml" -->

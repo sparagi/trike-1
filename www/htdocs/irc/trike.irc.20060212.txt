@@ -1,0 +1,477 @@
+[11:58] Action: asparagi opens a bag of cereal more vigorously intended, spewing corn flakes all over the van
+[11:58] <asparagi> anybody up?
+[12:40] Action: Dymaxion is, but is about to run off to get breakfast
+[20:40] <asparagi> whew.  i just sent Goran a several-page plan for making Flow more available in Squeak
+[20:40] <asparagi> we really want this if we are going to do a Trike server & client.
+[20:41] <asparagi> should be interesting to hear what he says.  i forget what time it is in Sweden.
+[20:42] <Dymaxion> cool!
+[20:43] <asparagi> it's going to be kind of a lot of work
+[20:43] <Dymaxion> it's 6:45am on monday there
+[20:43] <asparagi> oh, excellent
+[20:43] <asparagi> so in just a few hours, he should get in to work
+[20:43] Action: asparagi is impatient
+[20:45] Action: Dymaxion grins.
+[20:45] <Dymaxion> actually, I'm wrong...  more like 3:45am
+[20:47] <asparagi> oh
+[20:47] <asparagi> oh well
+[20:49] Action: asparagi is having a hard time getting excited by ui quirks documentation & would rather work on attack chaining
+[20:49] <asparagi> i wrote some of it, does that count?
+[20:50] Action: Dymaxion grins.
+[20:50] <Dymaxion> It's a start. :-)
+[20:50] <Dymaxion> I still need to start writing my part too, so I don't have room to talk.
+[21:40] <asparagi> y'know, i don't really want to do any release planning just yet
+[21:40] <asparagi> i admit it, i just want to hack around & have fun for a little bit
+[21:40] Action: Dymaxion grins.
+[21:40] <Dymaxion> ok
+[21:40] <asparagi> as soon as we have a plan, it becomes much more like work
+[21:40] <Dymaxion> yeah
+[21:41] <asparagi> i think i will actually get more done that way
+[21:41] <Dymaxion> we should talk about what we want to hack on next, but we definitely don't need a plan right now.
+[21:41] <asparagi> plus there are a bunch of avenues to explore right now
+[21:41] Action: Dymaxion nods
+[21:41] <asparagi> like connectors
+[21:41] <Dymaxion> yeah
+[21:41] <asparagi> and that graph library
+[21:41] <Dymaxion> mmm
+[21:41] <asparagi> and the client-server thing
+[21:42] <asparagi> and the xsd library so our xml support gets better
+[21:42] <Dymaxion> yeah
+[21:42] <asparagi> and of course engine support for use flows, and entity modeling, and business rules
+[21:42] <Dymaxion> I almost tackled the revision to exposure while you were in sacramento, just to see if I could, but I didn't have time.
+[21:42] <asparagi> it wouldn't be bad to just wander around a little & see what works
+[21:42] <asparagi> oh yeah, that too
+[21:43] <asparagi> that opens up a huge can of worms
+[21:43] <asparagi> like really it's tied into disaster response planning
+[21:43] Action: Dymaxion grins.
+[21:43] <Dymaxion> yeah
+[21:43] Action: asparagi smells scone creep
+[21:43] <asparagi> er, scope creep
+[21:44] <asparagi> i wonder what creeping scones smell like.,.
+[21:44] Action: Dymaxion has a mental image of fresh-baked goodness scurrying around on little currant legs.
+[21:44] Action: asparagi nickers
+[21:44] <asparagi> er, snickers
+[21:45] <Dymaxion> or perhaps they're like snails, only with butter.
+[21:45] <asparagi> i think i'm having some kind of freudian typing experience, indicating i'm hungry and 
+[21:45] <asparagi> horsing around?
+[21:45] Action: Dymaxion grins.
+[21:46] Action: Dymaxion dirves into copyright law.
+[21:46] <Dymaxion> dives, even.
+[21:46] <asparagi> oh, i did that a little earlier
+[21:46] <asparagi> we are all co-owners
+[21:47] <asparagi> if one co-owner acts without the consent of others, the others are entitled to an equal share of the profits
+[21:47] <asparagi> there can't be copyright infringement, because it is the owner's own copyright
+[21:47] <asparagi> this from copyright.gov
+[21:49] <Dymaxion> ah, ok
+[22:02] <asparagi> so, the current attack stubs aren't really working for me
+[22:02] <Dymaxion> in general, or just because we don't have tool support?
+[22:03] <asparagi> neither; the specific content in the tool seems wrong
+[22:03] <asparagi> i know it seemed really good at toorcon after i had been up all night
+[22:05] <Dymaxion> yeah
+[22:05] <Dymaxion> what specifically?
+[22:09] <asparagi> well, pop  open blog & go to cannot delete external asset
+[22:10] <asparagi> i checked this & it matches the attack stubs
+[22:10] <asparagi> but where is "if an action can occur only once, do it first"?
+[22:11] <asparagi> i guess maybe that's under take an intended action which changes a condition
+[22:11] <Dymaxion> hang on just a sec, gotta start laundry
+[22:11] <asparagi> but there's nothing that seems to hook down to prerequisite states, for example
+[22:11] <asparagi> 'scoo
+[22:12] <asparagi> i mean, basically we can hang attacks off assets, states, directly enforced rules, and DFD elements
+[22:13] <asparagi> i don't think those 4 things are adequately represented in the current threat stubs
+[22:13] <asparagi> (and of course i want to use them tomorrow ;) )
+[22:15] <Dymaxion> ok, back
+[22:16] <Dymaxion> yes, I agree.
+[22:16] <asparagi> well, s/states/state machine/
+[22:16] <asparagi> s/DFD elements/DFD/
+[22:16] <Dymaxion> Are the attack stubs in the tool currently the set of attack stubs which we'd defined as text?
+[22:16] <Dymaxion> yeah
+[22:16] <asparagi> yes
+[22:17] <asparagi> i verified them
+[22:17] <Dymaxion> hrm.
+[22:17] <asparagi> at least they're the same as the ones in SVN
+[22:17] <asparagi> (there were line ending problems in that file; lemme check it in -- now it only has indentation problems)
+[22:18] Action: Dymaxion grins.
+[22:20] <asparagi> Error: Can't open file '/home/trikesvn/svn/db/current': Permission denied  
+[22:20] <asparagi> or not
+[22:20] <Dymaxion> suck
+[22:20] <asparagi> i bet it was dave
+[22:20] <asparagi> ;)
+[22:20] Action: Dymaxion grins.
+[22:20] Action: Dymaxion tries to read the rest of that article and fails.
+[22:21] <Dymaxion> stupid paywalled libraries
+[22:21] <asparagi> so about the stubs..
+[22:22] <Dymaxion> yeah
+[22:22] <asparagi> it seems like the top level for an asset attack (threat) should go
+[22:23] <asparagi> attack state machine
+[22:23] <asparagi> attack enforcement of directly-enforced rule
+[22:23] <asparagi> #action #asset directly on DFD
+[22:24] <Dymaxion> this is for elv, right?
+[22:24] <asparagi> hmm
+[22:24] <asparagi> good point
+[22:25] <asparagi> i guess a thing i don't like about even what i just listed is that it needs to be a partition of the threat
+[22:26] <Dymaxion> and those definitely aren't
+[22:26] <asparagi> what it really is is a listing of the high-level breakdowns we've chosen to describe the action in question
+[22:26] <Dymaxion> yeah
+[22:27] <asparagi> so after that i think we could come up with & argue for a partition, but at the top level of an asset attack, we have bupkis
+[22:27] <asparagi> math is hard
+[22:27] <Dymaxion> I think we need capabilities to adequately describe what it means to be able to implement a threat; that will let us chain attacks properly at the top level.
+[22:28] <asparagi> how does that turn into a partition?
+[22:28] <Dymaxion> Also, we need to understand that there are a whole bunch of granularity levels in elevation of privilege
+[22:28] <asparagi> http://www.cs.princeton.edu/~sudhakar/papers/winval.pdf
+[22:28] <Dymaxion> so, if implementing a threat implies a set of capabilities and our lower level model of what actions will lead to what capabilities is good (which I think it will be), then we get a partitioning.
+[22:28] <asparagi> speaking of capability chaining
+[22:29] <asparagi> Wim sent me that
+[22:29] <Dymaxion> elevation of privilege "despite rules" has another partitioning -- what rules you're violating.
+[22:29] <asparagi> i'm just afraid that our analysis of what set of capabilities could implement the threat could be wrong
+[22:30] <asparagi> i mean, how do we know it's right?
+[22:31] <asparagi> that paper makes me think we should have plug-in modules with predefined capabilities for specific systems
+[22:31] <asparagi> since different ones break it down differently
+[22:31] <Dymaxion> hrm
+[22:32] <Dymaxion> I think we have to (somehow) try to keep a certain degree of universality, or at least cross-compatibility, or we're never going to be able to model non-trivial systems.
+[22:32] <asparagi> i guess we could argue that what set of capabilities is required to perform the action is part of the initial system analysis, so we're allowed to insist that people get it right for the results to be right
+[22:33] <asparagi> just like if the intended actions are wrong, the threats are wrong
+[22:33] <Dymaxion> yeah
+[22:33] <Dymaxion> oh, I think I see what you were asking.
+[22:33] <Dymaxion> Hrm.
+[22:33] <asparagi> well, real non-trivial systems are in fact not very cross-compatible
+[22:33] <Dymaxion> So, we can figure out what set of capabilities is required for every intended action; that's part of the analysis process.
+[22:34] <Dymaxion> so that puts us a big part of the way there, and we are allowed to rely on that being correct.
+[22:36] <asparagi> so, suppose we have capabilities
+[22:36] <asparagi> it seems like we still need the dfd
+[22:36] <Dymaxion> of course
+[22:36] <asparagi> do we still need the state machine?
+[22:37] <Dymaxion> we need the dfd to understand what the potential cabapility set is
+[22:37] <Dymaxion> yes; some are capabilities will relate to state elements, I think.
+[22:37] <asparagi> it is insufficient for that purpose
+[22:37] <asparagi> and presumably we still need some reference to directly-enforced rules
+[22:37] <Dymaxion> yeah
+[22:38] <asparagi> so it seems like we will just add another category for "attack capabilities"
+[22:38] <asparagi> and it still won't be a partition at the top level
+[22:38] <Dymaxion> asp: of course; figuring out the capability set is (I think, unfortunately) an analyst-involved action once the DFD is defined
+[22:38] <Dymaxion> no, it is.
+[22:39] <Dymaxion> see, what I (think I may be, actually) saying is that capabilities will subsume all the other elements.
+[22:39] <asparagi> the DFD is absolutely insufficient to determine what capabilities are needed
+[22:39] <Dymaxion> I'm not sure if I actually agree with it, stated that way, but that's were that train of thought was going.
+[22:39] <Dymaxion> yes; it's necessary, but not sufficient.
+[22:40] <asparagi> oh, i misunderstood what "no, it is." applied to
+[22:40] <Dymaxion> ah, yeah
+[22:41] <asparagi> yah, it seemed like subsuming was where we wanted to go with it, it just feels fuzzy right now
+[22:41] <Dymaxion> so, basically, in order to determine the partition of a threat into ways in which that threat can be implemented, we need to find a boolean tree of capabilities which allow an attacker to complete that action.
+[22:42] <Dymaxion> that seems self-evident, I think.
+[22:42] <asparagi> i mean, if we have capabilities that are "get the system into state X" then we've added a capability model thing without getting rid of the state machine thing
+[22:42] <Dymaxion> yes
+[22:42] <asparagi> hmm
+[22:43] <Dymaxion> I don't think that's necessarily a bad thing -- we need capabilities to be glue; if they simplify the model in other ways, that's good, but we don't necessarily require them to.
+[22:43] <asparagi> i think the boolean tree of capabilities would be just the same as me thinking the stub through without capabilities
+[22:43] <Dymaxion> There's another partitioning that got lost, though.
+[22:43] <asparagi> which one is that?
+[22:44] <Dymaxion> We need to split "accomplish action despite rules" into some set of subthreats that state which set of rules is being ignored, because they all have unique attack trees.
+[22:44] <Dymaxion> we have one attack tree for each element of the powerset of rules for an action.
+[22:44] <asparagi> we haven't done that because the rule model is fundamentally flawed
+[22:44] <Dymaxion> We should eventually be able to generate them all automatically, but.
+[22:44] <asparagi> it will fix itself with the new model
+[22:45] <Dymaxion> yeah -- this is a place where that's hurting us
+[22:45] <Dymaxion> yes
+[22:45] <asparagi> i don't really want to work on v1 anymore
+[22:45] <asparagi> but maybe i will change my mind tomorrow
+[22:45] <Dymaxion> I'm not saying we should try to fix it here, but we need to be aware of that, because it interacts weirdly with the whole capability thing
+[22:45] Action: Dymaxion nods.
+[22:45] <asparagi> i know we've had this conversation before..
+[22:46] <Dymaxion> we've got a useable v1 out... I guess maybe we should have it again next week.
+[22:46] <asparagi> well, maybe we should just think about in the new rule system, what the roots are
+[22:46] <asparagi> and how to partition those
+[22:47] <asparagi> if the answer is this hard, we're probably not framing the question right
+[22:47] <Dymaxion> I'm still really not sure... I think they'll be easier to partition, but I'm not sure if we have actions, so I'm not sure how to create threats.
+[22:47] <Dymaxion> I think the system changes so that a threat is a violation of a business rule of the system.
+[22:47] <asparagi> i don't think we have actions in at all the same way as we did before
+[22:47] <asparagi> yes
+[22:47] <Dymaxion> and because business rules specify both being able to do something and not being able to do something, the distinction between elv and dos gets fuzzier.
+[22:48] <asparagi> i agree, and that seems so simple & beautiful it cannot be ignored
+[22:48] Action: Dymaxion nods.
+[22:49] <asparagi> feh
+[22:49] <asparagi> all this work, and we have nothing, really
+[22:49] <Dymaxion> At which point, we look at the required set of capabilities for taking an action, and maybe the required set of capabilities for implementing a rule, and chain off of those into the DFD
+[22:49] <Dymaxion> use flows become rule flows; the set of DFD interactions involved in a rule.
+[22:49] <Dymaxion> hardly
+[22:50] <Dymaxion> we understand the problem and we have a place to start
+[22:50] <Dymaxion> trust me, that's huge.
+[22:50] <asparagi> i don't think we understand the problem
+[22:50] <asparagi> we might
+[22:50] <Dymaxion> And we're building a research system and we haven't thrown everything out yet -- it has to happen sooner or later
+[22:50] <asparagi> but we don't know yet
+[22:50] <asparagi> there is that
+[22:50] <Dymaxion> well, ok; we understand a whole lot more of the problem than we did when we started
+[22:52] <asparagi> so, is there any reason to believe that the attack stubs in v1 are fixable?
+[22:52] <Dymaxion> hrm,
+[22:52] <Dymaxion> I'm not sure
+[22:53] <asparagi> if there isn't, i'll stop trying & work on graph integration or something
+[22:53] <asparagi> i feel like the rule part you brought up is soluble
+[22:53] <Dymaxion> I definitely don't have an idea of how to fix them right now.
+[22:53] <Dymaxion> Oh yeah, that definitely is, I just wanted to make sure we were explicitly aware of it.
+[22:54] <asparagi> is the only unsoluble problem we are currently aware of the top level attacks under the threats?
+[22:54] <Dymaxion> yes
+[22:54] <Dymaxion> I think the only way to fix them is to manually come up with a better partitioning.
+[22:54] <Dymaxion> FWIW, I think DoS is much worse than Elv, based on my experience working through them.
+[22:54] <asparagi> i certainly can't think of an automatic way to do it
+[22:55] <asparagi> yah, DoS is what started me off on this
+[22:55] Action: Dymaxion nods
+[22:55] <asparagi> heh
+[22:55] <asparagi> the chocolate says:
+[22:55] <asparagi> "Don't think about it so much."
+[22:55] <Dymaxion> the DoS ones really suck... I couldn't figure out a way to write decent intermediate rules to bridge them over to lower levels at all
+[22:55] <Dymaxion> hah!
+[22:55] Action: Dymaxion grins.
+[22:56] <asparagi> the amoroso solution to create a partition would be Foo or NOT Foo
+[22:57] <asparagi> yeah, i feel like the old DoS stubs were actually better
+[22:57] <Dymaxion> that's certainly a definite partition
+[22:57] Action: Dymaxion nods
+[22:57] <asparagi> i wonder if i can find them somewhere
+[22:57] <asparagi> yeah, it just moves the problem down a level
+[22:57] <Dymaxion> That actually might not be a bad place to start; if we create an amoroso style partition that we're confident is a true partition, maybe we could simplify from it.
+[22:57] <asparagi> i mean, i guess one partition might be
+[22:58] <asparagi> do this at the moment the action happens
+[22:58] Action: Dymaxion nods
+[22:58] <asparagi> do this before the action happens
+[22:58] <asparagi> do this after the action happens
+[22:58] <Dymaxion> yeah
+[22:58] <asparagi> that's pretty amoroso-style
+[22:59] <Dymaxion> that seems a lot tighter... maybe we need to just go through the existing ones and redo them more carefully.
+[22:59] <asparagi> in the end it's all going to get back to DFD elements, so we could also partition by DFD element & move the other categories lower
+[22:59] <Dymaxion> it won't necessarily *fix* them, but it's definitely enough of a (potential) qualitative improvment to maybe be worth doing.
+[22:59] <Dymaxion> how so?
+[23:00] <asparagi> well, if it's not on a DFD element somehow, you can't attack it
+[23:00] <asparagi> all the state machine things, for example, eventually have to be tweaked in some way on some particular DFD element
+[23:01] <Dymaxion> yeah
+[23:01] <asparagi> so, time or location
+[23:01] <asparagi> any other dimensions we could partition on?
+[23:02] <asparagi> i guess we already partitioned on what
+[23:03] <asparagi> i fear partitioning on who is an enormous error we have already watched everyone else get tripped up on
+[23:03] <Dymaxion> yes
+[23:03] <asparagi> how is a bit tricky, but probably capability-like
+[23:03] <Dymaxion> is rule a true partition here?
+[23:04] <asparagi> not clear
+[23:04] <asparagi> i think when we have ross method we can treat it that way
+[23:04] Action: Dymaxion nods
+[23:04] <asparagi> we are asking the analyst to define a partition using this language
+[23:05] <asparagi> but for now it doesn't seem like a reliable choice
+[23:05] <Dymaxion> yeah
+[23:05] <asparagi> seems like we will end up using both time & location, at different levels
+[23:06] <Dymaxion> I guess I was thinking of it as a potential partition because rules carry (will carry, whatever) information about where and when they're enforced.
+[23:06] <asparagi> so which should we put top?
+[23:06] <asparagi> oh, that's _interesting_
+[23:06] <Dymaxion> see, that's why I though that partition was interesting
+[23:07] <asparagi> i think we should do before, at, after as the top partition
+[23:07] <asparagi> (well, the second partition, under rules)
+[23:08] <asparagi> then under that it should be location
+[23:08] <asparagi> because it'll be easier to trace out that way
+[23:08] Action: Dymaxion nods.
+[23:08] <Dymaxion> That seems reasonable.
+[23:08] <asparagi> i want ross method _now_
+[23:08] <Dymaxion> I'm going to have to see an attack tree here to really grok this.
+[23:09] <asparagi> i'll send you one in a little bit
+[23:09] <Dymaxion> I've been reading the book... it's a bit overwhelming how big it is and how much meaning there is in the system.
+[23:09] <asparagi> yeah
+[23:09] <asparagi> but i feel like these partitions would be peachy
+[23:10] <asparagi> we'd hang one off every chevron or bicycle seat
+[23:10] Action: Dymaxion nods
+[23:10] <asparagi> i think that will make the state machine be absorbed into the rules
+[23:10] <Dymaxion> yeah, it definitely will
+[23:26] <asparagi> so, um
+[23:27] <asparagi> it seems like if the actions really are CRUD, location-wise they must always occur on a data store
+[23:27] <Dymaxion> yes
+[23:27] <Dymaxion> sometimes more than one, but yes
+[23:27] <asparagi> well, really actions that can occur on a data store are CRUD
+[23:28] <asparagi> actions that can occur on a data flow are send & receive
+[23:28] <asparagi> actions that can occur in a process are ...?
+[23:28] <Dymaxion> hrm
+[23:28] <Dymaxion> invoke?  stop?  modify?
+[23:28] <asparagi> seems like a little process flow chart
+[23:29] <asparagi> i mean, processes are the only places that can make decisions
+[23:29] <Dymaxion> yeah -- that's modify, basically.
+[23:29] <Dymaxion> (modify what it does)
+[23:29] <asparagi> all state transitions have to occur in a process
+[23:29] <asparagi> as do all rule enforcement
+[23:30] <Dymaxion> what about transitions that don't happen until the state containing element is written to a data store?
+[23:30] <Dymaxion> I agree re: rule enforcement.
+[23:30] <asparagi> hmm
+[23:31] <asparagi> really the only thing a process does is make decisions
+[23:31] <Dymaxion> yeah
+[23:32] <Dymaxion> sorry, I was thinking about "actions on a process" not "actions by a proccess" above.
+[23:32] <asparagi> i don't know when to say a state transition has occurred
+[23:32] <asparagi> oh
+[23:32] <asparagi> i hadn't even noticed, i am still mudding around :)
+[23:32] <Dymaxion> I would say that a state transition has occured whenever what will check that state later would be satisfied that the state was in effect.
+[23:33] <asparagi> so really what we need is not a state machine, but a little control flow thing inside each process, for how it decides
+[23:33] <Dymaxion> that seems like the best definition to me.
+[23:33] <Dymaxion> danger will robinson
+[23:33] <asparagi> yeah, it sounds good to me too
+[23:33] <asparagi> yeah, yeah
+[23:33] Action: Dymaxion grins.
+[23:33] <asparagi> we are now approaching formal methods
+[23:33] <asparagi> but is it any worse than a state machine and some rules, really?
+[23:33] <Dymaxion> no, that *is* a formal method
+[23:34] Action: asparagi sighs
+[23:34] <Dymaxion> sort of -- we allowed ourselves some critical fuzziness there.
+[23:34] <Dymaxion> of course, that fuzziness had problems, but
+[23:34] <asparagi> well, the fuzz is not working too well
+[23:34] <Dymaxion> yeah.
+[23:34] <Dymaxion> I think we need to figure out where else it can god
+[23:34] <asparagi> maybe we need to ditch the fuzz
+[23:34] <Dymaxion> er, go
+[23:34] <asparagi> arm the criminals!
+[23:34] <Dymaxion> hehe
+[23:34] <asparagi> er, sorry
+[23:35] <Dymaxion> arm the bears!
+[23:35] Action: asparagi laughs
+[23:35] <asparagi> we don't have to go into a lot of detail with the flow chart
+[23:36] <Dymaxion> I might buy that, yeah -- again, I guess I'd have to see one, you know?
+[23:36] <asparagi> we could use ross method for the rule definition & the flow chart/decision tree for the implementation
+[23:36] <Dymaxion> I'm not sure what you're looking at right now.
+[23:36] Action: Dymaxion nods.
+[23:36] <asparagi> actually i'm looking at blog
+[23:36] <Dymaxion> oh, I mean in terms of the flow chart density
+[23:37] <asparagi> mostly i'm thinking about stuff because someone used the word "haphazard" to refer to my analysis in a meeting on friday
+[23:37] <asparagi> i can see how he got there
+[23:37] Action: Dymaxion nods
+[23:37] <asparagi> i don't agree, but is there a grain of truth?
+[23:37] <Dymaxion> yeah
+[23:38] <Dymaxion> definitely, right now.
+[23:38] <asparagi> mostly he got there because i ran out of time to complete the analysis he was looking at, and i didn't work on it in a very predictable order
+[23:38] <asparagi> so it looked a lot more haphazard than it is
+[23:38] <asparagi> but still
+[23:39] <asparagi> now all the haphazard anything is irritating to me
+[23:39] Action: Dymaxion nods.
+[23:42] <asparagi> did we ever do up a set of DFDs for Blog?
+[23:42] <asparagi> that aren't 0wned?
+[23:42] <Dymaxion> just the ones for that talk
+[23:46] <asparagi> the toorcon talk?
+[23:46] <Dymaxion> yeah
+[23:47] <asparagi> oh my
+[23:47] <asparagi> those are pretty comprehensive
+[23:48] <asparagi> aha!
+[23:49] <asparagi> and the use flow has everything i would need in the flow chart
+[23:49] <Dymaxion> cool
+[23:49] Action: asparagi cackles maniacally
+[23:49] <Dymaxion> what level of detail are you interested in?
+[23:49] <asparagi> now, we shall take over the world!
+[23:50] <asparagi> basically, what's in the use flow now is exactly the level of detail i care about
+[23:50] <Dymaxion> ok, cool.
+[23:50] <Dymaxion> That's very convenient.
+[23:50] <Dymaxion> And removes my removing-fuzz fears quite nicely.
+[23:50] <asparagi> i mean, really what i want to call out is that the process is the thing that controls what happens in the use flow
+[23:50] <Dymaxion> gotcha
+[23:51] <asparagi> i think this explains my ongoing discomfort about the use flows
+[23:51] <asparagi> they seemed sort of ... out of control somehow
+[23:51] <asparagi> i don't know
+[23:51] <asparagi> it's just an alternate way to present the same data
+[23:51] <Dymaxion> yeah?
+[23:51] <Dymaxion> ok
+[23:53] <asparagi> so what needs to be covered in a process flow chart, should we choose that representation, is an input spot for all inputs to the process, an output spot for all outputs to the process, and just enough detail in between to explain which inputs could lead to which outputs
+[23:54] <asparagi> so we mark all important decisions, and there's a window of opportunity between the decision & the results getting stored in a data store
+[23:58] <Dymaxion> that sounds reasonable
+[23:58] <asparagi> i think what i really like about this representation over use flows is that it can be seen as an expansion of detail in the DFD.  it isn't a flat trace through the DFD
+[23:58] <Dymaxion> we need to distinguish not just outputs but outcomes
+[23:58] <Dymaxion> yeah
+[23:58] <asparagi> i feel like putting it in, then traversing it auoomatically will be easier
+[23:59] <Dymaxion> I guess I think we may need both
+[23:59] <asparagi> yeah...
+[23:59] <Dymaxion> yeah -- we may be able to derive all the information in a use flow from that model, which is fine
+[23:59] <asparagi> well, the use flows could be completely automatically generated as a different view on the whole diagram
+[23:59] <asparagi> heh
+[23:59] <Dymaxion> I think I personally find benefit from seeing things in use flow form
+[23:59] <Dymaxion> yeah
+[23:59] Action: Dymaxion grins.
+[23:59] <asparagi> yes, that makes sents
+[23:59] <asparagi> wow
+[00:00] --- Mon Feb 13 2006
+[00:00] <Dymaxion> in fact, one could even call them a query against the threat model
+[00:00] <asparagi> interesting to accidentally get a homonym typo
+[00:00] <Dymaxion> a very interesting theory
+[00:00] <asparagi> yes, indeedy
+[00:00] <Dymaxion> heh
+[00:00] <Dymaxion> er, query, not theory
+[00:00] Action: Dymaxion grins.
+[00:00] <asparagi> a query which is very useful for writing a particular attack tree
+[00:00] <Dymaxion> BTW, we just found a fresh tofu factory on 12th which makes really wonderful fresh tofu -- you should stop in there next time you're up here.
+[00:01] <asparagi> so re: outcomes, it seems like outputs are the only outcomes that matter, yes?
+[00:01] <Dymaxion> yeah, exactly
+[00:01] <Dymaxion> sort of.
+[00:01] <asparagi> since they are the only way to transmit data outside the process
+[00:01] <asparagi> and only data stores can store data
+[00:01] <Dymaxion> So, the condition I'm thinking of is when the choice a process makes effects the structure of the use flow; I think that's an important distinction.
+[00:01] <asparagi> yes, absolutely
+[00:02] <asparagi> but it does it by sending different outputs
+[00:02] <Dymaxion> beyond that, I agree with you.
+[00:02] <Dymaxion> yeah
+[00:02] <Dymaxion> well, sort of
+[00:02] <asparagi> it's like a process is a circle around a flow chart
+[00:02] <Dymaxion> not just different output values, though; possibly different output channels as well
+[00:02] <Dymaxion> yes
+[00:02] <asparagi> every line that crosses the circle is important
+[00:02] <Dymaxion> I like that metaphor a lot, in fact
+[00:02] <Dymaxion> yeah
+[00:03] <asparagi> we just hook those lines into the rest of the dfd
+[00:03] <asparagi> so it really is like zooming into the process
+[00:04] <Dymaxion> yeah
+[00:04] <asparagi> that would express  where the output goes as well as what it is -- does that work for you?
+[00:04] <Dymaxion> ooh, I like this
+[00:04] <Dymaxion> yeah
+[00:04] <asparagi> so _then_, tracing through by time is really easy
+[00:04] <asparagi> and location, grouped by time, is really easy
+[00:05] <asparagi> so all the partitions are easy
+[00:05] <asparagi> (down to that level anyway)
+[00:05] <Dymaxion> yeah
+[00:05] <asparagi> and we can way better see alternate paths to the same action
+[00:05] <Dymaxion> and we also have more meaning of "subvert this process", which was clear as mud before
+[00:05] <asparagi> yes, indeedy
+[00:06] <asparagi> mud mud mud
+[00:06] <asparagi> nobody else but the rose bush knows
+[00:06] Action: Dymaxion grins.
+[00:06] <asparagi> i hope nobody reads these logs
+[00:08] Action: Dymaxion grins.
+[00:08] <Dymaxion> what, you don't want people to see sausage^Wlaws^Wtheory being made?
+[00:09] Action: asparagi laughs
+[00:11] <asparagi> login is a lot better this way too
+[00:12] <Dymaxion> yeah?
+[00:14] <asparagi> yah
+[00:14] <asparagi> lemme send you something inna minute
+[00:14] <Dymaxion> ok
+[00:26] <Dymaxion> I like that paper from wim a lot; I need to digest it a bit more and chase some references, I think.
+[00:27] <Dymaxion> I don't believe that what they say there implies that our capabilitities will necessarily be platform-specific, although I do believe that there will be capabilitiess specific to a modelled system.
+[00:28] <Dymaxion> I think if you analyzed things down far enough, you might get true tech-specific capabilities, but I think that's going to be really pretty rare for most real threat models.
+[00:31] <asparagi> look in /usr/local/share/trike/Login.tif
+[00:32] <asparagi> no, what it said to me was that if we used platform-specific capabilities, we could use turtles all the way down
+[00:32] <asparagi> and see a huge benefit
+[00:32] <asparagi> it was a way to plug automatic scanning tools into the bottom of our threat model, which seems really powerful
+[00:32] <Dymaxion> ah, ok, yeah, that I get.
+[00:32] <Dymaxion> yes
+[00:33] <asparagi> so after drawing that diagram, i think several things
+[00:33] <asparagi> one is that color, or some other distinction, would be powerful
+[00:33] <asparagi> another is that gosh, somebody probably already looked at this diagram problem
+[00:33] <asparagi> and their name is probably uml
+[00:33] Action: Dymaxion nods
+[00:33] <Dymaxion> hehe
+[00:33] <Dymaxion> yeah
+[00:34] <asparagi> (i hate to say it)
+[00:34] <Dymaxion> me too
+[00:34] <asparagi> maybe it is time to get that out & take another look
+[00:34] <Dymaxion> otoh, if there's something that maps well there, it wouldn't be bad for us to say we're using it.
+[00:34] <asparagi> not at all
+[00:34] <Dymaxion> so, problem
+[00:35] <Dymaxion> you need one flow chart for each instance of a process in a use flow
+[00:38] <asparagi> why?
+[00:38] <asparagi> i didn't do that for login, and i think it was a feature
+[00:38] <Dymaxion>  Well, I guess you technically don't.  Hrm.
+[00:39] <Dymaxion>  so yes, I see what you mean there... I guess... hrm.  So, what do you do if you have two completely disjoint use flows that go through the same process?
+[00:39] <asparagi> worry
+[00:40] <Dymaxion>  well, yeah, that too, but. :-)
+[00:40] <asparagi> that's a really important thing to notice, i think
+[00:40] <asparagi> just draw 2 disconnected flow charts, i think, and flag in the attack tree the possibility of interaction
+[00:41] <Dymaxion>  ok, yeah, that seems reasonable.
+[00:41] <asparagi> we shouldn't break the process down further because we already broke it to trust boundaries
+[00:41] <Dymaxion> yeah
+[00:41] <Dymaxion> that's a very good point.
+[00:46] Action: asparagi is getting sleepy
+[00:46] <asparagi> i haven't finished the attack tree thing yet
+[01:37] <ar4chne> :P no it wasn't dave
+[01:37] <ar4chne> but it should be fixed for now
+[01:51] Action: Dymaxion grins.

@@ -1,0 +1,37 @@
+<!--#include file="toorcon2005vars.shtml" -->
+<!--#include file="talkHeader.shtml" -->
+
+<p>
+From the conference brochure:
+<blockquote>
+<p>
+Trike is a repeatable, consistent, partially automatable methodology for
+analyzing the security risk posed by a system. Threat models are particularly
+useful for finding architectural and algorithmic holes in an application.
+Trike builds a model of system threats, attacks, weaknesses, vulnerabilities
+and risks on a model of the system requirements and implementation. In
+version 1, system threats can be generated automatically given system
+requirements, and a variety of questions about risk can be answered
+programmatically.
+</p>
+<p>
+Eleanor & Brenda will present version 1 of the Trike methodology by constructing
+a sample threat model using the Trike tool. They will provide an overview of
+the theory behind Trike as each relevant concept appears in the sample threat
+model, and mention current lines of thought which may become part of version 2.
+</p>
+</blockquote>
+</p>
+
+<div id="contenthdr">Slides &amp; Demo</div>
+<p>
+We used two slide decks for this presentation: 
+<a href="Trike-ToorCon-2005-theory.ppt">Theory</a> and
+<a href="Trike-ToorCon-2005-examples.ppt">Examples</a>.  The example slides begin
+where our demo (of Trike v1 build 5) ended.
+</p>
+<p>
+We also looked at an example file of <a href="attackStubs.txt">attack stubs</a>.
+</p>
+
+<!--#include file="footer.shtml" -->

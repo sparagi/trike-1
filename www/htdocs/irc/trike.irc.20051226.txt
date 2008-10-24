@@ -1,0 +1,75 @@
+[19:34] <ar4chne> hi!
+[19:37] <asparagi> hi!
+[19:38] <asparagi> how was your christmas?  did you actually go sand the lab? ;)
+[19:38] Action: Dymaxion waves.
+[19:41] <asparagi> i finally attached a fix to a Squeak bug I filed
+[19:41] <asparagi> i hope the bug fix folks aren't going to be too annoyed at me for my usual ratio of work production
+[19:42] <asparagi> Paul, what'd you do for Christmas?
+[19:45] <Dymaxion> Hung out at home for the motning, and then headed over to some of alex's friends for dinner.
+[19:45] <Dymaxion> Nice quiet day
+[19:45] <Dymaxion> You?
+[19:46] <Dymaxion> (...and then had to come in to work today, and had my laptop refuse to boot first thing, and burned all my day's productivity and motivation on IT crap)
+[19:49] Action: Dymaxion grins re: fixes vs. bugs. :-)
+[19:49] <asparagi> you had to work today? :(
+[19:51] <asparagi> i ended up going to the real estate agent's place.  hilariously, on saturday i was trying to find stuff to do in the area, and i decided to look up the local ham club after the holidays.  well, two of the members are related to the real estate agent
+[19:52] <Dymaxion> hah!
+[19:53] <Dymaxion> and yeah, we got fucked on holidays.
+[19:58] <asparagi> Check this out: http://www.octotrike.org/tool/dev/build
+[20:02] <Dymaxion> woot!
+[20:02] <Dymaxion> we can upgrade to 6706 as well now?
+[20:02] <asparagi> yup
+[20:02] <asparagi> except i forgot i have to upload my .mczs.  i'm working on that now
+[20:02] <Dymaxion> cool... I'll try to rebuild my image before wednesday night
+[20:02] <Dymaxion> cool.
+[20:03] <asparagi> there was a bug in 6706, but i fixed it and the changes are in the Squeak bug tracking system as well as our build script
+[20:04] <Dymaxion> Cool.
+[20:05] <Dymaxion> oh, cool, this one upgrades squeakmap too
+[20:06] <Dymaxion> can it pull down packages from squeakmap?
+[20:06] <Dymaxion> also, is it actually running the #toggleProgrammerFacilities bit?
+[20:06] <Dymaxion> (and, if so, do we have UI to undo it?)
+[20:08] <asparagi> yes, it upgrades squeakmap so it can pull down the Lockdown package
+[20:08] <asparagi> it is running the lockdown thing. to undo it, go to settings>behavior and check the programmer facilities box
+[20:09] <asparagi> i'm going to start pulling more stuff off squeakmap.  e.g. the XML parser, the grid layout, ...
+[20:11] <asparagi> but i might wait till i have faster net.  it has taken me 2 days to get that script working because it takes15-20 minutes to do a build run from here.
+[20:14] <asparagi> so if you wanted you could probably write the development image version, for you to file in before (easier, since your file list will be closed when you run the main script) or after (better, could undo the programmer facilities thing) the main build script using similar code. i can explain how to get it into the changeset format
+[20:14] <asparagi> i will do this eventually but i am a slacker
+[20:18] <asparagi> wow, andreas is a contrary individual.  nobody ever wants to work with him.  a change _he made_ in another part of the system caused a debugger to pop up when you attempt to change the system font.  he is in charge of fonts.  i filed a bug in the fonts category, _with a change set attached_, and he just bounced it the unknown category with the comment " What does this have to do with fonts??? "
+[20:19] <asparagi> someone please tell me if i ever turn into him.  he could at least put it in whatever he thinks the appropriate category is
+[20:20] <asparagi> now i feel really good about not including the comment that using lint on the code before you check in changes would easily prevent problems like this...
+[20:20] <asparagi> good thing i'm not a newbie anymore, i might get discouraged..
+[20:21] <asparagi> he's right, of course.  fonts isn't the right category.  if i had categorized it after i debugged it i would have chosen a different one.
+[20:22] Action: Dymaxion grins.
+[20:23] <asparagi> perhaps, "funny how everything andreas touches starts throwing unhandled exceptions for trivial reasons"
+[20:23] <asparagi> oh wait, we don't have one of those.
+[20:24] <Dymaxion> Maybe we can give a whack at getting a dev-script running this week... I'd love it if we could auto-install/configure omnibrowser and RF-browser as well (and not turn off programmerFacs)
+[20:25] <Dymaxion> also, yay working lockdown!
+[20:49] <ar4chne> oh, yay!
+[20:49] <ar4chne> sorry went afk for a bit and look how productive you all were ^^
+[20:52] <ar4chne> and wow, I have no idea what you guys are talking about again :D woot
+[20:52] <ar4chne> but scr1be is now busy archiving our stuffs to svn
+[20:52] <ar4chne> I made it so that there woudl be 1 file / day
+[20:53] <ar4chne> do you guys think that's ok?
+[20:54] <Dymaxion> yeah, sounds good
+[20:54] <Dymaxion> yay archives
+[21:07] <asparagi> yah, sounds good
+[21:09] <asparagi> so speaking of wednesday, i was thinking i might drive up.  is it a good time for me to do that?
+[21:10] <asparagi> i.e. S are you going to be way too busy this week?
+[21:10] <asparagi> (i was thinking since you are in crunch the other option would be to not meet this week)00
+[21:20] <Dymaxion> I don't honestly know what my schedule is going to look like.  I really want to make sure we meet, but there's a chance I'm going to be massibely crunched as well.
+[22:08] <ar4chne> hmmmm...I was planning on meeting; but I have to be at the airport at 10:30 to pick up dave
+[22:09] <ar4chne> on wednesday, i mean
+[22:09] <ar4chne> and I won't be in town the following week
+[22:09] <ar4chne> because I'll be in missouri
+[22:41] <asparagi> cool, trip to missouri :)
+[22:41] <asparagi> i am falling asleep by 10pm these days anyway
+[22:53] <asparagi> for the moment, i propose a short meeting tuesday, 7:30-9:30 or 10.
+[22:54] <asparagi> also, i checked some stuff about bug tracking databases into SVN -- it'd be great if y'all would take a peek & edit the doc & add comments & stuff
+[22:55] <asparagi> oops, i meant wednesday, not tuesday. i am a dork
+[23:09] <ar4chne> ok, sounds good :)
+[23:09] <ar4chne> do you want a place to stay while you're in town?
+[23:09] <ar4chne> or are you going to stay at the lab?
+[23:10] <Dymaxion> Cool, sounds good.
+[23:10] Action: Dymaxion needs to poke at SVN.  Probably not tonight though... beat.
+[23:25] <asparagi> oh, i was figuring i'd stay at the lab.  i was considering looking at some mud & tape kinds of things.  but thank you :)
+[23:26] <asparagi> ok.  i'm a tired puppy.  i'm off to sleep.  g'night!
+[00:00] --- Tue Dec 27 2005

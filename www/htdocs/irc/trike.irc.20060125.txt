@@ -1,0 +1,368 @@
+[21:25] <ar4chne> doot doot
+[21:33] Action: Dymaxion looks around.
+[21:33] <ar4chne> howdy
+[21:34] <Dymaxion> hey
+[21:34] <ar4chne> sup?
+[21:35] <Dymaxion> not too much.
+[21:35] <Dymaxion> loooong day at work today, or at least it felt like it, trying to get stuff wrapped up.
+[21:36] <ar4chne> hehe :)
+[21:37] <ar4chne> brenda just called
+[21:38] <ar4chne> she's still driving
+[21:38] <Dymaxion> ok
+[21:38] <Dymaxion> eta?
+[21:38] <ar4chne> she didn't know 
+[21:39] <ar4chne> but I told her not to worry about it since we do it to her all the time :P
+[21:39] <Dymaxion> ok
+[21:39] <Dymaxion> I'll keep an eye on channel
+[21:41] <ar4chne> oki ^^
+[22:00] <asparagi> i'm here!
+[22:01] <ar4chne> yay!
+[22:01] <Dymaxion> yay
+[22:01] Action: ar4chne *pokes* dym
+[22:01] <Dymaxion> ouch!
+[22:01] Action: Dymaxion grins.
+[22:02] <ar4chne> :D
+[22:02] <asparagi> so, i think we should do something to make me dispensable
+[22:02] <ar4chne> k
+[22:02] <Dymaxion> yeah?
+[22:03] <asparagi> i mean, not that y'all need ta dispense with me, just that it seems like it would be better to not have me being the critical path item _all_ the time.
+[22:03] Action: Dymaxion nods.
+[22:03] <ar4chne> ;)
+[22:03] <Dymaxion> In the long term, that sounds great; can we do anything towards that in the shorter term?
+[22:04] <asparagi> well, in an ideal world, how would it go?
+[22:04] <Dymaxion> We'd each grab bugs as we had time, fix them, and consult with each other as needed
+[22:04] <asparagi> i realize i'm going to be the critical path until 1/31, but i was hoping maybe we could Take Steps after that
+[22:05] <asparagi> or maybe even start before.
+[22:05] <Dymaxion> We'd still need to do groupthink for new features and for methodology stuff, but be could definitely work more independently on the actual code
+[22:05] <asparagi> S, what do you think would be a good way to go about the team thing
+[22:05] <asparagi> ?
+[22:05] Action: Dymaxion nods
+[22:05] <ar4chne> no idea :/
+[22:06] <Dymaxion> hey, did hyphos lose some keys?
+[22:06] <ar4chne> lose some keys?
+[22:06] <ar4chne> what?
+[22:07] <Dymaxion> I was going to open a tunnel, and it doesn't seem to like my key any more
+[22:07] <ar4chne> hrm
+[22:07] <asparagi> i'm getting prompted for a password, too
+[22:07] <asparagi> nice deflection from an uncomfy topic, Dym ;)
+[22:07] <ar4chne> gimme a bit and i'll poke around
+[22:07] <Dymaxion> sorry, didn't mean to derail
+[22:07] <asparagi> well, maybe not uncomfy, but .. difficult
+[22:08] Action: Dymaxion nods.
+[22:08] <ar4chne> i think we just need tasks
+[22:08] <ar4chne> just asign us something, aspa
+[22:08] <ar4chne> and we'll bang our heads 
+[22:08] <asparagi> ok.  so is the big problem lack of parallelization in the coding part?
+[22:08] <ar4chne> and if our heads get too bloody, we'll ask for help
+[22:08] <asparagi> :)
+[22:08] Action: Dymaxion grins.
+[22:09] Action: asparagi doesn't want any bloody heads
+[22:09] <Dymaxion> You parceling out stuff might be a good way to start, really, because you're in the best position to know what's going to be the hard stuff...
+[22:10] <Dymaxion> I'd like to eventually get to a place where we're sort of picking more cooperatively, but that'll take a while
+[22:10] <Dymaxion> I think as far as you being critical path, it's mostly a coding issue
+[22:10] <asparagi> ok.  let's try me being dictator in a polo shirt for a couple weeks til we ship, then re-evaluate?
+[22:10] <ar4chne> haha, awesome
+[22:11] <Dymaxion> It's somewhat of a time issue on my part, at least, because I haven't had the time to step up in other places, but hopefully that's gonna change
+[22:11] Action: Dymaxion grins.
+[22:11] <Dymaxion> Works for me.
+[22:11] <asparagi> (have you heard that song?  it's in the shop mix)
+[22:11] <Dymaxion> I don't think I have
+[22:11] <asparagi> it's by the bobs.  when i am up next weekend i'll play it for you
+[22:11] <Dymaxion> cool. :-)
+[22:12] <asparagi> https://jail04.gamma.zettai.net/bugs
+[22:12] <asparagi> is where i will be when GPRS finishes loading
+[22:12] <Dymaxion> ok
+[22:13] <asparagi> first, feature question: do we still want to shoot for XML?
+[22:13] <ar4chne> ok
+[22:14] <Dymaxion> I would like to, if possible.
+[22:14] <asparagi> ok.  so, let's discuss file format for the next 45 mins
+[22:14] <Dymaxion> ok
+[22:15] <Dymaxion> do we have svn back so we can use the example file there?
+[22:15] <Dymaxion> (if not, we'll work around it)_
+[22:15] <asparagi> i have last week's copy checked out
+[22:15] <Dymaxion> ditto
+[22:15] <Dymaxion> shall I throw it on dymaxion?
+[22:15] <ar4chne> no svn yet
+[22:15] <asparagi> i think we should start & when we have svn back, great
+[22:15] <Dymaxion> ok, I'll do that
+[22:15] <asparagi> yah, just link us
+[22:17] <Dymaxion> http://dymaxion.org/trike/trike.xml
+[22:17] <ar4chne> ok...you guys work on the xml stuffs and I'll fiddle w/ svn
+[22:17] <asparagi> oh, nice extra comments
+[22:18] <asparagi> are we at rules? 
+[22:18] <Dymaxion> I wanted to clarify stuff instead of just marking it out, because I couldn't figure out what was going on for a while last time when I opened it up after a week
+[22:18] <Dymaxion> yes
+[22:18] <asparagi> i vote type by attribute
+[22:18] <Dymaxion> reference vs. attribute typing again.
+[22:19] <Dymaxion> I think that's preferable too; just have to enforce that text rules can't have children in the code
+[22:19] <asparagi> i think S said that's what she'd been arguing to start with
+[22:19] <Dymaxion> works for me
+[22:19] <asparagi> yeah.  i don't remember whether that's enforced now.
+[22:20] <Dymaxion> duly noted
+[22:20] <asparagi> maybe we can look up mad xsd tricks & enforce it there
+[22:20] <asparagi> ok.  verb="create"
+[22:20] <Dymaxion> yeah... I'm skeptical if that's doable, but
+[22:20] <asparagi> i think the problem was the word verb
+[22:20] <Dymaxion> ok
+[22:21] <asparagi> i don't have a problem with it now, although i suggest we change some code to use that instead of action
+[22:21] <Dymaxion> type again, intead?
+[22:21] <asparagi> (in the right places)
+[22:21] Action: asparagi is nervous
+[22:21] <Dymaxion> hrm... either one works for me, as long as we're consistent
+[22:21] <asparagi> it's data, not class..
+[22:22] <Dymaxion> I guess I'd rather do <action type="">, because it seems more consistent with how we do things.
+[22:22] <Dymaxion> hrm.
+[22:22] <Dymaxion> ok, good point.
+[22:22] <Dymaxion> <action kind="">?
+[22:22] Action: asparagi shrugh
+[22:22] <asparagi> i like verb better...
+[22:23] <Dymaxion> I like verb too, but changing too much stuff in the code makes me twitchy...
+[22:23] <asparagi> or this....
+[22:23] <asparagi> i think the refactoring browser can Just Do It.
+[22:23] <Dymaxion> if that isn't a big deal and I should not be twitchy, I'm cool with verb -- it certainly fits best
+[22:23] <Dymaxion> ok, works for me.
+[22:23] <asparagi> but you're right, it's awfully close to ship
+[22:24] <asparagi> let's make that change tonight so we have some time to test
+[22:24] <Dymaxion> if you're comfortable doing it in RB, I think that's the right thing to do.
+[22:24] <Dymaxion> ok, done
+[22:24] <Dymaxion> uh, what's next
+[22:25] <asparagi> instead of <action asset=""> i propose <action><asset reference="'>
+[22:25] <asparagi> parallel with other characteristics
+[22:25] <Dymaxion> oh, good one, yeah.
+[22:25] <asparagi> of action
+[22:25] <Dymaxion> done
+[22:26] <Dymaxion> attacks?
+[22:26] <asparagi> (i think there's a delay in the transmitter on S' mind meld device: that's what she advocated to start with)
+[22:26] <asparagi> (and now we are all convinced & stuff)
+[22:26] <asparagi> ok.  i think we should put attacks top level, like rules
+[22:26] <asparagi> for the same reasons
+[22:27] <Dymaxion> hrm, right -- deals with the graph nature properly.
+[22:27] <asparagi> so, just like for knownActors for the references
+[22:28] <Dymaxion> er?
+[22:29] <Dymaxion> we've got a set of children, a set of parents, a type, and what else?
+[22:29] <asparagi> <action> <attacks><attack reference="">
+[22:29] <Dymaxion> oh, right
+[22:29] <asparagi> for threats, a riskFactor
+[22:29] <Dymaxion> sorry
+[22:31] <Dymaxion> do threats have a riskfactor?  I guess it's calculated; we want to store risk and exposure explicitly though, I suppose
+[22:31] <asparagi> our existing types (in Squeak) are: regular (effectively, text), and, or, reference, DoS, elev
+[22:32] <asparagi> yes, threats have an explicit riskFactor: it's what you edit with the pink squares
+[22:32] <Dymaxion> oh, duh
+[22:32] <Dymaxion> so they have both a risk factor and a risk
+[22:32] <asparagi> btw i have tried using it on a real project & i completely agree re: color
+[22:32] Action: Dymaxion grins.
+[22:32] <asparagi> but in the file format we should only store riskFactor, i think
+[22:33] <Dymaxion> you think?
+[22:33] <Dymaxion> I think I disagree
+[22:33] <asparagi> yeah. there's no field for risk in the data model
+[22:33] <Dymaxion> It means our data format isn't normalized, but risk is a very complicated number to calculate
+[22:33] <asparagi> when you read it in, what do you do about inconsistencies?
+[22:33] <Dymaxion> I don't want to have to rewrite the graph traversal code to use our output format
+[22:34] <asparagi> mmm, there is that :)
+[22:34] <Dymaxion> it's non-canonical; if you have an implementation which is capable of calculating it, you discard those values.
+[22:34] <ar4chne> gwar
+[22:34] <asparagi> especially the magic loop breaking part we will eventually have in there..
+[22:34] <asparagi> gwar?
+[22:34] <ar4chne> i dont know whats wrong
+[22:34] <asparagi> your head is bloody because you went to a concert?
+[22:35] <ar4chne> :) not yet
+[22:35] <asparagi> (don't they throw blood at gwar concerts?)
+[22:35] <Dymaxion> implementations should be aware of any manipulations to the data model that may break the saved risk values and do something appropriate to the user if it happens
+[22:35] <Dymaxion> yes
+[22:35] Action: asparagi advocates tickling users who misbehave
+[22:36] Action: asparagi is tired & silly
+[22:36] <asparagi> ok. having it be noncanonical makes sense.
+[22:37] <asparagi> maybe the nonconforming implementations should discard conflicting types of values.
+[22:38] <asparagi> e.g. user edits 1 riskFactor, all risk values for the whole model are discarded
+[22:38] <Dymaxion> yeah, sounds reasonable -- otherwise you have to figure out what's important, and that's just as hard.
+[22:38] <asparagi> or we could just leave them & next time we read it in, fix them
+[22:38] <asparagi> but that's a little much on the silent failure front
+[22:39] <Dymaxion> well, we'll definitely do that, but I want users of whatever other tool to know that they just fucked up the risk model and that it's broken -- I think that's important
+[22:39] <asparagi> ara, is it file permissions on the key file?  or a containing directory?  i've had ssh implementations ignore key files w/ promiscuous permissions
+[22:39] <asparagi> oh, i see
+[22:40] <asparagi> the nonconforming tool must announce its lack of coolnes
+[22:40] <asparagi> s?
+[22:40] <Dymaxion> yes
+[22:41] <Dymaxion> as soon as the user messes with it, it has to let them know if it can't recalculate
+[22:41] <asparagi> i wonder how the heck TrikeThreat got an instance variable named ruleIsNil.
+[22:43] <asparagi> ah. it's an implementation-specific caching thing.
+[22:44] <asparagi> threats also have an action reference
+[22:45] <Dymaxion> reload?
+[22:45] <asparagi> s/childAttacks/children/?
+[22:45] <asparagi> oh.
+[22:45] <asparagi> maybe i don't mean that
+[22:46] <asparagi> i think we should leave parents out, actually.
+[22:46] <Dymaxion> hrm.
+[22:46] <Dymaxion> again, I'm not sure if I agree, but much less strongly so this time.
+[22:46] <asparagi> it's implementation-specific
+[22:47] <asparagi> and a pain in the wazoo
+[22:47] <Dymaxion> It'll save a lot of work for the users of the file, although it's not strictly necessary.
+[22:47] <Dymaxion> hrm, ok.
+[22:47] <Dymaxion> I guess walking the list of attacks isn't too bad
+[22:47] <asparagi> i think it will actually cause them more work
+[22:47] <Dymaxion> for editing, yeah, you're right
+[22:48] <asparagi> they will almost always want to trace top-down when asking ?s, and any redundancy will just give interoperating programs more to goof up
+[22:49] <Dymaxion> ok
+[22:49] <asparagi> so then we could call childAttacks attacks
+[22:50] <asparagi> oooooh
+[22:50] <asparagi> i have an idea
+[22:50] <Dymaxion> that makes me a little twitchy... seems like we're dropping a bit too much information there, but I could be convinced
+[22:50] <asparagi> except its half-baked
+[22:50] <Dymaxion> yeah?
+[22:51] <asparagi> re: attacks, is children better?
+[22:51] <Dymaxion> I think so
+[22:51] <asparagi> then we cauld do the same thing for rules
+[22:51] <asparagi> that satisfies my desire for parallelism
+[22:52] <asparagi> so my idea goes something like this:
+[22:53] <asparagi> our types of attacks are weird, in that AND, OR, text are parallel, and DoS & Elev are parallel, but they aren't parallel togethe
+[22:53] <asparagi> r
+[22:53] <asparagi> we should fix this
+[22:54] <asparagi> but really the whole point of the threats is that they are the roots of the trees
+[22:54] Action: Dymaxion nods.
+[22:54] <asparagi> which we already know becaus they hang off the actions
+[22:54] <asparagi> so we could do something excessively clever somehow
+[22:55] <Dymaxion> hrm
+[22:55] <asparagi> like make the action be a target of the threat
+[22:55] <asparagi> so when we get the other little trees working we can slip them right into the file format
+[22:56] Action: asparagi says deviously
+[22:56] <Dymaxion> mmmm.
+[22:58] <asparagi> what about and, or, text and structured?
+[22:58] <Dymaxion> and so perhaps riskFactor becomes DoSRiskFactor and ElvRiskFactor and lives in action (which is fully populated, but some are marked unintended), and then only the optional risk and exposure elements serve to distinguish the fact that a "text" attack happens to be a threat?
+[22:58] <Dymaxion> structured?
+[22:59] <Dymaxion> reload?
+[23:01] <asparagi> yeah, like <attack type="structured" subtype="action" verb="DoS" riskFactor=""><action reference="
+[23:01] Action: Dymaxion blinks
+[23:02] <asparagi> <attack type="structured" subtype="process" verb="crash"><dfdElement reference="
+[23:02] <asparagi> or maybe <attack type="structured" target="action" verb="DoS" riskFactor=""><action reference="
+[23:02] <asparagi> that might be clearer
+[23:03] <asparagi> it's an attack whose structure is determined by the type of its target
+[23:03] <ar4chne> gwar, I dunno what's up guys
+[23:03] <ar4chne> I'll see if h1k's been doing anything funny when he gets home
+[23:03] <ar4chne> other than that, I'm stumped
+[23:03] <asparagi> did you see the permissions idea?
+[23:04] <Dymaxion> hrm, ok, I see your point... it's still making my brain spin a little, but.
+[23:04] <ar4chne> no, it's not the permissions; that's the first thing I checked
+[23:04] <asparagi> damn
+[23:05] <asparagi> then we could do a structured attack & hang it off any of our attack target thingummys
+[23:05] <Dymaxion> hrm, yeah.
+[23:06] <asparagi> re: text rule, suggest <rule name=""> to be parallel to actor, asset
+[23:06] <asparagi> also, and and or rules should never be negated
+[23:06] <asparagi> i.e. that field shouldn't appear
+[23:08] <Dymaxion> done and done
+[23:08] <asparagi> wow, it's really coming along
+[23:08] <Dymaxion> what do you think of my interpretation of the structured type as shown in the file right now?
+[23:09] <Dymaxion> I pulled subtype out as redundant and pushed it into the type of the element in the target sub-element.
+[23:09] Action: asparagi is still reading
+[23:10] <asparagi> interesting
+[23:10] <asparagi> i like moving the risk factor stuff to be a characteristic of action
+[23:11] <Dymaxion> it seems like it removes redundant information, but it may involve more read-ahead than we want for dispatching on the target type of the structured action
+[23:11] <Dymaxion> yeah -- that just gets noise out of the way -- it's not really an attribute of the attack at all
+[23:12] <asparagi> i think it should be in a separate element, e.g. <risks><risk verb="DoS">1
+[23:12] <Dymaxion> hrm, I'll buy that
+[23:12] <Dymaxion> esp. given how much our risk model is likely to change
+[23:12] <asparagi> that will be really extensible for extra attack targets
+[23:13] <asparagi> i'm still thinking about the structured thing
+[23:13] <Dymaxion> less mess with optional attributes for the risks then too
+[23:14] <Dymaxion> (intended vs. unintended actions)
+[23:14] <asparagi> yah
+[23:14] <asparagi> or changes b/c of whether the action has a rule
+[23:14] <Dymaxion> yeah
+[23:15] <asparagi> wrt structured, can we make exposure go away somehow?
+[23:15] <asparagi> i don't think it makes sense for non-action attack targets
+[23:15] <asparagi> but maybe it does?
+[23:15] <Dymaxion> no, it doesn't, but there's no where else in the model to hang it.
+[23:16] <Dymaxion> hrm, maybe we should make a <risks> tag there too
+[23:16] <asparagi> S, are you reading, bored, or...?
+[23:16] <Dymaxion> that seems much better, actually.
+[23:16] <asparagi> well, every attack will have a cached risk, yes?
+[23:17] <Dymaxion> will it?
+[23:17] <ar4chne> still trying to fix the problem
+[23:17] <ar4chne> *go team*rahrah*
+[23:17] <ar4chne> sorry :/
+[23:17] <ar4chne> I dunno, you guys are doing great
+[23:18] <asparagi> 'sok, just want to make sure you're not sitting around being bored...,
+[23:18] <ar4chne> hehe, nah :)
+[23:18] <asparagi> we don't have any implementation of risk beyond exposure, actually
+[23:18] <asparagi> so i have no idea
+[23:18] <Dymaxion> ok
+[23:18] <asparagi> maybe we should just leave it all out
+[23:19] <ar4chne> sorry, I guess "m a bit bummed out and confused about like atm...it's making me a bit untalkative perhaps
+[23:19] <asparagi> for attaks
+[23:19] <ar4chne> life, too
+[23:19] <asparagi> yah....
+[23:19] <Dymaxion> putting it in a seperate element like that seems to give us maximum flexibility, which is sort of why I was voting for that
+[23:19] Action: Dymaxion nods.
+[23:19] <asparagi> i can see that
+[23:20] <asparagi> i think leaving it out would be even more flexible than that already flexible solution
+[23:20] <asparagi> oh dear, time flew. it is way late
+[23:21] <Dymaxion> hrm, ok, I'll buy that.  Shall we leave exposure as a seperate element?
+[23:21] <asparagi> why not just mark that unresolved & we can do it saturday?
+[23:21] <asparagi> heck if i know
+[23:21] <ar4chne> :) I was going to jump in and say "go to sleep" in about 5 more minutes
+[23:21] Action: ar4chne wags her finger like a mom
+[23:21] <asparagi> it's not a hard calculation
+[23:21] <asparagi> (exposure)
+[23:21] Action: asparagi giggles
+[23:22] <Dymaxion> hehe
+[23:22] <Dymaxion> yeah... I guess I'd like to avoid the client of the format having to do math whenever possible, even if it is easy
+[23:22] <asparagi> damn, i wanted to leave 15 min to exercise my newfound power as dictator and assign Bugs.
+[23:23] Action: Dymaxion grins.
+[23:23] <ar4chne> haha :D
+[23:23] <ar4chne> are we having the other meeting tomorrow, aspa?
+[23:23] Action: asparagi cackles maniacally
+[23:23] <asparagi> yah, let's
+[23:23] <Dymaxion> we confound your power by talking too much!
+[23:23] <ar4chne> you can work on the dictatorship then and assign via email
+[23:23] <Dymaxion> ok
+[23:23] <asparagi> it'll get me out of work on time
+[23:23] Action: Dymaxion might be there, might not... no idea what my schedule will look like yet
+[23:24] <ar4chne> ok :) we can make it another shorter session so you can get more sleep
+[23:24] <asparagi> ok.  each of you tell me about how long the bug i give you should take to fix
+[23:24] <ar4chne> I promise I'll be more talkative then
+[23:24] <asparagi> e.g. 2 bugs, 15 min ea
+[23:24] <asparagi> or 5 bugs, 10 min ea
+[23:24] <Dymaxion> what's our due date?
+[23:24] <asparagi> i can't guarantee anything under 10 min
+[23:24] <ar4chne> *shrug* whatever...just assign and I'll work to get them done
+[23:25] <ar4chne> altho, I was hoping to be able to demo captain on sat
+[23:25] <asparagi> um, let's say saturday when we get together
+[23:25] <asparagi> oh!
+[23:25] <asparagi> that's much better.
+[23:25] <Dymaxion> ok
+[23:25] <asparagi> i won't give you any bugs
+[23:25] <ar4chne> so if you assign too much, I won't have a demo!!@#$
+[23:25] <ar4chne> haha, ok
+[23:25] <ar4chne> it's just working on osx atm
+[23:25] <ar4chne> kinda roughly 
+[23:26] <asparagi> wow!
+[23:26] <ar4chne> I'm trying to get images from the clipboard right now
+[23:26] <asparagi> i am so excited
+[23:26] <asparagi> i bet i can find like a zillion test users for yau
+[23:26] <ar4chne> and converting from CGImageRef -> wxImage objects is being a bitch
+[23:26] <Dymaxion> I'm going to be really conservative and say that I have one hour to burn before saturday (I may have more, but I really don't want to overextend right now)
+[23:26] <asparagi> everyone has been mentioning problems i think it could solve
+[23:26] <Dymaxion> yay demos!
+[23:26] <ar4chne> oh, awesome :)
+[23:26] <asparagi> ok.  i will give you ~1 hr of bugs
+[23:27] <ar4chne> I'll try and get it shiny by then...altho the image support may or may not happen
+[23:27] <Dymaxion> cool
+[23:27] <ar4chne> it would be really cool if it did
+[23:27] <asparagi> in smaller pieces so you can do part more easily, if they take longer than i think
+[23:27] <Dymaxion> yay captain!
+[23:27] <Dymaxion> cool
+[23:27] <asparagi> oh, that is so exciting. :)
+[23:27] <ar4chne> :)
+[23:27] <ar4chne> now go to bed!
+[23:27] Action: ar4chne waggles her finger again
+[23:27] <asparagi> okay, okay. 
+[23:28] <ar4chne> ;)
+[23:28] Action: Dymaxion giggles
+[23:28] <asparagi> :)
+[23:28] <ar4chne> awesome work, guys ^^
+[23:28] <ar4chne> chat atcha both tomorrow
+[23:28] <asparagi> I'll see you tomorrow, ara, and you via email, dym
+[23:28] <Dymaxion> cool
+[23:28] <Dymaxion> I'll hop on if I'm around/awake/free
+[23:29] <asparagi> great :)
+[23:32] <Dymaxion> ar: let me know when I should try to check the xml file back into svn
+[00:00] --- Thu Jan 26 2006

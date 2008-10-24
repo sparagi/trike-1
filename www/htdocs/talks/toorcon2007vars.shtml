@@ -1,0 +1,6 @@
+<!--#set var="venueName" value="ToorCon 2007" -->
+<!--#set var="venueURL" value="http://www.toorcon.org/2007/"-->
+<!--#set var="talkName" value="Privilege-Centric Security Analysis" -->
+<!--#set var="talkDate" value="2007/10/21" -->
+<!--#set var="talkURL" value="toorcon2007.shtml" -->
+<!--#set var="pageDescription" value="Brenda's October 2007 discussion of threat modeling using privilege." -->

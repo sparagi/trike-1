@@ -1,0 +1,323 @@
+[12:16] Action: Dymaxion waves
+[12:17] <asparagi> hey there!
+[12:17] <asparagi> i found The Bug
+[12:17] <asparagi> but it is a bit tricky to fix
+[12:17] <Dymaxion> woohoo!
+[12:18] <Dymaxion> (even so)
+[12:18] <asparagi> yeah, at least I know what is going on.
+[12:18] <asparagi> it's another equivalency vs. = problem
+[12:18] <Dymaxion> ah
+[12:19] <asparagi> Unfortunately my first stab at fixing it is not going well.
+[12:19] <asparagi> I can fix it, but the performance hit is intolerable.
+[12:20] Action: Dymaxion nods.
+[12:20] <Dymaxion> hey, how much longer are you going to be there working on it?
+[12:20] <asparagi> I'm starting to think maybe what we should do is make equivalency a little more like =, and make a separate message like clauseEquivalent or something
+[12:20] <Dymaxion> I'm tempted to run up there for an hour or two
+[12:21] <asparagi> oh, definitely for an hour or two
+[12:21] <asparagi> especially if you nab food on the way
+[12:21] <Dymaxion> hrm, ok.
+[12:21] <asparagi> except if you're not hungry
+[12:21] <Dymaxion> it'll take me ~25 to get out of here.  What do you want re: foo?
+[12:21] <asparagi> nevermind, it would just be a delay
+[12:21] <Dymaxion> food, rather
+[12:22] <Dymaxion> ok
+[12:22] <Dymaxion> (went out with friends last night, *just* got up)
+[12:22] <asparagi> cool, i'll see you when you get here
+[12:22] <asparagi> whee :)
+[12:22] <Dymaxion> cool
+[12:22] <asparagi> i got up at 8
+[12:22] <asparagi> i didn't want to, but since i'm planning to be @ work @ 7 on mon, it seemed best
+[12:40] <asparagi> la la la, made it worse, ha ha
+[12:40] Action: asparagi searches through van for bug-stomping boots
+[12:41] Action: asparagi thinks bug-stomping boots fell out in northern CA over a month ago
+[12:50] <ar4chne> 4morning :)
+[13:11] <asparagi> https://jail04.gamma.zettai.net/bugs/ListIssues/sortorder-urgency?Filterlogic=block&saved_filter=&f-statuses=on+hold&f-statuses=rejected&f-statuses=completed&f-fromname=&f-email=&filteroptions=1&ListIssues%3Amethod=Apply+filter+settings&page=ListIssues
+[13:11] <asparagi> that's the link i like
+[15:36] <asparagi> i fixed The Bug
+[17:22] <asparagi> Dym, check your mail
+[17:27] <ar4chne> yay!
+[17:27] <ar4chne> long die The Bug!
+[17:38] <asparagi> hey, are you moved?
+[17:38] <Dymaxion> ok, back on irc
+[17:38] <Dymaxion> got your mail
+[17:39] <Dymaxion> waiting for unison to sync my USB key, and then I'll try it.
+[17:40] <ar4chne> getting ready to start the furniture
+[17:44] <Dymaxion> ugh... I really need to figure out why this drive doesn't work over usb2
+[17:44] <Dymaxion> nm, that was really fast this time... bizarre
+[17:45] <asparagi> so Dym, we should finish the XML file before I have to leave
+[17:47] <Dymaxion> do I just install that file?
+[17:48] <Dymaxion> (and yes, I want to do that next, just want to clear this off my stack)
+[17:51] <Dymaxion> I tried installing it, and I'm still getting that same debugger
+[17:54] <asparagi> oh
+[17:54] <asparagi> i forgot the repro steps
+[17:54] <asparagi> tell me again?
+[17:54] <Dymaxion> reset the entire grid to never
+[17:54] <Dymaxion> er, to unknown
+[17:54] <Dymaxion> set all unknown to sometimes
+[17:55] <Dymaxion> debugger on the second action
+[17:56] <asparagi> ok. i fixed some other bugs, but not that one
+[17:57] <Dymaxion> ok
+[17:57] <Dymaxion> np
+[18:02] <Dymaxion> so, xml
+[18:02] <Dymaxion> open questions that I see are:
+[18:03] <Dymaxion> should risk and exposure values for attacks be an attribute or a tag
+[18:04] <Dymaxion> should we have notes and a generic properties section for the whole mode
+[18:06] <Dymaxion> do we want to change 'verb' for refering to create, read, update, and delete in the code, do we want to change it in the xml, or do we want to leave them as different for now
+[18:06] <Dymaxion> anything else?
+[18:11] Action: asparagi gives up on bug for now & updates svn
+[18:11] <asparagi> oh my
+[18:12] <asparagi> there is captain source in svn now!
+[18:12] <Dymaxion> woo!
+[18:17] <asparag1> argh
+[18:17] Action: Dymaxion nods
+[18:17] <asparag1> stupid net
+[18:18] <asparag1> so.  i think we should not have generic properties for the whole model
+[18:18] <Dymaxion> ok
+[18:18] <asparag1> adding things later is easy, changing things later is less easy, and we have no use for that now 
+[18:18] <Dymaxion> I think we will want them later, but that we can add them then.
+[18:18] <Dymaxion> yes
+[18:19] <asparag1> likewise, i think we should not have risk, anywhere
+[18:19] <asparag1> we should have exposure for threats
+[18:19] <Dymaxion> hrm.
+[18:19] <asparag1> but we hadn't figured out how to do that
+[18:19] <Dymaxion> alright, yeah, I'll buy it.  No risk for threats, no risk values at all in attacks
+[18:20] <Dymaxion> should exposure be an element or attribute?
+[18:20] <asparag1> long-term i think we should change to use verb in the code, but i think we've done rather enough invasive changes for the moment :)
+[18:20] <Dymaxion> yeah
+[18:20] <Dymaxion> ok
+[18:21] <Dymaxion> leave it inconsistent for now, then?
+[18:21] <Dymaxion> and should I file a bug on that inconsistency, then?
+[18:22] <asparag1> yeah, file it
+[18:22] <asparag1> & leave it inconsistent
+[18:22] <asparag1> brb
+[18:23] <asparagi> that's better
+[18:23] <asparagi> i don't know whether exposure should be an attribute or an element
+[18:24] <asparagi> it seems more attributy, but that doesn't fit so well with the structured thing
+[18:24] <Dymaxion> filed
+[18:24] <Dymaxion> yeah
+[18:25] <Dymaxion> I think it has to be an element
+[18:25] <Dymaxion> that also feels like it will make changes there later lower impact, although ICBW.
+[18:26] <asparagi> well, if we knew what they'd be now,....
+[18:26] <Dymaxion> we sort of do, but it may change when we implement it.
+[18:27] <Dymaxion> basically, some set of additional elements is likely to be added there
+[18:27] <Dymaxion> some of which might have their own structure and thus potentially be handled as references to other things, like the rules
+[18:28] <asparagi> maybe
+[18:30] <asparagi> so, in the rules right now a text clause is terminal
+[18:30] <Dymaxion> yes
+[18:30] <asparagi> but for attacks, you can change the names of ands & ors partway up the tree
+[18:31] <Dymaxion> you can?
+[18:31] <asparagi> sure
+[18:31] <asparagi> look @ the sample attacks for blog
+[18:32] <Dymaxion> ok
+[18:33] <asparagi> so it seems like name= should be an attribute for all attacks
+[18:33] <Dymaxion> oh, the branching things there are ands and ors, right.
+[18:33] <Dymaxion> yes
+[18:33] <asparagi> (which implies renamable threats)
+[18:34] <asparagi> i like "and" "or" "text" as types for sure
+[18:34] <asparagi> (text being a leaf node)
+[18:34] <Dymaxion> btw, doesn't it seem like there needs to be some indication in the UI if a node is text, and, or or?  That feels *really* confusing right now
+[18:34] <asparagi> yes, it does
+[18:34] <asparagi> but heck if i know what
+[18:34] <asparagi> let's do the rest of the xml first
+[18:35] <Dymaxion> ok
+[18:35] <asparagi> the problem is those dang threats
+[18:35] <asparagi> and any other attack with structure, really
+[18:35] <Dymaxion> ok
+[18:35] <Dymaxion> what's the problem?
+[18:36] <asparagi> i feel pretty good about everything else
+[18:36] <asparagi> well, where do we put exposure?
+[18:36] <Dymaxion> oh, right
+[18:36] <asparagi> and right now, the type of the target is buried inside the structure
+[18:36] <Dymaxion> yes
+[18:36] <asparagi> but in our implementation, we need to know the target type before we've read that part
+[18:37] <Dymaxion> I think that's unavoidable, because the condition where we specify the type of the target twice feels even worse
+[18:37] <asparagi> we could look deep inside, but it's not very elegant
+[18:37] <Dymaxion> which is what would happen if we had a target type attribute and a free-form target element
+[18:37] Action: Dymaxion nods
+[18:38] <Dymaxion> well, it could be, if you had a sufficiently lazy evaluator for xml->handler mappings, but that's messy too.
+[18:38] <asparagi> well, do we want to not mention the target type at all?
+[18:38] <Dymaxion> how does that work?
+[18:38] <asparagi> e.g. <attack target="xxxxx"
+[18:39] <asparagi> just use the uuuid
+[18:39] <Dymaxion> Dispatch based on chasing the ID of the target?  That seems even nastier
+[18:39] Action: Dymaxion nods
+[18:39] <asparagi> it'd be really easy in squeak......
+[18:39] <asparagi> but i dunno how it would be in other languages
+[18:39] <Dymaxion> if we were going to do that, I'd rather have <attack target="XXXX" type="foo"
+[18:40] <asparagi> in squeak you'd just be, gimme that object, and then you could send it a message
+[18:40] <asparagi> well, right now we're using type="structured"
+[18:40] <Dymaxion> er, sorry: <attack target="XXXX" type="structured" targetType="foo"
+[18:41] <asparagi> but i think all the cases we'll want structured attacks like that are the roots of our little trees
+[18:41] <asparagi> do you think that sounds likely?
+[18:42] <Dymaxion> yeah
+[18:43] <Dymaxion> so, the way I'd normally write this sort of thing is doing a mapping from xml elements to type signatures.
+[18:43] <asparagi> sure
+[18:43] <Dymaxion> if I need to read deeper into an element before I get a signature match and dispatch, that isn't a big deal, but chasing a guid reference, especially one that might not be defined yet, doesn't work.
+[18:44] <Dymaxion> or rather, it becomes very much more complicated
+[18:44] <asparagi> we already have to chase guid refs that aren't defined yet
+[18:44] <Dymaxion> at the very least, it means I have to have the entire document in memory
+[18:44] <Dymaxion> not really.
+[18:44] <asparagi> every <foo reference="xxx"> could cause tat
+[18:44] <asparagi> there can be loops in the attack graph
+[18:45] <asparagi> no, you don't, you can resolve on the fly
+[18:45] <Dymaxion> I have to set the pointer in whatever data structure I build up to point to that uuid, and then I need a uuid look up table -- that's easy
+[18:45] <asparagi> so what's hard?
+[18:46] <Dymaxion> but if the type of the element I'm currently processing requires knowing the type of something on the other end of a guid reference, I have to go find that reference (which may not have been read in yet) and then go from there.
+[18:46] <asparagi> hmm
+[18:46] <Dymaxion> the other way, as long as I have the id->element mapping, I never have to find what's on the other side of an id to dispatch the method
+[18:47] <Dymaxion> deep reading into an element is easier, because although it's messy, I'm still within the element I'm trying to dispatch on
+[18:49] <Dymaxion> so, I think that the type of the target element should be somewhere in the structured element; I don't care if it's an attribute or sub-element
+[18:51] <asparagi> maybe we need to make sure that we have all the tree roots have the same structure
+[18:51] <Dymaxion> er?
+[18:51] <asparagi> so we can have only one type for a tree root
+[18:52] Action: Dymaxion throws a parser exception on the line before last
+[18:52] <asparagi> then the problem goes away; we just look at <element and type=
+[18:52] <asparagi> ok. so a threat is a tree root in the attack graph
+[18:52] <Dymaxion> so there'd be <attack type="threat" and <attack type="process", etc?
+[18:52] <asparagi> it's also the tree root of an attack stub
+[18:53] <asparagi> if all the tree roots in the latter sense had the same structure/were the same type, that could be very good for us
+[18:54] <Dymaxion> yes
+[18:54] <Dymaxion> that was the point of type="structured", right?
+[18:54] <asparagi> oh! how about this <attack type="root" target="action"><action reference="xxx">
+[18:54] <Dymaxion> yeah, that works.
+[18:54] <asparagi> well, structured was partway there
+[18:55] <Dymaxion> ah, ok
+[18:55] <asparagi> i, at least, didn't know it was always a root
+[18:55] <Dymaxion> I guess I don't see the difference except in nomenclature -- is there one?
+[18:55] <Dymaxion> Ah, ok
+[18:55] <Dymaxion> I guess I'd sort of assumed that at some point
+[18:55] <asparagi> and it hadn't occurred to me that the "structure" in question might always be the same
+[18:55] <Dymaxion> I like that; I'll add it to the xml file
+[18:55] <asparagi> ok
+[18:56] <asparagi> so all we have to do is figure exposure
+[18:56] <Dymaxion> what about verbs for attacks
+[18:56] <asparagi> oh, yah
+[18:56] <Dymaxion> which I think should properly be "goal"
+[18:56] <asparagi> that sounds good for type="root"
+[18:56] <asparagi> sure
+[18:56] <asparagi> goal is fine
+[18:57] <Dymaxion> that seems to represent what verb always is for a root, and is the differentiator for multiple otherwise identical roots
+[18:57] <asparagi> that sounds really awesome
+[18:57] <asparagi> i feel like i want exposure to be an attribute
+[18:57] <asparagi> but you weighed in in favor of element
+[18:58] <Dymaxion> do we still want <target><action reference="XXXX"></target>
+[18:58] <Dymaxion> ?
+[18:58] <Dymaxion> that matches our format everywhere else
+[18:58] <asparagi> no, i think eliminate the <target> container
+[18:58] <asparagi> it has only one element
+[18:58] <Dymaxion> yes
+[18:58] <asparagi> so it's silly
+[18:58] <Dymaxion> ok, right
+[18:58] <asparagi> that's closer to how we did rule on action
+[18:58] <Dymaxion> we're doing that elsewhere too; I'm ok with that
+[18:58] <Dymaxion> yeah
+[18:59] <asparagi> i think making exposure an attribute would be most parallel to what we have elsewhere
+[18:59] <Dymaxion> yeah
+[19:00] <Dymaxion> you're right
+[19:00] <Dymaxion> we can reconsider when/if the risk model gets weirder
+[19:00] <asparagi> yah
+[19:00] <asparagi> we can always rev the file format
+[19:01] <Dymaxion> now, exposure is only defined for root attacks with action as a target; I guess that'll just have to be another caveat like throwing away the value if the model is edited
+[19:01] <asparagi> remind me what interface you need for riskFactor stuff?
+[19:01] <asparagi> yeah, i guess
+[19:01] <asparagi> conveniently the only roots we have right now have action as a target
+[19:02] <asparagi> i think the data model is likely to change drastically when we have attack chaining implemented
+[19:02] <Dymaxion> what's riskFactor again?  I don't remember right now
+[19:02] <Dymaxion> yeah
+[19:02] <asparagi> it's the pink boxes
+[19:03] <asparagi> we have it stored in xml under action
+[19:03] <Dymaxion> right
+[19:03] <Dymaxion> risk type="DoS" and such
+[19:03] <asparagi> i think that risk type= thing should be risk goal= , actually, to match attack
+[19:03] <asparagi> yes
+[19:03] <Dymaxion> hrm
+[19:03] <Dymaxion> yes
+[19:04] <asparagi> and we should capitalize the verbs in action to match our new look
+[19:04] <Dymaxion> hrm... that suggests a very interesting parallelization to make the risk model for deeper parts of the attack tree more customizable, albeit one that I have no idea about the validity of
+[19:04] <Dymaxion> ok
+[19:05] <asparagi> yah
+[19:05] <asparagi> someday the risk model will probably not suck
+[19:05] <asparagi> so for getting the risk
+[19:05] <Dymaxion> I'm actually not sure about doing that here, although I may buy it for consistency's sake... it looks really weird in xml
+[19:05] <asparagi> what's it look like?
+[19:06] <Dymaxion> svn up
+[19:06] <Dymaxion> I may be being really pedantic there; it's just the only non-human-defined value that isn't an acronym (DoS) that has caps in it
+[19:06] <asparagi> Factor stuff working, you need to be able to look up the threats somehow?
+[19:07] <Dymaxion> huh?
+[19:07] <Dymaxion> i'm missing something here
+[19:07] <asparagi> so for getting the riskFactor stuff working, you need to be able to look up the threats somehow?
+[19:08] <asparagi> there's some piece of Squeak interface which was missing
+[19:08] <asparagi> i just can't remember whjt
+[19:08] <Dymaxion> oh, right, for blog!
+[19:08] <Dymaxion> hand on
+[19:08] <Dymaxion> er hang
+[19:08] <asparagi> the DoS is what looks funny?
+[19:09] <Dymaxion> no, the "Create" as the verb in action looks funny
+[19:09] <asparagi> oh
+[19:10] <asparagi> what if we decap create again (we can just convert) and change "dos" and "elv" to "less" and "more"?
+[19:11] <asparagi> i think that looks really good
+[19:11] <Dymaxion> decap is fine, I can go either way on the second one; I'll note what the set of possibilities is there when I update that comment
+[19:11] <Dymaxion> ok
+[19:12] <asparagi> did we miss anything?
+[19:12] <asparagi> it looks so simple... :)
+[19:13] Action: asparagi will be back shortly
+[19:13] <Dymaxion> do we want a global notes section?
+[19:13] <asparagi> oh
+[19:13] <asparagi> we don't have one in trike
+[19:13] <asparagi> and no time to write one
+[19:14] <asparagi> so i'd say, leave out until we have a ui in trike
+[19:14] <Dymaxion> alright; by the logic we've used elsewhere, it goes, but I'm filing a bug on not having one.
+[19:14] <asparagi> great
+[19:14] <asparagi> feature requests, here we come :)
+[19:14] <Dymaxion> ok, done and uploaded; we have a final xml format for 1.1.2a
+[19:15] <Dymaxion> I will attempt to get this outputting to transcript soon, possibly by eod
+[19:15] <Dymaxion> after I finish the UI test cases
+[19:16] <Dymaxion> filed
+[19:16] <Dymaxion> I'll file any bugs I find in the UI, including what I've got so fa
+[19:16] <Dymaxion> far
+[19:19] <Dymaxion> I'm not quite sure what exactly I need to get the riskFactor code working for blog
+[19:19] <Dymaxion> I think we had a problem where we couldn't enumerate the threats, yes
+[19:28] <Dymaxion> hrm, got a debugger in the tree editor
+[19:29] Action: Dymaxion tries to find repro steps
+[19:29] <asparagi> ok.  i will try to fix that other bug, get you an enumerator thing, and make attack editing work
+[19:29] <Dymaxion> cool
+[19:29] <asparagi> so, would you have time to do up an xsd for the xml?
+[19:29] <asparagi> that would be really cool, if we had that
+[19:30] <Dymaxion> It's been really cool to really dig into this, btw... I think this will really help me un-burn out.
+[19:30] <asparagi> yay!
+[19:30] <asparagi> that's great
+[19:30] <Dymaxion> I can attempt to do so, but I will give no guarantees -- I'm going to get xml printToTranscript working first
+[19:30] <Dymaxion> I do not know XSD right now, and I know it's kind of big and nasty
+[19:30] <asparagi> having another person working on code has been motivating me, too
+[19:30] <Dymaxion> cool
+[19:30] <asparagi> yeah, it is
+[19:30] <asparagi> it's true
+[19:31] <Dymaxion> I feel a lot more comfortable with the code and the system after today
+[19:31] <asparagi> ok. i have to go deal with my plumbing & start driving
+[19:31] <Dymaxion> ok, have fun, and have a safe drive... it's nasty out
+[19:31] <asparagi> hopefully i will see you online tonight or tomorrow
+[19:31] <Dymaxion> yeah, I should be around, although I don't know what all will pop up.
+[19:31] <asparagi> yeah, i noticed.  lugging heavy tanks around was unpleasant
+[19:31] <Dymaxion> I think I'm going to try to get up at a workday hour tomorrow to work on stuff
+[19:32] <asparagi> the muck outside the loading dock is nasty
+[19:32] <Dymaxion> eww
+[19:32] <asparagi> do you need more bugs assigned, or are you good with this?
+[19:32] <Dymaxion> I'm good with this for right now -- I certainly don't think I'll need any more before tomorrow night
+[19:32] <asparagi> ok
+[19:32] <asparagi> see you later!
+[19:33] <Dymaxion> ok
+[19:33] <Dymaxion> ttyl
+[19:33] <asparagi> oh!
+[19:33] <asparagi> 2 typos in .xml
+[19:33] <asparagi> targe should be target
+[19:34] <asparagi> and since we have and and or, text attacks shouldn't have children
+[19:34] <Dymaxion> oh, right
+[19:34] <Dymaxion> you wanna edit or should I?
+[19:34] <asparagi> go ahead, i'm loggin' out
+[22:19] <ar4chne> wow, you guys have been hella productive 
+[22:19] <ar4chne> good job!
+[23:48] <Dymaxion> yeah, we got a lot done today
+[23:48] <Dymaxion> I still haven't had time to touch the xml transcript stuff, dunno if that'll happen tonight.
+[23:48] Action: Dymaxion wishes e'd been as productive with eir personal IT stuff.
+[23:49] <Dymaxion> Ever dealt with software raid on freebsd?
+[00:00] --- Mon Jan 30 2006

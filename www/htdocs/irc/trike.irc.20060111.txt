@@ -1,0 +1,144 @@
+[22:09] <Dymaxion> hey
+[22:10] <Dymaxion> we're calling you on stef's cell, the voip line is sucking
+[22:17] <ar4chne> yay!
+[22:39] <Dymaxion> http://securityinnovation.com/
+[22:50] <Dymaxion> So, I'm looking at the blog model definition, and I see the do: [:attack | attack riskFactor: 5]. at the end... that's setting all the risk values for the externalAsset, right?
+[22:51] <Dymaxion> how do I do the equivalent thing for the other assets?
+[22:59] <Dymaxion> ping                                                                                                    ?
+[22:59] <Dymaxion> erp.
+[22:59] <Dymaxion> let's try that again.
+[23:00] <Dymaxion> ping/
+[23:00] <Dymaxion> bah. :-)
+[23:00] <asparagi> i'm  looking, i'm just not finding
+[23:00] <asparagi> i didn't make a convenient interface for that
+[23:01] <asparagi> basically you want to be able to get at each threat based on which action it is for, and its class, so you can set the values.
+[23:01] Action: Dymaxion grins.
+[23:01] <Dymaxion> yeah
+[23:01] <Dymaxion> how does the UI do it?
+[23:01] <asparagi> lessee
+[23:03] <asparagi> hee hee
+[23:03] <asparagi> i couldn't really say.  i abstracted it all away.
+[23:03] <Dymaxion> heheh
+[23:04] <asparagi> i think the short answer is, it already has the threat it needs at any given point, because of the events that are triggered as you change the model
+[23:04] <Dymaxion> huh, ok.
+[23:04] <asparagi> there's a method on asset called actionAt:
+[23:05] <ar4chne> is there a current image somewhere on zettai?
+[23:05] <ar4chne> my image is a bit fux0red delux
+[23:05] <asparagi> no, you should get it from paul
+[23:05] <asparagi> or you could try the build script with a fresh image
+[23:05] <ar4chne> oh, right...that's what I was trying to do
+[23:06] <asparagi> the build script is checked into svn, and the .mcz files are still on zettai in that one place
+[23:06] <ar4chne> yeah, i have current mcz files
+[23:06] <ar4chne> I'll update svn
+[23:06] <asparagi> theoretically you start the fresh image, browse to that cs file and file it in
+[23:06] <Dymaxion> worked for me
+[23:07] <asparagi> you have to set an environment variable.  after you file it in i think it gives you instructions
+[23:08] <asparagi> Dym, you want to make a method like actionAt: on action, to get threats
+[23:08] <ar4chne> what do you mean file it in?
+[23:08] <asparagi> oh
+[23:09] <asparagi> get a file list from the open menu, browse to it in the filesystem, and then i think there's a button like "file in"
+[23:09] <ar4chne> that's a pretty poorly chosen name, huh?
+[23:10] <asparagi> no, it's called install
+[23:10] <asparagi> it was called "file in" a long time ago.  like the 80s.
+[23:10] <ar4chne> haha :P
+[23:10] <asparagi> chalk it up to smalltalkism
+[23:10] <ar4chne> ok, it's running!
+[23:11] <asparagi> yay!
+[23:11] <asparagi> i'm sorry it still takes a long time
+[23:11] <Dymaxion> ok
+[23:11] <ar4chne> or at least it popped up a progress bar that's not moving
+[23:11] <asparagi> P, so maybe attackInClass:
+[23:11] <asparagi> oh, yah
+[23:11] <asparagi> don't click on anything
+[23:11] <asparagi> the progress bar is better than it used to be
+[23:12] <ar4chne> "could not resolve the server named: sqeak.krampe.se"
+[23:12] <asparagi> but still lame
+[23:12] <asparagi> fuck.  :(
+[23:12] <asparagi> it's trying to update squeakmap
+[23:12] <ar4chne> yeah
+[23:12] <ar4chne> should I update sm first?
+[23:12] <asparagi> i shouldn't swear on a logged forum, sorry
+[23:12] <asparagi> sure, try that.  it can't hurt
+[23:12] <asparagi> maybe it will give you a better error
+[23:12] <ar4chne> hmmm...the progress window won't move, lol
+[23:13] <ar4chne> yeah...it's all frozen :D
+[23:13] <asparagi> sometimes it isn't moving when it is doing something.
+[23:13] <ar4chne> die die die!
+[23:13] <asparagi> you could press command-period
+[23:13] <Dymaxion> eh, screw that not swearing shit. :-)
+[23:13] <asparagi> and then if it is doing something you could resume or continue or whatever.  proceed.
+[23:14] <asparagi> if it's not doing anything, you could abandon. but you would have the ui back
+[23:15] <asparagi> so paul, you could steal code for TrikeAction>>attackInClass: from TrikeAction>>addThreatIfNotAlreadyPresent:
+[23:16] <ar4chne> oki, updating squeakmap
+[23:16] <ar4chne> oh, I just killed the image and reloaded it
+[23:16] <asparagi> in fact you could call attackInClass: attackInClass:ifNone: and refactor addThreat... to call the former.  
+[23:16] <asparagi> S, that works
+[23:16] <ar4chne> and then deleted package-cache & sm in my image dir
+[23:17] <asparagi> right.  i should figure out how to make that not be necessary
+[23:17] <ar4chne> because I was getting a really weird error, that apparently means 'delete package-cache & sm in your image dir'
+[23:17] <ar4chne> ;)
+[23:17] <asparagi> probably by filing a bug report on goran
+[23:17] <asparagi> yeah, i've seen that one :)
+[23:17] <asparagi> Dym, how's it coming?
+[23:18] <Dymaxion> ooh, can you patch him with a squeaker who will worry about backwards compatibility?
+[23:18] <asparagi> hee hee
+[23:19] <asparagi> i think he's trying, he just didn't get it all quite right.  he works really hard & is a really helpful person, and there will be no goran-knocking on my beat.
+[23:19] <asparagi> so there.
+[23:19] Action: Dymaxion grins.
+[23:21] <ar4chne> I popped debugger
+[23:22] <asparagi> damn
+[23:22] <asparagi> oh, by clicking on something?
+[23:22] <ar4chne> Object class(Object)>>doesNotUnderstand: #subclass:uses:instanceVariableNames:classVariableNames:poolDictionaries:category:
+[23:22] <asparagi> it was all working so nicely.,. :(
+[23:22] <ar4chne> Undefined object DoIt
+[23:22] <asparagi> whoa
+[23:23] <asparagi> had you started installing TrikeBuilder, or were you still working on SqueakMap?
+[23:23] <ar4chne> no, it was installing TrikeBuilder
+[23:24] <asparagi> ok, that's my bug.  but Paul, you tried it earlier & it worked for you?
+[23:24] <Dymaxion> es
+[23:24] <Dymaxion> yes
+[23:24] <Dymaxion> even
+[23:24] <Dymaxion> there were occasional weird errors, but it ended up working in the end.
+[23:24] <asparagi> in that debugger, can you find the stack frame that says Undefined DoIt?
+[23:25] <ar4chne> oh, I killed it
+[23:25] <ar4chne> paul said I could abandon
+[23:25] <asparagi> oh.
+[23:25] Action: ar4chne tries again
+[23:26] <Dymaxion> sometimes abandon did the right thing for me... it's been hard to figure out which I should do some times.
+[23:26] <asparagi> how about, get a working image from paul, and let's debug the build script when i am there in person?
+[23:26] <asparagi> it shouldn't be popping any debuggers, although it is occasionally ass slow
+[23:26] <ar4chne> ok, deal
+[23:27] <ar4chne> in that case, I think I'm going home
+[23:27] <ar4chne> 4:30 is only 7 hours away
+[23:27] <asparagi> ok..  sleep well, happy flight and good luck at shmoocon.  i wish i could be there
+[23:27] <ar4chne> me too!
+[23:28] <ar4chne> and thanks :)
+[23:28] <ar4chne> sorry I wasn't more productive
+[23:28] <asparagi> 'sok.  you have been awesome with the web site & all
+[23:30] <asparagi> oh my god.
+[23:30] <asparagi> there is a BalloonMorph, and it's a subclass of PolygonMorph
+[23:30] <asparagi> so all PolygonMorphs must look like that
+[23:31] <Dymaxion> weird
+[23:32] <ar4chne> are there different types of polygon morphs?
+[23:33] <ar4chne> like, maybe they pass in a constructor argument that tells it how to draw?
+[23:36] <asparagi> well, you can tell it to be "smooth" or not, but it looks like they all have jaggies like that
+[23:43] <asparagi> ok. we have some choices
+[23:44] <asparagi> the balloon spawning process is a collaboration between handmorph and whatever morph has the balloon text
+[23:44] <asparagi> we could make changes in any of 3 places:
+[23:46] <asparagi> handmorph - this might be where we need to deal with the cursor hints anyway, but i hope not; it is kind of a black magic part of the system since i think there are vm primitives to support it
+[23:47] <asparagi> balloonmorph - probably refactoring so it isn't a subclass of polygonmorph would fix it -- we'd just have bordered squares with text in them; however, it's a rude change to put in a package on squeakmap
+[23:48] <asparagi> the morphs that have balloon help - not so bad since we are already changing many of them; disadvantage is if we forget a change somewhere, users see inconsistent balloon help
+[23:48] <asparagi> btw, i have to go in ~ 10 min
+[23:49] <asparagi> or, we could fix the root cause, that being lousy polygon morphs
+[23:49] <asparagi> ned may be using polygons in connectors, too; can't recall. if he is, this would be a good fix
+[23:50] <asparagi> (P, are you still there?  or am i talking to myself?)
+[23:50] <Dymaxion> yeah, I'm here, but talking to stef for a bit, haven't been reading closely for thesecond
+[23:50] <Dymaxion> sorry
+[23:50] <asparagi> 'scoo, just thought i'd shaddup if nobody was listening :)
+[23:57] <asparagi> ok.
+[23:57] <asparagi> i have to go.  i am very tired & i can't figure this out right no
+[23:57] <Dymaxion> ok
+[23:58] <asparagi> i will see y'all later
+[23:58] <Dymaxion> sleep well
+[23:58] <asparagi> good night!
+[00:00] --- Thu Jan 12 2006

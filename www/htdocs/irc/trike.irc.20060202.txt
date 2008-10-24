@@ -1,0 +1,224 @@
+[10:58] <ar4chne> gmorning
+[15:04] Action: Dymaxion waves
+[15:57] <ar4chne> hey, dym :)
+[21:28] <asparagi> one of our criticals leads to a weird scenario.  suppose you have this:
+[21:28] <asparagi> or
+[21:28] <asparagi>   a
+[21:28] <asparagi>   or
+[21:28] <asparagi>     b
+[21:29] <asparagi>     !b
+[21:29] <asparagi> you simplify the child or
+[21:29] <asparagi> the answer to the simplification is, of course, always
+[21:29] <asparagi> so now you have to say
+[21:29] <asparagi> or
+[21:29] <asparagi>   a
+[21:29] <asparagi>   always
+[21:30] <asparagi> but there is no way to store always in a rules tree
+[21:31] <asparagi> the right thing to do is simplify the top or, but if you do that, it is a little weird
+[21:31] <asparagi> because it's not what the user asked for
+[21:32] <asparagi> i think i am going to change the ui so you can only simplify the whole rule tree
+[21:32] <asparagi> not subtrees
+[21:32] <asparagi> there is of course a similar problem for and
+[22:17] <Dymaxion> yeah
+[22:17] <Dymaxion> That makes more sense anyway.
+[22:17] <Dymaxion> Now that we've fixed the parenting bug, we shouldn't need to simplify manually most of the time.
+[22:20] <asparagi> did you see i found the repro steps for your disappearing model sections?
+[22:20] <asparagi> unfortunately they involve a debugger
+[22:20] <asparagi> and i am having trouble finding them
+[22:20] <Dymaxion> blah
+[22:21] <asparagi> oh
+[22:21] <asparagi> i just figured it out
+[22:24] <asparagi> the radio is so funny.  somebody just called the country station to report that 7 helicopters flew over her house
+[22:24] <asparagi> so the DJ is going to figure out what happened.  the DJ requests anyone with information to call her
+[22:24] <Dymaxion> hehe
+[22:24] <Dymaxion> oh, I haven't added the xml export ui bug yet -- should I?
+[22:25] <asparagi> i mean, if helicopters flew over my van i'd call the country station for sure
+[22:25] <asparagi> naw, i've already partly implemented it
+[22:25] <asparagi> so i didn't forget :)
+[22:26] <Dymaxion> ok. :-)
+[22:59] <asparag1> no more criticals! whoo hoo!
+[23:01] <Dymaxion> wooohooo!
+[23:01] Action: Dymaxion looks at eir watch^Wtimestamp.  Right on time, too!
+[23:02] <asparag1> well, i don't _quite_ have the file export ui working
+[23:02] <asparag1> there is a little missing glue
+[23:02] Action: Dymaxion nods
+[23:03] <asparag1> oh yah -- ara called. we should package up the windows release & put it on zettai, and when she is awake & has net again tomorrow, she'll release that.
+[23:03] <asparag1> then when she has time, she'll test for os x, and package & release that
+[23:04] <Dymaxion> cool
+[23:04] Action: asparag1 is waiting for unit tests
+[23:19] <asparagi> the files are uploading
+[23:20] <asparagi> i think i am starting to get excited
+[23:20] <asparagi> i like our debugging process.  the part where we found & fixed that stuff before we shipped seems really good to me
+[23:21] Action: Dymaxion nods
+[23:21] <asparagi> ok.  the files are waiting for you.
+[23:21] <Dymaxion> cool
+[23:21] <asparagi> i am going to go build an image as well :)
+[23:21] <Dymaxion> and yeah, I've been really happy with the past week or two as a whole, really, including the feature stuff
+[23:22] <asparagi> but mine will probably take the whole time to build that yours does to build & test
+[23:22] <Dymaxion> why?
+[23:22] <asparagi> slow net
+[23:23] <Dymaxion> oh, you're building from scratch, right.
+[23:23] <asparagi> the build process installs things off squeakmap
+[23:23] <asparagi> oh, i am so excited!
+[23:23] <asparagi> this is going to be awesome
+[23:23] <asparagi> you are going to build & find more criticals, and then I will fix them
+[23:23] <asparagi> i hope not
+[23:26] Action: Dymaxion grins
+[23:27] <asparagi> oh.  i don't have 6718.  i'm not going to have it for another 40 minutes & 43 seconds
+[23:27] <asparagi> so i guess i'm not going to build
+[23:27] Action: Dymaxion grins
+[23:27] Action: Dymaxion went and checked for a more recent build, but it 6718 is still current.
+[23:27] <asparagi> as soon as you have test results i'll stick the packages in SqueakMap
+[23:28] <asparagi> that should make it easier for ara to build on OS X, too, theoretically
+[23:28] <Dymaxion> ok
+[23:30] <Dymaxion> can you put it on squeak map in some kind of test mode so we can try a build from there, too, before it goes public?
+[23:31] <asparagi> nope.  all public, all the time
+[23:32] <Dymaxion> hrm.
+[23:32] <Dymaxion> Well, we'll test quickly, then. :-)
+[23:32] <asparagi> but i yup
+[23:32] <asparagi> er
+[23:32] Action: asparagi 's head is full of half-formed sentences which drift together randomly
+[23:33] <asparagi> yeah.  i am a little concerned about the dependency thing
+[23:33] Action: Dymaxion nods.
+[23:33] <asparagi> i never learned how to work it.
+[23:34] <asparagi> we have an abnormally fine-grained collection of .mczs...
+[23:34] <asparagi> maybe it will just work, ha ha
+[23:34] Action: Dymaxion grins.
+[23:47] <Dymaxion> built
+[23:49] <Dymaxion> debugger on Delete Actor
+[23:51] <Dymaxion> Create a new actor in Blog, then delete it.
+[23:52] <Dymaxion> Don't have another repro
+[23:52] <Dymaxion> Can't get it to happen in another TM, might have something to do with other rule state.
+[23:52] <asparagi> bah
+[23:52] <Dymaxion> Want me to file this?
+[23:52] <asparagi> lemme try to repro
+[23:53] <asparagi> worked for me first try
+[23:53] <Dymaxion> you did or did not reproduce it?
+[23:54] <asparagi> i reproduced it
+[23:54] <asparagi> then i fixed the bug
+[23:54] <asparagi> next?
+[23:54] <Dymaxion> gotcha
+[23:54] <asparagi> ;)
+[23:54] <Dymaxion> woO!
+[23:55] <asparagi> got any more bugs?
+[23:56] <Dymaxion> working on it, nothing yet
+[23:57] <Dymaxion> Hrm.
+[23:57] <Dymaxion> You can delete the external asset, thus leaving a model with no out of scope asset
+[23:59] <asparagi> that isn't supposed to work
+[23:59] <asparagi> i wonder if it only updates the ui.
+[00:00] --- Fri Feb  3 2006
+[00:00] <asparagi> no, it's really gone
+[00:00] <asparagi> feh
+[00:01] <Dymaxion> debugger on negating an and with a negated text clause below it; working on confirming that as a minimal test case
+[00:02] <Dymaxion> no, there's something more going on, hang on
+[00:03] <Dymaxion> ok, go to the rule tab, open up Actor Reads User Account all the way, negate "It is Actor's own User Account", and then attempt to negate the AND above it
+[00:04] <Dymaxion> -> debugger, "Object is not in the collection" from WeakIdentitySet, called by TrikeActorRule removeParent:
+[00:06] <Dymaxion> uhh... not sure how to repro this one, but I was beating on something else, repeatedly negating it, and I'd swear something in the tree for another action changed.
+[00:07] <asparagi> hmm
+[00:10] <Dymaxion> If you have an action which has only a text clause as a child and you click on the child and say "add sibling rule->text clause", it doesn't.
+[00:11] <Dymaxion> ditto for clicking on the action and saying "also allow when->text clause"
+[00:11] <asparagi> ok, i fixed the Actor's own Account debugger
+[00:11] <asparagi> i think
+[00:12] <asparagi> i'm relying on the garbage collector a little more heavily
+[00:12] <asparagi> it makes sense that you couldn't add a sibling text clause
+[00:12] <asparagi> oh, no it doesn't
+[00:12] <asparagi> feh
+[00:13] <asparagi> oh
+[00:14] <asparagi> i think there's an automatic simplification going on when the rule is set
+[00:14] <Dymaxion> right
+[00:14] <asparagi> can we leave that one for next release, or do you think it's critical?
+[00:14] <Dymaxion> which then says "these are the same"
+[00:14] <Dymaxion> no -- annoying, but not critical
+[00:14] <asparagi> k.
+[00:14] <Dymaxion> like the thing with external asset, unless that's already fixed
+[00:14] <asparagi> how 'bout deleting the external asset?
+[00:14] <Dymaxion> want me to file?
+[00:15] <asparagi> no, not yet
+[00:15] <asparagi> file the auto-simplification
+[00:15] <asparagi> i'm going to take a quick stab at the external asset
+[00:15] <Dymaxion> ok
+[00:16] <asparagi> what do you think it should do if you try to do that?
+[00:17] <Dymaxion> the same thing it does if you try to uncheck it -- nothing.
+[00:17] <Dymaxion> ideally, we want some way of notifying the user of what's going on, but we don't really have that right now.
+[00:18] <asparagi> it's my hatred of modal dialog boxes
+[00:18] <Dymaxion> I think we'll eventually want some generic general purpose way of displaying help and feedback to the user, and once we've got that, it'll be fine.
+[00:19] <Dymaxion> I don't think we want a dialog box at all here.
+[00:19] <Dymaxion> In fact, I'll be very annoyed if one shows up for this sort of informational thing.
+[00:19] <asparagi> ok, fixed
+[00:19] <Dymaxion> cool
+[00:19] <Dymaxion> filed
+[00:19] <asparagi> yeah, that's why i didn't put one in
+[00:19] <asparagi> any more?
+[00:19] <Dymaxion> not yes
+[00:20] <Dymaxion> er, yet
+[00:20] <Dymaxion> I think we may want to schedule that for the next release if we can -- our UI is getting somewhat complex, and better feedback would be a big win for usability.
+[00:21] <asparagi> well, ara's suggestion was a little status line
+[00:21] <asparagi> i don't have a suggestion
+[00:21] <asparagi> and you & i apparently both dislike modal dialogs
+[00:24] <Dymaxion> http://bugs.octotrike.org/bugs/bugs/0074
+[00:26] <asparagi> is there a missing piece before "that might make a good first pass"?
+[00:26] <asparagi> haha
+[00:26] <Dymaxion> yes.
+[00:26] <asparagi> i know how to avoid trouble with the external asset
+[00:26] <Dymaxion> the stupid auto text formatting crap did something evil.
+[00:26] <asparagi> don't put the remove item in the menu to start with
+[00:27] <asparagi> since we have menus with items that appear & disappear already, this isn't any weirder than any other situation
+[00:27] <Dymaxion> but wait, what if they add a new out of scope item and want to remove external asset/
+[00:27] <Dymaxion> only let it show up if the asset could be deleted?
+[00:27] <asparagi> although greying it out and supplying a balloon help reason could be good
+[00:27] <asparagi> yeah, exactly
+[00:28] <Dymaxion> either one works
+[00:28] <asparagi> why tempt the user with the impossible?
+[00:28] <asparagi> well, i'm not going to do either right now..
+[00:28] <asparagi> i'm starting to get tired
+[00:28] <asparagi> lemme know when you want the last drop, then i'm going to bed
+[00:29] <Dymaxion> ok, which attacks can be edited is not consistent.
+[00:30] <Dymaxion> You can edit ORs but not ANDs, and only some of the default tree is editable
+[00:30] <asparagi> uhhhh
+[00:31] <asparagi> oh
+[00:31] <asparagi> yah
+[00:31] <Dymaxion> Closing all the threat models makes Quit!, Save, and Save and Quit go away, and they don't come back when you create a new one.
+[00:31] <asparagi> hee hee
+[00:31] <Dymaxion> only some times though
+[00:31] <Dymaxion> sometimes it happens when you create a new TM after deleting the others
+[00:32] <asparagi> so remember when we were talking about how to tell if an attack node is an AND?
+[00:32] <Dymaxion> some times just some of the buttons go away.
+[00:32] <asparagi> can you fix it with the menu?
+[00:33] <Dymaxion> no, the menu doesn't change when this happen
+[00:33] <asparagi> i decided the way to tell, right now, was to have the ANDs always say AND
+[00:33] <asparagi> but, check & uncheck the appropriate box
+[00:33] <Dymaxion> ah, ok
+[00:34] <asparagi> do the missing buttons come back?
+[00:34] <Dymaxion> we should document that
+[00:34] <Dymaxion> hang on a sec
+[00:34] <Dymaxion> debugger!
+[00:34] <Dymaxion> I tried to turn off the section with missing buttons
+[00:34] <asparagi> re: only some attacks editable, can you give me examples?
+[00:34] <Dymaxion> hang on
+[00:34] <asparagi> damn
+[00:34] <asparagi> damn damn
+[00:35] <Dymaxion> ok, no, this is weirder
+[00:36] <Dymaxion> first, I could edit the name of a threat, but the name changed back
+[00:36] <Dymaxion> then, I went through editing names and they all worked, until I edited a name but clicked elsewhere without actually changing it.  Now a bunch of them are uneditable.
+[00:37] <Dymaxion> hard to tell if there's a pattern
+[00:38] <asparagi> oh my
+[00:38] <asparagi> that sounds rather strange
+[00:38] <Dymaxion> silently truncates file name in the export box, but that's not bad behaviour
+[00:38] <asparagi> is the one you were editing still green?
+[00:38] <Dymaxion> nope
+[00:39] <asparagi> silently truncates file name?
+[00:39] <Dymaxion> if it's a few hundred characters long when you enter it, say
+[00:39] <asparagi> i see
+[00:39] <Dymaxion> (truncates to maxpath, I think)
+[00:39] <asparagi> seems good :)
+[00:39] <asparagi> file that threat name one
+[00:39] <asparagi> i don't know
+[00:40] <Dymaxion> Ok, I have to go hang out with alex -- I'll file stuff when I get back, and I'll email you if I find anything new.
+[00:41] <Dymaxion> bbl
+[00:43] <asparagi> ok. sounds good
+[00:56] <asparagi> i'm going to bed
+[00:57] <asparagi> i am working on the section debugger thing
+[00:57] <asparagi> it makes me sad that we can't release
+[00:58] <asparagi> i guess next time we need to get to stable features earlier so we have longer to pound
+[00:58] <asparagi> :(
+[00:58] <asparagi> good night

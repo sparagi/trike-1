@@ -1,0 +1,578 @@
+[03:00] <asparagi> try elementAt: 'model'
+[03:00] <asparagi> and then attributeAt: 'name' put: name
+[03:02] <asparagi> if you get an "image browser" off the open menu, it has the indented inheritance thang goin' on, and in the XML-Parser category the stuff in the XMLNode hierarchy is helpful.  most stuff you want will be in accessing somewhere
+[03:08] <asparagi> errrg
+[03:08] <asparagi> stupid updating
+[03:21] <asparagi> i think both attack tree bugs revolve around updating
+[03:21] <asparagi> i am tired, so i am going to sleep & get up again early
+[03:22] <asparagi> paul, upload whatever you have & i'll download & merge
+[03:22] <Dymaxion> ok, that works.
+[03:22] <asparagi> er, i mean when you're done
+[03:22] <Dymaxion> I'm starting to get the hang of this
+[03:22] <Dymaxion> yeah
+[03:22] <asparagi> just send me email 
+[03:23] <asparagi> then when i get up i'll merge, find the dang update bug, and upload for the final test run
+[03:23] <Dymaxion> cool
+[03:23] <asparagi> and maybe write out to file
+[03:23] <asparagi> i'd love to have us just do packaging tomorrow
+[03:23] <asparagi> e.g. getting onto squeakmap
+[03:23] <Dymaxion> yeah
+[03:23] Action: Dymaxion nods
+[03:23] <asparagi> i mean tomorrow night 
+[03:24] <asparagi> i'm tired.  clearly.  see you here tomorrow night?
+[03:26] <Dymaxion> yeah
+[03:26] <Dymaxion> sleep well
+[03:44] <Dymaxion> argh
+[10:17] <ar4chne> morning
+[10:17] <ar4chne> sorry about last night...I started working on porting the bugtraq stuff and completely fell asleep
+[10:31] <asparagi> no worries
+[10:31] <asparagi> i hope your head is better this morning?
+[10:31] <asparagi> shoot, must run to work.  i hope your day goes great, & i see you here tonight :)
+[10:32] <asparagi> and i think we should cancel wednesday's meeting & sleep instead
+[10:32] <asparagi> or in my case, work to catch up on what i'm going to slip today
+[18:47] <Dymaxion> ok, fixed a bunch more stuff, still a few more things left to mess with.
+[18:48] <Dymaxion> Taking a break to fix dinner for alex
+[18:48] Action: Dymaxion needs to figure out how to convert ints to strings
+[19:59] <ar4chne> howdy
+[20:04] <Dymaxion> figured that out; running errands, bbs
+[20:34] <Dymaxion> bak
+[20:49] <ar4chne> wb!
+[21:09] <ar4chne> howdy, aspa
+[21:10] <asparagi> hi there!
+[21:12] <asparagi> wow, i don't think i've ever seen fur actually fly before...
+[21:12] <ar4chne> hm?
+[21:13] <asparagi> my kitties are wrestling right next to me
+[21:14] <ar4chne> ah :)
+[21:15] Action: Dymaxion grins
+[21:16] <Dymaxion> Ok, so I'm most of the way there... I've got stuff actually printing out to the transcript, although it's a little fucked up.
+[21:16] <asparagi> woo hoo!
+[21:16] <asparagi> :)
+[21:16] <Dymaxion> It's also really hard to debug because of the way the xml parser works -- all the errors happen when it tries to print out the stream, not when you create the document
+[21:17] <asparagi> i'm eating & then i'll dive into the update thing
+[21:17] <asparagi> thats weird
+[21:17] <ar4chne> wee, I hate wxWidget
+[21:17] <ar4chne> s
+[21:17] <ar4chne> and I'm getting ready to start on the bug portage
+[21:17] <asparagi> i didn't realize there was so much disconnect b/w bug & debugger
+[21:18] <Dymaxion> there wasn't before, but I've got through the first layer of bugs
+[21:18] <asparagi> so, ara, i don't know if you were here the other day when i got all excited about captain existing in svn
+[21:18] <asparagi> but i'm really excited
+[21:19] <asparagi> oh, is it stuff like it won't print out with some stuff missing?
+[21:19] <ar4chne> oh :)
+[21:19] <ar4chne> yeah, I added it the other day
+[21:19] <asparagi> i'm sorry you have to slog through wxWidgets, but i can't wait till you have
+[21:20] <ar4chne> because I was about to delve into some risky business (tm) and wanted to maintain a sort-of working copy
+[21:20] Action: asparagi laughs
+[21:20] <ar4chne> :D I'm about this close -> <- to having the vertical sashing working between line items
+[21:20] <asparagi> hee hee
+[21:20] <ar4chne> as well as variable height on paste
+[21:20] <Dymaxion> asp: no, I've got most of the nil checks in.. I'm not quite sure what the deal is right now.
+[21:20] <Dymaxion> I'm going to add in the blog threats and then ship it over
+[21:21] <asparagi> ooh, so under a  certain size of paste, the paste pane gets smaller?
+[21:21] <asparagi> Dym: ok, i'll take a look
+[21:22] <asparagi> although i should really do that update stuff before I get too tired
+[21:22] <ar4chne> aspa :) yeah :)
+[21:22] <asparagi> toby, bless his heart, scheduled me for a conference call tonight from 10pm-midnight
+[21:23] <ar4chne> omfg
+[21:23] <ar4chne> poor you :(
+[21:23] <asparagi> i suspect by the time i'm done with that, i won't be that useful for trike
+[21:23] <asparagi> yeah, i just wish it wasn't tonight
+[21:23] <ar4chne> so we have 2 hours, roughly
+[21:23] <asparagi> yeah
+[21:23] <Dymaxion> asp: suck
+[21:23] <Dymaxion> I should be done shortly
+[21:23] <asparagi> well, i have 5 min left on my sandwich.
+[21:24] <asparagi> i love having a one-handed keyboard.  you can eat with one hand & not get it all dirty
+[21:29] <asparagi> ok.  i'm all trike till just before 10pm
+[21:33] <Dymaxion> ok, so, I've got all the assets as named elements in the blog creation method
+[21:33] <Dymaxion> I can get a threat given an action
+[21:33] <Dymaxion> how do I get an action by type?
+[21:34] <asparagi> asset actionAt: #Create
+[21:34] <asparagi> i think
+[21:34] <Dymaxion> cool
+[21:34] <Dymaxion> yes
+[21:46] <Dymaxion> ok, just putting in the real numbers
+[21:47] <asparagi> :)
+[21:47] <asparagi> i'm writing tests
+[21:48] <asparagi> that's the only way i got the rules tree updates to work, so i figured it was the right thing to do here
+[21:50] <Dymaxion> ok, writing out now
+[21:52] <Dymaxion> Trike-Interaction-Spiral-PBS.25.mcz and Trike-Core-PBS.24.mcz
+[21:52] <Dymaxion> permissions fixed
+[21:54] <Dymaxion> let me know what I can do now
+[22:01] <asparagi> ara, what web site content do we need for release?
+[22:01] <Dymaxion> did you get that changeset ok?
+[22:01] <asparagi> working on it
+[22:02] <asparagi> you know my net connection :)
+[22:02] Action: Dymaxion grins.
+[22:03] <asparagi> so, dym, how about a brief release checklist?
+[22:03] <asparagi> bugs, build, test, ..?
+[22:03] <asparagi> we prolly need an announcement, web page, ,.?
+[22:04] <asparagi> we should test the built image on OS X & get us a .dmg as well
+[22:04] <ar4chne> lemme know what you want in them and I can slap sthing together right quick
+[22:04] <Dymaxion> bugs on the site, release builds, run through the UI test checklist, announcement blurb for the site, 
+[22:04] <ar4chne> I've been playing around with trying to figure out how to pkg a dmg as well
+[22:04] <Dymaxion> current screen shots?
+[22:06] <Dymaxion> hey, did we have per-attack risks and proper exposures in our last release?
+[22:07] <asparagi> wooo!  look at those pretty pink boxes
+[22:07] <asparagi> i can't remember
+[22:09] <Dymaxion> I don't think we did.
+[22:10] <asparagi> dym, what you should do to keep debugging on the xml file format is get a blog up, then explore self convertToNativeXML
+[22:10] <Dymaxion> ok, proposed text blurb to the list
+[22:10] <Dymaxion> oh, ok
+[22:10] <asparagi> it'll say "<error: XMLDocument>"
+[22:10] <asparagi> just keep popping 'em open until you get to something funny
+[22:11] <ar4chne> shouldn't we have some sort of user docs?
+[22:11] <asparagi> e.g. the first bug in a depth-first traversal is that there's a TrikeAndRule as an element
+[22:11] <Dymaxion> yeah
+[22:12] <asparagi> user docs sound like a good idea to me :)
+[22:12] <asparagi> i'm going to keep working on the bugs
+[22:13] <asparagi> paul, can you take the open section out, too? we'll just have export
+[22:13] <ar4chne> I think maybe we should do them during next week's meeting
+[22:13] <Dymaxion> yeah, I can do that
+[22:13] <Dymaxion> ar: sounds good
+[22:14] <asparagi> hrm.  i'm going to be on a plane for next weeks meeting.
+[22:14] <asparagi> but that's good
+[22:14] <Dymaxion> oh, I had to change the xml format again, too -- I couldn't get <notes>[CDATA]</notes> to work, so instead it's <notes text="foo" />
+[22:14] <asparagi> if y'all write the docs there is less chance that i will be myopic
+[22:14] <asparagi> oh!
+[22:14] <asparagi> there's a trick to that
+[22:14] <asparagi> let me look it up
+[22:16] <asparagi> nameXML := XMLElement named: 'Name' attributes: Dictionary new.
+[22:16] <asparagi> 			nameXML
+[22:16] <asparagi> 				addContent: (XMLStringNode string: name).
+[22:17] <Dymaxion> open section is gone
+[22:17] <Dymaxion> aha!
+[22:17] <Dymaxion> yeah, hadn't found XMLStringNode
+[22:17] <asparagi> it is pretty obscure
+[22:17] <asparagi> not what i would have written
+[22:17] <asparagi> blame mir :)
+[22:25] <asparagi> add a test: change the name of an AND attack
+[22:26] <asparagi> it pops a debugger
+[22:26] <asparagi> (doh)
+[22:27] <asparagi> right. so to do a screen shot, get the notebook to the state you want, then pop the halos. there's an icon that looks like a menu, and on it there is an item named export which will let you pick your format
+[22:27] <Dymaxion> oops
+[22:28] <asparagi> don't do the attack tree yet, though -- the lack of updates means that a bunch of items don't show up yet
+[22:28] <asparagi> but i am getting warmer
+[22:29] Action: Dymaxion nods
+[22:29] <asparagi> and my dove wrapper says to trust my instincts :)
+[22:29] <Dymaxion> what's this 'evaluate "2 asExplorerString" to debug' stuff?
+[22:29] Action: Dymaxion grins
+[22:29] <asparagi> it's messed up
+[22:30] <asparagi> what you should actually do is highlight that item and alt-d on self asExplorerString
+[22:30] <asparagi> or alt-p on self, usually
+[22:30] <asparagi> or keep going down into the tree until you see something weird
+[22:31] <Dymaxion> ok
+[22:35] <Dymaxion> woo, got rules printing
+[22:36] <asparagi> yay!
+[22:39] <asparagi> The announcement seems fine; i think we should make the screenshots page be version-specific, i.e. the URL should have 1.1.2a in it
+[22:42] <asparagi> oh.  one test that would be nice: in the Morphic-Layouts-Core package, there is only one method, Morph>>adjustLayoutBounds.  is this actually needed? to test, save image, save as, then revert that method to andreas' version, open a trike notebook & flip through the tabs to see if anything is broken
+[22:43] <asparagi> if that works, add & delete some assets
+[22:43] <asparagi> breakage will be obvious -- you will probably have to kill squeak
+[22:46] <asparagi> haha
+[22:46] <asparagi> i found my bug
+[22:46] <Dymaxion> ok, I'm just missing something.
+[22:46] <Dymaxion> As far as I can tell, my xml is now correct, but it's still complaining about errors.
+[22:46] <Dymaxion> I'm uploading my changes
+[22:48] <Dymaxion> done
+[22:48] <Dymaxion> do you want me to revert that method?
+[22:51] <asparagi> yah, try it
+[22:51] <asparagi> just be prepared to kill squeak :)
+[22:52] <asparagi> (from the task manager)
+[22:52] <Dymaxion> ok, nothing blew up, but when I add a new asset, stuff gets shifted around -- now not just the stuff at the bottom is off screen, but the stuff at the top and the right as well.
+[22:53] <asparagi> ok. that answers that question, we do need that method
+[22:53] <asparagi> we shouldn't
+[22:53] <asparagi> but we'll leave it in
+[22:53] <asparagi> so go ahead & revert back to my version
+[22:53] <Dymaxion> and yeah, re-reverting fixes it
+[22:57] <Dymaxion> ok, n/m, found my bug
+[22:57] <asparagi> oh, awesome, i was just going to download
+[22:57] <asparagi> now that most of my tests are passing :)
+[22:58] <asparagi> i love unit tests
+[22:58] <asparagi> have i mentioned that recently
+[22:58] <asparagi> ?  in fact i think i might want to spend some quality time with the unit tests as the beginning of our next dev cycle
+[22:59] Action: Dymaxion grins.
+[22:59] <Dymaxion> woot, attacks print!
+[22:59] <asparagi> yay!
+[22:59] <asparagi> so what's left?
+[22:59] <Dymaxion> just actions left
+[22:59] <asparagi> somehow the tests got really slow again
+[23:00] <Dymaxion> it builds!
+[23:00] <Dymaxion> ship it!
+[23:01] <asparagi> ;)
+[23:01] <asparagi> i dunno. 1 failure & 1 error, 18 tests to go
+[23:02] <asparagi> i don't think i can release on squeakmap tonight
+[23:03] <asparagi> we depend on some extra changesets now, that are other ppls packages that aren't up to date on squeakmap
+[23:04] Action: Dymaxion nods
+[23:04] <asparagi> oh. no we don't. we didn't move over to use graph
+[23:04] <asparagi> nevermind. we are good to go
+[23:05] <asparagi> how are we stocked for bandwidth on octotrike?
+[23:05] <asparagi> and what will our release URL be?
+[23:07] <Dymaxion> ok, I think I've uploaded a working version of my changes... Monticello may have gotten a little confused.
+[23:18] <Dymaxion> lemme know what else I should work on.
+[23:18] <asparagi> i almost have your changes
+[23:19] <Dymaxion> cool
+[23:19] <asparagi> and i almost have my bug fixed
+[23:20] <asparagi> i sure wish i understood why they were so fast earlier today, but aren't now
+[23:20] <Dymaxion> had you merged in my changes?  I might have done something that slowed them down, although I can't imagine what.
+[23:21] <asparagi> nope, it's all me
+[23:21] <asparagi> i think i'm passing around an excessive amount of updates
+[23:21] <Dymaxion> trying to get the attack tree editing stuff working?
+[23:22] <asparagi> looking at what's in BEL-Misc, can you think of another name for that package?
+[23:22] <asparagi> yeah
+[23:33] <Dymaxion> right now all I'm seeing is WeakIdentitySet
+[23:34] <asparagi> oh, go to monticello browser, select the package & hit browse
+[23:34] <Dymaxion> oh, never mind, I see the rest now
+[23:34] <Dymaxion> Do you want the name to be trike-specific?
+[23:34] <asparagi> no
+[23:34] <asparagi> http://map1.squeakfoundation.org/sm
+[23:35] <asparagi> If you want to be co-maintainer (either or both of you) on SqueakMap, go there & get an account so I can add you
+[23:36] <ar4chne> hmmm...I think I'll wait until I actually have code going into a release :/
+[23:36] <Dymaxion> created PBS, waiting for email
+[23:36] <Dymaxion> hey, you've got code in here -- there are changesets with your name on them
+[23:37] <ar4chne> O.o really?
+[23:37] <asparagi> well, yah
+[23:37] <asparagi> in squeakmap, you mean?
+[23:37] <ar4chne> hmmm...I still don't feel like I've really contrib'd enough to go register as a maintainer
+[23:37] <asparagi> yeah, i released those layouts & some memory image tools quite a while ago
+[23:38] <asparagi> we'll fix the os x build process & get you ramped up on tools
+[23:38] <asparagi> oh! ara's code in the trike release
+[23:38] <Dymaxion> no, I meant in trike -- there are at least four or five -ara- mczs
+[23:38] <Dymaxion> yeah
+[23:39] <asparagi> i wish there were a way to hunt for all the methods with a dev's sig on them
+[23:39] <asparagi> damn, all these slow tests & now an error
+[23:39] <asparagi> grrr
+[23:40] <asparagi> it's only 67 in of 109
+[23:40] <asparagi> i think a lot of it is setup & teardown time
+[23:42] <asparagi> i can see that the event framework needs some refactoring again
+[23:43] <asparagi> i didn't understand how slow it was
+[23:43] Action: Dymaxion nods.
+[23:43] <asparagi> i bet we can get a huge performance gain..
+[23:43] <Dymaxion> On the bright side, getting the tests down to a reasonable time will make the interface a lot snappier
+[23:46] <Dymaxion> if we want a trike-specific name for bel-misc, trike-support doesn't sound bad.
+[23:47] <asparagi> hmmm
+[23:48] <asparagi> that would be good, but it was also used by that google image scavenger thing i never released
+[23:48] <asparagi> you should be listed for Trike Engine & Trike Morphic UI
+[23:51] <Dymaxion> Ok, something unrelated them... Octopus-Patches?
+[23:51] <Dymaxion> lots of random tentacles into things
+[23:53] <asparagi> I like it.
+[23:53] <Dymaxion> and patches is really the best word for it... a lot of those seem like things that should go into their respective real packages, so.
+[23:54] <asparagi> Yes
+[23:54] <asparagi> Can you rename the package?
+[23:55] <Dymaxion> no, I don't know how
+[23:55] <Dymaxion> (and it isn't obvious in the UI)
+[23:56] <asparagi> k. i'll do it
+[23:56] <Dymaxion> msg asparagi I couldn't figure out how to do it, though.
+[00:00] --- Wed Feb  1 2006
+[00:07] <ar4chne> did either of you change the irc logs?
+[00:19] <asparagi> nope
+[00:19] <asparagi> or at least, i didn't
+[00:23] <ar4chne> man guys, I'm having 0 luck with this bug tracking system
+[00:23] <asparagi> :(
+[00:23] <ar4chne> do you suppose it would be possible to just setup a dns entry for bugs.octotrike.org to go to zettai?
+[00:23] <asparagi> maybe we should just link to it on zettai for now?
+[00:23] <asparagi> ooh, even better
+[00:23] <asparagi> yeah, let's do that
+[00:23] <ar4chne> and then config the apache server on zettai to just serve the bugs?
+[00:23] <ar4chne> that would be much easier
+[00:23] <asparagi> we can put it at the root
+[00:23] <asparagi> yeah.
+[00:24] <ar4chne> lol, wish I would have thought of this 3 hours ago
+[00:24] Action: asparagi will work on the dns
+[00:24] <ar4chne> and aren't you supposed to be on a conf call?
+[00:30] <asparagi> i am
+[00:30] <asparagi> i'm mostly listening
+[00:37] <asparagi> dns is updated but it hasn't propagated yet
+[00:38] <asparagi> ara, are you going to do the apache thing?
+[00:54] <asparagi> argh, have to do a little trikeattack refactoring
+[01:03] <ar4chne> hmm...any idea on how to set it as the root?
+[01:03] <ar4chne> zope confoozles me
+[01:18] Action: asparagi goes to look
+[01:34] <ar4chne> the main site is ready to go whenever we are
+[01:34] <ar4chne> and i've figured out how to make dmg files
+[01:34] <asparagi> cool!
+[01:35] <asparagi> i am still fixing a couple bugs
+[01:35] <asparagi> i don't think you should stay up
+[01:35] <asparagi> unless you want to
+[01:35] <asparagi> my eta ~1.5 hours
+[01:35] <ar4chne> I still need to change the root for the bugs site tho
+[01:35] <asparagi> for code stuff
+[01:35] <asparagi> yeah
+[01:35] <ar4chne> and I have no idea how to do that
+[01:35] <asparagi> i'm looking at it
+[01:35] Action: ar4chne is lame
+[01:35] <ar4chne> sorry :(
+[01:35] <asparagi> i think the apache conf is the way to do it
+[01:36] <ar4chne> hmmm...how?
+[01:36] <asparagi> but i am looking for the right place
+[01:36] <ar4chne> I thought it was just telling apache to use zope
+[01:36] <asparagi> RewriteCond %{HTTP:Authorization}  ^(.*)
+[01:36] <asparagi> RewriteRule ^/sekrit(.*) /usr/local/share/www/cgi-bin/Zope.cgi/$1 [e=HTTP_CGI_AU
+[01:36] <asparagi> THORIZATION:%1,t=application/x-httpd-cgi,l]
+[01:36] <ar4chne> and then al the zope content is handled withing the zope database?
+[01:36] <asparagi> a variation on that
+[01:36] <asparagi> yeah
+[01:37] <asparagi> so we we need to rewrite ^/(.*) to /something/Zope.cgi/bugs/$1
+[01:37] <ar4chne> so don't you just need to log into zope and tell it to use the IssueTracker Product as it's default thang?
+[01:37] <asparagi> i can't find a virtual host whatzit in there
+[01:37] <ar4chne> ah, I couldn't either :/
+[01:37] <ar4chne> suck
+[01:37] <ar4chne> well, I can play with apache so you don't have to
+[01:38] <asparagi> it looks like we have rewrite module
+[01:38] <asparagi> all you need to find is the right line in the right file
+[01:38] <ar4chne> no worries :)
+[01:42] <asparagi> wow, 10pm is an uncivilized time for a meeting
+[01:42] <asparagi> but now we are done
+[01:43] <asparagi> ok, try this:
+[01:43] <asparagi> <VirtualHost bugs.octotrike.org>
+[01:43] <asparagi>   RewriteEngine on
+[01:46] <asparagi>   RewriteRule ^/(.*) http://127.0.0.1:8080/...:80/$1 ....
+[01:46] <asparagi> </VirtualHost>
+[01:46] <ar4chne> xactly like that?
+[01:46] <asparagi> look in /usr/local/etc/apache/conf/vhosts.conf
+[01:47] <asparagi> no, i messed it up
+[01:47] <asparagi> <VirtualHost bugs.octotrike.org:80>
+[01:47] <asparagi> RewriteEngine On
+[01:48] <asparagi>   RewriteRule ^/(.*) http://127.0.0.1:8080/VirtualHostBase/http/%{HTTP_HOST}:80/bugs/$1 [L,P]
+[01:48] <asparagi> </VirtualHost>
+[01:49] <asparagi> xactly like that
+[01:49] <asparagi> and if that works, 
+[01:49] <asparagi> dupe for :443, but snag all the SSL config stuff from the existing section
+[01:49] <asparagi> (_default_:443)
+[01:49] <ar4chne> k
+[01:50] <asparagi> you might need the icons line too
+[01:51] <ar4chne> icons line?
+[01:52] <ar4chne> What if we just set up a simple redirect for the 443 stuff?
+[01:53] <ar4chne> so that it bumped everything to from bugs.octotrike.org:443 to bugs.octotrike.org/bugs?
+[01:55] <ar4chne> wow, you're amazing
+[01:55] <ar4chne> the rewrite stuff worked wonderfully
+[02:03] <asparagi> i'd like us to use ssl for logging into the bug system
+[02:03] <asparagi> so it'd be cool to make the 443 site work for bugs.octotrike.org too
+[02:03] <ar4chne> I'm trying to get it working
+[02:03] <asparagi> xmlns should go on XMLDocument, i think
+[02:03] <asparagi> 	negated should be true or false (attack not vs. attack negated)
+[02:03] <asparagi> 	actors elements should be actor, not asset
+[02:03] <asparagi> 	use actions, not intendedActions, to get intended="false" actions as well
+[02:03] <asparagi> 	attacks elements should be attack, not rule
+[02:03] <asparagi> 	call attributeAt: in same order every time
+[02:03] <asparagi> er, that last bit is for Dym, when e returns
+[02:04] <asparagi> that's the xml bug lisT
+[02:04] <ar4chne> I don't know how to get ssl turned on with this version of apache tho
+[02:04] <asparagi> there's stuff in vhosts.conf
+[02:04] <asparagi> does that not work? 
+[02:05] <asparagi> dym, wait for my upload, though-- i did some attack refactoring
+[02:05] <asparagi> ping when you get back
+[02:06] <ar4chne> oh, I just needed to know to do 'apachectl startssl'
+[02:06] <ar4chne> we don't have a cert pregened for this server either, do we?
+[02:13] <asparagi> no
+[02:13] <ar4chne> oh, yes we do, I think
+[02:13] <ar4chne> this is such a weird server
+[02:13] <asparagi> we've been using zettai's cheesy cert
+[02:14] <asparagi> i didn't know to do that startssl thing.. :)
+[02:16] <asparagi> 2 tiny, tiny bugs
+[02:16] <asparagi> (plus xml)
+[02:19] <ar4chne> oh, I can gen a cert
+[02:20] <asparagi> 1 bug left
+[02:21] <ar4chne> yay
+[02:25] <asparagi> i hate being tired
+[02:25] <asparagi> i know this is simple & i can't figure it out
+[02:30] <asparagi> bugs fixed
+[02:30] <asparagi> i wil do the xml ones real quick too, then upload
+[02:30] <asparagi> (and start a build)
+[02:38] <ar4chne> yeah, same here
+[02:45] <asparagi> running tests
+[02:46] <asparagi> holy f-ing sh-t, i think we might actually get this thing out the door
+[02:46] <asparagi> it's probably still 1/31 somewhere
+[02:55] Action: Dymaxion hops back on
+[02:56] <Dymaxion> sorry to disappear for so long
+[02:59] <asparagi> 'scoo
+[03:01] <Dymaxion> do you still need me to work on any of those xml bugs?
+[03:04] <asparagi> nope
+[03:04] <asparagi> i got 'em
+[03:04] <asparagi> but i am uploading now & i would love you to build & ui test
+[03:06] <Dymaxion> ok
+[03:06] <asparagi> ok, go.  you need octopus-patches instead of bel-misc
+[03:07] <asparagi> as soon as you have it built, could you upload to zettai?
+[03:07] <asparagi> and then ara, could you download & run through dym's ui tests on your mac?
+[03:08] <Dymaxion> building
+[03:08] <asparagi> keep a fresh copy, pre test-run; that's what we'll ship
+[03:08] <asparagi> need to make sure we ship OSProcess bits too because i don't have time to figure out how to get them out again
+[03:09] <asparagi> next time we will do this a little better
+[03:11] Action: asparagi starts working on screen shots
+[03:21] <Dymaxion> wait, which option do I want for a non dev version?
+[03:26] <asparagi> um
+[03:26] <asparagi> build the dev version, we'll ship that
+[03:26] <Dymaxion> ok
+[03:26] <asparagi> i didn't get the other config stuff straightened out
+[03:26] <asparagi> sorry
+[03:27] <Dymaxion> no problem -- I just wanted to double check that
+[03:29] <asparagi> before we ship it we should put Trike in full-screen & turn off programmer facilities
+[03:29] <Dymaxion> gotcha
+[03:29] <Dymaxion> I'll do that and then run my tests that way
+[03:30] <asparagi> awesome
+[03:31] <asparagi> i can't find the list from earlier
+[03:31] <asparagi> S has a web page ready to go
+[03:31] <asparagi> we have screen shots, and code
+[03:31] <Dymaxion> bug list?
+[03:32] <asparagi> ssl on zettai seems a mite unhappy just now
+[03:32] <asparagi> we're just going to point to http://bugs.octotrike.org/
+[03:33] <asparagi> i'll fix it up right now despite lack of ssl, i guess
+[03:33] <Dymaxion> ok
+[03:39] <asparagi> i'm taking the remaining bugs out of hold
+[03:41] <Dymaxion> image uploading
+[03:44] <asparagi> ara, are you still up?
+[03:44] <ar4chne> yeah, I'm here
+[03:44] <asparagi> wow
+[03:44] <ar4chne> hm?
+[03:45] <asparagi> we are all going to be totally wiped tomorrow
+[03:46] <asparagi> so, if we test, update the bug system, post the announcement to the web site, post the screenshots to the web site, and post the windows .zip, image .zip, and mac .dmg to the website, are we done?
+[03:46] <Dymaxion> I think so
+[03:47] <Dymaxion> hrm... if you turn the navigation buttons off and back on again, it loses the highlight
+[03:47] <asparagi> i refuse to touch any bug involving highlighting until i have had some sleep & caught up on my day job
+[03:47] <asparagi> ;)
+[03:48] <Dymaxion> uh, it's possible to mark the external asset in scope
+[03:48] <asparagi> is it?
+[03:48] <Dymaxion> yeah
+[03:48] <asparagi> it wasn't before, was it?
+[03:48] <Dymaxion> nope
+[03:48] Action: asparagi will go try to fix
+[03:49] <asparagi> did you mark another one in scope first?
+[03:50] <asparagi> there's just always supposed to be at least one out of scope
+[03:50] <Dymaxion> Hrm, ok, hang on
+[03:50] <Dymaxion> yeah, that has the right behaviour
+[03:50] <asparagi> er, i meant out of scope when i asked about in scope
+[03:50] <asparagi> whew
+[03:50] <Dymaxion> false alarm; I didn't know that that was the criteria -- we should document that eventually.
+[03:51] <ar4chne> have we ever had https working for the bugs login?
+[03:51] <asparagi> yeah... it might be buried in a comment somewhere
+[03:51] <asparagi> yes, it was working earlier today
+[03:51] <asparagi> or whenever i last edited bugs
+[03:53] <Dymaxion> AND node selected with children, tried to change to OR, debugger
+[03:53] <Dymaxion> no specific repro -- I've been fucking around with it a little.
+[03:53] <Dymaxion> error is "Object is not in the collection."
+[03:53] <asparagi> damn
+[03:54] <asparagi> that sounds like the caching thing i thought i fixed
+[03:54] <Dymaxion> image available for downloading in /usr/src/trike
+[03:54] <Dymaxion> (Trike1.1.2a-release.*)
+[03:55] <asparagi> did it name itself that, out of curiosity?
+[03:55] <Dymaxion> no
+[03:55] <asparagi> hmmm
+[03:55] <asparagi> it was supposed to not have dev in it, anyway
+[03:55] <Dymaxion> it didn't
+[03:56] <asparagi> oh, good
+[03:56] <Dymaxion> hrm -- no way to get a real debugger if one pops when you have programmer facilities turned off, is there?
+[03:57] <asparagi> don't think so
+[03:57] <Dymaxion> ooh, another problem -- I tried to bring up the menu on that item again, got another debugger (messageNotUnderstood: nil >> actors), but there's a create button in this one.
+[03:58] <asparagi> :)
+[03:58] <asparagi> with the programmer facilities turned off?
+[03:58] <Dymaxion> yes
+[03:59] <asparagi> i guess that makes sense.  i don't think ned's been squeaking much since the create button got added.
+[03:59] Action: Dymaxion nods.
+[03:59] <asparagi> nothing we can do right now; file it for records
+[03:59] <Dymaxion> Ok, got a minimal test case for the first debugger.
+[03:59] <asparagi> as a critical
+[04:00] <Dymaxion> Create an "AND" child node, and create another one underneath it.  Flip to top level AND to OR ->debugger
+[04:00] <asparagi> oh.
+[04:00] <asparagi> that makes sense
+[04:01] <Dymaxion> no ssl for bug tracker?
+[04:01] <asparagi> i wonder how to fix it
+[04:01] <asparagi> no, i think ara is working on it
+[04:01] <Dymaxion> ok
+[04:01] <asparagi> at least she was a little bit ago
+[04:02] <asparagi> hmm.
+[04:02] <asparagi> can you zip that image & changes up for me?
+[04:02] <asparagi> it thinks it will take 3 hours to download
+[04:02] <Dymaxion> sure
+[04:03] <Dymaxion> do you have anything that will read bzip2?
+[04:04] <asparagi> nope
+[04:04] <asparagi> not that i know of
+[04:05] <asparagi> i could try to get something next time i am somewhere fast
+[04:05] <Dymaxion> no problem -- it's slightly smaller, but zip will work fine now
+[04:05] <Dymaxion> Trike1.1.2a-release.zip, 15MB
+[04:06] <Dymaxion> should I bug that double and thing?
+[04:06] <asparagi> n o, i'm going to fix it right now
+[04:06] <Dymaxion> ok
+[04:09] <Dymaxion> Simplifying a rule which has a boolean rule with no children as a child -> debugger
+[04:09] <asparagi> wow, i'm going to be really done here really soon
+[04:09] <asparagi> i am starting to feel nauseous i am so tired
+[04:09] <asparagi> same bug
+[04:09] <asparagi> i mean, same cause
+[04:10] <Dymaxion> simplify on an or with not (rule) and (rule) as children -> debugger -- also the same?
+[04:11] <Dymaxion> actually, no, this is a different message -- "MessageNotUnderstood: ByteSymbol >> knownActors", with a create button
+[04:13] <Dymaxion> redraw bug with null rule names in the attack tree -- do we know about that already?
+[04:14] <asparagi> nope
+[04:14] <asparagi> be more specific on last 2 repro steps
+[04:14] <Dymaxion> you can only edit the text of attacks after you've brought up a menu on them.
+[04:14] <Dymaxion> ok, for the first:
+[04:15] <Dymaxion> create an OR rule with Actor in role Foo and NOT Actor in role Foo as children; simplify the OR rule
+[04:15] <Dymaxion> for the second:
+[04:16] <asparagi> cra.
+[04:16] <Dymaxion> delete all the text out of an attack -- it draws as an empty box, but it renders all the way to the left and hides part of the lines for the tree
+[04:16] <asparagi> oh, yes, we know about the latter, i think
+[04:16] <Dymaxion> cool
+[04:17] <asparagi> it's the offset highlighting bug
+[04:17] <Dymaxion> actually, I think I was mistaken on that anyway -- it seems to not be allowing me to make a name completely empty, which is good.
+[04:17] <asparagi> i don't think i can fix these tonight after all
+[04:17] <asparagi> i am just too stupid
+[04:17] <Dymaxion> it's ok, I know I've just thrown out a ton of bugs
+[04:17] <asparagi> even sugar won't help now
+[04:17] <Dymaxion> Sleep will.
+[04:17] <asparagi> i guess file them..
+[04:17] <Dymaxion> We can ship tomorrow -- it's not a huge deal
+[04:18] <asparagi> if y'all want to release anyway, go ahead
+[04:18] <asparagi> i have to work
+[04:18] <Dymaxion> tomorrow night?  Suck.
+[04:19] <asparagi> yeah, my weekend & evenings have been so full of trike i haven't been able to catch up
+[04:19] <Dymaxion> :-(
+[04:20] <asparagi> well.  y'all do whatever is best; i'll leave my machine downloading the image & when i wake up, i'll look for criticals in the bug system if i have time before work
+[04:20] <Dymaxion> ok
+[04:20] <asparagi> unless you've shipped already :)
+[04:20] <ar4chne> got the https stuff working
+[04:20] <ar4chne> gening new certs atm
+[04:21] <ar4chne> have the content for the new page done, as well as the caps lettering changed on the site
+[04:21] <asparagi> ooh la la! :)
+[04:21] <asparagi> ara, what do you think re: releasing tonight or not?
+[04:22] <ar4chne> did we just find a bug?
+[04:22] <asparagi> yes, 2 of them
+[04:22] <asparagi> debuggers in the rules tree
+[04:22] <asparagi> 3 sets of symptoms
+[04:22] <ar4chne> :/ I'd say wait
+[04:22] <Dymaxion> plus the create button
+[04:22] <asparagi> i am too tired to fix them now
+[04:22] <ar4chne> debuggers are bad
+[04:22] <ar4chne> and you should sleep
+[04:22] <asparagi> ok
+[04:23] <ar4chne> :/ sorry I haven't been more helpful guyhs
+[04:23] <ar4chne> but you've both been wonderful
+[04:23] <asparagi> i will sleep & look for criticals at next opportunity
+[04:23] <asparagi> you have been just fine
+[04:23] <asparagi> we are almost ready
+[04:23] <asparagi> i will sleep & then we'll see
+[04:23] <Dymaxion> yeah, if you use that create button, you totally get a real debugger/editor
+[04:23] <asparagi> g'night
+[04:23] <Dymaxion> sleep well
+[04:25] <Dymaxion> ok, I've filed everything I've found, and I'm done with the UI tests.  Hopefully I didn't miss anything.
+[04:25] <Dymaxion> I think it's time for bed for me too... first day at the new job tomorrow.
+[04:25] <ar4chne> good luck :)
+[04:25] <Dymaxion> zzzz
+[04:25] <Dymaxion> thanks!
+[04:32] <ar4chne> ok, you guys should go peek at the cert now
+[04:32] <ar4chne> and see if it's okie
+[04:32] <ar4chne> well, or whenever
+[04:35] <Dymaxion> works for me, looks good.
+[04:35] <Dymaxion> I love the OU. :-)
+[04:35] <Dymaxion> ok, bed for real now
+[04:36] <ar4chne> ;)
+[04:36] <ar4chne> gnite
+[09:23] <asparagi> i like octopuses
+[09:24] <asparagi> i see the criticals; i have to go to work, but will get to them as soon as i can tonight
+[20:43] <Dymaxion> oh, right, are we meeting tonight?
+[20:43] <Dymaxion> irc-only, I'm assuming, if we do?
+[20:43] <Dymaxion> I'll be around, if that's the case
+[20:46] <Dymaxion> (I may be a bit late, though -- need to eat and go drive by an apartment first)
+[22:21] <ar4chne> 'lo
+[00:00] --- Thu Feb  2 2006
+[00:30] Action: Dymaxion finally gets done with dinner
+[00:37] <Dymaxion> eee, the TMs disappearing one is scary
+[00:37] <Dymaxion> and the closing a tm thing is a good point too.
+[00:37] <Dymaxion> Are we going to try to get a UI for xml export before we ship?
+[00:37] <Dymaxion> hrm, missed.

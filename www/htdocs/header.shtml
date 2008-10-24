@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta name="Author" content="trikers">
+	<meta name="Description" content="<!--#echo var="pageDescription" -->">
+	<meta name="KeyWords" content="trike, threat, threat modeling, threat modelling, attack tree, attack graph, security, computer security, risk">
+	<title>Trike: <!--#echo var="pageTitle" --></title>
+	<link href="/layout.css" rel="stylesheet" media="screen">
+	<link href="/style.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div id="box">
+	<div id="hdr">
+		<a href="/"><span style="color: #A1A1A1;">Octo</span>trike<span style="color: #A1A1A1;">.org</span></a>
+	</div>
+	<div id="nbr">
+
+<a class="nbritem" href="/papers"> Papers</a><a class="nbritem" href="/talks"> Talks</a><a class="nbritem" href="/tools.shtml"> Tools</a><a class="nbritem" href="/faq"> FAQ</a><a class="nbritem" href="/irc"> IRC</a><a class="nbritem" href="/contact.shtml"> Contact</a>
+	</div>
+	<table class="main"
+			cellspacing="0">
+
+	<tr><td id="content">
+			<div id="title">&curren;&nbsp;<!--#echo var="pageTitle" --></div>

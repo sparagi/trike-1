@@ -1,0 +1,14 @@
+[16:47] Action: Dymaxion waves
+[16:48] <asparagi> hey!
+[17:14] <asparagi> do you remember the URI for the XSD that we decided on?
+[17:15] <asparagi> not this: http://dymaxion.org/trike/trike.xml  the one to put in the header doohickey
+[17:15] <asparagi> it happened the day before the IRC logs started getting checked into SVN
+[17:25] <asparagi> Oh.  Remember cut and paste?  I forget what we decided: do we want to put that into the current release?
+[17:25] <asparagi> (of rules & attacks)
+[18:06] <asparagi> er, i'm going to combine the tool & methodology faq for now, so we don't get duplicates
+[18:37] <Dymaxion> http://octotrike.org/XSD/TrikeModel/1.1.2a.xsd?
+[18:37] <Dymaxion> or, actually, the sample xml file contains it
+[18:38] <Dymaxion> re: cut and paste, I'm not sure...
+[18:38] <Dymaxion> proposed release data sounds fine to me.
+[22:10] Action: Dymaxion gets ready to dive into writing trike-content
+[00:00] --- Tue Jan  3 2006

@@ -1,0 +1,9 @@
+[23:43] <ar4chne> hey aspa :)
+[00:00] --- Wed Jan 18 2006
+[00:17] <asparagi> hi there!
+[00:21] Action: asparagi is enjoying paul's additions to the bug tracking system
+[00:21] Action: asparagi is also enjoying the new site
+[00:22] Action: asparagi is especially enjoying the octopus
+[00:46] <asparagi> well, i got closer to our show-stopping bug, but didn't actually fix it.  it looks like the reason those instances of TrikeRule were hanging around is probably because a debugger was keeping them, and it was probably being kept because i started editing something in it and then closed it without saving.
+[00:47] <asparagi> that seems like a bug, but 2408.
+[00:47] <asparagi> anyway, i'll see y'all here tomorrow!

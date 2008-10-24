@@ -1,0 +1,14 @@
+[16:54] <asparagi> halloo?
+[16:54] Action: asparagi 's voice echoes
+[21:07] <Dymaxion> hey
+[21:23] <asparagi> hey!
+[21:24] <asparagi> i'm working on finishing URI & some classes to support it
+[21:24] <asparagi> i started trying to get the xml namespace tests y'all started writing to be tests & run & stuff
+[21:25] <asparagi> it looks like the xml parser isn't very extensible to do what I wanted
+[21:25] <asparagi> but fortunately it's not too big either
+[21:26] <asparagi> so i'm going to finish URI, then use the character encoding classes I wrote for it to fix the XML implementation
+[21:27] <Dymaxion> yay
+[21:27] <Dymaxion> cool
+[22:30] <ar4chne> nifty, aspa
+[22:34] Action: Dymaxion ponders going out tonight
+[00:00] --- Sun Apr 30 2006

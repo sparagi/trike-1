@@ -1,0 +1,5 @@
+  <dt class="talkTitle">
+    <!--#echo var="talkDate" -->
+    <a href="<!--#echo var="talkURL" -->"><!--#echo var="talkName" --></a> @
+    <a href="<!--#echo var="venueURL" -->"><!--#echo var="venueName" --></a>
+  </dt>

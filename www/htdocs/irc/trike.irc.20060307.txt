@@ -1,0 +1,505 @@
+[21:32] <asparagi> hey there!
+[21:33] <asparagi> proposed agenda: continue triage for next v1 release
+[21:33] <asparagi> then examine result & see how long this is gonna take
+[21:56] Action: Dymaxion bounces in.
+[21:57] <Dymaxion> ugh, long walk.
+[21:57] <Dymaxion> That sounds like a good plan to me.
+[21:57] <asparagi> do we have an ara?
+[21:58] <asparagi> (did you get her on the telly?+
+[21:58] <Dymaxion> yes
+[21:59] <asparagi> well, go look @ the on hold issues & see if any look like they shouldn't be
+[22:00] <asparagi> i applied the will-the-bug-exist-in-v2 check & these failed
+[22:01] Action: Dymaxion looks
+[22:02] <Dymaxion> Are we likely to have trees in 2?
+[22:03] <asparagi> i don't think so
+[22:03] <asparagi> i mean, the rules tree is replaced by ross method
+[22:03] <asparagi> & the attack trees didn't sound like trees anymore last we talked
+[22:03] Action: Dymaxion nods
+[22:04] <asparagi> there might be graphs, but i don't think the display method will be tree-like
+[22:04] <Dymaxion> those all sound good to me.
+[22:04] <asparagi> (i was thinking of tamara's stuff)
+[22:04] <asparagi> so is ara on her way, then?
+[22:04] <Dymaxion> I SMSd her to remind her...
+[22:04] <asparagi> or should we call her?
+[22:05] <asparagi> hmm
+[22:05] <asparagi> i think i'll call her
+[22:07] <asparagi> voicemail
+[22:07] <asparagi> i hope she's ok...
+[22:07] <Dymaxion> hrm
+[22:07] <Dymaxion> yeah
+[22:07] <asparagi> how about page 1 of the open or taken issues?
+[22:08] <asparagi> http://bugs.octotrike.org/bugs/bugs/ListIssues/sortorder-urgency?Filterlogic=block&saved_filter=&f-statuses=on+hold&f-statuses=rejected&f-statuses=completed&f-fromname=&f-email=&filteroptions=1&ListIssues%3Amethod=Apply+filter+settings&page=ListIssues
+[22:08] <ar4chne> eek, sorry
+[22:08] <asparagi> yay! there you are
+[22:08] <ar4chne> sorry sorry sorry
+[22:08] <Dymaxion> yay!
+[22:08] <ar4chne> fell asleep
+[22:08] <Dymaxion> no, no problem
+[22:08] Action: Dymaxion didn't leave work early enough again.
+[22:09] <asparagi> just so you didn't get mugged on your way home or something, i'm happy
+[22:09] <ar4chne> oh, man...yesterday I was walking home and there were like 5 cop cars in the street
+[22:09] <ar4chne> and this large black woman yelling at this very bored looking cop
+[22:09] <asparagi> mugged by cops?
+[22:09] <ar4chne> and as I'm passing her by I look down and noticed I was stepping through blood splatter :/
+[22:09] <asparagi> ewww!
+[22:09] <asparagi> oh my
+[22:10] <ar4chne> I dunno what happened, but it was weird
+[22:10] <asparagi> see, your walk home is frequently _way_ too exciting
+[22:10] <Dymaxion> eww
+[22:10] <Dymaxion> where was this?
+[22:10] <ar4chne> hmmm...pine and bellvue ish?
+[22:11] <asparagi> so, ara, do you see any bugs in the on hold issues which you think we should stick back into the next release of v1?
+[22:11] <asparagi> wow, right by dym's house
+[22:11] <asparagi> well, not right by
+[22:11] <ar4chne> nah, 4 or 5 blocks away
+[22:11] <ar4chne> haha, 1 block in seattle makes a big difference ^^
+[22:11] Action: Dymaxion grins and nods
+[22:11] <ar4chne> oh, I have something to add to the agenda!
+[22:11] <asparagi> what is it?
+[22:11] <ar4chne> server-space
+[22:11] <asparagi> oh. yes indeed
+[22:12] <Dymaxion> mmm, server space.
+[22:12] <ar4chne> so I found out about this hosting provider that the metasploit guys are using
+[22:12] <ar4chne> called domaingurus
+[22:12] <ar4chne> or sthing
+[22:12] <asparagi> cheap & good?
+[22:12] <ar4chne> and it's a dedicated box with good specs and 10mbit (I think) unmetered access
+[22:12] <ar4chne> for $50 / mo
+[22:13] <Dymaxion> cool
+[22:13] <ar4chne> w/ a $99 setup fee
+[22:13] <asparagi> we admin, or they admin?
+[22:13] <ar4chne> so I'm thinking I'm  going to get one
+[22:13] <ar4chne> and then set up a bunch of xen instances on it
+[22:13] <ar4chne> with some extra ips
+[22:13] <ar4chne> and then I could put octotrike's stuff on one seciton
+[22:13] <ar4chne> section*
+[22:13] <ar4chne> and have all the other domains I'm hosting be seperate too
+[22:13] <asparagi> that sounds pretty good
+[22:14] <Dymaxion> Sounds great, yeah
+[22:14] <ar4chne> yeah, I'm looking forward to it...I can logically seperate my mail & chat servers from teh web servers
+[22:14] <ar4chne> and each domain can then have their own ssl certs
+[22:14] <ar4chne> without having to run on weird ports
+[22:15] <asparagi> yum, yum.
+[22:15] <Dymaxion> yay
+[22:15] <ar4chne> so I was thinking that if it were seperated, then you guys could have shells
+[22:16] <ar4chne> because I wouldn't worry so much about you poking around things that weren't trike-related
+[22:16] Action: Dymaxion nods
+[22:16] <Dymaxion> that would be really convenient
+[22:16] <asparagi> if i had a way to put content up on the web site that is all i need
+[22:16] <asparagi> well, okay, it wouldn't be bad to do the squeaksource thing & be able to kill it if needed
+[22:17] <ar4chne> hmmm..putting content on the site wouldn't be difficult with our current configuration
+[22:17] <asparagi> i don't know how stable it is
+[22:17] <ar4chne> yeah
+[22:17] <ar4chne> that's the other thing
+[22:17] <ar4chne> I don't want squeaksource up on my server :P
+[22:17] <asparagi> oh, ok
+[22:17] <ar4chne> unless it were logically seperated
+[22:17] <asparagi> that's cool
+[22:17] <ar4chne> I think the source code repository bits should be sep'd from the web server bits
+[22:17] <asparagi> we can stick it at my house if we are willing to port knock before we get in
+[22:18] <asparagi> yes, i agree
+[22:18] <Dymaxion> a xen partition is enough seperation though, right?
+[22:18] <ar4chne> yeah, that would be fine
+[22:18] <ar4chne> would you guys be willing to pitch in a little for extra ips?
+[22:18] <asparagi> absoloodle
+[22:18] <Dymaxion> of course
+[22:18] <ar4chne> http://domaingurus.com/Dedicated-Servers.php
+[22:19] <ar4chne> that's what I'm looking at
+[22:19] <ar4chne> oh, nvm...i[s are only an extra $1 / mo
+[22:19] <asparagi> boy, my net is so fast that when i click on a link i get no opportunity to change my mind before it is right there in front of me
+[22:19] <ar4chne> :) you can just buy lunch sometime
+[22:19] <Dymaxion> the base linux box?
+[22:20] Action: Dymaxion grins.
+[22:20] <Dymaxion> Works for me. :-)
+[22:20] <asparagi> okay!  i would be thrilled, as always, to buy you lunch
+[22:21] <asparagi> i love how the windows box is more expensive
+[22:21] <asparagi> hee hee
+[22:21] <Dymaxion> gotta pay for that license some how. :-)
+[22:22] <asparagi> the thing i really like about the virtual solution is that if we move servers, we can just gzip it and take it with, no setup
+[22:22] <ar4chne> yeah ^^
+[22:23] <asparagi> zat it on server space?
+[22:23] <ar4chne> i think so
+[22:24] <asparagi> k..  here's your link to bugs i want to postpone past the next v1 release:
+[22:24] <asparagi> http://bugs.octotrike.org/bugs/?Filterlogic=show&saved_filter=126&f-statuses=on+hold&f-fromname=&f-email=&filteroptions=1&ListIssues%3Amethod=Apply+filter+settings&page=ListIssues
+[22:24] <asparagi> paul looked at 'em already; ara, do you see any you really want fixed in the next v1?
+[22:25] <ar4chne> 4looking
+[22:29] <ar4chne> hmm...the one that says there's no way to bulk expand / contract the trees is innacurate, isn't' it?
+[22:29] <ar4chne> I thought the plusses did that
+[22:30] <asparagi> i think it's shift-click or something
+[22:30] <Dymaxion> this is the equivalent of hitting '*' in a windows explorer view
+[22:30] <Dymaxion> you can right click to expand the tree, but it works oddly; I think we wanted better docs or something.
+[22:30] <asparagi> yes, they do.  but nobody knows it.  we were talking about adding balloon help, i think
+[22:30] <ar4chne> ah, that doesn't seem very difficult
+[22:30] <asparagi> it does work oddly
+[22:31] <asparagi> want to untriage it?
+[22:31] <ar4chne> hmmm...I think the editing one is kinda important with the focus change
+[22:31] <ar4chne> that's going to persist into v2, right?
+[22:31] <asparagi> no, no trees in v2
+[22:31] <asparagi> we don't think
+[22:31] <ar4chne> ah, ok
+[22:32] <ar4chne> yeah, nothing's really popping out at me, then
+[22:32] <asparagi> even the bulk expansion?
+[22:32] <ar4chne> hmmm...I'd throw balloon help at it
+[22:33] <ar4chne> but wouldnt' change the functionality if they're going to disappear
+[22:33] <asparagi> ok.  re-opened on the balloon help plan
+[22:34] <asparagi> now we should all go to http://bugs.octotrike.org/bugs/bugs/ListIssues/sortorder-urgency?Filterlogic=block&saved_filter=&f-statuses=on+hold&f-statuses=rejected&f-statuses=completed&f-fromname=&f-email=&filteroptions=1&ListIssues%3Amethod=Apply+filter+settings&page=ListIssues
+[22:34] Action: asparagi looks forward to a bug tracking system with shorter URLs
+[22:34] Action: ar4chne looks forward to aspa finding one :D
+[22:35] Action: asparagi blushes
+[22:35] <ar4chne> ;P
+[22:35] <ar4chne> just teasing
+[22:35] <asparagi> i forgot that was my do
+[22:35] <ar4chne> hmmm...is that known issues?
+[22:35] <ar4chne> as in open?
+[22:35] <asparagi> yes.  open or "taken", i.e. assigned
+[22:36] <asparagi> it doesn't include everything from our feature list as of last week
+[22:36] <ar4chne> ok
+[22:36] <asparagi> but i think we were down to class comments or so last time
+[22:36] <asparagi> after we finish triaging these, i was figuring one of us could add the remaining stuff from our feature list & then we'll have it all in one place
+[22:37] <ar4chne> yeah, sounds good
+[22:38] <asparagi> so, i'm in favor of class comments for v1.  it will make people who want to interoperate have an easier time of it and it will be less tacky.
+[22:38] <asparagi> (dym, you still here?)
+[22:38] <Dymaxion> yup
+[22:39] <Dymaxion> sorry
+[22:39] <Dymaxion> I guess I'm willing to go with that, but it seems like a lot of time...
+[22:39] <ar4chne> can we mark the bugs as v1 or v2?
+[22:39] <asparagi> god, i wish
+[22:39] <asparagi> lemme see here
+[22:39] <Dymaxion> I'd certainly say that any code that will be transitioning to v2 should get commented.
+[22:40] <asparagi> we could create v1 and v2 accounts and assign them to each
+[22:41] <asparagi> it's a bit hackish, but..
+[22:41] <Dymaxion> good for now
+[22:41] <ar4chne> that works
+[22:41] <ar4chne> or I could be v1
+[22:41] <ar4chne> and you guys could be v2
+[22:41] <ar4chne> so thqat we don't have to add accts
+[22:43] <asparagi> while you were suggesting that, i added the accts
+[22:43] <asparagi> so it's too late
+[22:44] <asparagi> :+
+[22:44] <asparagi> er, :+
+[22:44] <asparagi> er>
+[22:44] <ar4chne> heeehee :D
+[22:44] <asparagi> :)
+[22:44] <ar4chne> no worries ^^
+[22:44] <asparagi> + and ) are right next to each other on my keyboard
+[22:44] <asparagi> like x and lf
+[22:44] <asparagi> and every other character :)
+[22:45] <ar4chne> :P
+[22:46] <asparagi> ok, let's just do class comments for classes that translate to v2
+[22:46] <ar4chne> ok
+[22:46] <ar4chne> who determines which classes those are?
+[22:47] <asparagi> us
+[22:47] <asparagi> :)
+[22:47] <ar4chne> !me
+[22:47] <asparagi> actually my first guess would be practically none
+[22:47] <ar4chne> I wouldn't know
+[22:48] <asparagi> well, we don't have a plan for v2 yet, so i don't know either
+[22:48] <asparagi> but actually, it looks like not much of the existing class structure will be useful
+[22:50] <asparagi> hmm, there's a problem with the v1 vs. v2 thing
+[22:50] <asparagi> there doesn't seem to be an interface for assigning bugs,only "taking" them
+[22:50] <asparagi> and the password i just set doesn't work
+[22:51] <Dymaxion> huh
+[22:51] <asparagi> i think we should contine with "on hold" meaning "not v1" and i will look at bug tracking systems this week
+[22:51] <asparagi> and i guess i'm willing to put class comments on hold
+[22:52] Action: Dymaxion nods
+[22:52] <asparagi> so, tab dragging to re-order models
+[22:53] <asparagi> i think we are not going to go straight to focus+context for v2, so i think we should fix this in v1
+[22:53] Action: Dymaxion agrees
+[22:55] <asparagi> so that means the bounds thing should be in v1 as well
+[22:55] <Dymaxion> yup
+[22:56] <Dymaxion> I think we're going to have to solve that either way, really
+[22:56] <asparagi> hmm, good point
+[22:56] <asparagi> oh!
+[22:57] <asparagi> i think i just figured out how to solve it
+[22:58] <asparagi> so, alphabetize open threat models by name
+[22:58] <asparagi> not really needed, exactly, but could be handy
+[22:58] <asparagi> would still apply in v1
+[22:58] <asparagi> er, v2
+[22:59] Action: asparagi feels like this is going really slowly
+[22:59] <asparagi> is this how y'all want to do triage?
+[22:59] <Dymaxion> sorry
+[22:59] <Dymaxion> I keep getting distracted by stuff here
+[22:59] <Dymaxion> (alex just made me come get dinner. :-)  )
+[22:59] <ar4chne> it's not that slow...I just ordered our new server :D
+[23:00] <asparagi> ahh :)
+[23:00] <asparagi> oh!
+[23:00] <asparagi> awesome
+[23:00] <ar4chne> :)
+[23:00] <Dymaxion> alphabetization would be nice to have for both, and would apply...  dunno how much it really matters, though.
+[23:00] <Dymaxion> I'd rather just have them show up in creation/opening order and allow dragging, I think.
+[23:00] <asparagi> ara?
+[23:01] Action: asparagi is about to put it on hold
+[23:01] <ar4chne> hmmm...yeah, I think just dragging is fine
+[23:01] <asparagi> (it being alphabetizing tms)
+[23:01] <asparagi> awesome.
+[23:02] <asparagi> actually i guess that's a reject, not on hold
+[23:02] <asparagi> notes section for model overall
+[23:02] <Dymaxion> I want this
+[23:03] <ar4chne> ok, server ordered
+[23:03] <ar4chne> :D
+[23:03] <asparagi> i feel like there is a huge philosophical can of worms there.
+[23:03] <asparagi> but ok.
+[23:03] <asparagi> yay, server!
+[23:04] Action: asparagi does the server dance
+[23:04] <ar4chne> hehe ^^
+[23:04] <Dymaxion> yeah, there definitely are a bunch of issues, and I think we should revisit it later, but it's something that I think will be very useful in the shorter term.
+[23:04] <Dymaxion> Yay server!
+[23:05] <ar4chne> hmmm..I think we need an in person hash out day
+[23:05] <ar4chne> it seems we keep running into these sticking points
+[23:05] <ar4chne> that sap up a lot of time, and nothing is really getting resolved
+[23:05] Action: Dymaxion nods
+[23:05] <asparagi> negative value assets: this will automagically vanish in v2, since the risk model won't directly put values on assets.  is it bad enough to include a fix in the last v1 release?
+[23:06] <asparagi> yah, an in-person hash-out might be good
+[23:06] <Dymaxion> I don't care about it for v1
+[23:06] <asparagi> but if we can just finish triage for v1 tonight i would be really happy
+[23:07] <asparagi> ara, do you care about negative asset values?
+[23:08] Action: asparagi is going to put it on hold
+[23:08] <ar4chne> no, I don't care
+[23:08] <ar4chne> sorry, trying to find food
+[23:09] <ar4chne> I dunno wassup, but I've been starving like every 3 hours lately
+[23:09] <asparagi> ahh :) good luck
+[23:09] <asparagi> cut/copy/paste rules & attacks
+[23:10] <Dymaxion> goes away?
+[23:10] <asparagi> if i were ever going to do another attack tree, i would care
+[23:10] <Dymaxion> yeah
+[23:10] <Dymaxion> didn't we already look at this when we were talking about undo, etc?
+[23:10] <asparagi> it does go away, but the general clipboard/cut & paste management system could be portable
+[23:10] <asparagi> i can't remember, sorry.
+[23:11] Action: Dymaxion nods
+[23:11] Action: Dymaxion hunts
+[23:11] <asparagi> last time i think everybody assumed someone else was updating the bugs
+[23:11] <asparagi> so we didn't get it synced up
+[23:12] <asparagi> i think right now i'm in favor of a clipboard system
+[23:12] <ar4chne> yeah, it's useful
+[23:12] Action: Dymaxion eyes the irc logs
+[23:12] <ar4chne> just in general
+[23:12] <Dymaxion> sounds good
+[23:12] <ar4chne> squeak doesn't have anything?
+[23:13] <asparagi> i think v2 will be useless without it, so we may as well get a little longer burn-in time
+[23:13] <asparagi> i have no idea
+[23:13] <asparagi> i haven't looked yet
+[23:13] <Dymaxion> we need something that integrates into our model and update event system, anyway
+[23:13] <Dymaxion> so there's going to be some code, no matter what.
+[23:16] <asparagi> k.  spurious NOT in role rules
+[23:16] <ar4chne> yeah, no worries
+[23:16] <asparagi> i think this problem, unfortunately, is a necessary side effect of the roles-are-not-mutually-exclusive thing
+[23:16] <Dymaxion> yeah
+[23:16] <Dymaxion> let's keep ignoring it.
+[23:16] <asparagi> and in my last project, in fact roles were not mutually exclusive.  so i vote reject
+[23:16] <Dymaxion> that works, too.
+[23:16] <asparagi> that way we don't have to keep triaging it over & over :)
+[23:16] Action: Dymaxion grins.
+[23:16] <asparagi> clicking outside any text box should accept changes
+[23:16] <ar4chne> hehe, fine by me
+[23:17] <asparagi> i vote v1
+[23:17] <ar4chne> I think that one's important
+[23:17] <Dymaxion> yeah
+[23:17] <Dymaxion> it's bloody annoying, too.
+[23:17] <asparagi> tabs beyond window width
+[23:17] <asparagi> i vote v1: it'll still be present in v2
+[23:17] <Dymaxion> yup
+[23:17] <asparagi> same for automatically scroll large panes
+[23:18] <ar4chne> sounds good
+[23:18] <Dymaxion> yeah
+[23:18] <asparagi> (i'm using the algorithm that one v1 vote is enough, but everyone must reject/on hold, in case that isn't clear)
+[23:19] <asparagi> k.  visible indication of editable text
+[23:19] <Dymaxion> ok
+[23:19] <Dymaxion> v1
+[23:19] <asparagi> v1, i think
+[23:19] <asparagi> balloon help for threat model tabs
+[23:19] <asparagi> i could go either way
+[23:19] <Dymaxion> v1; we may have to change the details, but we might as well get in the habit of doing it now.
+[23:20] <asparagi> k.  it may require notebook changes, too
+[23:20] <asparagi> sync tab & page names?
+[23:20] <asparagi> i think this is essential for v1
+[23:20] <Dymaxion> hang on, reading bug
+[23:21] <Dymaxion> huh, ok
+[23:21] <Dymaxion> I hadn't run into that; is this a "changing things with code" issue?
+[23:21] <asparagi> well, right now there is no UI to change the name of a threat model
+[23:21] <asparagi> i think. 
+[23:22] <Dymaxion> yeah, there isn't
+[23:22] <asparagi> currently this bug is half-fixed.  now if you programmatically change the model name, the tab changes
+[23:22] <asparagi> you should be able to click on the tab, edit the name, and have it stick
+[23:23] Action: Dymaxion nods
+[23:23] <asparagi> i could turn on click to edit the tab name easily, but i turned it off because it only changes the tab, not the model, which seems bad
+[23:24] <ar4chne> that doesn't sound too bad
+[23:24] Action: Dymaxion nods
+[23:25] <asparagi> i see paul wanted the notes field so much we have 2 open bugs on that. :)
+[23:25] <asparagi> i'm going to reject one.
+[23:25] Action: Dymaxion whistles innocently.
+[23:25] <Dymaxion> Sounds good.
+[23:26] <asparagi> ok.  'create' &c called verbs consistently in code & xml
+[23:26] <asparagi> i don't care
+[23:27] <Dymaxion> I'm inclined to leave it alone... it's a lot of work for consistency in code we're not carrying on.
+[23:27] <ar4chne> I don't understand that one
+[23:27] <asparagi> there are instance variables named "action", for example
+[23:28] <asparagi> when we finally agreed on xml, we called those same pieces of data (crud, basically) verbs
+[23:28] <asparagi> so the idea was, make the code use the same names as the xml, so interoperation folks, and us for that matter, wouldn't get confused.
+[23:29] <asparagi> plus the existing names are really confusing
+[23:29] <asparagi> you see lines of code including phrases like "threat action action"
+[23:29] <asparagi> which is weird.  "threat action verb" seems less like a typo
+[23:30] <asparagi> ara, we have a vote for on hold and an abstention.  you are the swing vote...
+[23:32] <ar4chne> sorry, 1 s
+[23:32] Action: ar4chne has no food :(
+[23:32] <Dymaxion> aww
+[23:32] <asparagi> none in your whole apartmentD
+[23:32] <asparagi> ?  we could send you pizza?
+[23:33] <ar4chne> I might order one
+[23:33] <ar4chne> hmmm...I'd say leave for v1
+[23:33] <ar4chne> but as we code for v2, we should match them
+[23:33] <asparagi> k..  now order food before you come back!
+[23:33] Action: ar4chne grumbles
+[23:33] <ar4chne> I wish more stuff were deliverable
+[23:34] <ar4chne> I don't really feel like pizza
+[23:34] <Dymaxion> yeah; that specific issue isn't going to be in v2, because actions won't be, but if anything like it comes up, we should definitely do it right from the start.
+[23:34] <asparagi> teapot delivers
+[23:34] <Dymaxion> ooooh
+[23:34] <Dymaxion> they do?
+[23:34] <asparagi> they're vegan, i think
+[23:34] Action: Dymaxion shouldn't know that.
+[23:34] <ar4chne> ooooh, no way :D :D
+[23:34] <asparagi> i think so.  i think i've had it delivered at danger house before
+[23:34] <ar4chne> teapot rocks
+[23:34] <asparagi> several times, in fact
+[23:34] <Dymaxion> cool
+[23:34] <ar4chne> mmmmmm
+[23:34] <ar4chne> oh, man
+[23:35] <ar4chne> I don't think I should know this
+[23:35] <asparagi> order quick tho, i think they might close @ 10
+[23:35] <ar4chne> <3
+[23:35] Action: Dymaxion slips out real quick to run over to steph's.
+[23:35] <asparagi> no, you should, you really should go order some right now :)
+[23:35] Action: asparagi laughs
+[23:36] <ar4chne> no delivery :(
+[23:36] <ar4chne> haha, she laughed at me
+[23:36] <asparagi> noo!
+[23:36] <asparagi> oh no
+[23:36] <Dymaxion> bah!
+[23:37] <asparagi> i could swear there was a guy with big boxes of chinese at my door
+[23:37] <asparagi> sorry to get your hopes up.  :(
+[23:37] <ar4chne> :) no worries
+[23:37] <ar4chne> ok, what's next
+[23:38] Action: ar4chne goes and microwaves a gluten free waffle
+[23:38] <ar4chne> *sigh*
+[23:40] <asparagi> :(
+[23:40] Action: asparagi was looking for other places
+[23:40] <asparagi> need more space around UI strings
+[23:41] <asparagi> i vote on hold, but fix the next issue in v1
+[23:41] <asparagi> that should solve the same problem
+[23:41] <Dymaxion> not really
+[23:41] <asparagi> no?
+[23:41] <Dymaxion> the spacing issue is one of space proportional to the text size
+[23:41] <asparagi> yes
+[23:42] <Dymaxion> fixing the next issue could include a fix to the current one, but doesn't have to.
+[23:42] <asparagi> so making the text resizable, which it isn't now, will fix that
+[23:42] <asparagi> i don't see how you could make the text resizable without addressing issues like that
+[23:42] <Dymaxion> Basically, if we make the text resizable, we need to make the padding on the text adjustable.
+[23:42] <Dymaxion> yeah
+[23:43] <Dymaxion> so, once we make the padding proportional, then we can figure out what the proportion should be.
+[23:43] <Dymaxion> Different bug.
+[23:44] <asparagi> i mean, that's basically what got us to the current state: changing to caps changed the size of the text when we have no plan for changing the size of the text
+[23:44] <ar4chne> I agree w/ aspa
+[23:44] <ar4chne> I think they can be rolled
+[23:44] <asparagi> i can leave them both open if you want, but i think it's the same fix
+[23:44] <Dymaxion> yes
+[23:45] <asparagi> so can i close need more space with a reference to change text size easily?
+[23:45] <Dymaxion> yes, that works
+[23:45] <asparagi> k
+[23:46] <asparagi> ah, then we get to display preferences sections & menu
+[23:47] <asparagi> the title on that one is difficult to grok
+[23:47] <Dymaxion> especially since the bug has been half-fixed
+[23:48] <asparagi> yes :)
+[23:48] <asparagi> if i half-fix 2 bugs, can i close one? ;)
+[23:49] <Dymaxion> yes, but only if you do so in a nondeterministic fashion, so it's always the other bug which is closed when you look at one of them.
+[23:49] Action: Dymaxion grins.
+[23:49] <asparagi> i guess i think the other half-fix should go into v1
+[23:49] <asparagi> i think i'm going to change its title
+[23:49] <asparagi> no, no i'm not
+[23:49] <asparagi> there's no ui
+[23:50] <Dymaxion> heh
+[23:51] <Dymaxion> so, the USB stick that's been my portable dev environment and password safe, among other things, died today for real.
+[23:51] <Dymaxion> I didn't lose any data, but its replacement is still not here.
+[23:52] <Dymaxion> Fortunately, I got a free 512MB stick in the mail today, which came with my laptop. :-)
+[23:52] <Dymaxion> (and then had to go toss 2/3 of the images I have sitting around, so it would fit, but)
+[23:54] <asparagi> just in time USB sticks
+[23:54] <Dymaxion> yup
+[23:55] Action: Dymaxion got the people e's getting the new one from to waive shipping and send it next day for being late. :-)
+[23:56] <asparagi> ara fell off the net
+[23:56] <Dymaxion> doh!
+[23:57] <asparagi> so we should finish triage & send a report to the list
+[23:57] <Dymaxion> ok
+[23:57] <Dymaxion> vertical text in grid views.
+[23:58] <Dymaxion> No more grid views, but we'll still have vertical text.  Is this still going to be a problem?
+[23:58] <asparagi> yes
+[23:58] <asparagi> no idea how to fix
+[23:58] <Dymaxion> blah
+[23:58] <Dymaxion> well, it stays, then
+[23:58] <asparagi> it's sort of like my stab at fixing balloon help
+[23:58] Action: Dymaxion nods.
+[23:59] <asparagi> i was going to suggest that we punt & see if a Squeak person fixes it
+[23:59] <asparagi> oh, or we could try a non-transparent background
+[23:59] <Dymaxion> should we perhaps poke some squeak people about it soonish, and see if they fix it by our next release?
+[00:00] --- Wed Mar  8 2006
+[00:00] Action: asparagi shrugs
+[00:00] <asparagi> let's try the non-transparent background, and then poke squeak people
+[00:00] <Dymaxion> seems like it might make it more likely to get fixed.
+[00:00] <Dymaxion> sounds good.
+[00:00] <asparagi> i think it's an andreas problem, is why i hesitate
+[00:00] <Dymaxion> ah, wheeeee.
+[00:00] Action: Dymaxion grins.
+[00:01] <asparagi> vertical tabs: v1?
+[00:01] <Dymaxion> yeah
+[00:02] <Dymaxion> ditto for flapper tabs
+[00:02] <asparagi> and button list across top
+[00:03] <asparagi> actually this seems like a dupe of vertical tabs
+[00:03] <Dymaxion> they can certainly be combined
+[00:03] <asparagi> ok, doing that
+[00:04] <asparagi> weird order for new clause types: punt?
+[00:04] <Dymaxion> hrm.
+[00:05] <Dymaxion> depends if we're going to have menus in v2.
+[00:05] <asparagi> it's a very v1-specific menu
+[00:05] <Dymaxion> if so, we should fix it, even if we don't implement the fix everywhere in v1.
+[00:06] <Dymaxion> that one is, yes, but aren't all menus in alphabetical order right now?
+[00:06] <asparagi> the problem isn't the menu, which preserves order fine, it's with the code that builds it.
+[00:06] <Dymaxion> ah, ok.
+[00:06] <Dymaxion> is the code that builds the menu only screwed up in this case?
+[00:07] <Dymaxion> (ie, is there anything intermediate to fix, or is the issue only located in dead code?)
+[00:07] <asparagi> yes
+[00:07] <asparagi> only in dead code
+[00:07] <Dymaxion> ok, never mind.
+[00:07] <asparagi> e.g. "Add sibling rule, Remove selected rule, Change Actor to..."
+[00:07] Action: Dymaxion nods.
+[00:07] <asparagi> not in alphabetical order
+[00:07] <Dymaxion> right
+[00:08] <Dymaxion> text being edited should have a more obvious highlight.  v1?
+[00:08] <asparagi> sure
+[00:08] <asparagi> different cursors: v1?
+[00:08] <Dymaxion> is the next one a dupe?
+[00:09] <asparagi> no
+[00:09] <Dymaxion> if not, then yes, v1.
+[00:09] <asparagi> oh
+[00:09] <asparagi> of a way earlier bug?
+[00:09] <Dymaxion> yeah
+[00:09] <Dymaxion> indicate editable strings.
+[00:09] <asparagi> yes.
+[00:10] <asparagi> i'll close editable strings -- different cursors is more general
+[00:10] Action: Dymaxion nods.
+[00:10] <Dymaxion> highlight colors are definitely a v1
+[00:10] <Dymaxion> and right click menu on notebook titlebars is a dupe.
+[00:11] <asparagi> yeah, i'll close badly named one
+[00:12] <Dymaxion> ...and ballon help is a v1.
+[00:12] <asparagi> and we're done
+[00:12] <Dymaxion> Which puts us at 28 old issues.
+[00:12] <asparagi> awesome
+[00:12] <asparagi> plus some stuff from the feature list you emailed out
+[00:13] <asparagi> some of those are old issues, too
+[00:13] <Dymaxion> yeah, checking them now.
+[00:14] <asparagi> i am headed to bed.  i would be happy to enter the issues from your mail next tuesday, or you can feel free to put them in before then
+[00:14] <asparagi> and we are on for v2 for tomorrow, right?
+[00:14] <Dymaxion> I'll try to get them in tonight
+[00:14] <Dymaxion> yup
+[00:14] <Dymaxion> :-)
+[00:14] <asparagi> bless you. :)
+[00:15] <asparagi> that's awesome. next tues, then, we can plot our approach
+[00:16] <asparagi> good night!
+[00:16] <Dymaxion> 'night

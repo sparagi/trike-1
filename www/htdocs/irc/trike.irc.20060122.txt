@@ -1,0 +1,30 @@
+[11:01] <asparagi> trikesvn forgot me!  :(
+[12:57] <asparagi> http://netjam.org/spoon/smallest.gif
+[14:01] <asparagi> anybody here?
+[14:45] <asparagi> well, i think i fixed the rules leak: i changed the parents collection to use weak references, and now the extra rules can be garbage collected.   the problem was that when you check to see which color an actions grid square should be, you actually ask the action "what are the rules for this actor that I care about?".  so it constructs a temporary-use rule to answer.  because the graph is doubly linked, that temporary rule isn't so temporary un
+[14:47] <asparagi> unfortunately, this did not fix the Show Stopping Bug.  i'm still working on the inconsistent data problem.  and the extra NOT in Role rules.  they may be related, as the corruption occurs in the not in role rules repro steps
+[15:10] <asparagi> back later..
+[21:55] <ar4chne> howdy, aspa ^^
+[21:55] <asparagi> hey there!
+[21:58] <ar4chne> how are you?
+[21:59] <asparagi> i still haven't found The Bug
+[21:59] <asparagi> so i am a little frustrated
+[21:59] <ar4chne> aww :/
+[21:59] <asparagi> there is something really weird going on in my image
+[21:59] <asparagi> i am building another one
+[22:01] <asparagi> whoa, it's really weird.  :?
+[22:01] <asparagi> i can't wait till the build script deals with writing monticello files out
+[22:01] <ar4chne> hehe :)
+[22:02] <asparagi> i don't know where they went
+[22:03] <asparagi> ah, my fault.  i put them in the package-cache
+[22:24] <Dymaxion> suck, re: no Bug found
+[22:28] <ar4chne> we stalked you a little bit today, dym :)
+[22:28] <ar4chne> peeked in your window 
+[22:28] <ar4chne> looking for apts in cap hill
+[22:28] Action: asparagi giggles
+[22:32] Action: Dymaxion grins.
+[22:33] <Dymaxion> We got up late and then were out most of the afternoon.
+[22:33] <Dymaxion> The place is a mess right now, though. :-)
+[23:23] Action: asparagi twiddles eir fingers waiting for 6717 to download
+[00:00] --- Mon Jan 23 2006
+[00:52] <Dymaxion> more bug fixes?

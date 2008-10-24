@@ -1,0 +1,234 @@
+[03:15] <ar4chne> yeah, once
+[10:37] <Dymaxion> it looks like their raid tools are more than a bit flaky, so I'm switching to open after all.
+[14:00] <Dymaxion> hrm, svn trees and unison don't seem to play too well together, annoyingly
+[14:13] <ar4chne> what's unison?
+[14:16] <Dymaxion> sort of like rsync, but much smarter.  I use it to keep my USB key synced with the copy on my desktop
+[14:16] <Dymaxion> (unix tool, via cygwin)
+[14:19] <Dymaxion> When I clone the repository that way, the next time I do an svn commit on it, it thinks I've changed a bunch of stuff.
+[14:19] <Dymaxion> v.annoying, as I really do want the repository on the keychain.
+[14:20] <Dymaxion> And I don't always want to run svn there directly, depending on what it's plugged into.
+[15:24] <ar4chne> ah, it's because the timestamps on the files change, I bet
+[21:32] <asparagi> i have some unfortunate news
+[21:32] <asparagi> i think i left my power supply at pna
+[21:33] <asparagi> and i left the machine in standby
+[21:33] <asparagi> so i probably have less than 6 hours of battery life before we have to releast
+[21:33] <asparagi> if you have questions, ask them now..
+[21:41] <Dymaxion> uh suck
+[21:41] <Dymaxion> is there anything I can do to get you power sooner?
+[21:41] <Dymaxion> I've had a kind of shitty day and haven't gotten any trike work done
+[21:44] <asparagi> :( sorry about your lousy day
+[21:44] <ar4chne> oh, no aspa...
+[21:44] <asparagi> the only thing i can think of is if there's somewhere in the area that sells my power supply, so i could just pick one up on my way home tomorrow
+[21:45] <asparagi> or maybe i put it in the wrong backpack & it's at work
+[21:45] <asparagi> but i don't remember putting it anywhere
+[21:45] Action: Dymaxion nods.
+[21:46] <asparagi> would one of you be willing to do a round of bug triage?  if it pops a debugger, we should fix it
+[21:46] <asparagi> and we should fix the attack tree editing ones
+[21:47] <asparagi> if somebody marks all of those critical, that'd be swell
+[21:47] <ar4chne> I can try...but I've been sick all day and have the most awful headache
+[21:47] <asparagi> i'm working on the existing one that paul found
+[21:47] <asparagi> oh no :(
+[21:47] <Dymaxion> aww
+[21:47] <asparagi> boy, it isn't the best day for anybody today
+[21:48] <ar4chne> what do I need to do?
+[21:48] <ar4chne> oh, wait...I don't have an image that works, do I?
+[21:48] <ar4chne> :/
+[21:49] <asparagi> https://jail04.gamma.zettai.net/bugs/ListIssues/sortorder-urgency?Filterlogic=block&saved_filter=&f-statuses=on+hold&f-statuses=rejected&f-statuses=completed&f-fromname=&f-email=&filteroptions=1&ListIssues%3Amethod=Apply+filter+settings&page=ListIssues
+[21:49] <asparagi> log in, then just go through that list.  mark anything that involves a debugger in the symptoms as critical
+[21:50] <ar4chne> oki
+[21:50] <asparagi> then i'll reload & fix them
+[21:53] <Dymaxion> ok, I think I've got both of the debugger bugs marked critical, and I pushed the other attack tree editing bug
+[21:54] <asparagi> oh
+[21:54] <asparagi> that works
+[21:54] <Dymaxion> there only seem to be two there
+[21:55] <ar4chne> oh :) so I don't need to?
+[21:55] <asparagi> guess not :)
+[21:57] <ar4chne> awesome ^^
+[21:57] <Dymaxion> Blah... there was a bunch of stuff there I really wanted to get to fixing before we released, but I'd rather get something out than slip, I guess.
+[21:58] <asparagi> yah
+[21:59] <asparagi> well, feel free to fix other items; i'm just going to fix the high & critical
+[21:59] <Dymaxion> Ok
+[21:59] <ar4chne> :/ I feel pretty useless
+[21:59] <Dymaxion> File I/O is marked high; I haven't got the XMLPrintToTranscript done, though.
+[21:59] <asparagi> & if anyone can find a toshiba m200 power supply anywhere in the portland area, please let me know where to drive
+[21:59] <Dymaxion> sorry, I shouldn't have jumped in there
+[21:59] <asparagi> i'll do file I/O last
+[22:00] <asparagi> er, i guess it's a toshiba portege m200
+[22:00] <asparagi> 3ric was threatening to drive to portland & visit
+[22:00] <Dymaxion> ar: if you've got time to work on the xml stuff with me, that would be cool, but I don't know if I'll be able to do it tonight.
+[22:00] <asparagi> but i already tried to call him
+[22:01] <asparagi> ar: how about moving the bugs to hyphos?
+[22:01] <asparagi> or, sleep so your head stops hurting :)
+[22:06] <Dymaxion> I believe that if you go to the fry's electronics here: http://www.google.com/maps?q=29400%20SW%20Towncenter%20Loop%20West%20wilsonville%20or and buy this: http://shop1.outpost.com/product/4034872?site=sr:SEARCH:MAIN_RSLT_PG you'll be all set.  They're open until 9.
+[22:07] <Dymaxion> If you go and they don't have that exact model, call me and read me the model number of whatever they do have, and I'll look up the detailed compatibility chart for you online and make sure it will work.
+[22:11] <asparagi> of course that debugger is because of =
+[22:12] <asparagi> ha ha
+[22:13] <asparagi> wow
+[22:13] <asparagi> i see the fix, but i have to drive to fry's now
+[22:13] <asparagi> i'll be back
+[22:15] <Dymaxion> ok
+[23:08] <Dymaxion> yay, power adapter aquired
+[00:00] --- Tue Jan 31 2006
+[00:20] <asparagi> hi, honey, i'm hoooome!
+[00:21] <Dymaxion> lol
+[00:21] <Dymaxion> here, have some of the delightfuly chicken-pineapple merange pie I baked while you were out!
+[00:22] <asparagi> chicken?
+[00:22] <asparagi> ;)
+[00:22] <asparagi> so, the power supply works
+[00:22] <asparagi> it makes a godawful whine, but it works
+[00:22] Action: Dymaxion grins.
+[00:22] <asparagi> i'm just going to turn up the music
+[00:22] <Dymaxion> Yay working
+[00:24] <asparagi> wow, the whine changes when you compile things
+[00:25] <Dymaxion> that's a very scary load meter
+[00:25] <asparagi> yes
+[00:35] <asparagi> ok, i fixed the unknown->sometimes bug
+[00:35] <asparagi> i don't think i can fix the debugger in blog tree
+[00:35] <asparagi> (in the time available)
+[00:36] Action: Dymaxion nods
+[00:40] <asparagi> it's a weirdness of the hierarchical list in which the parent of the current item, or maybe the current item, or maybe the menu for the current item is cached in some situations
+[00:40] Action: Dymaxion nods
+[00:40] <Dymaxion> Ugh, yeah, more cacheing bugs
+[00:40] <asparagi> i thought i had another bug open about it too, but i can't find it now
+[00:40] <asparagi> yah.
+[00:40] <Dymaxion> It had to try pretty hard to make that happen, so I'm not too worried about it
+[00:41] <asparagi> well, try promoting or demoting an item in a situation where move up and move down should appear differently in the new menu
+[00:42] <asparagi> if you don't select a different item & reselect, it's unhappy
+[00:42] <asparagi> same bug, i think
+[00:42] <Dymaxion> huh
+[00:42] <asparagi> ok
+[00:42] <Dymaxion> ok
+[00:42] <asparagi> i'll spend 15 min on it
+[00:42] <Dymaxion> well, let's document them as known bugs if that doesn't work
+[00:42] <asparagi> if i can't get it in that time, we ship anyway
+[00:42] <asparagi> yeah
+[00:42] <Dymaxion> yeah
+[01:13] <asparagi> okay.  the problem is that in certain situations, TrikeGridAndTreeSection>>currentTreeItem: is not being called
+[01:13] Action: Dymaxion nods
+[01:24] <asparagi> Yes!
+[01:24] <asparagi> It's a vile hack, but it works
+[01:24] Action: Dymaxion grins.
+[01:34] <asparagi> fixed the checkboxes in the menu on the tabs
+[01:34] <Dymaxion> cool!
+[01:35] <asparagi> so we have no open criticals
+[01:35] <asparagi> hot damn, i might get to sleep tonight
+[01:35] <asparagi> how late are you up?
+[01:35] <Dymaxion> I'm good for a while yet
+[01:36] <asparagi> ok.  i am going to try to whip out the highs & send you a drop for build & test, if you have time
+[01:36] <asparagi> then while you do that, if i haven't run out of steam, i'll do file output
+[01:36] <asparagi> and probably the save button
+[01:36] <Dymaxion> ok
+[01:36] <asparagi> the save button is wigging me out
+[01:37] <Dymaxion> do you want me to do anything as far as xml is concerned in the mean time, or are you going to handle that entirely?  I'm ready to jump in on that if you want me to.
+[01:37] <Dymaxion> yeah?
+[01:42] <asparagi> oh! if you started on it, that would be peachy
+[01:42] <asparagi> lemme find this one code snippet for you
+[01:42] <Dymaxion> ok, do you want to upload a set of current changes so I can give you back a noise-free changeset?
+[01:42] <asparagi> haha
+[01:43] <asparagi> i am working in 2 images at once
+[01:43] <asparagi> but i can stop anytime i want
+[01:43] <asparagi> ;)
+[01:43] Action: Dymaxion grins.
+[01:43] <asparagi> yeah, gimme 5 & i'll sync & upload
+[01:43] <Dymaxion> cool
+[01:48] <asparagi> ok. you should look @ 2 classes, XMLDocument & XMLElement
+[01:48] <asparagi> e.g.
+[01:48] <asparagi> outputXML := XMLDocument new.
+[01:48] <asparagi> 	outputXML
+[01:48] <asparagi> 		version: '1.0';
+[01:48] <asparagi> 		encoding: 'utf-8'.
+[01:50] <Dymaxion> ok
+[01:51] <asparagi> modelAttributes := Dictionary new.
+[01:51] <asparagi> 	modelAttributes
+[01:51] <asparagi> 		at: 'xmlns' put: 'http://www.octotrike.org/XSD/TrikeModel/1.1'.
+[01:51] <asparagi> 	modelXML _ XMLElement named: 'model' attributes: modelAttributes.
+[01:51] <asparagi> outputXML addElement: modelXML.
+[01:51] <asparagi> 	^outputXML
+[01:51] <asparagi> stuff like that
+[01:51] <Dymaxion> cool
+[01:51] <asparagi> if you can give me an XMLDocument object, I can do the rest
+[01:52] <Dymaxion> ok, I think I can do that; certainly, I'm game to try. :-)
+[01:53] <asparagi> i think there's a couple methods in TrikeModel? that will give you the 1.1 part
+[01:54] <Dymaxion> cool
+[01:58] <Dymaxion> lemme know when I should pull down the mczs
+[01:59] <asparagi> still working on the integration part
+[02:00] <Dymaxion> k
+[02:14] <asparagi> ok. grab the mczs
+[02:15] <asparagi> that wasn't so bad, to compress down to one image...
+[02:16] <Dymaxion> grabbing
+[02:17] <Dymaxion> Trike-Ineraction-Spiral-BEL.22?
+[02:19] <asparagi> yes
+[02:19] <asparagi> and everything else w/ higher #s
+[02:19] Action: Dymaxion build build build
+[02:19] <Dymaxion> yeah
+[02:19] <asparagi> i fixed the save button
+[02:19] <Dymaxion> I just grabbed everything again
+[02:19] <Dymaxion> woo!
+[02:19] <asparagi> it was so easy i couldn't help myself
+[02:20] Action: asparagi stomps on bugs
+[02:20] Action: Dymaxion grins.
+[02:21] Action: Dymaxion reloads and sees the number of open bugs drop.
+[02:27] <asparagi> flipper.
+[02:27] <asparagi> the TrikeAttack hierarchy needs refactoring
+[02:27] <asparagi> TrikeRule is pretty clean
+[02:28] <asparagi> i like the Boolean vs. Atomic thing
+[02:28] <asparagi> but TrikeAttack is icky, icky, icky
+[02:28] <Dymaxion> yeah?
+[02:28] <Dymaxion> do we need to do that to get rule editing working?
+[02:28] <asparagi> i'm not going to touch it no
+[02:29] <Dymaxion> cool
+[02:29] <asparagi> well, it depends what you mean by working
+[02:29] <Dymaxion> open a bug on it for later?
+[02:29] <Dymaxion> not throwing a debugger, and allowing basic rule changes?
+[02:29] <asparagi> e.g. i think now you can edit the names of AND and OR attacks
+[02:29] <asparagi> which i guess is to spec according to the file format
+[02:29] <Dymaxion> ok
+[02:30] <asparagi> and yet it seems premature, what with there being no other way to tell which one is meao
+[02:30] <Dymaxion> good by me
+[02:30] <asparagi> er, meant
+[02:30] <Dymaxion> does inserting new ones work?
+[02:30] <asparagi> it is all weird
+[02:30] <asparagi> oh, i have no idea, i haven't tried fixing that one yet
+[02:30] <Dymaxion> Hrm.. we don't have a way to do a non-editable string displayed next to the name of the rule, do we?
+[02:31] Action: Dymaxion nods.
+[02:31] Action: Dymaxion watches a progress bar inch along
+[02:31] <asparagi> the short answer is no
+[02:31] <Dymaxion> the long answer is not right now?
+[02:31] <asparagi> we could do it like we do NOT
+[02:32] <asparagi> oh boy
+[02:33] <asparagi> now you can only change the names of threats, and when you do you can't see the new name until you unselect & reselect
+[02:33] <Dymaxion> wheeeeee!
+[02:33] <asparagi> can't change any other attacks
+[02:33] <asparagi> pah.
+[02:35] <Dymaxion> oh, cool, you gave me a start on the xml-fu
+[02:36] <asparagi> did i?
+[02:36] <Dymaxion> there's some xml stuff in here
+[02:36] <asparagi> uh oh
+[02:37] <asparagi> don't paste it herew
+[02:37] <asparagi> what method is it in?
+[02:37] Action: asparagi hopes it isn't owned...
+[02:37] <Dymaxion> trikeModel printXMLOn:, emptyNativeXML, nativeAssetsXML, nativeNameXML, etc.
+[02:38] <asparagi> whew
+[02:38] <asparagi> it's not owned
+[02:39] <asparagi> wow, looks like i put it in in november
+[02:39] <Dymaxion> cool
+[02:39] <asparagi> i think you can say something like TrikeModel blog printXMLOn: Transcript
+[02:39] <asparagi> to test
+[02:39] <Dymaxion> how can I wrap one of the print<foo>On:...
+[02:39] <Dymaxion> hehe, I was just going to ask that
+[02:40] <asparagi> i might have set it up so you can debug it into existence
+[02:40] <asparagi> i might not have gotten flushing right
+[02:40] <asparagi> i know Transcript show: flushes
+[02:41] <Dymaxion> yeah, debugging it in seems to work... I'm getting a debugger with should be implementeds, at least
+[02:41] <asparagi> so if you don't see anything, just call Transcript show: after you try the thing above, and it might show up
+[02:41] <asparagi> awesome :)
+[02:41] <asparagi> that's pretty funny, i totally forgot i did that
+[02:53] <asparagi> so at one point i was going to add an interface that let you add actions from the tree view, other than the previous menu interface
+[02:53] <asparagi> apparently i went so far as to remove the menu interface
+[02:54] <asparagi> do we care? can we just make ppl use the grid?
+[02:54] <Dymaxion> for now, sure
+[02:54] <asparagi> awesome
+[02:54] <Dymaxion> ok, figuring out tag nesting with this API is hard
+[02:55] <Dymaxion> I've got the model tag in their, with the right xmlns
+[02:55] <Dymaxion> the name has to be blank there though, because that method is emptyNativeXML, which obviously can't set the name.
+[02:56] <Dymaxion> so, in convertNativeXML I need to a) add the name into the previous model tag directly (or cause another method to do it -- either way I need to extract the just-added model tag, and b) ensure that all the other tags get added inside the model tag.

@@ -1,0 +1,334 @@
+[21:23] <asparagi> howdy!
+[21:26] <ar4chne> heyaz!
+[21:26] <ar4chne> I need to head over to pauls
+[21:26] <ar4chne> but I just realized I don't quite know exactly where that is
+[21:26] <ar4chne> or even if he's home ;D
+[21:26] <asparagi> hmm
+[21:27] <asparagi> step 1 would probably be determining whether he's home.  have you called his cell?
+[21:27] <Dymaxion> hey
+[21:27] Action: Dymaxion just got in
+[21:27] <asparagi> ha ha!
+[21:27] <asparagi> are you at home?
+[21:27] <Dymaxion> 403 e thomas st #1
+[21:27] <Dymaxion> yes
+[21:28] <asparagi> that's probably really close to where you described you are, ara
+[21:28] <Dymaxion> it's the greyish cement building across from the park with the reddish awning
+[21:28] <Dymaxion> btw, I haven't had dinner yet -- ara, have you?
+[21:28] Action: asparagi imagines a park with a reddish awning ;)
+[21:29] <Dymaxion> Hehe
+[21:29] <asparagi> there's like some steps up from the street across from the park
+[21:29] <Dymaxion> yeah
+[21:31] <Dymaxion> arachne: if you haven't eaten, alex is offering to fetch an order from jai thai, if thai food sounds interestnig.
+[21:31] <asparagi> we made a plan for what to do tonight; anybuggy remember which logs it'd be in?
+[21:32] <Dymaxion> hrm.
+[21:32] <Dymaxion> I think I might have emailed something out
+[21:32] Action: Dymaxion notes that e still doesn't have a laptop, annoyingly.
+[21:32] <asparagi> damn
+[21:32] <ar4chne> yeah, just got back form dinner
+[21:32] <Dymaxion> ah, ok
+[21:32] <asparagi> hence the meeting at your house
+[21:32] <Dymaxion> we'll figure our own food out
+[21:32] <ar4chne> and no :) I can't eat thai food
+[21:33] <ar4chne> I think I'm allergic to something in it
+[21:33] <Dymaxion> suck!
+[21:33] <asparagi> how sad :(
+[21:33] <ar4chne> but thanks for the offer!
+[21:33] <Dymaxion> hrm, yeah -- I should figure out how to get a second chair back here.
+[21:33] Action: asparagi is eating pastrami from the local sub shop
+[21:34] <asparagi> i think it's really funny that the only decent restaurant i've found here is a hole-in-the-wall takeout sub shop
+[21:35] <Dymaxion> hehe
+[21:35] <ar4chne> ok, I'm heading out in 3 minutes
+[21:35] <Dymaxion> ok
+[21:37] <asparagi> look, you did send out the meeting plans.  :)
+[21:38] <asparagi> so, ara proposed earlier that she work on the OS X package while we work on docs
+[21:38] <asparagi> and, i have to go at like 9.
+[21:38] <asparagi> blame toby. :)
+[21:39] <Dymaxion> whee
+[21:39] Action: Dymaxion blames toby. :-)
+[21:40] <asparagi> so, i could take a stab at the ui quirks
+[21:40] <asparagi> did you write any docs already?
+[21:40] <Dymaxion> no, I've been really swamped
+[21:40] <asparagi> the whole new job thing is always fun
+[21:40] <Dymaxion> yeah
+[21:41] <Dymaxion> do we want the phone?
+[21:41] <asparagi> hmm
+[21:41] <asparagi> not especially, on my end anyway
+[21:42] <Dymaxion> ok
+[21:44] <asparagi> so, i think we should make it really easy for people to write attack stubs
+[21:45] <asparagi> possibly even an XML format
+[21:45] <asparagi> although that would be dangerous
+[21:46] <Dymaxion> hrm
+[21:46] <Dymaxion> back
+[21:46] <Dymaxion> with a stef
+[21:46] <asparagi> oh, look, a steph!
+[21:47] <asparagi> did you get the right one?
+[21:47] <Dymaxion> I think so
+[21:47] <asparagi> i mean, we wouldn't want just any steph.
+[21:47] Action: Dymaxion grins
+[21:48] <Dymaxion> so, right, attack stubs
+[21:48] <Dymaxion> I definitely support making them easier to mess with
+[21:49] <asparagi> it's kind of off-topic, maybe we should write docs for this release..
+[21:49] <Dymaxion> yeah
+[21:49] <Dymaxion> docs first, everything else later.
+[21:49] <ar4chne> baq!
+[21:49] <asparagi> heya!
+[21:49] <Dymaxion> I'd talked about a feature triage for our next meeting, so that seems like a good topic for then.
+[21:49] <asparagi> sure
+[21:50] Action: Dymaxion . o O ( queeboard? )
+[21:50] Action: asparagi laughs
+[21:51] <asparagi> ok, here's my draft topics for the UI quirks docs:
+[21:51] <asparagi> Trike's UI Philosophy
+[21:51] <asparagi> "Normal" for a Squeak UI
+[21:51] <asparagi> Less-than-Obvious Trike UI Tricks
+[21:51] <asparagi> Known Bugs
+[21:51] <asparagi> Features We Know We Need to Add
+[21:52] <Dymaxion> We should have an Unknown Bugs section too.
+[21:52] <ar4chne> How to Build
+[21:52] <ar4chne> a bit better than the thing put out for build 
+[21:52] <ar4chne> 5
+[21:52] <Dymaxion> Actually, what we should have is a "What happens when the debugger comes"
+[21:52] <asparagi> um, Unknown Bugs?
+[21:52] Action: Dymaxion grins.
+[21:52] <asparagi> ah
+[21:53] <Dymaxion> (that first one was a joke, although if you can write it, we should definitely include it)
+[21:55] <Dymaxion> That sounds like a good outline
+[21:55] <asparagi> hey, is the versioning scheme up on octotrike somewhere?
+[21:55] <asparagi> i can't find it
+[21:56] <ar4chne> yes, it is
+[21:56] <ar4chne> but it was really obscurely linked
+[21:56] <ar4chne> http://octotrike.org/versions.html
+[21:57] <ar4chne> it's linked from the tools page
+[21:57] <asparagi> i think our next version will be 1.2.0a; can we decide that now, or is that for the feature triage/release planning next time?
+[21:58] <ar4chne> where it goes "Demo <Versions> of Trike"
+[21:58] <asparagi> oh!
+[21:58] <asparagi> that's even where I was looking for it
+[21:58] <ar4chne> :)
+[21:58] <asparagi> i mean, on that page
+[21:58] <asparagi> maybe we should link it in a little better.  not sure where from
+[21:59] <Dymaxion> We're planning on adding features and rewriting the xml support to not suck, plus redoing exposure/asset values.  Those mean file format changes, and I don't think there's any point in writing a compatibility layer.
+[21:59] <Dymaxion> Therefor, yes; 1.2.0a
+[21:59] <asparagi> ok. i'll refer to it that way
+[22:00] <ar4chne> maybe on the tools page, just have a second heading that says "About Versioning" and put the data there? 
+[22:00] <asparagi> Yeah.  That sounds much more obvious.
+[22:00] <Dymaxion> soungs good to me
+[22:00] <ar4chne> oki
+[22:00] <ar4chne> gimme 3 secs
+[22:00] <asparagi> while you're there, can  you cap Trike in the v1.1.2a paragraph?
+[22:02] <Dymaxion> done
+[22:02] <ar4chne> done!
+[22:02] <asparagi> actually could we move the versions.html to have a Trike-tool-specific url?
+[22:02] <asparagi> and i have a couple changes for it:
+[22:02] <asparagi>    For example, our next planned release will be named 1.1.2a:  methodology version 1, tool version 1.2, approximately alpha quality.
+[22:03] <asparagi> should become
+[22:03] <asparagi> For example, the version 1.1.2a release implements methodology version 1, in tool version 1.2, of approximately alpha quality.
+[22:03] <ar4chne> :(
+[22:03] <ar4chne> I just deleted it
+[22:04] <asparagi> haha!
+[22:04] <asparagi> i have a copy
+[22:04] <Dymaxion> So, if you're looking at the UI quirks docs, I should do a "how to use trike" doc, right?
+[22:04] <asparagi> since it is on my screen
+[22:04] <asparagi> P, yahh
+[22:04] <ar4chne> no, I mean the code
+[22:04] <ar4chne> not the content
+[22:04] <asparagi> oh no
+[22:04] <asparagi> oh.
+[22:04] <asparagi> crap
+[22:04] <ar4chne> we're not sure what you're meaning, aspa
+[22:04] <ar4chne> refresh the tools page
+[22:04] <Dymaxion> do you not putting the versioning stuff on the tools page?
+[22:04] <ar4chne> you don't like it?
+[22:04] <asparagi> oh
+[22:05] Action: asparagi shuts up & hits refresh
+[22:05] <Dymaxion> We could change that title to "About Trike Versioning", if it's not clear.
+[22:05] Action: asparagi searches blindly for the mind meld device
+[22:05] <Dymaxion> try behind the cat dish
+[22:06] <asparagi> you're right! there it is
+[22:06] <asparagi> no, it's totally clear, i just misunderstood the plan.  i like it.
+[22:06] <asparagi> put Issue Tracker above About Versioning?
+[22:07] <asparagi> i hope more ppl want to file bugs than want the nitty-gritty of the versions
+[22:07] <ar4chne> ok
+[22:07] <ar4chne> 3 secss!
+[22:07] Action: Dymaxion grins
+[22:07] <asparagi> Change to "A Trike version number has 4 parts:"
+[22:08] <asparagi> and then "Version 1.1.0a should have been released to the public at  ShmooCon 2005, but was so buggy it is unlikely to ever see the light of day."
+[22:09] <ar4chne> lol :D
+[22:09] <asparagi> I try to keep our readers entertained.
+[22:09] <asparagi> All 3 of thea.
+[22:09] <asparagi> er, them.
+[22:09] Action: Dymaxion grins.
+[22:11] <asparagi> Can we rephrase the v1.1.2a release to not have the word here be a link?  I don't know why that bugs me, but it does.
+[22:11] Action: Dymaxion looks at the IRC logs and reads up on what we're going to say on April 9th, 2006.
+[22:11] <asparagi> why are there...
+[22:11] <asparagi> whoa
+[22:11] <asparagi> i definitely have the mind meld device now
+[22:12] <Dymaxion> unfortunately, we didn't say anything too interesting that day -- no sneak peaks into problems we haven't run into yet.
+[22:12] Action: asparagi snorts
+[22:12] <asparagi> do you remember what day that really was?
+[22:13] <asparagi> was it 1/30, probably?
+[22:13] <Dymaxion> I'm guessing January 30, from context in the list
+[22:13] <Dymaxion> eyah
+[22:13] <ar4chne> you can check the bottom
+[22:13] <ar4chne> there would be a timestamp for the next day
+[22:13] <ar4chne> starting
+[22:13] <ar4chne> aspa, what do you mean by:
+[22:14] <ar4chne> <asparagi> Can we rephrase the v1.1.2a release to not have the word here be a link?  I don't know why that bugs me, but it does.
+[22:15] <asparagi> Oh, like <a href="">Current bugs</a> something something instead of  Current bugs can be seen <a href="">here</a>
+[22:16] <ar4chne> hmmm...I like it the way it is
+[22:16] <ar4chne> unless I were to bullet them and do like
+[22:16] <ar4chne> * bugs
+[22:16] <ar4chne> or 
+[22:16] <ar4chne> * Known Issues
+[22:16] <ar4chne> and then
+[22:16] Action: Dymaxion could go either way
+[22:16] <ar4chne> * Screenshots
+[22:17] <asparagi> ooh, and * Installation Instructions
+[22:17] <asparagi> and * User Documentation
+[22:17] <ar4chne> altho, i think all those bullets should be on the 1.1.2a page
+[22:17] <ar4chne> instead of in the brief discription
+[22:17] <asparagi> Oh, that makes sense.
+[22:18] <asparagi> Maybe we should just take that out of the brief description
+[22:18] <asparagi> Then they could be header thingies just like they are now.
+[22:19] <ar4chne> oki
+[22:19] <asparagi> I think we should change v1 build 5 Known Issues to:
+[22:20] <Dymaxion> "Lots, use something newer."
+[22:20] <asparagi> There are many bugs in this version of Trike.  It was an alpha version we are not planning to maintain.
+[22:20] <asparagi> Use Paul's version.
+[22:20] <ar4chne> does the bug tracking system track versions for us?
+[22:20] <ar4chne> like "this issue is in version x.x.xa"
+[22:20] <Dymaxion> no, not right now
+[22:21] <asparagi> i wish we had one that did
+[22:21] <Dymaxion> We may want to put switching bug tracking systems on the table for next week
+[22:21] <asparagi> yah
+[22:21] <asparagi> i think i am the one who was supposed to look at that
+[22:21] <asparagi> i mean, evaluating them
+[22:23] <ar4chne> !zope 
+[22:23] <ar4chne> please pleaxse pretty pretty plz
+[22:23] <asparagi> on the shmoocon 2005 talk page change the slides & demo thing to
+[22:24] <asparagi>  If you were at the talk, you recall that  the slides and demo didn't work entirely properly.  Well, they still don't, and they aren't going to.
+[22:24] <asparagi> Sorry. 
+[22:25] <asparagi> Yes, Zopeless bugs is on my requirements list
+[22:25] <ar4chne> ok, refresh
+[22:25] <ar4chne> on the tools page
+[22:25] <ar4chne> and the 1.1.2a page
+[22:27] <asparagi> on tools, the example version number paragraph still needs to be updated to reflect that we released v1
+[22:27] <asparagi> er, 1.1.2
+[22:27] <asparagi> a
+[22:27] <ar4chne> where?
+[22:28] <ar4chne> oh, go to 1.2.0
+[22:28] <ar4chne> ?
+[22:28] <asparagi> just before "Exceptions"
+[22:29] <asparagi> "For example, our next planned release...
+[22:29] <asparagi> For example, the version 1.1.2a release implements methodology version 1, in tool version 1.2, of approximately alpha quality.
+[22:29] <ar4chne> ok, refresh!
+[22:30] <asparagi> Sure, that work
+[22:30] <asparagi> on 1.1.2a, it's the "here" with an <a href></a> around it that bugs me
+[22:31] <ar4chne> what else should I put?
+[22:31] <asparagi> <a href>See Trike in action.</a>
+[22:31] <asparagi> ?
+[22:31] <asparagi> I dunno
+[22:31] <ar4chne> hmm...that sounds like we have a flash demo
+[22:32] <asparagi> how about 
+[22:32] <asparagi> We took some <a href>stills of Trike 1.1.2a</a>
+[22:32] <asparagi> that one's better anyway
+[22:33] <ar4chne> stills?
+[22:33] <asparagi> i just want the link text to
+[22:33] <asparagi> ok, that's dorky toa
+[22:33] <asparagi> wow, dorky toa, it's like krakatoa
+[22:33] Action: ar4chne gets the feeling aspa is trying to avoid document writing
+[22:33] <asparagi> say screenshots again?
+[22:33] <ar4chne> ;D
+[22:34] <asparagi> no, i just want the link text to be descriptive
+[22:34] <asparagi> of what you are going to see when you click on it
+[22:34] <asparagi> but ok
+[22:34] <asparagi> i'll go get to work
+[22:34] <ar4chne> it says "see screenshots"
+[22:34] <ar4chne> :P
+[22:36] Action: asparagi doesn't want to context-switch away from updating the web site until we have fixed all the places it sounds like 1.1.2a isn't really here yet
+[22:36] Action: Dymaxion nods
+[22:37] <asparagi> e.g. on the 1.1.2a screenshot page, it says "development system" but should maybe say "Trike 1.1.2a" instead
+[22:38] <ar4chne> we need to change the "When is the next release of trike coming" question on the faq as well
+[22:38] <asparagi> yeah
+[22:38] <ar4chne> so...when is the next release of trike coming? :D
+[22:38] Action: Dymaxion starts a list for next time
+[22:38] <asparagi> maybe for now we should say something like we're still planning it
+[22:39] <Dymaxion> that's a good question.  Why don't we get back to you next week.
+[22:39] <asparagi> hee hee
+[22:39] <ar4chne> :P
+[22:39] <Dymaxion> I think that should be the answer. :-)
+[22:39] <asparagi> Works for me
+[22:39] <asparagi> although i'm not sure we'll know next week either
+[22:40] <asparagi> although we might know broad strokes features i suppose
+[22:40] <Dymaxion> oh, I didn't mean to specify any *specific* week with that answer...
+[22:40] <Dymaxion> just you know, next week.
+[22:40] <asparagi> I think in question 9 we should really include a link to the microsoft tool if we are going to use the word purport
+[22:41] <asparagi> since it actually is a threat modeling tool
+[22:41] <asparagi> i don't want to accidentally dis it
+[22:41] <ar4chne> faq updated
+[22:42] <ar4chne> nah, I think that question is fine
+[22:44] <asparagi> Could we add something about a plan to post a list later, then?
+[22:44] <ar4chne> like what?
+[22:45] <asparagi> "At some point in the future, we may post a threat modeling tool comparison chart."
+[22:45] <asparagi> or something...
+[22:45] <Dymaxion> For the individual talks pages, we should note that the language on the pages comes from the conference programs -- it sounds weirdish now.
+[22:48] <asparagi> sure..
+[22:59] <ar4chne> paul's making fun of my spelling of broshure!
+[22:59] Action: Dymaxion grins
+[22:59] <asparagi> hee hee
+[22:59] <asparagi> sure, bro..
+[22:59] <Dymaxion> like I shoudl talk most of the time...
+[23:01] <ar4chne> ok, I think I nailed anything
+[23:01] <ar4chne> s/anything/everything/
+[23:01] <ar4chne> *pant*pant*pant*
+[23:01] Action: Dymaxion grins.
+[23:01] Action: Dymaxion throws the context switch.
+[23:01] <Dymaxion> bzzaaaap
+[23:01] <asparagi> you go, ara!
+[23:02] <Dymaxion> do we want to talk about docs some now?
+[23:02] <ar4chne> I'm sorry I missed so much stuff :/
+[23:03] <asparagi> no worries
+[23:03] <Dymaxion> not your fault... we were the ones who gave you the list
+[23:03] <Dymaxion> I've check something into svn that tries to list all the things we just changed that we'll need to do next release
+[23:04] <asparagi> just thought if we were spiffing it up & adding docs, we should do a little site maint too
+[23:04] <asparagi> i've been poking at the ui quirks
+[23:04] <asparagi> but it is hardly usable
+[23:04] <asparagi> it is also 9pm
+[23:04] <Dymaxion> ok
+[23:05] <Dymaxion> do you want to send something out over email if you have time to get it together before the next meeting?
+[23:05] <asparagi> can we all make it next wed?
+[23:05] <asparagi> yes, i will
+[23:05] Action: Dymaxion will try to work on a basic user's guide.
+[23:05] <Dymaxion> I can
+[23:05] <asparagi> and you should do the same
+[23:05] <ar4chne> I'll work on getting the dmg up before tomorrow morning, too
+[23:05] <Dymaxion> yeah
+[23:06] <ar4chne> altho, I have to be on a plane in 8 hours or so
+[23:06] <ar4chne> :D
+[23:06] <asparagi> with a little sleep, i hope
+[23:06] <Dymaxion> can you send the outline we talked about up above out to the list too, asp, so I don't duplicate anything on it?
+[23:06] <asparagi> sure
+[23:06] <Dymaxion> cool
+[23:07] <asparagi> cool, we all have action items
+[23:07] <Dymaxion> yay
+[23:07] <asparagi> i'll see y'all next week
+[23:07] <ar4chne> haha, now I know you started working at a corp, aspa
+[23:07] <Dymaxion> see you next week
+[23:07] <Dymaxion> don't work too much
+[23:07] <Dymaxion> hehe
+[23:07] <ar4chne> ;D I'd never heard the term 'action items' until then
+[23:07] <asparagi> you neither
+[23:08] <asparagi> yeah, they call them ARs, though
+[23:08] <asparagi> i forget what the r is for
+[23:08] <Dymaxion> heh
+[23:08] <Dymaxion> do pirates get ARrrrrrrrs?
+[23:09] <asparagi> wow
+[23:09] <asparagi> i hope i remember that next year for talk like a pirate day
+[23:09] <ar4chne> haha :D
+[23:09] <ar4chne> oki, heading out
+[23:09] Action: Dymaxion grins
+[23:09] <Dymaxion> tty1
+[23:09] <ar4chne> yay, trike release!
+[23:09] <asparagi> ok. see y'all later
+[23:09] <Dymaxion> up
+[23:09] <asparagi> yay!
+[23:09] <Dymaxion> yup, even
+[00:00] --- Fri Feb 10 2006

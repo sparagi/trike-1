@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<model xmlns="http://www.octotrike.org/XSD/TrikeModel/1.1" name="Blog">
+ <assets>
+  <asset name="Blog Entry" id="XXXX" value="5" inScope="true">
+   <notes>[CDATA]</notes>
+  </asset>
+ </assets>
+ <actors>
+  <actor name="Anonymous" id="XXXXX" risk="5">
+   <notes>[CDATA]</notes>
+  </actor>
+ </actors>
+ <rules>
+  <rule id="XXXX" type="and">
+   <!-- additional type "or" not shown -->
+   <notes>[CDATA]</notes>
+   <children>
+    <rule reference="XXXXX" />
+   </children>
+  </rule>
+  <rule id="XXXX" type="text" name="a condition" negated="false">
+   <!-- code must enforce lack of children for text rules -->
+   <notes>[CDATA]</notes>
+  </rule>
+  <rule id="XXXX" type="role" negated="false">
+   <!-- code must enforce lack of children for role rules -->
+   <notes>[CDATA]</notes>
+   <actor reference="XXXXX" />
+  </rule>
+ </rules>
+ <actions>
+  <action id="XXXXX" verb="create" intended="true">
+   <!-- additional verbs are "read", "update", and "delete" -->
+   <notes>[CDATA]</notes>
+   <asset reference="XXXXX" />
+   <knownActors>
+    <actor reference="XXXXX" />
+   </knownActors>
+   <rule reference="XXXXX" />
+   <risks>
+    <risk goal="less" value="1" />
+    <risk goal="more" value="2" />
+   </risks>
+   <attacks>
+    <attack reference="XXXXX" />
+   </attacks>
+  </action>
+ </actions>
+ <attacks>
+  <attack id="XXXXX" type="root" target="action" goal="less" exposure="21"
+  name="a threat">
+   <!-- exposure is denormalized and non-canonical; it should be discarded 
+        by implementations capable of calculating it and must be marked 
+	invalid if any risk model changes occur. -->
+   <!-- the set of goals for root attacks with an action target is "less" and
+        "more" -->
+   <notes>[CDATA]</notes>
+   <action reference="XXXX" />
+   <children>
+    <attack reference="XXXXX" />
+   </children>
+  </attack>
+  <attack id="XXXXX" type="and" name="an attack">
+   <!-- additional type "or" not shown -->
+   <notes>[CDATA]</notes>
+   <children>
+    <attack reference="XXXXX" />
+   </children>
+  </attack>
+  <attack id="XXXXX" type="text" name="an attack">
+   <notes>[CDATA]</notes>
+  </attack>
+ </attacks>
+</model>

@@ -1,0 +1,387 @@
+[21:28] <ar4chne> 'lo
+[21:32] Action: ar4chne waves
+[21:32] <asparagi> heya!
+[21:32] <asparagi> well, i guess i'm 4:22 late
+[21:33] <asparagi> do we have a Dym?
+[21:33] <ar4chne> haven't seen him yet
+[21:34] <asparagi> well, e better show up & grab the mind meld device -- it's going to be a wild ride tonight
+[21:34] <asparagi> so, are we supposed to be doing v1 or v2 tonight?
+[21:34] <ar4chne> no idea ^^
+[21:35] <asparagi> well, you know i always want to do v2.  you are our voice of reason :)
+[21:35] <ar4chne> haha, I think that works
+[21:36] <asparagi> so, i believe that i broke attack graphs six ways to sunday.
+[21:37] <ar4chne> oh?
+[21:37] <asparagi> yah
+[21:38] <asparagi> the problem is, they were never a very efficient way to generate the lower-level stuff, just all these layers of cruft in the middle
+[21:38] <asparagi> and then i applied them  to a problem which has requirements at a very high level, and components that are in scope at a very low level
+[21:39] <Dymaxion> I'm hre
+[21:39] <Dymaxion> here, even
+[21:39] <asparagi> there is a big gap in the middle, in my problem, which is out of scope.  that is inherent in the nature of the problem
+[21:39] Action: Dymaxion catches up
+[21:40] <asparagi> so the cruft in the middle, which was useless and annoying to start with, goes through this region of fuzz in the middle and either (a) becomes enormous or (b) causes one to miss things
+[21:41] <asparagi> i believe that in this kind of problem, possibly in all kinds of problems, an attack graph is not an efficient tool
+[21:41] Action: Dymaxion nods
+[21:43] <asparagi> i wanted to go back & look at the irc logs from the other night when we were talking about different kinds of links in the attack graph
+[21:43] <asparagi> but they aren't up
+[21:44] Action: Dymaxion nods.
+[21:44] <ar4chne> oh, gimme a sec
+[21:44] <ar4chne> is it there now?
+[21:45] <asparagi> yes.
+[21:45] <asparagi> yes, is is :)
+[21:45] <ar4chne> ^^
+[21:46] <asparagi> ok.  so, the capabilities are fine
+[21:46] <asparagi> task breakdown is not.
+[21:47] <Dymaxion> how so?
+[21:47] <asparagi> well, that's how we have been generating the graphs that have gotten us into trouble
+[21:47] Action: Dymaxion nods
+[21:47] <asparagi> i mean, what if a capability transition had to be linear?
+[21:48] <Dymaxion> how so?
+[21:48] <asparagi> and i still don't understand intent, really.  i think it might be a red herring.
+[21:49] <asparagi> well, you start with capability a, and you do steps 1-5 in order, and you end up with capability c
+[21:49] <asparagi> no ors, no ands
+[21:49] <Dymaxion> yeah
+[21:51] <asparagi> the question is, if we had requirements-level threats, just like we do now, and instead of generating attack stubs hanging off  of them, we created a set of sets of capabilities that would directly enable that threat, 
+[21:52] <Dymaxion> And then we'd have, seperately, sets of steps with some starting and ending sets of capabilities.
+[21:52] <Dymaxion> Hrm.
+[21:52] <asparagi> and then we created a bunch of linear capability transitions based on the implementation, would we be doing as well as we would with a graph, but without all the steps?
+[21:52] <asparagi> obviously we need a capability inferencer
+[21:52] <Dymaxion> yeah, but we knew that
+[21:52] <Dymaxion> hrm.
+[21:53] <asparagi> i'm not sure how it does for dos
+[21:53] <Dymaxion> Are steps *only* ever linear?
+[21:53] <asparagi> we almost need capability removing steps
+[21:53] <Dymaxion> It does DoS just as well as it does Elv, I think.
+[21:53] <asparagi> i dunno, i haven't slept in a long time
+[21:54] <Dymaxion> so, how do you know what sets of capabilities implement a threat?
+[21:54] <asparagi> you look at the implementation
+[21:54] <asparagi> the threats are still requirements-bashd
+[21:54] <Dymaxion> yeah, I get that part
+[21:54] <Dymaxion> How do we not miss the weird ass capability over in left field that lets you do something evil?
+[21:55] <Dymaxion> (I don't think we handle this well right now either, but)
+[21:55] <asparagi> but then you take the thing the use flows turned into, and select minimum sets of capabilities that enable the threat.
+[21:56] <Dymaxion> Hrm.
+[21:56] <Dymaxion> Ok
+[21:56] <asparagi> e.g. this asset passes over this data flow, so maybe i say to elv read, you must be able to read this network connection
+[21:56] <asparagi> in some ways it's exactly the same
+[21:56] <Dymaxion> that gets us the set of capabilities which directly interact with the threat/action for the treat, which is all we can get now
+[21:57] <Dymaxion> and if the capability over in the corner can do something weird, either we get it via chaining, or we didn't model the use flows right and we should have gotten it to start with.
+[21:57] <asparagi> it's just that you no longer have to spend hours editing the connective tissue in the middle of the attack graph
+[21:57] <Dymaxion> ok, I'll buy that.
+[21:57] <Dymaxion> yeah
+[21:57] <asparagi> yup
+[21:57] <Dymaxion> So, do we need to capture why a capability enables a threat?
+[21:57] <asparagi> or we don't understand the atomic capabilities inherent in the implementation
+[21:58] <asparagi> naw, just ask the engine
+[21:58] <asparagi> it should be able to spit out any number of chains
+[21:58] <Dymaxion> no, I mean a top level capability; one we selected directly from the use flow
+[21:58] <asparagi> oh
+[21:59] <asparagi> well, we could certainly do so
+[21:59] <Dymaxion> Can we do so in a strong manner?
+[21:59] <Dymaxion> ie, something semi-formal?
+[21:59] <Dymaxion> Or is it just going to be an annotation?
+[21:59] <asparagi> i am imagining tracing the dfd to get the use flows, then basically tracing the use flows to get the capabilities
+[22:00] <asparagi> well, we might be able to automate
+[22:00] <Dymaxion> (which isn't necessarily bad, it just may imply different things)
+[22:00] <Dymaxion> yeah, that sounds like a good model
+[22:01] <asparagi> the thing is, we have moved the hard problem to (a) the inferencer and (b) selecting the atomic capabilities
+[22:01] <Dymaxion> yeah
+[22:01] <asparagi> and maybe (c) defining why these capabilities are needed to do this action
+[22:01] <Dymaxion> I definitely like the inferencer part; the other two worry me a little bit.
+[22:01] <Dymaxion> OTOH, I think I like it overall better than what we have now.
+[22:02] <asparagi> so, ask me about the capability chain things
+[22:02] <Dymaxion> We're going to need a concise definition of why attack trees aren't good enough/don't work -- right now that's the one point of commonality, at least in terminology, that we have with other threat modeling implementations
+[22:02] <Dymaxion> (something which does make it suspicious)
+[22:03] <Dymaxion> What about them?
+[22:03] <Dymaxion> oh right
+[22:03] <asparagi> they are traces through the use flows!  in the flow chart part we talked about last time
+[22:03] <asparagi> maybe
+[22:04] <asparagi> i think we might achieve magic if we defined intended actions using the use flows somehow
+[22:04] <Dymaxion> need a better word than capability chain -- that describes the high level capability graph to me
+[22:04] <Dymaxion> asp: well, we certainly annotate intended actions onto the use flow
+[22:04] <asparagi> the use flows and capabilities might be closely related
+[22:05] Action: Dymaxion nods
+[22:05] <asparagi> steph, are you still hanging on back there?
+[22:05] <Dymaxion> yeah; I think use flow requirements are really just capabilities
+[22:05] <asparagi> yah, i don't know what to call the capability transitions
+[22:05] <ar4chne> yeah, still here
+[22:06] <Dymaxion> I was just going to suggest exactly taht
+[22:06] <asparagi> what do you think?
+[22:07] Action: asparagi pokes the mind meld device
+[22:08] <asparagi> the mind meld device jiggles and glows softly
+[22:09] <asparagi> ok, i know this line of thought goes further, but i am too tired to chase it now
+[22:09] <asparagi> anybody else have anything?
+[22:10] <Dymaxion> so, defining capability transitions is going to be interesting... I think we may want to actually support branching at least as we implement it
+[22:11] <asparagi> i was sort of thinking they might just need names
+[22:11] <Dymaxion> ie; these first three steps don't get you anything on their own, but depending on which step you take next, you get one of four different resulting capability sets
+[22:11] <Dymaxion> That too
+[22:11] <asparagi> hmm
+[22:11] <asparagi> that could be
+[22:12] <asparagi> i don't know how that would work
+[22:12] <Dymaxion> I'm worried about how we'll figure out what the possible capability transitions for an application are; I guess that comes down to security knowledge and technology-specific libraries, maybe.
+[22:13] <asparagi> hmm
+[22:13] <asparagi> well, this last project i did, a bunch ran after me & bit me on the leg
+[22:13] <Dymaxion> Well, effectively what you're saying is that if you have the initial required set of capabilities, you can get any of the resulting sets; these may be mutually exclusive or may not be, depending on the set of steps along the way.
+[22:13] Action: Dymaxion grins.
+[22:13] <Dymaxion> Yeah -- I think 95% of them will be easy to find.
+[22:13] <asparagi> but i guess that doesn't mean they all dir
+[22:14] <Dymaxion> That isn't the part I'm worried about.
+[22:14] <asparagi> ok, so we need a way to tell whether we found all the capabilities
+[22:14] <Dymaxion> yeah
+[22:15] <Dymaxion> That's a good start
+[22:15] <asparagi> i think intended actions are capabilities
+[22:15] <asparagi> did you say that already?
+[22:15] <Dymaxion> The capability to perform this action?
+[22:15] <Dymaxion> I think that's too high level
+[22:15] <asparagi> pretty much
+[22:15] <Dymaxion> I think that "the capability to enter this use flow"
+[22:15] <Dymaxion> might be useful, though
+[22:15] <asparagi> it would make chaining really really nice
+[22:16] <Dymaxion> Maybe intended actions are sets of capabilities... that doesn't bother me.
+[22:16] <asparagi> hmm
+[22:17] <asparagi> i think we need to try this approach
+[22:17] <Dymaxion> yeah
+[22:17] <asparagi> unless we can think of some other ways to do away with the attack graph
+[22:17] <Dymaxion> this sounds like our best option right now; I think we should try it.
+[22:17] <asparagi> i don't want to construct, format, or see another attack graph ever again
+[22:18] Action: Dymaxion grins.
+[22:18] <Dymaxion> I'm with you there.
+[22:18] <asparagi> maybe when i'm 80 they will fill me with nostalgia and i will want to pet them
+[22:18] <Dymaxion> hah!
+[22:18] Action: Dymaxion grins.
+[22:19] <Dymaxion> God, I hope by the time I'm 80 I'll have better things to fill me with nostalgia. :-)
+[22:19] <asparagi> nice attack graph.  aren't you fierce!  sit! stay!
+[22:19] <Dymaxion> lol
+[22:20] <asparagi> okay. so basically after this project i just did, i think i don't need trike in it's current form at all.  it no longer does anything i'm interested in
+[22:20] <Dymaxion> Yeah, pretty much.
+[22:20] <asparagi> i am unlikely to use it, even if we fix the little issues
+[22:21] <asparagi> but ara wanted to do a 1.2.0a
+[22:21] <Dymaxion> I may use it for requirements level work, but not for anything deeper than that; I still find working at that level occasionally useful.
+[22:21] <asparagi> ara?  it's safe to come out now...
+[22:21] <ar4chne> if you guys really think that there's no reason to do another v1, then we shouldn't
+[22:21] <Dymaxion> I think a 1.2.0a would not be a bad thing for use to do as a project
+[22:22] <asparagi> yeah, i guess i might use the grid
+[22:22] <Dymaxion> We have a little bit of name recognition, and v2 will be more likely to be adopted/looked at if v1 doesn't disappear completely
+[22:23] <asparagi> well, one reason to do another v1 is probably to give people an alternative while they wait god knows how long for v2
+[22:23] <Dymaxion> yeah
+[22:23] <Dymaxion> that's sort of what I mean
+[22:23] <ar4chne> that was my arguement last week :P
+[22:23] Action: asparagi sighs
+[22:24] <asparagi> yah, you are pretty much always right
+[22:24] Action: asparagi sighs
+[22:24] Action: Dymaxion grins.
+[22:24] <asparagi> okay, okay
+[22:24] <ar4chne> haha, sorry aspa
+[22:24] <Dymaxion> We'll knock it out quickly -- there isn't too much to do.
+[22:25] <asparagi> what needs to go in?  paul sent out that list
+[22:25] Action: asparagi goes to get the list
+[22:26] <Dymaxion> I think I still stand by that as a good target
+[22:26] <asparagi> that's a pretty good list
+[22:26] <asparagi> does it include mike's requests?
+[22:26] <Dymaxion> DFD drawing is a little crunchy, so that'll be fun, and that's directly 2.0 relevant
+[22:26] <Dymaxion> yes
+[22:27] <asparagi> let's add rule performance problems
+[22:27] <Dymaxion> ok... that would be nice to have
+[22:27] <asparagi> and i think we should add renaming actions
+[22:27] <Dymaxion> and I think a little experience working on performance problems would be good for us in the future
+[22:27] <Dymaxion> ok
+[22:27] <Dymaxion> on a per-asset basis?
+[22:28] <asparagi> e.g. "update" -> "set"
+[22:28] <asparagi> yah
+[22:28] <Dymaxion> cool
+[22:29] <asparagi> what about our open bugs?  did they get triaged as part of making this list, too?
+[22:29] <Dymaxion> not really
+[22:29] <Dymaxion> I did look at them
+[22:29] <asparagi> (are you taking notes?)
+[22:29] <Dymaxion> basically, the bar I care about is that anything which is open now which will still be a problem in 2.0 should get fixed
+[22:29] <asparagi> ok.  then maybe we should take a quick pass at that
+[22:29] <Dymaxion> yeah
+[22:30] <asparagi> yah, that makes sense
+[22:30] <asparagi> so, about the DFD part
+[22:30] <Dymaxion> Beyond that, if it has a really big effect in using the system and isn't on the list, we should definitely look at it.
+[22:31] <asparagi> some kind of diagram editing would not be bad, for usability & experience
+[22:31] <asparagi> but are we sure that's the one we want?
+[22:31] <Dymaxion> DFDs?
+[22:31] <asparagi> e.g. maybe we should reopen the UML thing
+[22:31] <Dymaxion> Hrm.
+[22:31] <asparagi> yah..
+[22:32] <asparagi> or we could punt, doing no diagrams at all for v1
+[22:33] <asparagi> ara?
+[22:33] <Dymaxion> I dunno... I'm inclined to go with DFDs right now because a) we have most of a data model, b) it's what we've been talking about as far as the v1 methodology goes, and c) if we don't like it when we get to v2, I don't think the time we've spent getting a drawing system working will be wasted, and that we'll be able to switch it around pretty quickly.
+[22:33] <Dymaxion> I think we should revisit that decision for v2, although UML is pretty heavyweight if you aren't using it otherwise
+[22:34] <ar4chne> yes?
+[22:34] <asparagi> ok, that's fair
+[22:34] <asparagi> what do you think about 1.2.0 features?
+[22:35] <ar4chne> I think everything sounds fine
+[22:35] Action: asparagi is shamelessly trying to rope ara into being more opinionated :)
+[22:35] Action: Dymaxion grins.
+[22:35] <ar4chne> hehe
+[22:35] <ar4chne> I have opinions, it's just I don't feel I'm equipped right now to provide a lot of valid input
+[22:36] <ar4chne> part of me thinks maybe I could work on v1 while you guys work on v2 methodology
+[22:36] <asparagi> well, you usually turn out  to be right
+[22:36] <asparagi> whoa
+[22:36] <asparagi> that's a pretty fascinating idea
+[22:37] <ar4chne> like, you guys do v1 stuff that'd roll into v2
+[22:37] <ar4chne> but I could do bug fixes, etc
+[22:37] <ar4chne> and other things
+[22:37] <asparagi> like captain integration? :)
+[22:37] <ar4chne> hehe, yeah :P
+[22:37] <asparagi> well, really inter-operation is what i mean
+[22:38] <ar4chne> yeah, import and export
+[22:38] <Dymaxion> That sounds like a really cool idea to me
+[22:39] <asparagi> it only sounds cool to me if you don't want to get wrapped up in v2  theory.
+[22:39] <ar4chne> honestly, you guys are talking a bit above me
+[22:39] <ar4chne> and I think getting familiar w/ v1 will be helpful to further the mind meld
+[22:39] <asparagi> if it's just that the mind meld isn't working right yet,...
+[22:39] <asparagi> hmm, that's true
+[22:41] <asparagi> so, wanna play triage?
+[22:41] <ar4chne> absolutely
+[22:41] <Dymaxion> ar: I hope so... I want you to catch up so you're more comfortable working on the methodology stuff
+[22:41] <asparagi> http://bugs.octotrike.org/bugs/bugs/ListIssues/sortorder-urgency?Filterlogic=block&saved_filter=&f-statuses=on+hold&f-statuses=rejected&f-statuses=completed&f-fromname=&f-email=&filteroptions=1&ListIssues%3Amethod=Apply+filter+settings&page=ListIssues
+[22:41] <Dymaxion> yeah
+[22:42] <asparagi> yah, i think you will have a bunch of valuable input once you are up to speed
+[22:42] <Dymaxion> First two are already included; do we want to do 3?
+[22:42] <asparagi> oh. yah. it was biting me
+[22:43] <Dymaxion> ok
+[22:44] <Dymaxion> Next three are all UI issues; are any of them going to survive into v2?
+[22:44] <asparagi> no.   no grid, no trees
+[22:45] <Dymaxion> ok; two actors having the same name -- can we just stop that from being allowed?
+[22:45] <Dymaxion> It's nasty when you do it, but not worth fixing beyond that.
+[22:46] <asparagi> i move that we do the same thing as last time & keep the bug tracking system as our list of in features/checklist for release
+[22:46] <asparagi> yes, we could do that
+[22:47] <asparagi> file export & maxpath will still be an issue
+[22:47] Action: Dymaxion nods
+[22:48] <asparagi> do we want to tackle no good in-place feedback?
+[22:48] <Dymaxion> UI feedback is something that will still be a problem in 2, but I think we should wait until then so we know better what we want from it
+[22:48] <asparagi> k
+[22:49] <asparagi> 2nd text clause irrelevane
+[22:49] <asparagi> undo?
+[22:49] <Dymaxion> undo is going to be big
+[22:49] <asparagi> maybe we should just build undo into 2 from the start
+[22:49] <Dymaxion> Hrm.
+[22:49] <asparagi> it feels tentacly
+[22:49] <Dymaxion> You may be right... it's going to be a huge change
+[22:49] <asparagi> oh!
+[22:49] <Dymaxion> yeah
+[22:49] <asparagi> no!
+[22:50] <asparagi> it's not tentacly
+[22:50] <asparagi> remember when i broke everything to make the actions work right?
+[22:51] Action: Dymaxion nods
+[22:51] <asparagi> i think i made undo much easier.  we only want to undo things from the ui, and almost all ui actions flow through one set of classes already
+[22:51] <Dymaxion> ok, cool
+[22:51] <asparagi> so, 1 or 2
+[22:51] <asparagi> ?
+[22:51] <Dymaxion> Hrm.
+[22:51] <Dymaxion> You know, I'm going to say 1, tentatively.
+[22:51] <asparagi> does the evil empire have it?
+[22:52] Action: asparagi says, looking for market share
+[22:52] <Dymaxion> I think it's going to be big and it will take a while to get right, but I think it would be really nice for v1, and it will be easier to do on a simpler data model
+[22:52] <Dymaxion> probably, yeah
+[22:53] <asparagi> losing manually created information... still a problem in 2
+[22:53] <asparagi> possibly related to undo
+[22:53] <Dymaxion> yeah
+[22:53] <Dymaxion> versioning isn't even on this list, but it's also related
+[22:53] <asparagi> naw, that would be annoying to use.
+[22:53] <asparagi> wow, there's a can of worms
+[22:53] <Dymaxion> versioning?
+[22:53] <asparagi> yah
+[22:55] <asparagi> actually, we won't have data to lose in v2 for a while.
+[22:55] <Dymaxion> It's another big feature, probably about the same size as undo
+[22:56] <Dymaxion> yeah
+[22:56] <asparagi> oh, nevermind, we probably will
+[22:56] <asparagi> we will still generate threats, & the mapping of actions to capabilities might be like that
+[22:57] <Dymaxion> yeah
+[22:57] <Dymaxion> it should happen less often, though, which is good
+[22:57] <asparagi> well, let's go on a brief tangent
+[22:57] <Dymaxion> (until we get a risk model, but)
+[22:57] <asparagi> what is v2 going to be like?
+[22:58] <Dymaxion> Well, barring other plans, I'm assuming we'll stick with the same general UI
+[22:58] <asparagi> are we going to go straight for the intelligent paper metaphor?
+[22:58] <Dymaxion> Hrm.
+[22:58] <Dymaxion> I was assuming not; that may be worth revisiting
+[22:58] <asparagi> we will need a data model, not a flat list of assets & actors
+[22:58] <Dymaxion> Yeah
+[22:59] <asparagi> we need rules diagrams, not a rules tree
+[22:59] <Dymaxion> A data model builder thingy, a rules builder thingy, a dfd builder thingy
+[22:59] <asparagi> all of which are diagrammatic
+[22:59] <Dymaxion> yup
+[23:00] <asparagi> huh
+[23:00] <Dymaxion> We're going to need something to define use flows, and something else to define capability transitions (although I think those may look very similar)
+[23:00] <Dymaxion> Also both probably diagrammatic.
+[23:00] <asparagi> i couldn't tell you about the capability transitions
+[23:00] <Dymaxion> When we get a risk model, we'll probably just be adding values to all the other diagrams
+[23:01] <Dymaxion> that's a wild-assed guess, which will probably be wrong. :-)
+[23:01] <asparagi> well, threat-wise i think we have one
+[23:01] <Dymaxion> We're going to want some kind of query thingy, so we can ask our interesting questions.
+[23:01] <asparagi> it is more spreadsheet like than anything else
+[23:01] <asparagi> oh, yes. definitely
+[23:02] <asparagi> it is lame to have to write code to get answers
+[23:02] <Dymaxion> oh, the risk model for the threats, you mean?
+[23:02] <asparagi> yep
+[23:02] <Dymaxion> yeah -- I'm imagining some kind of search window with a bunch of dropdowns, for lack of a better idea; hopefully we'll improve on that, though
+[23:02] <asparagi> although i guess i'm not sure what a threat looks like anymore
+[23:03] <Dymaxion> Raaaaaaar!
+[23:03] <Dymaxion> Like that
+[23:03] <Dymaxion> Only hairier
+[23:03] Action: asparagi laughs hysterically
+[23:03] Action: asparagi can't stop laughing
+[23:04] Action: Dymaxion grins.
+[23:04] <asparagi> people are always so worried about how to identify them, and all this time has been wasted
+[23:04] <asparagi> if only they knew
+[23:04] Action: Dymaxion grins.
+[23:06] <asparagi> ok. so that sounds fine.  in a primarily diagrammatic interface like that, where does the now-obsolete data show up in the UI to potentially be retrieved?
+[23:06] <Dymaxion> Probably in a big bucket full of blocks of diagrams
+[23:06] <asparagi> so basically, the trash
+[23:07] <Dymaxion> Possibly as part of a design history slider/tree thing which we have in lieu of undo
+[23:07] <asparagi> right
+[23:07] <asparagi> well, it would implement undo, it just might look different
+[23:07] <Dymaxion> yeah
+[23:08] <asparagi> ok, it sounds like we should address losing manual info in v1
+[23:10] <Dymaxion> Ok
+[23:10] <Dymaxion> Do we want to do versioning?
+[23:11] <asparagi> ugh
+[23:11] <asparagi> i don't know how
+[23:11] <Dymaxion> Well, if we do a design history style undo, it's half done
+[23:11] <Dymaxion> We need some kind of merge thingy, but that's it.
+[23:12] <asparagi> why wouldn't i just use external functionality, e.g. svn?
+[23:13] <Dymaxion> Because that doesn't solve the merge problem, which is the hard part
+[23:13] <Dymaxion> We're effectively a binary format, as far as something like SVN is concerned
+[23:13] Action: asparagi doesn't want to solve the merge part, either
+[23:13] Action: Dymaxion grins.
+[23:14] <Dymaxion> Also, having versioning gets us a big part of the way to solving the multi-organization threat model problem.
+[23:14] <asparagi> ok.  let's put it on the list & do some research
+[23:14] <asparagi> e.g. maybe someone already has an obj vers lib
+[23:15] <Dymaxion> While we're on big hairy features, multi-user interaction
+[23:15] <Dymaxion> yeah
+[23:15] <Dymaxion> I don't know if that part will be the hard bit -- I think it's going to be dealing with the cascading changes and manually created info that are going to be hard for merge.
+[23:15] <asparagi> I was thinking of rejecting " Risks for external asset should be immune from grid reset"
+[23:15] <Dymaxion> yeah?
+[23:16] <asparagi> check the comment
+[23:16] <asparagi> http://bugs.octotrike.org/bugs/0084
+[23:16] <asparagi> multi-user interaction
+[23:17] <Dymaxion> yeah
+[23:17] <asparagi> let's leave it out for v1 but do at beginning of v2
+[23:17] <Dymaxion> hrm, ok
+[23:18] <asparagi> i know it's not parallel, but i think it is the most correct thing to do (84)
+[23:18] <Dymaxion> yeah -- I'm fine with that.
+[23:20] <asparagi> want to quit early tonight?
+[23:21] <Dymaxion> you getting tired?
+[23:21] <asparagi> yah
+[23:21] <Dymaxion> ok... I'm kinda beat too.
+[23:21] <Dymaxion> Go get some sleep. :-)
+[23:21] <asparagi> it's hard to stay awake when no one is talking
+[23:22] <Dymaxion> ar, is that ok with you?
+[23:22] <Dymaxion> sorry
+[23:22] <asparagi> sorry?
+[23:22] <Dymaxion> For not talking more. :-)
+[23:22] <asparagi> oh
+[23:22] <asparagi> 'scoo
+[23:23] <asparagi> i made some of the notes we need in the bugs, but not all
+[23:23] <asparagi> i guess i'm going to bed
+[23:23] <Dymaxion> ok
+[23:23] <asparagi> g'night
+[23:23] <Dymaxion> I've got notes of what we added that I'll send to list momentarily
+[23:23] <Dymaxion> 'night
+[23:23] <asparagi> :)
+[23:23] <ar4chne> gnite!
+[23:24] <asparagi> bye, ara!
+[00:00] --- Thu Mar  2 2006

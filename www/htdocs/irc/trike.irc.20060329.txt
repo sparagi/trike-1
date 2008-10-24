@@ -1,0 +1,241 @@
+[20:51] Action: Dymaxion heads for the Cafe via eir house (gotta get my power brick)
+[20:56] <ar4chne> howdy, aspa
+[21:04] <asparagi> hiya!
+[21:07] <ar4chne> getting ready to head to the cafe where I'm meetingg paul ^^
+[21:07] <ar4chne> bbiab!
+[21:10] <asparagi> awesome! :) see y'all soon
+[21:28] Action: Dymaxion just grabber eir power brick, will be there momentarily
+[21:36] <ar4chne> ok, here...I forgot my power tho :(
+[21:36] <ar4chne> my batt's almost dead
+[21:37] <asparagi> bummer. :(
+[21:38] <asparagi> and paul doesn't have matching power
+[21:39] <asparagi> so, i put a file up on Zettai: /usr/local/src/trike/Information-Data Formats-XSD-BEL.7.mcz
+[21:39] <asparagi> i think it will install into the current Trike release
+[21:39] <ar4chne> oki
+[21:39] <asparagi> which should be set up as a dev image already
+[21:42] Action: Dymaxion gets online.
+[21:43] <ar4chne> oh, so I was queried today about trike
+[21:44] <ar4chne> and whether it could be used for production
+[21:44] <asparagi> production of what?
+[21:44] <asparagi> threat models?
+[21:44] <asparagi> it doesn't do import
+[21:45] <ar4chne> I think it would be a good idea if we got the limitations of v1 documented like we were planning
+[21:45] <asparagi> so, i dunno.  i might say no.
+[21:45] <asparagi> yah.
+[21:45] <ar4chne> production...like a production environment
+[21:45] <asparagi> that would be good
+[21:46] <asparagi> are you suggesting that we do that tonight?
+[21:46] <ar4chne> :/
+[21:46] <ar4chne> no
+[21:46] <ar4chne> but we should probably do it next week
+[21:46] Action: Dymaxion grins
+[21:46] <asparagi> ok.  let's do it then.
+[21:46] <asparagi> Dym, did you see the file to get off Zettai?
+[21:47] <asparagi> it's /usr/local/src/trike/Information-Data Formats-XSD-BEL.7.mcz
+[21:47] <Dymaxion> yeah
+[21:48] <asparagi> you will have to load it via the monticello browser
+[21:50] <Dymaxion> which package do I want?
+[21:51] <Dymaxion> er, right, information-data-formats; what are the information diagram packages?
+[21:52] <asparagi> we aren't using them yet
+[21:52] <Dymaxion> ok
+[21:52] <asparagi> they are the data model for DFDs & Entity Modeling
+[21:52] Action: DymAra nods
+[21:52] <asparagi> sorry i'm slow
+[21:52] <DymAra> ok, loaded
+[21:52] <asparagi> ok
+[21:52] <asparagi> so now the question is, what to work on
+[21:52] <asparagi> i still don't remember my design
+[21:53] <asparagi> you could start by reading the XSDClassFactory commene
+[21:53] <asparagi> er, commene
+[21:53] <asparagi> argh
+[21:53] <asparagi> commenT.
+[21:53] <DymAra> ok
+[21:54] <asparagi> i had to comment some stuff out of XMLNamespaceResolver class>>initialize
+[21:54] <asparagi> to get it to load
+[21:58] <asparagi> ahhh
+[21:58] <asparagi> ok.  the place to start is actually XMLNamespace
+[21:59] <asparagi> read that comment next
+[21:59] <asparagi> then i would create an XMLNamespaceTest
+[22:00] <asparagi> you can use XSDClassFactoryTest as an example
+[22:00] <asparagi> to see if it worked, pop up a test runner from the open menu & go to Information-Data For... whatever I can't see
+[22:02] <asparagi> the next thing I would do is get the content of all the examples in the spec into XMLNamespaceTest so you can run some tests
+[22:03] <asparagi> this would be like the section non-normative tests in XSDClassFactoryTest (class side)
+[22:03] <asparagi> there's a naming convention in the XSDClassFactoryTest commene
+[22:03] <asparagi> T
+[22:06] <asparagi> are y'all still there?
+[22:09] <DymAra> yes, we're doing as our dictator is demanding
+[22:09] <DymAra> ;) 
+[22:09] <asparagi> oh, ok. :)
+[22:10] <asparagi> i'm working on figuring out how namespaceresolver works
+[22:10] <asparagi> so don't do that part, do something else :)
+[22:10] <DymAra> generateApplicableFacetTests  in XSDClassFactoryTest looks rather intimidating
+[22:10] <asparagi> yah
+[22:10] <DymAra> where did it originate from
+[22:10] <asparagi> i wrote it
+[22:10] <asparagi> oh, you mean the data
+[22:11] <asparagi> it came from the Primer
+[22:11] <asparagi> XSD part 0 or whatever
+[22:11] <DymAra> ok
+[22:11] <DymAra> hrm
+[22:11] <DymAra> we're conf00zled
+[22:11] <asparagi> ok, which part?
+[22:11] <DymAra> and it's unclear what you're expecting
+[22:11] <DymAra> all of it
+[22:11] <asparagi> ok
+[22:12] <asparagi> i tried to get more organized but it is just really big
+[22:12] Action: DymAra nods
+[22:12] <asparagi> so, what i'm hoping for tonight is that you can write some test cases for XML namespaces & the resolution thereof
+[22:13] <DymAra> I thought we were going to be having fun :P
+[22:13] <asparagi> meantime i'm trying to figure out which part of the namespace stuff is supposdd to go where so i can help walk you through writivg that stuff next time
+[22:13] <DymAra> ok
+[22:13] <asparagi> what would make it fun?
+[22:14] <DymAra> we'll make our own fun
+[22:14] <asparagi> ok..
+[22:15] <asparagi> basically, if you can get the data from the namespace spec into the form of test cases, that would be swell
+[22:15] <asparagi> the test generation section of XSDClassFactoryTest is scary & should probably be ignorded
+[22:16] <asparagi> the point is to get any XML snippets into the class side somehow, so we can ask for them when we run the tests
+[22:16] <asparagi> & then the tests themselves will go on the instance side
+[22:16] <asparagi> (of XMLNamespaceTest)
+[22:16] <asparagi> did that help?
+[22:19] <DymAra> eah
+[22:19] <DymAra> yes, thanks ^^
+[22:30] <asparagi> one test idea: XMLNamespace withUri: foo should == XMLNamespace withUri: foo
+[22:30] <asparagi> (replace foo with a URI)
+[22:44] <asparagi> ok. here are the rest of my notes about XMLNamespace:
+[22:44] <asparagi> XMLNamespace>>perElement: needs to issue the same instance every time it is asked with the same argument
+[22:44] <asparagi> see XMLNamespace class>>withUri: for a similar idea
+[22:44] <asparagi> test needed to confirm this as well
+[22:44] <asparagi> make sure you just hand them out for nil
+[22:45] <asparagi> if elementType is changed from nil to some type at some point in the future, it should get registered with the same-uri global space
+[22:45] <asparagi> what should happen if it's already there?
+[22:45] <asparagi> initializePerElementPartition should read:
+[22:45] <asparagi> 	contents at: #perElementAttributes put: Dictionary new
+[22:45] <asparagi> fix class comment: uri can't be nil, only '' (empty)
+[22:45] <asparagi> get a perElement XMLNamespace, then compare its allElements and globalAttributes to the one you got it from -- they should be ==
+[22:45] <asparagi> write atAttribute:
+[22:45] <asparagi> 	(which name spaces should it look in, in what order? will require reading spec)
+[22:45] <DymAra> help!
+[22:45] <DymAra> how do you escape '?
+[22:45] <asparagi> 'if you don''t like this string, it''s too bad'
+[22:45] <DymAra> gimnee
+[22:46] <DymAra> thx ^^
+[22:46] <asparagi> is that what you're looking for?
+[22:46] <asparagi> :)
+[22:46] <asparagi> (those are doubled single quotes)
+[22:46] <DymAra> yeah, I got it :)
+[22:46] <DymAra> and yes, that's what we were looking for
+[22:46] <DymAra> thx ^^
+[22:59] <asparagi> ok, now i'm hacking at XMLNamespaceResolver.  so don't change it.
+[22:59] <DymAra> uh, ok, we'll roll back all of our changes
+[22:59] <DymAra> ;-)
+[23:00] <DymAra> ok, we're done getting the examples in.
+[23:00] <DymAra> now what?
+[23:02] <asparagi> cool :)
+[23:03] <asparagi> earlier ii pasted my notes about other changes i think need to be made
+[23:03] <asparagi> e.g. XMLNamespace>>perElement: is wrong
+[23:04] <asparagi> that would be the next set of things to do
+[23:04] <asparagi> oh.
+[23:04] <asparagi> except, have you written tests for the examples yet, or just got the examples in as class-side methods?
+[23:05] <DymAra> so, fixing the code there, not writing tests?
+[23:05] <DymAra> now, we just have the examples in.
+[23:05] <asparagi> oh, ok.
+[23:05] <asparagi> better do the test writing part
+[23:05] <asparagi> so, pick an example method & paste it in here
+[23:05] <DymAra> not sure where to go from here; neither of us understand what you were doing with those test
+[23:05] <asparagi> & i will give you advice about how to get goivg
+[23:06] <DymAra> <x xmlns:edi='http://ecommerce.org/schema'>
+[23:06] <DymAra> <!-- the "edi" prefix is bound to http://ecommerce.org/schema
+[23:06] <DymAra> for the "x" element and contents -->
+[23:06] <DymAra> </x>
+[23:06] <asparagi> oh. dang
+[23:07] <asparagi> you need the resolver for that one
+[23:07] <asparagi> oh!
+[23:07] <DymAra> you're instilling us with the utmost confidence, dictator-maam
+[23:07] <asparagi> hee hee
+[23:08] <asparagi> well, hopefully you knew what you were in for when you headed for this 2-bit island
+[23:08] Action: DymAra peels another banana
+[23:09] <asparagi> ok.  do that list i pasted earlier, modifying actual code, while i figure out what those tests should look like
+[23:09] <DymAra> ok
+[23:11] <asparagi> we are hosed, all those tests from the spec require stuff that we haven't written or figured out yet
+[23:12] <DymAra> awesome
+[23:12] <DymAra> can you explain what this is doing? :
+[23:12] <DymAra> withUri: aURI a new or existing instance of me, with the given URI." 
+[23:12] <DymAra> newInstance |
+[23:12] <DymAra> URI asString = ''
+[23:13] <DymAra> well, that' didn't work
+[23:13] <DymAra> what does the withUri method do?
+[23:13] <DymAra> we can't read it
+[23:13] <DymAra> :)
+[23:16] <DymAra> or at least we think it's already doing what you said you want it to do
+[23:18] <asparagi> oh.  withUri: is great
+[23:18] <asparagi> it's perElement: that needs to do likewise
+[23:19] <asparagi> so, perElement: is supposed to create a child of this namespace, for a particular element
+[23:19] <asparagi> except, if that particular element already has one, it should answer that one instead of a new one
+[23:20] <asparagi> so the namespace needs to keep a list, indexed by element, of its children
+[23:20] <asparagi> this will mean adding a new instance variable to the namespace
+[23:20] <DymAra> wtf is a partition?\
+[23:21] <asparagi> see A.2 in the spec
+[23:21] <asparagi> or are you asking about the mathematical concept?
+[23:21] <DymAra> I dunno, your comments talks about partitions
+[23:21] <DymAra> and it's unclear what that means
+[23:22] <DymAra> (in PerElement)
+[23:22] <asparagi> oh.
+[23:22] <asparagi> yah, it's the A.2 sense
+[23:22] <asparagi> basically every 
+[23:22] <DymAra> ns spec?
+[23:22] <asparagi> xmlns is really 3 namespaces in the normal sense
+[23:22] <asparagi> yeah
+[23:23] <asparagi> sometimes only 2 of them are valid, sometimes (if it's a per-element namespace) they all are
+[23:24] <asparagi> so what's in perElement now is what you would do if you didn't already have such an element in your list of children
+[23:25] <asparagi> er, i mean if you had nothing for aClass in your list of children
+[23:32] <Dymaxion> Steph is tired and not feeling so well, so I'm going to head back to my place; bbia few.
+[23:32] <asparagi> ok..
+[23:32] <asparagi> see you shortly
+[23:32] <asparagi> bye, ara!
+[23:32] <asparagi> feel better
+[23:43] <Dymaxion> ok, back
+[23:44] <asparagi> whatcha got?  is it working?
+[23:45] <Dymaxion> just sat down again
+[23:45] <Dymaxion> the partition stuff is sort of breaking my head; I understand what they're trying to do, but the definition of what each set contains is ... unclear.
+[23:46] <asparagi> yah
+[23:46] <asparagi> it's pretty icky
+[23:46] <asparagi> basically, the sets are used by XSDClassFactory & XMLNamespaceResolver
+[23:47] <asparagi> do you want to just talk on the phone?
+[23:48] <Dymaxion> yeah, give me a minute
+[23:50] <Dymaxion> (getting set up to work on my desktop)
+[23:52] <Dymaxion> ok, call me?
+[23:52] <Dymaxion> (home line)
+[23:53] <Dymaxion> hrm.  There's a newer version of the namespace spec than the one you had linked
+[23:54] <Dymaxion> oops; try again?
+[23:56] <Dymaxion> http://www.w3.org/TR/xml-names11/
+[00:00] --- Thu Mar 30 2006
+[00:09] <asparagi> oh, except it's after 10pm & i have an 8am tomorrow
+[00:09] <asparagi> so i have to go
+[00:09] <asparagi> :(
+[00:10] <Dymaxion> ok
+[00:10] <asparagi> can you stick your code up on Zettai?
+[00:13] <Dymaxion> yeah, let me clean it up a little
+[00:14] <Dymaxion> ugh, it's been too long since I wrote any code.
+[00:15] <Dymaxion> How do I file out changes again?:
+[00:16] <asparagi> monticello browser
+[00:16] <asparagi> select Information-blah blah blah
+[00:16] <asparagi> then select a repository & hit save
+[00:16] <asparagi> it'll prompt you for comments
+[00:19] <Dymaxion> right
+[00:19] <Dymaxion> done
+[00:20] <asparagi> awesome.
+[00:20] <asparagi> permission denied
+[00:20] <Dymaxion> oh, right
+[00:20] <Dymaxion> hang on, I'll fix it
+[00:21] <Dymaxion> ok
+[00:22] <asparagi> got it
+[00:22] <asparagi> i will integrate & put one back
+[00:22] <Dymaxion> yay
+[00:22] <Dymaxion> there may be some noise -- look at it before you merge
+[00:22] <asparagi> (but not right this instant -- i'm going to bed)
+[00:22] <asparagi> ok
+[00:22] <asparagi> will do
+[00:23] <Dymaxion> sleep well
+[00:23] Action: Dymaxion heads off to read the XSD spec^W^W^W^Wsleep
+[00:23] <asparagi> heee hee
+[00:23] <asparagi> g'night

@@ -1,0 +1,10 @@
+[01:53] <Dymaxion> When you rename an asset, the actions in the tree don't seem to update.
+[01:53] <Dymaxion> (actors do)
+[01:53] <Dymaxion> It only updates when you change the rules
+[01:54] <Dymaxion> either via a menu or the grid
+[01:58] <Dymaxion> If an action is listed as unknown in the grid for one actor and never/sometimes/always for others and you delete all rules for that action, the action will show up as always for everyone but the actor listed as unknown.  Clicking on that grid cell does nothing the first time, as it actually updates the action to be unknown (and changes the rules); clicking it a second time will get to never.
+[01:59] <Dymaxion> You can't add two 'actor is in role' rules with the same role to an action if they both would be at the top level; not wrong, but should be documented.
+[02:01] <Dymaxion> reseting the risk grid shouldn't change the external asset, just like it doesn't change the external asset in the actions grid.
+[02:03] <Dymaxion> ok, filing the bugs I've found; none of them are release blockers.
+[02:03] <Dymaxion> I'
+[02:03] <Dymaxion> er, I'm also posting my release canidate build on dymaxion.org and notifying the list+3ric.

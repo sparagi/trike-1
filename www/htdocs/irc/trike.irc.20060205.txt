@@ -1,0 +1,164 @@
+[12:32] <ar4chne> morning
+[12:41] <asparagi> whoo hoo, a release candidate!
+[13:11] <Dymaxion> yup!
+[13:36] <asparagi> i like the release candidate a lot
+[13:36] <asparagi> i would be totally comfortable with shipping it
+[13:37] <Dymaxion> it's got my vote, obviously.
+[13:38] <asparagi> it took me almost an hour to download the rc; i don't have time to download the vm, too
+[13:38] <asparagi> i'd like to see the shipping .zips be similar to last time:
+[13:39] <asparagi> Trike1.1.2a.zip contains only the .image & .changes
+[13:40] <Dymaxion> yes; I'll package them together for the actual release
+[13:40] <asparagi> Trike1.1.2a-Win32.zip contains the above, plus the windows VM
+[13:40] <Dymaxion> right
+[13:40] <asparagi> and likewise Trike1.1.2a-OSX.zip
+[13:40] <asparagi> or something
+[13:41] <asparagi> before you ship those could you unpack the very zip file you are about to ship & drag the .image onto the .exe?
+[13:41] <Dymaxion> yes
+[13:41] <asparagi> just to confirm we aren't missing plugins in the shipped vm
+[13:41] <asparagi> i'm worried about OSProcess, mainly
+[13:41] <asparagi> i don't think we need the plugin for operation, but i'm not sure
+[13:42] <asparagi> & there was all that font junk before
+[13:42] Action: asparagi is needlessly being a worrywart
+[13:43] <Dymaxion> so, should I see if it runs without those two plugins?
+[13:43] <Dymaxion> I was going to zip up my VM as installed, which includes them.
+[13:43] <asparagi> don't try without SqueakFFIPrims
+[13:43] <Dymaxion> yeah, of course
+[13:43] <asparagi> but without OSProcess & anything else you've got, yeah
+[13:44] <asparagi> i don't think we should need FontPlugin anymore
+[13:45] <Dymaxion> cool
+[13:46] <asparagi> did it work?
+[13:47] <Dymaxion> yeah, ran without either one
+[13:47] <Dymaxion> (assuming, of course, that it isn't just finding them elsewhere on my system.
+[13:48] <asparagi> it's pretty dumb about looking for plugins
+[13:48] <asparagi> if they weren't in the same dir as either the VM or the .image, it won't find them
+[13:48] <asparagi> i think there might be an env var, but i don't think you'd have that set
+[13:49] <asparagi> awesome
+[13:49] Action: asparagi is excited
+[13:49] <Dymaxion> cool
+[13:51] <Dymaxion> zips
+[13:51] <Dymaxion> er, zips made
+[13:52] <Dymaxion> ok, shipping version is at http://dymaxion.org/trike/Trike1.1.2a.zip and http://dymaxion.org/trike/Trike1.1.2a-Win32.zip
+[13:55] <asparagi> you should email that to ara
+[13:56] <asparagi> i have the feeling she hasn't gotten her net things going yet & may not see stuff we leave for her here
+[13:58] <Dymaxion> yeah, sent to the list
+[13:58] <asparagi> Oh!
+[13:58] <asparagi> The screen shots are wrong
+[13:58] <asparagi> we added buttons since i took them
+[13:58] <asparagi> could you fix?
+[13:59] <Dymaxion> remind me how to do so?
+[13:59] <asparagi> get the morph looking the way you want, then alt-click on it.
+[13:59] <Dymaxion> and where's the set of screenshots that I should take?  I don't have the current set.
+[13:59] <asparagi> at about 11 o'clock there is a menu-looking halo
+[13:59] <Dymaxion> right
+[13:59] <asparagi> in that menu there's an export option
+[14:00] <Dymaxion> cool
+[14:00] <asparagi> hmm, lemme find where i left the old ones
+[14:01] <asparagi> they're on zettai: /usr/local/share/trike
+[14:01] <asparagi> replace that .pics.zip with an up-to-date one & tell ara, and we'll be golden
+[14:01] Action: asparagi does the happy dance
+[14:02] <Dymaxion> yay!
+[14:09] <Dymaxion> ok, done
+[14:09] <Dymaxion> I've added a copy of the exported xml for blog to the file as well
+[14:10] <asparagi> that's a good idea
+[14:11] <Dymaxion> and online and sent to the list
+[14:13] <Dymaxion> ok, I think that's everything on our release checklist except for actually putting it up.
+[14:13] <Dymaxion> Will you be able to make next wednesday's meeting?
+[14:14] <Dymaxion> I may try to write some more docs before then, but I'd like to have everyone look at them before we post them, and I think we needs some docs fast; a basic how to use the tool if we don't have one, and a list of all known UI quirks, bug or non-bug.
+[14:14] <asparagi> i don't think i'll be there :(
+[14:14] <asparagi> my flight leaves sacramento at 7:15pm
+[14:15] <Dymaxion> oh, suck
+[14:15] <asparagi> i don't think i'll be home until at least 10pm, and i have to pick up those kitties at 7am
+[14:15] <Dymaxion> well, we'll be ok without you if we need to; we can send stuff out for the list for review
+[14:15] <asparagi> could we meet thursday?
+[14:15] <Dymaxion> eww, ugh.  Yeah, don't worry about it, then.
+[14:16] <Dymaxion> Maybe?  I don't think there's anything going on then for me.
+[14:16] <asparagi> yah, i could also check email wednesday night when i get home
+[14:16] <Dymaxion> cool
+[14:16] <asparagi> ara & i are already set up to meet th as well, so that should work for us
+[14:16] <Dymaxion> oh, ok.
+[14:16] <Dymaxion> I'll try to make that then.
+[14:17] <Dymaxion> hopefully we can get some docs hammered out in one night, and do release planning the next week.
+[14:17] <asparagi> better post to the list about that, too, just in case
+[14:17] <asparagi> yah...
+[14:17] <Dymaxion> yeah, will do.
+[14:17] <asparagi> there are so many possibilities for what to do next :)
+[14:19] <Dymaxion> I'm going to list a few that we've talked about.
+[14:20] <asparagi> re: docs it seems like rather than trying to write them online, we should figure out what's needed together & then go write some separately, and pass them around for review
+[14:20] <Dymaxion> yeah
+[14:24] <Dymaxion> ok, sent out
+[14:25] Action: Dymaxion will try to at least start the UI quirks docs before the next meeting.
+[14:25] <Dymaxion> Ok, time for me to go take a shower and get some work done on other stuff.
+[14:25] <Dymaxion> Enjoy your trip!
+[14:28] <asparagi> see ya later! :)
+[14:29] <asparagi> thanks for all your help.  this is totally awesome
+[14:32] Action: Dymaxion grins.
+[14:32] <Dymaxion> Thank you!
+[14:33] <Dymaxion> It feels like we've finally shipped something really useable now.
+[16:09] <asparagi> hey, paul, are you listening at the moment?
+[16:09] <asparagi> i have a 5 minute thought experiment
+[16:10] <Dymaxion> yeah
+[16:10] <asparagi> in some situations, one asset enables access to another
+[16:10] <Dymaxion> right
+[16:10] <asparagi> when you sort threats by exposure, that should be factored in
+[16:11] <Dymaxion> yes
+[16:11] <asparagi> the question is, should it be factored into the value of the asset, or perhaps via a graph traversal?
+[16:11] <asparagi> and, if via a graph traversal, what do we need in the graph in order to make that possible?
+[16:12] <Dymaxion> via graph traversal, definitely.
+[16:12] <asparagi> it seems like putting it in the asset value is making everything too fuzzy
+[16:12] <Dymaxion> We need "implement another threat that makes this threat possible" to work.
+[16:12] <Dymaxion> Which we have all the information for; it can be our first chaining attack tree.
+[16:12] <asparagi> but it's hard not to put it in there, when you are trying to figure out what the asset value should be
+[16:13] <asparagi> we don't actually have all the information for that, i don't think
+[16:13] <Dymaxion> it really doesn't belong there, though -- it may have another, intrinsic value, which is what we should capture.
+[16:13] <Dymaxion> Not?
+[16:13] <Dymaxion> er, No?
+[16:13] <asparagi> even if we had use flows, i don't think we do...
+[16:13] <asparagi> e.g. suppose asset #1 in a system is a sort of pre-cursor to asset #2.
+[16:13] <Dymaxion> Why can't we say that manually?
+[16:14] <asparagi> oh, sure, we could say it manually
+[16:14] <Dymaxion> I mean, eventually we should do it automatically, but I think being able to do it manually for now would be a good thing.
+[16:14] <asparagi> when you said "we have all the information for" i took that to mean "all the information needed to calculate that is already in our possession"
+[16:15] <asparagi> yah, that's what referenceattacks were fore
+[16:15] <asparagi> er, for
+[16:16] <asparagi> yeah, i agree that this doesn't belong in the value, but i'm finding it hard to formulate advice for ignoring it when picking asset values
+[16:16] <Dymaxion> yeah
+[16:16] <asparagi> i think asset values are way messed up
+[16:16] <Dymaxion> Yeah, probably.
+[16:17] <Dymaxion> maybe what we want are action values
+[16:17] <asparagi> i wonder what would happen if we just used the risks
+[16:17] <asparagi> and this chaining thing
+[16:17] <Dymaxion> I dunno... I think we capture something really important with asset values.
+[16:17] <asparagi> the riskFactor really is an action value, sort of
+[16:17] <Dymaxion> if nothing else, because our risk system doesn't give us enough range
+[16:18] <asparagi> it's just really hard not to get those other things mixed in when you're picking it
+[16:18] <Dymaxion> it's an attempt to patch asset values for the fact that doing different things has different value
+[16:18] Action: Dymaxion nods.
+[16:18] <asparagi> two sides of the same coin, i guess
+[16:19] <asparagi> ok.  i'll try to do something based on the graph
+[16:19] Action: Dymaxion nods.
+[16:19] <asparagi> thanks
+[16:19] <asparagi> crap, i might have to take my personal hardware after all
+[16:19] <Dymaxion> Actually calculating it is going to be trick -- I think use flows might get us most of the way there, but I agree that I don't know if we have them for real.
+[16:20] <asparagi> they don't express causality, only sequence
+[16:20] <asparagi> maybe they should have capability nature as well
+[16:20] <Dymaxion> yeah
+[16:20] <Dymaxion> I think they'll have to
+[16:20] <asparagi> if they had that we would probably have enough
+[16:21] Action: Dymaxion ndos
+[16:21] <asparagi> i don't think we should finalize that draft paper until we have working engine to implement it
+[16:21] <Dymaxion> ok
+[16:21] <asparagi> there is too much risk that we will change our minds in a big way
+[16:22] <Dymaxion> I want to revise it to bring it up to current on v1, and fill in some more examples; if I have time to get this done, I may want to put out a second draft that's a bit closer to current.
+[16:22] <Dymaxion> but I agree.
+[16:22] <asparagi> that's cool..
+[16:22] <asparagi> i just don't want to define v1 in a fixed way until it settles, that's al
+[16:23] <Dymaxion> yeah
+[16:44] <asparagi> our current exposure calculation is so full of holes i can't even describe it coherently
+[16:44] <asparagi> bah
+[16:45] <asparagi> i don't have time to figure out & implement something better before i need to have this out
+[16:45] <asparagi> i suppose i could just omit it.
+[16:45] <asparagi> maybe i'll do that.  black boxes r us.
+[16:59] <asparagi> well, see y'all when i get back
+[17:03] Action: Dymaxion grins
+[17:03] <Dymaxion> see you later
+[00:00] --- Mon Feb  6 2006

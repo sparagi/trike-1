@@ -1,0 +1,99 @@
+<!--#set var="pageTitle" value="FAQ" -->
+<!--#set var="pageDescription" value="Frequently Asked Questions about the Trike tool or threat modeling methodology." -->
+<!--#include file="header.shtml" -->
+
+<div id="contenthdr">Questions</div><br>
+
+  <!--#include file="1q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="2q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="3q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="4q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="5q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="6q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="7q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="8q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="9q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="10q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="11q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+  <!--#include file="12q.shtml" -->
+  <!--#include file="faqQuestion.shtml" -->
+
+<div id="contenthdr">Answers</div><br>
+
+  <!--#include file="1q.shtml" --><!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="1a.shtml" --><!--#include file="faqAnswerFooter.shtml" -->
+  <!--#include file="2q.shtml" --><!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="2a.shtml" --><!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="3q.shtml" --><!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="3a.shtml" --><!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="4q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="4a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="5q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="5a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="6q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="6a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="7q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="7a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="8q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="8a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="9q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="9a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="10q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="10a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="11q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="11a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+  <!--#include file="12q.shtml" -->
+  <!--#include file="faqAnswerHeader.shtml" -->
+  <!--#include file="12a.shtml" -->
+  <!--#include file="faqAnswerFooter.shtml" -->
+
+<!--#include file="footer.shtml" -->
+

@@ -1,0 +1,41 @@
+[13:50] <Dymaxion> I can't wait to push this release out so we can start on new feature work... I'm dieing to have a use-flow editor.
+[13:53] <ar4chne> 2hehe :) yeah ^^ it'll be nice
+[13:53] <ar4chne> altho, :( it's looking like I'm not going to have captain ready by then
+[13:54] <ar4chne> tooooo much stuff to do
+[13:54] <ar4chne> work sux
+[14:14] <Dymaxion> yeah, it does
+[16:50] <Dymaxion> Hey, I don't seem to be able to tunnel into hyphos -- any ideas?
+[16:51] <Dymaxion> I'm presenting the key that I sent to you, but it just jumps past it and asks for a password (and not the key passphrase)
+[17:14] <ar4chne> hmmmm...weird
+[17:14] <ar4chne> can you resend the key so I can check it?
+[17:17] <ar4chne> oh, it might be the wrapping
+[17:17] <ar4chne> I was having some weird problem with that
+[17:18] <ar4chne> oh...btw...are you using -N?
+[17:22] <ar4chne> ok, I repasted your key in there
+[17:23] <ar4chne> it looked identical to what I had, afaikt
+[17:23] <ar4chne> afaict*
+[17:23] <ar4chne> what are your ssh params?
+[17:31] <Dymaxion> sorry, back
+[17:32] <Dymaxion> ssh -fvN -L 3690:localhost:3690 hyphoselida.net
+[17:32] <Dymaxion> (-f is auto-background on connect, -v is verbose)
+[17:33] <Dymaxion> yeah, still nothing.
+[17:36] <ar4chne> weird
+[17:36] <ar4chne> oh, wait
+[17:36] <ar4chne> you're not specifying the trikesvn user
+[17:36] <ar4chne> trikesvn@hyphoselida.net
+[17:39] <Dymaxion> ah, ok, duh
+[17:41] <Dymaxion> sweet, working!
+[17:41] <ar4chne> rad :)
+[17:52] <ar4chne> oh, can you try it again?
+[17:52] <ar4chne> I want to make sure I didn't break anything
+[17:55] <Dymaxion> hang on
+[17:57] <Dymaxion> still works. :-)
+[17:57] <ar4chne> awesome :D
+[17:58] <ar4chne> I'm working on the website ^^
+[17:58] <ar4chne> work is so dead dead today
+[17:58] Action: Dymaxion grins.
+[17:58] <Dymaxion> the office is kind of dead here too, but I've got a whole lot to do.
+[17:58] <ar4chne> I'm waiting on emails
+[17:59] <Dymaxion> whee
+[19:50] <Dymaxion> argh argh argh I want attack trees to stop sucking
+[00:00] --- Wed Dec 28 2005

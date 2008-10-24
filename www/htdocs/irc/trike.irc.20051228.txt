@@ -1,0 +1,209 @@
+[14:00] Action: Dymaxion waves
+[14:14] <asparagi> hey!
+[14:14] <asparagi> i saw your note about attack trees
+[14:32] <Dymaxion> yeah?
+[14:32] <asparagi> well, we have large parts of the model written already
+[14:33] <asparagi> and model writing goes _way_ faster than UI work
+[14:33] <Dymaxion> cool. :-)
+[14:33] <asparagi> so i think if we can just get 1.1.2a out, we'll be pretty good pretty fat
+[14:34] <asparagi> er, fast
+[14:34] <Dymaxion> I think that's really all stuff we're looking at doing for the next release anyway, that's just my preference on how to prioritize it
+[14:34] <asparagi> yeah.. it makes sense
+[14:34] <Dymaxion> I don't know if that came out more vitriolic than I intended -- I'm a little frustrated, but it's not a huge massive deal or anything.
+[14:34] <asparagi> i mean, writing the model first makes sense in general
+[14:34] Action: Dymaxion nods.
+[14:35] <asparagi> i didn't feel offended or anything
+[14:35] <asparagi> i feel like right now, you are our early warning system
+[14:35] <Dymaxion> it's more that I'd like to write a bunch of pieces of model all at once and get them tested before we start on UI stuff
+[14:35] Action: Dymaxion grins.
+[14:35] <asparagi> if we get any other users, they will say the same thing soon enough
+[14:36] <Dymaxion> I slacked way too much getting this TM done because the attack tree editing stuff is so bad and so painful to do, and because manual attack trees in a real system are a nightmare
+[14:36] <Dymaxion> Now it's biting me. :-)
+[14:36] <asparagi> yah... :(
+[14:40] <asparagi> so it's totally silly, but i really want some other Squeak folks to start using Trike. especially the ones who do Morphic.  then i want them to say "how can i help?" so i can say "please, please, fix the highlighting"
+[14:40] <asparagi> i don't understand why the highlighting is so hard....
+[14:40] <Dymaxion> hrm, that's really not a bad idea.
+[14:41] <Dymaxion> Is there anyone else who does squeak and security?
+[14:41] <asparagi> matt hamrick
+[14:41] <Dymaxion> where is he?
+[14:41] <asparagi> luciano notarfrancesco
+[14:41] <asparagi> bay area and argentina, respectively, i think
+[14:41] <asparagi> i don't know if either does morphic
+[14:41] Action: Dymaxion nods.
+[14:42] <Dymaxion> Water seemed a little interested in it when we last talked.
+[14:42] <asparagi> there might be some others.  does randall schwartz do any security stuff these days?
+[14:42] <asparagi> yeah, but water will just want us to use slate
+[14:43] <Dymaxion> I think he still might do a little bit -- is he a squeaker?
+[14:43] <asparagi> i mean, it's sort of like trying to get craig to do anything related to squeak.  all he wants to do now is spoon
+[14:43] <Dymaxion> yeah, I know
+[14:44] <asparagi> apparently a little.  or at least, he responded to a squeak post i made on the hackers list a few months ago
+[14:44] <asparagi> he sounded like he was hacking on it
+[14:44] Action: Dymaxion nods.
+[14:44] <Dymaxion> Hrm.
+[14:45] <asparagi> not a long list
+[14:45] <Dymaxion> Well, we should send them mail. :-)
+[14:45] <Dymaxion> Maybe when 1.1.2a is out?
+[14:46] <asparagi> hmm, ok.  that sounds good.  maybe i'll also announce 1.1.2a on squeak-dev and hackers-l.  we should put it on webappsec again, too.
+[14:46] <asparagi> if we have all these stupid issues worked out
+[14:46] <asparagi> i don't want to broadly announce something that looks this stupid.
+[14:49] Action: Dymaxion nods.
+[14:50] <Dymaxion> It's light years ahead of where we were, in terms of stability, etc., but that's not as obvious from the outside as it should be.
+[16:26] <asparagi> a while ago, didn't you want a button to mark all unknown actions as never?
+[16:26] <asparagi> do you still want that?
+[16:26] <asparagi> (or menu item or whatever)
+[16:30] <Dymaxion> Yes!
+[16:30] <Dymaxion> definitely
+[16:30] <Dymaxion> that will make filling out that table *much* faster.
+[16:30] <asparagi> ideas about where it might go?
+[16:30] <Dymaxion> Heck, I'll settle for a method. :-)
+[16:31] <asparagi> ok
+[16:31] <asparagi> i'll start with that
+[16:31] <Dymaxion> next to the legend down in the right hand corner, we can have a column of buttons "mark all actions as:"
+[16:31] <Dymaxion> how's that sound?
+[16:31] <Dymaxion> we probably want to be able to mark them all as unknown as well, to blank out the grid and start over...
+[16:32] <asparagi> how about "mark all unknown actions as:", and have it change the existing key to buttons?
+[16:32] <Dymaxion> oh, right
+[16:32] <asparagi> except unknown would do them all?
+[16:32] <Dymaxion> yeah, that sounds good.
+[16:32] <asparagi> ok
+[16:33] <Dymaxion> I don't know about the last bit -- it sounds bad from a UI perspective, especially as we don't have undo, but it's also a handy thing to be able to do.
+[16:33] <Dymaxion> maybe we want a "reset grid" button below the legend for that...
+[16:34] <asparagi> mmm.
+[16:34] <asparagi> k, lemme try some stuff & see how it looks
+[16:34] <Dymaxion> oh, and I guess we should have the same thing for the risks/attacks grid, but that's not a high priority for me, at least.
+[16:35] <ar4chne> howdy :)
+[16:35] <Dymaxion> hey
+[16:40] <Dymaxion> blargh
+[16:41] Action: Dymaxion looks at adding a whole mess of semi-spurious assets into a system to make up for the fact that the state machine doesn't model system state.
+[16:42] <Dymaxion> Well, it could, I guess.
+[16:42] <Dymaxion> Multiple simultaneous states are messy.
+[16:44] <Dymaxion> and weird to even think about drawing.
+[16:50] <asparagi> hiya, S!
+[16:51] <asparagi> it seems like it is supposed to model system state.. if it doesn't, what the heck good is it?
+[16:57] <asparagi> i need a whiteboard. we have notes about our release plan.  i'm going to erase it
+[17:00] <ar4chne> hey guys...what sort of categories do you think we should have on the website?
+[17:01] <ar4chne> like...source, papers, slides, contact?
+[17:03] <asparagi> i like the names papers, talks, tools that we have now
+[17:03] <asparagi> contact seems good
+[17:04] <asparagi> something for related work would be nice -- e.g. pointers to our competitors, some content comparing various methodologies..?
+[17:05] <asparagi> that's all i can think of
+[17:05] <ar4chne> hmmm...can you come up w/ a short name for 'other methodologies'?
+[17:06] <asparagi> do you want one word?
+[17:06] <ar4chne> yeah...otherwise it just looks gangly
+[17:06] <asparagi> context?  related?
+[17:06] <asparagi> competition? ;)
+[17:06] <ar4chne> haha :P
+[17:07] <ar4chne> oh, btw!  SUNSHINE!
+[17:07] <ar4chne> it must be just for you :)
+[17:07] <asparagi> yeah! i went outside to enjoy it & there was a major car wreck outside the front door :/
+[17:08] <asparagi> comparison
+[17:08] <ar4chne> comparisons?
+[17:08] <asparagi> yeah.... :)
+[17:08] <asparagi> or perspectives
+[17:08] <ar4chne> I think comparisons > perspectives
+[17:08] <asparagi> i wish i could think of something shorter, easier to spell
+[17:08] <ar4chne> but whatever you guys like
+[17:08] <ar4chne> yeah
+[17:09] <asparagi> there's always stuff :)
+[17:09] <asparagi> ooh, how about other?
+[17:10] <asparagi> (or others)
+[17:10] <asparagi> props ..
+[17:12] <asparagi> i think right now i like related best actually.  it can cover both comparisons to related tools & methods, and be somewhere to put our bibliography/stuff we built off of
+[17:12] <asparagi> maybe we need 2 sections, comparisons & roots or something
+[17:15] <ar4chne> k, I'll make it related
+[17:16] <Dymaxion> related sounds good
+[17:17] <Dymaxion> asparagi: it does model system state, but I've got a weird case.
+[17:18] <Dymaxion> Request is #user -> +#requested, and Approve is #admin, #requested -> -#requested
+[17:18] <Dymaxion> but there's no single transition into the state #admin, #requested.
+[17:18] <Dymaxion> which I guess doesn't actually matter, but it's still weird if you think about drawing it.
+[17:19] <ar4chne> what server is this?
+[17:20] <Dymaxion> this is a TM I'm working on for work
+[17:20] <Dymaxion> sorry, that's my shorthand for states in a state model, not irc channels. :-)
+[17:21] <ar4chne> no, what server is this irc channel being hosted on?
+[17:21] <asparagi> irc.freenode.net?
+[17:21] <ar4chne> ah, oki
+[17:21] <ar4chne> thx :)
+[17:23] <asparagi> seems like usually, there would be an object whose state would be requested, rather than it being an overall system state
+[17:23] <asparagi> how does one get into #admin to start with?
+[17:24] <Dymaxion> there's a pair of Login #anon -> -#anon, +#user and Admin Login #anon -> -#anon, +#admin transitions
+[17:25] <Dymaxion> and yes, the problem is that there are multiple objects which need to have their state represented, in this case the state of the user and the state of the request-thing
+[17:25] <Dymaxion> Or rather, what ever asset is attached to the request -- I don
+[17:26] <Dymaxion> don't think we should be tracking requests like that as though they were objects with state, if at all possible.
+[17:26] <Dymaxion> The SM the way we've been thinking of it only tracks state for one object, really -- obviously needs to be fixed/rethought.
+[17:44] <asparagi> well, i'm not inclined to spend much time thinking about it -- ross method already solves the problem
+[17:45] <asparagi> so the ppl who own that nice little house are somewhere in bend, or, and their real estate agent cannot get ahold of them.
+[17:45] <asparagi> i am having way stress...
+[17:46] <asparagi> but i will take a few deep breaths & go right back to working on the known actor problas
+[17:46] <asparagi> er, problems
+[17:50] Action: Dymaxion hugs you
+[17:50] <Dymaxion> I'm sorry
+[17:51] <Dymaxion> and yeah, I don't want to spend too much time thinking about it either, but I will probably spend a little bit on it, as it effects 1.1.3
+[17:52] <asparagi> i think we should also spend some time thinking about 1.1.3 vs, say, 2.0.0..
+[17:52] <asparagi> i mean, one of these is a lot of work.
+[17:52] <asparagi> i dunno. i shouldn't say anything right now, i'm just freakin'
+[17:53] <Dymaxion> yeah, I know....
+[17:53] <asparagi> thanks for the sympathy. :)
+[17:54] <Dymaxion> I'd think I'd like to do the model parts of 1.1.3, so we have something that we can use in the mean time, but I'm open to options, including dropping the UI portion and attacking 2.0.
+[17:59] Action: asparagi thinks longingly of the entity modeling book's spec for huge swaths of the data model in 2.0
+[17:59] <asparagi> you're probably right...
+[17:59] Action: Dymaxion grins.
+[17:59] <Dymaxion> Trust me, I really want 2.0 too.
+[18:04] <Dymaxion> I keep getting it out to start reading and not having time...
+[18:20] <ar4chne> do you guys have any color prefs?
+[18:20] <ar4chne> I was thinking white + red and grey as an accent
+[18:20] <ar4chne> trike red, of course :)
+[18:27] <asparagi> oooh, with the logo colored with the same red on the trike and the grey on the octopus?  :) :)
+[18:28] <asparagi> hi, casper!  who are you & how did you find us? 
+[18:30] <Dymaxion> sounds good to me
+[18:34] <asparagi> hey Paul, do you have that threat risk data for blog?
+[18:35] <Dymaxion> no, not yet. :-(
+[18:35] <Dymaxion> I can do that tonight
+[18:35] <asparagi> ok.. just trying to get a handle on our final list
+[18:36] <asparagi> i think we are pretty close
+[18:36] <Dymaxion> cool
+[18:40] <ar4chne> hmmm...how about we leave the logo b&w for now
+[18:40] <ar4chne> :D and then when we finish 2.0 we have it in color
+[18:40] <ar4chne> that way the octopus sort of gets more personality at the same pace as the trike tool ^^
+[18:41] <Dymaxion> that works
+[18:45] <asparagi> sure
+[18:47] <ar4chne> oki, heading home for a bit
+[18:47] <ar4chne> what time are we meeting?
+[18:51] <Dymaxion> 7ish, like normal?
+[18:55] <asparagi> sounds good to me
+[19:19] <ar4chne> oki, just making sure ^^
+[19:29] Action: Dymaxion grins.
+[19:29] <Dymaxion> I'll even try to be on time this time.
+[19:29] <Dymaxion> (sigh)
+[19:29] <ar4chne> *blush* me too
+[19:30] <Dymaxion> hey, you've got a way better track record there than I do
+[19:34] <ar4chne> ;P
+[19:36] <asparagi> should i run out somewhere (subway, taco del mar?) and get everybody some food?
+[19:37] <Dymaxion> ooh, that would be all sorts of cool
+[19:37] <ar4chne> oh, it's up to you aspa
+[19:37] <ar4chne> if you're going to, I could pop by now and go with
+[19:37] <Dymaxion> taco del mar, maybe?
+[19:41] <asparagi> yeah, i will & tdm sounds fine.  i was thinking of leaving here at 6:40pm sharp so as to be back on time with hot food
+[19:45] <Dymaxion> hrm... almost super pork on spinach with pinto beans, no lettuce, and mild salsa?
+[19:46] <Dymaxion> I think I've eaten their too often. :-)
+[19:46] <asparagi> whoo hoooooo!  they accepted the offer.
+[19:47] <Dymaxion> for the house?
+[19:47] <Dymaxion> kick ass!
+[19:47] <asparagi> they will fill out the paperwork when they get back from Podunk, OR on Monday
+[19:47] <asparagi> i feel so much better. :)  and now i can proceed with my enormous buying-a-house checklist
+[19:48] <Dymaxion> kick ass
+[19:48] <Dymaxion> this calls for celebration of some sort
+[19:48] <asparagi> i bet they are happy, too -- since i bumped into them they know i am going to use their shop.
+[19:49] <Dymaxion> probably involving xml. :-)
+[19:49] <Dymaxion> cool
+[19:54] <ar4chne> lol :P poor aspa
+[19:55] <ar4chne> 'congrats! on the house...lets write some xml forms!'
+[19:55] <ar4chne> btw :) congrats on the house
+[20:00] Action: Dymaxion grins.
+[20:03] <asparagi> hee hee :)
+[20:04] <asparagi> so S, are you joining me for the taco run?
+[20:08] <ar4chne> jep jep, getting ready to take off
+[20:08] <ar4chne> haha, kinda getting my last moment of veg in ;)
+[20:09] Action: Dymaxion grins.
+[20:09] <Dymaxion> I'm going to head home in ten or twenty and then drive over.
+[20:20] <ar4chne> oki, heading down now
+[00:00] --- Thu Dec 29 2005

@@ -1,0 +1,26 @@
+<!--#set var="pageTitle" value="Tools" -->
+<!--#set var="pageDescription" value="Download, installation, use & versioning information for the Trike tool." -->
+<!--#include file="header.shtml" -->
+
+<div id="contenthdr">Released Trike Prototypes</div>
+<p>You can <a href="https://sourceforge.net/project/showfiles.php?group_id=239449&package_id=291181">download publicly released versions of Trike from SourceForge</a>.</p>
+
+<div id="contenthdr">Development Versions of Trike</div>
+<p>You <a href="http://www.squeaksource.com/Trike.html">can get current development versions of Trike from SqueakSource</a> for a little longer, until we get ourselves moved over to SourceForge.</p>
+
+<div id="contenthdr">Now What?</div>
+
+<p>Now that you have Trike, here are some places to look for more information about what it's good for and how to use it.
+<ul>
+<li><a href="/faq">FAQ</a>
+<li><a href="http://trike.wiki.sourceforge.net/">wiki</a> (you'll find the largest quantity of information here)
+<li><a href="https://sourceforge.net/mail/?group_id=239449">mailing lists</a>
+<li><a href="/irc">IRC</a>
+<li><a href="/talks">talks</a> and <a href="papers">papers</a>
+</ul>
+
+<p>
+Please <a href="https://sourceforge.net/tracker/?group_id=239449">report bugs and request features</a>!
+</p>
+
+<!--#include file="footer.shtml" -->

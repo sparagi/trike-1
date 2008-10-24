@@ -1,0 +1,11 @@
+[14:01] <Dymaxion> so, where/when is this paper going to be coming out?
+[15:15] <ar4chne> uninformed.org/?v=3
+[15:15] <ar4chne> I'll send an email to this guy letting him know we updated the site
+[15:15] <ar4chne> as soon as I know the dns transfered
+[15:26] <Dymaxion> it transfered last night, we're just waiting for cache timeouts now, and as we were pretty low profile, that probably isn't much of a problem.
+[15:27] <Dymaxion> Hosts that are obeying our TTL should have expired the DNS record after an hour anyway.
+[15:29] <ar4chne> cool...I sent him a msg
+[15:35] <Dymaxion> cool... which article are we supposed to be getting a mention in?
+[15:37] <Dymaxion> ah, cool, found it.
+[15:37] <Dymaxion> Hopefully he'll put the reference to us in there soon. :-)
+[00:00] --- Thu Jan  5 2006

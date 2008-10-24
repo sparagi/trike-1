@@ -1,0 +1,154 @@
+[12:05] <ar4chne> morning, aspa :)
+[12:14] <asparagi> morning, ara!
+[12:15] <asparagi> i'm afraid i didn't write down enough stuff about the web site for the meeting notes.  i can't remember what-all we talked about
+[12:15] <ar4chne> no worries :) I think I have most of it in my head
+[12:15] <asparagi> so if you want to fix them that would be great. or if it's enough detail for you, that's great too
+[12:15] <asparagi> cool
+[12:16] <ar4chne> oh, and I didn't think about it...but maybe you don't know?
+[12:16] <ar4chne> you can drag files over to apps in windows and it will open that file with that app, you know?
+[12:16] <ar4chne> so you can have an editor in your quicklaunch bar and just drag files to it
+[12:16] <asparagi> i think i tried that and it didn't work with those
+[12:16] <ar4chne> ah, well :)
+[12:17] <ar4chne> I'm adding txt to the end as we type!
+[12:17] <asparagi> because i have to read them in wordpad, because of the line ending convention, and instead of opening it it adds a little image of the file icon
+[12:17] <asparagi> basically i am having a hard time because my OS sucks
+[12:19] <asparagi> i guess the SqueakNOS (Squeak No OS) folks put out a release that runs on VMWare, and another guy has a native machine compiler for x86.  so if i wait 3 months someone will put them together and all i will need is applications :)
+[12:19] <ar4chne> hehe
+[12:19] <asparagi> i really appreciate the .txt endings -- they will make my life better
+[12:25] <ar4chne> oki, if you update in that dir, everything will be magical ^^
+[12:30] <asparagi> YAY!
+[12:30] <asparagi> It worked.
+[12:33] <ar4chne> :)
+[12:36] <ar4chne> oh, and I was fiddling with mailman earlier
+[12:37] <ar4chne> and what I thought was fixed was not
+[12:37] <ar4chne> so it's a GOAL for today
+[12:37] <ar4chne> and then it will be done and pretty, promise
+[12:37] <ar4chne> otherwise you guys can...I dunno...stab me or something
+[12:49] Action: asparagi giggles
+[12:50] <asparagi> well, i checked the meeting notes into SVN; you can use them as a test message if you want
+[12:53] <asparagi> speaking of SVN..  we're going to use it as a back end for SqueakSource, right?
+[12:55] <asparagi> so, why not go back to plan A, in which when you go to check something into SVN, it removes the version numbers & uses tags instead, and when you check it out it reads the tags & puts them in the filename?
+[12:56] <asparagi> my motivation is that if we did it right, we could update SVN once, and then have everything work totally offline (including the build scripts, in place), and when you get online you could just commit to SVN.
+[12:56] <asparagi> then we wouldn't have to screw with SqueakSource further at all
+[13:00] <asparagi> also, i'm trying to figure out how to check in the build scripts.  i was thinking make a subdirectory of src/trike, named build, and stick them & the instructions there.  but then i'm like, wouldn't it be convenient if you didn't have to move anything around?  as in, just run the scripts in place.
+[13:04] <asparagi> this might mean a path like src/trike/src, and then folks would create their own working subdirectories (and NOT check them in) parallel to that.  i don't really like src/trike/src as a path (maybe src/trike/modules?), and i'm worried that someone will accidentally check in their working directory.  i have mixed feelings about causing everyone's directory structure to be similar -- kind of convenient but kind of dictatorial.  but o
+[13:26] <ar4chne> oh, can you use an env var in the script?
+[13:27] <ar4chne> so something like TRIKE_HOME or TRIKE_SRC to point at the src directory?
+[13:28] <ar4chne> (sorry, ran away to a meeting for a bit?
+[13:46] <asparagi> looks like yes, we can read environment variables, but perhaps only on unix flavors (probably including OS X, but I'm not completely sure) and windows. i think i can do it without adding another dependency to the released Trike.
+[13:46] <asparagi> so as long as we don't get any developers whose home platform is, say, riscOS, we'll be set
+[13:47] <ar4chne> would that be a good way to go about giving people the flexibility of their dir structure while letting the script be a bit more nifty?
+[13:47] <asparagi> i'm a little worried about it...
+[13:47] <ar4chne> ok
+[13:47] <ar4chne> what if instead we collapsed the src dir
+[13:47] <ar4chne> and had just /trike in the root dir
+[13:48] <asparagi> we could potentially look at the filename the script is running from and assume that it is in a structure like the SVN repository
+[13:48] <ar4chne> so then /trike/src wouldn't be so icky?
+[13:49] <asparagi> combining your suggestion w/ mine, we get:
+[13:49] <asparagi> src/
+[13:49] <asparagi>   trike/
+[13:49] <asparagi>     *.mcz
+[13:49] <asparagi>     build/
+[13:49] <asparagi>       *.cs
+[13:50] <ar4chne> oh, I think that would work nicely :)
+[13:50] <asparagi> that doesn't seem so terrible.  no src/trike/src mess
+[13:50] <asparagi> ok.  i'll write some stuff up.
+[13:50] <ar4chne> yea, good job :)
+[13:50] Action: ar4chne goes back to report writing
+[13:50] <ar4chne> still waiting on creds to test stuff that has to be done before year end :| *sigh*
+[13:58] <asparagi> boy, year end is going to be here any minute
+[13:59] <ar4chne> ja, like...day after tomorrow as far as work is concerned
+[14:53] <ar4chne> yay!  dave fixed it ^^
+[15:06] <asparagi> fixed mailman?
+[15:07] <asparagi> well, the build scripts are now cut apart in little pieces on the floor
+[15:07] <asparagi> i guess it's a good time to do this since i now have fast net
+[15:07] Action: Dymaxion grins.
+[15:11] <ar4chne> yeah, fixed mailman ^^
+[15:11] <ar4chne> he'd configured it in kinda a weird way because it had to work w/ both tc & octotrike
+[15:12] <ar4chne> so I asked him to look at it since it had rather stumped me
+[15:12] <ar4chne> it's taken him a good 4 hours tho
+[15:22] <ar4chne> oooh...a friend of mine is offering to link to octotrike.org in a paper he's publishing on uninformed.org
+[15:23] <ar4chne> :) but suggested we clean up the website before he does
+[15:25] <asparagi> re: mailman: dang..  that's really nice of him to fix it all up
+[15:25] <asparagi> good thing you are already working on website cleanup :)
+[15:25] <ar4chne> yeah, he's a sweetie :)
+[15:26] <ar4chne> yeah! definitely ^^ but I would probably suggest that maybe we spend a day or two this week focusing on content?
+[15:26] <asparagi> hopefully paper-publishing friend isn't going to say how much trike sucks ;)
+[15:26] <ar4chne> haha, no
+[15:26] <ar4chne> but he did say he's looking forword to a more stable version
+[15:26] <asparagi> yeah... if we had a list of desired content that would really help
+[15:26] <asparagi> yeah, no wonder.
+[15:26] <asparagi> would he like an alpha?
+[15:27] <asparagi> the alpha is certainly more stable than the published crap
+[15:28] <ar4chne> :) I'll ask
+[15:28] <asparagi> of course i can't build one right this instant.....
+[15:28] <ar4chne> *giggle* no worries :)
+[15:28] Action: asparagi is still working on the kind of complicated build scripts
+[15:28] <ar4chne> the paper launches jan 4th
+[15:29] <asparagi> ok, that's a little time for us to soup up the content
+[15:29] <asparagi> plus i will want to update the screenshots
+[15:30] <ar4chne> what about doing a super pre 1.1.2a release?
+[15:31] <ar4chne> the paper gets a fair bit of traffic, and last time trew wrote, he was /.'d
+[15:32] <ar4chne> I dunno :/
+[15:32] <ar4chne> I don't want to crazy stress people
+[15:33] <ar4chne> but we could kinda put something out as a teaser 'we're looking for alpha testers' etc
+[15:33] <ar4chne> with many disclaimers of the sort "we know there's problems, the official version will be released in 3 weeks" etc
+[15:34] <asparagi> hmmm......
+[15:34] <asparagi> well, i'd want all the content, engine and dev lifecycle issues fixed first
+[15:35] <asparagi> and the more egregious ui issues, like attack editing not working
+[15:35] <asparagi> i don't think we can do file i/o by jan 4th
+[15:36] <asparagi> and i'd want all known bugs in the bug tracking system, preferably the new one, so ppl can see what they're getting into
+[15:36] <ar4chne> yeah, if we do decide to do a prerelease, I say hold the io for a few weeks
+[15:36] <ar4chne> absolutely
+[15:37] <asparagi> i spose we could do that
+[15:37] <ar4chne> would it be very stressy?
+[15:37] <ar4chne> it's your last week or two of freedom :)
+[15:37] <asparagi> actually it would really help my position wrt intel and ip stuff
+[15:37] <ar4chne> I don't want to ruin it
+[15:37] <ar4chne> oh, cool :)
+[15:38] <asparagi> i have a small fear that the actual 1.1.2a release will be delayed by lawyer things.  i don't think that will actually happen, but it'd sure be nice if we had a release out before i started just in case
+[15:39] <asparagi> i think that would be possible.
+[15:39] <asparagi> we should give it a unique name, tho.  perhaps 1.1.2.0a
+[15:40] <asparagi> actually at this point i think it's my last 5 days of freedom
+[15:41] <Dymaxion> hrm... I think an interim release wouldn't hurt.
+[15:41] <asparagi> let's not announce 1.1.2.0a anywhere other than on our site, and let's wait to hear from Dym before we advertise this plan anywhere it will be hard to take back
+[15:41] <asparagi> oh, speak of the Dym ;)
+[15:41] Action: Dymaxion grins.
+[15:42] <ar4chne> *gg*
+[15:42] <ar4chne> cool...well, I should get out of here around 4:30ish tonight
+[15:43] <ar4chne> was planning on triking the rest of the night
+[15:43] <ar4chne> could head to the lab if it would be helpful in anyway
+[15:46] <asparagi> i'm just going to sit & hack on trike myself.  if someone had time to, say, receive oral dumps of content & write them up so they sound decent, i could talk between bugs
+[15:47] <ar4chne> ;) sounds good
+[15:47] <ar4chne> I can dump them straight to net
+[15:47] <ar4chne> say...6?
+[15:47] <ar4chne> I'd promise earlier, but traffic gets really really ugly at 5
+[15:48] <ar4chne> and I need to run home and grab a car and a laptop
+[15:49] <asparagi> sure.  i'll be here all night :)
+[15:50] <asparagi> so unfortunately, by the time the changeset is being filed in, there is no way for me to tell where in the filesystem it lives
+[15:50] <asparagi> so the current directory structure plan won't work
+[15:52] <ar4chne> hmmm...so what's happening exactly?
+[16:00] <asparagi> when you click the install button in the file list, ChangeSet creates a stream from the given file.  the stream knows the file's full name.  then ChangeSet creates a ChangeSet instance with the stream and just the local part of the filename as a name.  i can get the ChangeSet object while I'm filing in, so i can get the local filename, but I can't figure out how to get to the stream, which would have the full path.
+[16:01] <asparagi> oh.
+[16:02] <asparagi> in fact a stream conversion takes place, so the ChangeSet instance never sees the stream that has any connection to the filesystem
+[16:02] <asparagi> so i guess we just have our dev environment depend on OSProcess
+[16:03] <asparagi> which was probably inevitable anyway, since i can't imagine how the release script would work without OSProcess
+[16:09] Action: ar4chne watches the explanation fly waaaaay over her head and is happy aspa understands it
+[16:12] <asparagi> the short version is we're going with your original suggestion, an environment variable
+[16:12] <ar4chne> haha :)
+[16:12] <asparagi> dunno if that part was clear..
+[16:12] <ar4chne> ok
+[16:12] Action: ar4chne waves the pom poms
+[16:13] <asparagi> but the released version won't have to depend on any OS-specific stuff, like i was initially worried
+[16:13] <ar4chne> oh, cool :)
+[16:25] <ar4chne> brb...interview 
+[16:45] <asparagi> damn.  OSProcess is a plugin.  we will all have to have working Squeak recompilation environments to get it to work
+[16:45] <asparagi> maybe being dictatorial would be better for now.
+[16:46] <asparagi> :(
+[16:46] Action: asparagi will be back in 30 mins or so
+[17:39] <asparagi> back
+[17:44] <asparagi> ah.  a prebuilt dll appropriate for this platform is installed with OSProcess, we don't have to build it. whew.
+[17:47] <Dymaxion> yay
+[17:53] <ar4chne> wb!
+[17:53] <ar4chne> and yay! \o/
+[00:00] --- Fri Dec 30 2005

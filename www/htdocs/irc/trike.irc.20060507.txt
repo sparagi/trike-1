@@ -1,0 +1,38 @@
+[13:36] <asparagi> I must share, and I have no phone.  Last night I was working on the entity modeling library we need as a precursor for the Ross Method library.  I read the entity modeling book, at least the relevant parts (in the middle it starts to describe the precursor to Ross Method, which we
+[13:37] <asparagi> don't need to implement, so I skipped that).
+[13:39] <asparagi> Much of the advice is for people who will construct entity models, vs. someone like me who will construct a tool for editing them.  But boy, did it have some good advice for doing OO design faster.  I find this funny since he is not an OO proponent.  So he says, figure out all the data object types (classes) first, then figure out their attributes.  So I did this, which completely simplified my class hierarchy.
+[13:42] <asparagi> Then, I was working on extracting all the consistency rules for entity modeling which are peppered through the text.  I need settings for many of them because they are optional rules.  At some point I started to think about how cool it would be if they were implemented self-referentially, i.e. were actually modeled using Ross Method & could be enforced that way.  But, I discarded this idea because I hadn't planning to make th
+[13:46] <asparagi> Then this morning, I was thinking more about the comment near the beginnning of the red book that rules normalize.  All my confusion about how to hook the rules up to the entity model in the class hierarchy completely vanished.  I have the correct class structure for modeling the rules as well as the entities.  And I think the self-referential enforcement idea is a lot more doable than I thought initially.  The entity model f
+[13:46] <asparagi> Actually, it's an entire declarative programming language.
+[13:48] <asparagi> I guess we knew that, Paul's been saying that.  But it hadn't really sunk in.  I'm building eToys for database people, sort of.  I'm hoping my next brainstorm is the rules that need to be enforced for constructs in this declarative programming language to be semantically consistent.  I am getting a little nervous about that.
+[13:50] <asparagi> I'm not sure which I like better, tying my head in a knot or tying other people's heads in knots.  buahaaahaaaha!
+[14:06] <ar4chne> hehe :)
+[14:06] <ar4chne> sounds like you're been busy
+[14:06] <ar4chne> some of your sentences got truncated, tho
+[14:23] <Dymaxion> yeah, the semantic consistency thing is a little hard... it's a pretty rich language
+[14:23] <Dymaxion> I hadn't looked at the entity modeling stuff from an OO design perspective, but yeah, that's obvious, now that you mention in.
+[14:23] <Dymaxion> I'm glad it's decomposing easily into a class structure.
+[14:30] Action: Dymaxion can't wait to get back to work on stuff, as soon as eir life is back together a bit more
+[14:52] <asparagi> :)
+[14:58] <asparagi> So if my sentences were being truncated, you might not have seen this part:
+[14:58] <asparagi>  mean, the preferences for turning consistency rules on & off for an entity model will be the entity model of the entity model, in the same interface.  It is a thing of beauty.
+[14:59] <asparagi> i think that's my favorite part
+[17:00] <Dymaxion> oooh!
+[17:00] <Dymaxion> that's sexy
+[17:21] <asparagi> i thought so. :)
+[17:21] <asparagi> it's slightly tricky, but i think it will be self-documenting
+[19:47] Action: ar4chne doesn't really know much about the details
+[21:47] <dkekrkdkd> asparagi, you around?
+[21:55] <asparagi> yes, i'm here.
+[21:56] <asparagi> i'm kind of busy coding, though.
+[21:56] <dkekrkdkd> awesome.  You are a hard person to reach.  :)  cellphone dead, eh?   anyway, I wanted to get in touch with you regarding mark/desk/stuff. 
+[21:56] <asparagi> yeah, i dropped my phone in the cat dish.
+[21:57] <dkekrkdkd> I heard. 
+[21:57] <dkekrkdkd> (your voicemail)
+[21:57] <asparagi> i responded to your email about mark.  he was going to get in touch with paul.  but as it turns out, handy andy has a truck in the shop & he won't be down this weekend at all
+[21:58] <dkekrkdkd> righto.  No problem, I just wanted to make sure that I could help out if I could.  
+[21:59] <asparagi> thanks.
+[22:00] <Dymaxion> oh, right... I completely forgot about that when I didn't get a call yesterday
+[22:00] <asparagi> well, there ya go -- that's what happened
+[22:01] <dkekrkdkd> So mark drove andy's truck into the water dish, and now it's in the shop. 
+[00:00] --- Mon May  8 2006

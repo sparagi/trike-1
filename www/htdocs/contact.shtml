@@ -1,0 +1,18 @@
+<!--#set var="pageTitle" value="Contact" -->
+<!--#set var="pageDescription" value="Get in touch with the Trike team." -->
+<!--#include file="header.shtml" -->
+
+<p>
+You can reach the Trike contributors via 
+<ul>
+<li>our <a href="https://sourceforge.net/tracker/?group_id=239449">Trackers</a> (for bug reports, patches, feature requests and support requests)
+<li>the <a href="https://sourceforge.net/mailarchive/forum.php?forum_name=trike-devel">trike-devel</a> mailing list at  lists.sourceforge.net and
+<li>the <a href="irc/">#trike</a> irc channel on irc.freenode.net.
+</ul>
+</p>
+
+<p>
+If you'd like to hear from us (but not too often), you might try joining <a href="https://sourceforge.net/mailarchive/forum.php?forum_name=trike-announce">trike-announce</a>.
+</p>
+
+<!--#include file="footer.shtml" -->

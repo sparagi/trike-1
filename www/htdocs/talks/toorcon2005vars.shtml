@@ -1,0 +1,6 @@
+<!--#set var="venueName" value="ToorCon 2005" -->
+<!--#set var="venueURL" value="http://www.toorcon.org/2005/" -->
+<!--#set var="talkName" value="Hands-On Threat Modeling with Trike v1" -->
+<!--#set var="talkDate" value="2005/09/18" -->
+<!--#set var="talkURL" value="toorcon2005.shtml" -->
+<!--#set var="pageDescription" value="Eleanor & Brenda's September 2005 demo of the prototype Trike v1 tool." -->

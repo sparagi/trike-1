@@ -1,0 +1,567 @@
+[21:45] <ar4chne> heyas
+[22:16] <Dymaxion> hey
+[22:16] <Dymaxion> sorry I'm running late
+[22:16] Action: Dymaxion calls brenda
+[22:25] <asparagi> Hi!
+[22:25] <Dymaxion> hey
+[22:25] <asparagi> Sorry about the wait -- I'm having an attack of the fumblefingers
+[22:26] <Dymaxion> No problem -- I stayed at work way later than I should have.
+[22:26] <Dymaxion> What's our agenda tonight?
+[22:28] <asparagi> apparently we don't know
+[22:29] Action: Dymaxion grins.
+[22:29] <asparagi> i think we are supposed to work on docs
+[22:29] <Dymaxion> Well, we still need to ..
+[22:29] <Dymaxion> yeah
+[22:29] <asparagi> but i want to talk about theory
+[22:29] <Dymaxion> ok
+[22:29] <asparagi> we need ara to show up & keep us in line
+[22:29] <Dymaxion> i need to go write some docs anyway before I'll have much to talk about
+[22:30] <Dymaxion> someone should respond to mike's email too -- I can do it if you want.
+[22:30] Action: asparagi gets mail so she will know what Dym is talking about
+[22:31] <asparagi> so, it has come to my attention that Trike has a number of deficiencies
+[22:31] <Dymaxion> yes?
+[22:32] <asparagi> specifically, you have to be able to nail down what the heck it is you are analyzing before it will really work
+[22:32] <asparagi> now, you will say, of course you have to do that
+[22:33] <asparagi> but, we are supposed to be all flexible, i.e. start at the beginnning & update as you go
+[22:33] Action: Dymaxion nods
+[22:33] <asparagi> i think we are not doing very well on that score
+[22:33] <Dymaxion> but that doesn't work right now -- things are very crystaline, and break when things they depend on change
+[22:33] <Dymaxion> yeah
+[22:33] <asparagi> yah
+[22:33] <asparagi> so.
+[22:34] <asparagi> i don't know the answer, but can we fix it by friday pretty please? ;)
+[22:34] <Dymaxion> I think if we add undo and copy/paste, we'll have the framework to leave snippets of obsoleted stuff laying around, which will go a long way to fixing that -- things go into the trash heap instead of just disappearing.
+[22:34] Action: Dymaxion grins.
+[22:34] <asparagi> mmm, yah, that would help
+[22:35] <asparagi> i think we should think about adding in some explicit fuzz
+[22:35] <asparagi> e.g. Admin creates Blog Entry when *fuzz here*
+[22:35] <Dymaxion> still not perfect; I think some of this is inherent in the structures we're modeling with and may go away a bit as out model becomes more sophisticated
+[22:35] <Dymaxion> I like that idea a lot
+[22:36] <asparagi> or in a DFD..  this part is nailed, then it connects to *fuzz*
+[22:36] <Dymaxion> yeah
+[22:36] <asparagi> that way we could at least cover the parts we know
+[22:37] <asparagi> so, next failure: hardware assets don't work.
+[22:37] <asparagi> this is sort of like physical assets don't work
+[22:37] <Dymaxion> as we start to get smarter, we may be able to make sets of conjectures about the fuzz -- basically, here are the different things that could be generated, depending on property foo of this fuzz.
+[22:37] <Dymaxion> Oh?
+[22:37] <asparagi> what, exactly, would it mean to create a hardware asset?
+[22:38] <asparagi> they're kind of all there already.
+[22:38] <Dymaxion> well, what does it represent?
+[22:38] <asparagi> and say you are using pins
+[22:38] <asparagi> as your assets
+[22:38] <asparagi> you could say read & update are pretty good, but create and delete are, um, poor
+[22:39] <Dymaxion> an entity in the DFD which has business rules about it?
+[22:39] Action: asparagi imagines someone wielding the great wire cutters in the sky, via the network
+[22:39] Action: Dymaxion grins.
+[22:39] Action: Dymaxion cackles.
+[22:40] <asparagi> not exactly.  there's some data stored on the pin
+[22:40] <Dymaxion> Yeah -- setting actions to N/A will help with that a little bit
+[22:40] <Dymaxion> yeah
+[22:40] <asparagi> i think we should go straight to v2
+[22:40] <asparagi> i think it is our only hope
+[22:41] <Dymaxion> hrm.
+[22:41] <asparagi> there's another area for improvement which i can't describe very well
+[22:41] <Dymaxion> give it a shot?
+[22:41] <asparagi> you know how the stubs are supposed to plunk together to make an overall attack graph?
+[22:42] <asparagi> we are still somehow confusing steps in an attack with attack chaining
+[22:42] <asparagi> we should separate them
+[22:42] <Dymaxion> yeah, except we sort of shove some handwaving between them to give a pretense of intention falling through
+[22:42] <Dymaxion> like what?
+[22:43] Action: asparagi is fuzzy
+[22:43] <asparagi> i don't know
+[22:43] <asparagi> they seem hard to separate
+[22:44] <Dymaxion> which do?
+[22:44] <asparagi> i mean, any AND in the attack tree seems like chaining to me
+[22:44] <Dymaxion> sorry, static on the mind meld channel
+[22:44] <Dymaxion> how so?
+[22:45] <asparagi> intention, attack chaining and task breakdown
+[22:45] <asparagi> those are all in the graph structure, sort of undifferentiated-like
+[22:45] <Dymaxion> yeah
+[22:46] <asparagi> well, if i have to snoop the network AND decrypt the traffic, isn't that chaining those 2 attacks?
+[22:46] <Dymaxion> so we need to differentiate the structures that transfer that meaning -- capabilities are what chain, intentions are in the stubs, and tasks are the actual trees
+[22:46] <Dymaxion> yeah, I totally get it now.
+[22:46] <asparagi> i still don't :)
+[22:46] Action: Dymaxion . o O ( we need a sound effects channel for the mind meld device )
+[22:47] <Dymaxion> It's all about the type of the nodes in the attack graph
+[22:47] <asparagi> can you go into that structure differentiation thing more?
+[22:47] <Dymaxion> we're representing three high level categories of objects in a single graph
+[22:47] <Dymaxion> intents, capabilities, and attacks
+[22:48] <Dymaxion> capabilities can appear as either "provides #X" or "requires #X" -- both ends of chaining points for attacks, basically.
+[22:48] <Dymaxion> the actual attacks are the breakdowns of a specific attack task.
+[22:48] <ar4chne>  ugg, sorry guys
+[22:49] <asparagi> hey!
+[22:49] <ar4chne> I was sitting here waiting and must have fallen asleep :/
+[22:49] <Dymaxion> each of these types of graph node has slightly different semantics as far as what it can do, how it interacts, etc., and not having those pulled out makes things really muddy.
+[22:49] <Dymaxion> Hey!
+[22:49] <Dymaxion> aww
+[22:50] <asparagi> we're in the middle of a deeply theoretical discussion about the attack graph -- grab the mind meld device & hang on for a wild ride!
+[22:50] Action: Dymaxion grins.
+[22:51] <ar4chne> oki, I'll read the backlog and try to keep up :)
+[22:51] <Dymaxion> so, yeah.  I definitely agree that that needs to change too.
+[22:52] <asparagi> so, Paul, i don't see how  would know what data to put in which kind of node, or what the structure would look like
+[22:52] <asparagi> e.g. intents sounds like attack goal
+[22:52] <Dymaxion> er?
+[22:52] <Dymaxion> "see how  would"
+[22:52] <asparagi> why wouldn't that be a capability?
+[22:52] <asparagi> missing I
+[22:52] <Dymaxion> ah
+[22:52] <asparagi> "see how I would"
+[22:52] <Dymaxion> yeah
+[22:52] <Dymaxion> hrm.
+[22:52] <asparagi> I and space are right next to each other on my keyboard
+[22:52] <asparagi> like everything else
+[22:53] <Dymaxion> I guess I have a gut feeling about it, but I'm not sure how to convey that
+[22:53] Action: Dymaxion nods.
+[22:53] <asparagi> especially x and lf
+[22:54] <Dymaxion> So, capabilities represent specific technical things; they exist only in the DFD domain
+[22:54] <asparagi> hmm
+[22:55] <asparagi> do they have to involve DFD elements?
+[22:55] <Dymaxion> attacks are things which sometimes could be represented as capabilities, or are sometimes really inseperable parts of getting a single capability; there's a bit of "how much do we want to model" fuzz there, I think
+[22:55] <Dymaxion> or portions of DFD elements, actions on them, things like that.
+[22:56] <Dymaxion> "the ability to take some action within the domain of the implementation"
+[22:57] <asparagi> e.g. i was thinking that paper somebody sent me which did attack chaining for escalation of privilege on windows myriad privilege thingummies could plug right in, with each of those privileges being a capability in our model
+[22:57] <asparagi> maybe i didn't tell anyone else about that paper yet
+[22:57] <asparagi> it was cool
+[22:58] <asparagi> so, it seems like one possibility is that we get rid of the attacks entirely & call it all capabilities
+[22:58] <asparagi> do we still need the attacks?
+[22:58] <Dymaxion> yeah, I read it
+[22:59] <Dymaxion> hrm
+[22:59] <Dymaxion> I think so
+[22:59] <Dymaxion> attacks represent (if nothing else) the steps to exercise a capability
+[22:59] <Dymaxion> there will always be some steps there.
+[22:59] <Dymaxion> And probably multiple ways of exercising any capability
+[23:00] <asparagi> oooh
+[23:00] <Dymaxion> There's something else in there, too -- we have high level intents and various lower level intents, but there's glue between them
+[23:00] <Dymaxion> dunno what you call that
+[23:00] <asparagi> are you saying "here's capability A, here's capability B, attacks are how you use them to get capability C"?
+[23:01] <Dymaxion> yes
+[23:01] <asparagi> in that case, capabilities could be nodes in the graph, and attacks could be edges
+[23:01] <asparagi> or maybe edge traversal algorithms/mechanisms
+[23:01] <Dymaxion> you'll have little attack treelets with required capabilities as their children and yielded capabilities as their parents
+[23:02] <Dymaxion> there's a couple of levels of graphs
+[23:02] <Dymaxion> if you look at the capability graph, each edge is an attack tree, not just a single edge
+[23:02] <asparagi> what's in the tree?
+[23:03] <asparagi> i think i want to argue that ORs are different edges
+[23:03] <Dymaxion> the ways of traversing from a to b
+[23:03] <Dymaxion> yeah
+[23:03] <asparagi> and ANDs should be achieved by chaining
+[23:03] <asparagi> leaving us with no attack tree, just an attack
+[23:03] <Dymaxion> hrm
+[23:04] <Dymaxion> what about multi-step attacks?
+[23:04] <asparagi> well, the question is, why is it mult-step?
+[23:04] <asparagi> does it mean we missed a capability?
+[23:05] <Dymaxion> I think what your suggesting will lead to too many capabilites; we want to be able to represent  fairly complex attaks without needing a lot of noise caps that are just intermediate steps
+[23:05] <asparagi> presumably you have something after step 1 that makes it possible to go onto step 2
+[23:05] <Dymaxion> I don't think that missing a capability is necessarily a bad thing
+[23:05] <Dymaxion> YEAH
+[23:05] <Dymaxion> er, yeah
+[23:05] <asparagi> i think we need an enormous library of attack graphs so we can look at it for examples
+[23:06] <Dymaxion> hrm
+[23:06] <Dymaxion> I wonder who has one
+[23:06] <asparagi> or so i can put it in my report on friday :)
+[23:06] <ar4chne> so then we should come up with a way of generating them?
+[23:06] <asparagi> yah.
+[23:06] <ar4chne> to use as test cases
+[23:06] <asparagi> oh yet
+[23:06] <asparagi> er, oh yes
+[23:07] <asparagi> yah, i think if we had a big set of test data we could more easily figure out where we are falling down in general
+[23:07] <ar4chne> hmhmhm...I wonder if work would mind if I threat modelled my projects?
+[23:07] <ar4chne> :P that would give us 19 graphs
+[23:07] <asparagi> somehow i doubt they would
+[23:07] Action: Dymaxion nods
+[23:07] <asparagi> but they would mind if you gave the data to Us
+[23:07] <ar4chne> yeah, exactly
+[23:08] <asparagi> i think you should do a few anyway, because then you can tell us what 4th thing we have mixed into the mud in our attack graph
+[23:08] <ar4chne> hehe :)
+[23:09] <asparagi> ok, so Dym, go back to the part with intent.
+[23:09] <ar4chne> actually, I bet I could put together 30 or so, if I did projects I've completed + the ones in my queue
+[23:09] Action: Dymaxion grins
+[23:09] <Dymaxion> So, we have high level intents, known as threats
+[23:09] <asparagi> unless you are, as i suspect, looking for the motherlode of attack graph data
+[23:10] <Dymaxion> We think we have a handle on lower level intents, the goals for each specific element
+[23:10] <Dymaxion> (yeah, I'm doing that too... no luck yet. :-)  )
+[23:10] <asparagi> well, i thought those were capabilities
+[23:10] <Dymaxion> http://www.cs.cmu.edu/afs/cs/project/calder/www/sp02.html
+[23:11] <Dymaxion> http://www.cs.cmu.edu/afs/cs/project/calder/www/tr02-109.html
+[23:11] <asparagi> that should go straight into the bibliography
+[23:12] <Dymaxion> well, i'm gonna read them first, but yeah
+[23:12] <asparagi> no, stick them in first
+[23:13] <asparagi> then make notes after you've read them
+[23:13] <Dymaxion> so, no; I'm distinguishing between capabilities, which are things that you can perform in the implementation, and intents, things which you'd like to accomplish as an attacker
+[23:13] <Dymaxion> ok
+[23:13] <asparagi> maybe we should draft those people, too, if the papers are as good as their abstracts
+[23:14] Action: Dymaxion grins
+[23:14] <ar4chne> Dymaxion: that sounds like a good differentiation
+[23:14] <ar4chne> not all capabilities of an app will be a threat
+[23:14] <ar4chne> but certain capabilities could combine to become one
+[23:15] <asparagi> here we get back to ye olde philosophy.  why do we care what an attacker wants?  we are defense.  we care only what will hurt us.  if attackers want to dance around throwing punches at thin air, what do we care?
+[23:16] <Dymaxion> sorry, let me rephrase that
+[23:16] <Dymaxion> intents are things we'd like to prevent
+[23:16] <Dymaxion> high level intents are threats
+[23:16] <ar4chne> asparagi: from a management pov, if I can give a tool to my business peoples and they can do some entry as to what they're app _does_ then the business is better off
+[23:16] <ar4chne> that that's documented
+[23:16] <Dymaxion> low level ones are specific ways rules, states, DFD elements, etc., can fail
+[23:16] <ar4chne> and then from there, you can look at the capabilities and determine what _is_ threatening
+[23:17] <ar4chne> otherwise you might miss things
+[23:18] <asparagi> ara: i agree, i think that is taking a defensive position
+[23:18] <asparagi> dym: ok, that rephrase helped
+[23:18] <ar4chne> :D then I'm confused
+[23:18] <ar4chne> I thought I was agreeing w/ dym and you disagreed
+[23:18] <ar4chne> but then you agreed with me!
+[23:18] <Dymaxion> papers added
+[23:19] Action: ar4chne tries to find the mind meld device and pokes herself in the eye looking
+[23:19] <ar4chne> ow!
+[23:19] <Dymaxion> aww
+[23:19] <asparagi> well, after i understood what dym was saying i agreed with dym too :)
+[23:19] <ar4chne> gotcha ;)
+[23:19] Action: Dymaxion replaces the mindmeld device with a nerf version
+[23:19] Action: asparagi laughs
+[23:19] Action: ar4chne giggles
+[23:19] <ar4chne> mind meld for dummies (tm)
+[23:20] <Dymaxion> careful, I may have to actually make one. :-)
+[23:20] <asparagi> i want to repeat back the idea i think dym is talking about, to confirm i get it
+[23:21] <asparagi> intents are the roots of attack trees (no graph)
+[23:22] <Dymaxion> yes
+[23:22] <asparagi> an attack tree is an edge in the capability graph, with a certain set of required & resulting capabilities
+[23:22] <asparagi> there is deliberate fuzz in attack trees, so that we don't have to get as formal as capabilities when we model
+[23:23] <asparagi> i'm done.
+[23:23] <Dymaxion> yes
+[23:23] <asparagi> did i miss anything?
+[23:23] <Dymaxion> yes
+[23:24] <Dymaxion> intents and <intent-glue> form higher level trees; capability graphs and attack trees plug into those as you get lower down.
+[23:25] <asparagi> hmm. i think i agree with you, but i don't like ih
+[23:26] <Dymaxion> it's ugly
+[23:26] <Dymaxion> we need to figure out what <intent-glue> is and what it means; it might get less ugly then.
+[23:26] <asparagi> it seems like this is the definitional use of attack trees.  i.e. "this is the definition of DoS"
+[23:27] <asparagi> i think intent-glue is definition (of that intent)
+[23:27] <Dymaxion> Then again, I think out intentions will get finer grained with business rules, so there well be much much less need for intent-glue -- I think 2.0 might solve this problem.
+[23:27] <Dymaxion> yes
+[23:27] <asparagi> ahhhh
+[23:27] <asparagi> so, about 2.0.
+[23:28] <asparagi> are we ready for that yet? ;)
+[23:28] <Dymaxion> yeah
+[23:28] <Dymaxion> Ok, so, I'd like to get one more feature into 1.o before we ditch it, at least.
+[23:28] <Dymaxion> Namely, XML import.
+[23:29] <Dymaxion> We need to get the DFD library working at some point anyway, and I think it won't take too much time past that to make that work.
+[23:29] <asparagi> that seems reasonable
+[23:29] <Dymaxion> That'll give us a much more credible 1.0 to have sitting out there lonely while we work on 2.0 for however long.
+[23:29] <Dymaxion> http://csdl2.computer.org/persagen/DLAbsToc.jsp?resourcePath=/dl/proceedings/&toc=comp/proceedings/vizsec/2005/2782/00/2782toc.xml&DOI=10.1109/VIZSEC.2005.14
+[23:29] <asparagi> and yes, it is a no-op after the XSD thing works to do output
+[23:30] <asparagi> wow, what nice mail from Mike!
+[23:30] <asparagi> i mean, he used it & it more-or-less worked & stuff
+[23:30] <Dymaxion> yeah -- I've been meaning to respond, haven't had time
+[23:30] <Dymaxion> yup
+[23:30] <asparagi> i blame you guys
+[23:30] Action: Dymaxion grins.
+[23:30] <asparagi> i was just going to dink around writing exploratory code forever
+[23:31] <asparagi> and never release it at al
+[23:31] <asparagi> er, all
+[23:31] <Dymaxion> http://doi.ieeecomputersociety.org/10.1109/CSFW.2002.1021806
+[23:31] <Dymaxion> http://doi.ieeecomputersociety.org/10.1109/ITCC.2004.1286496
+[23:33] Action: asparagi feels lost
+[23:34] <Dymaxion> http://www.cs.nott.ac.uk/~gxt/ # specifically the section on situation calculus at the end
+[23:34] <Dymaxion> sorry, just google trolling on attack graphs
+[23:34] <ar4chne> I'd like to add dd's drop down color change ability to 1.0 as well
+[23:34] <asparagi> maybe before we do 2.0 we should go read a bunch of papers
+[23:34] <ar4chne> the clicking really does suck
+[23:34] <Dymaxion> ar: yeah
+[23:34] <Dymaxion> ar: and it's fast
+[23:34] <asparagi> i still don't like that mechanism
+[23:34] <Dymaxion> asp: yes
+[23:35] <asparagi> what about pie menus for that?
+[23:35] <Dymaxion> That would work well; I'd be down with it.
+[23:35] <ar4chne> pie menus?
+[23:35] <Dymaxion> I think we should leave the details for now, though -- add in a menu so there's something a bit more straightforward and get onto 2.0
+[23:35] <asparagi> nooo!
+[23:35] <asparagi> ;)
+[23:36] Action: Dymaxion grins
+[23:36] <Dymaxion> ar: http://www.piemenus.com/
+[23:36] <asparagi> let us not slip further towards standard, evil interfaces
+[23:36] <asparagi> our current position is bad enough
+[23:36] <ar4chne> how is a menu of colors a standard, evil interface?
+[23:36] <ar4chne> it's logical
+[23:36] <asparagi> i think the compromises we have made so far are pretty good
+[23:37] <Dymaxion> I think we should fix it for 2.0 if we still have a that sort of interface
+[23:37] <asparagi> it requires much more aiming
+[23:37] <asparagi> and is therefore slower
+[23:37] <asparagi> hmm
+[23:37] <asparagi> do you think we could make all the menus everywhere go away for 2.0?
+[23:38] <ar4chne> :/ you don't think having a menu system out of a game is going to make us seem a bit cartoonish?
+[23:38] <asparagi> i think we are a bit cartoonish already
+[23:38] <ar4chne> and the pie menu's in the sims were annoying at times
+[23:38] <Dymaxion> a good pie menu system is actually really easy to use
+[23:38] <asparagi> the idea didn't start with gaming, ppl are just more accepting of new ui in games
+[23:39] <Dymaxion> alias wavefront uses them everywhere... so do a few other really heavy duty software packages
+[23:39] <Dymaxion> the mouse gestures stuff that's become popular is effectively pie menus without the UI
+[23:40] <asparagi> basically, what i don't like about rectangular menus for the colors is that i feel like i am going to spend a lot of time looking for & attempting to click on some particular item
+[23:40] <Dymaxion> anyway, I'd be in favor of one more 1.0 release that fixes up some low hanging fruit bugs and makes things more usable.
+[23:41] <Dymaxion> If there are features that we're going to need to write for 2.0 which can be adapted for 1.0 very easily, I'm cool with putting those in there too
+[23:41] <asparagi> with a pie menu it could be one fluid gesture with a much bigger,  more random access space to aim for
+[23:42] <asparagi> well, at one point we had ideas like: we are going to need DFDs in both systems, so we could do the UI for that & put it in 1 before doing the 2-specific stuff
+[23:43] Action: asparagi is afraid pie menus drove ara into silence
+[23:43] <Dymaxion> I think I sort of still buy that, although I'm worried about spending too much time trying to figure out how to hook DFDs up to stuff in 1.0
+[23:44] <asparagi> mmm, with intent-glue?
+[23:44] <ar4chne> hmmm...I think I'd be more interested in getting the functionality there as quick and easy as possible
+[23:44] <Dymaxion> Yeah
+[23:44] Action: asparagi sighs
+[23:44] <ar4chne> and adding more complex ui stuff once things actually sort of work
+[23:44] <asparagi> you are right, of course
+[23:44] <Dymaxion> ...and that's why it's called trike.
+[23:44] Action: Dymaxion grins.
+[23:44] <asparagi> but i don't like it... :)
+[23:45] Action: asparagi snorts
+[23:45] <Dymaxion> http://64.233.179.104/search?q=cache:GpJBrzAIY5UJ:csis.gmu.edu/faculty/jajodia-vizsec-2004.pdf+attack+graphs&hl=en&gl=us&ct=clnk&cd=36
+[23:46] <asparagi> i want a couple little usability things myself..
+[23:47] <ar4chne> like what?
+[23:47] <asparagi> ability to change names of threats
+[23:47] <Dymaxion> http://www2.laas.fr/IFIPWG/Workshops&Meetings/44/W1/02-Hollingworth.pdf [Towards Threat, Attack, and Vulnerability Taxonomies]
+[23:47] <asparagi> N/A and unspecified in the intended actions grid
+[23:48] <asparagi> after that i want to rip out our old, useless risk model & put in the new one 
+[23:48] <ar4chne> so maybe we should chat about what should go into 1.1.3?
+[23:48] <asparagi> but that's more than a little usability thing :)
+[23:48] <asparagi> ok.
+[23:49] <asparagi> i guess we should
+[23:49] Action: Dymaxion nods
+[23:49] <ar4chne> seems like pretty minimal stuff so far...and if it'll help with our productivity then that would be cool
+[23:49] <Dymaxion> yeah
+[23:49] <ar4chne> and then get into the fun stuff :)
+[23:49] Action: Dymaxion grins.
+[23:49] <asparagi> :)
+[23:49] Action: asparagi needs more fun
+[23:50] Action: ar4chne dances around in a silly hat
+[23:50] Action: Dymaxion giggles
+[23:50] <ar4chne> better?
+[23:50] Action: asparagi laughs
+[23:50] <asparagi> much
+[23:50] <ar4chne> ^^ good
+[23:50] <asparagi> now if only i had attack graphs for my enormous threat model
+[23:50] <ar4chne> what do you need to gen the attack graphs?
+[23:51] <asparagi> well, really i need a bunch of stubs and a data model for the DFD
+[23:51] Action: Dymaxion nods
+[23:51] <Dymaxion> too big to do by hand?
+[23:52] <asparagi> and then i need to punch in some data about the intended actions & the way the DFD implements them
+[23:52] <asparagi> there are 13 assets
+[23:52] <Dymaxion> hehe
+[23:52] <Dymaxion> yeah, you lose.
+[23:52] Action: Dymaxion was dieing with 7x7
+[23:52] <asparagi> there are only 3 actors, but it turns out they matter less
+[23:53] <asparagi> in terms of attack graph complexity
+[23:53] Action: Dymaxion nods
+[23:53] <Dymaxion> yeah
+[23:53] <ar4chne> hmmm...it's 10
+[23:53] <asparagi> so i might have a data model for the dfd
+[23:53] <ar4chne> (not to be a wet blanket)
+[23:53] <Dymaxion> rules complexity is also a huge ballon factor, when you get there
+[23:53] <asparagi> but i never tested it
+[23:53] <ar4chne> but you were so tired earlier aspa
+[23:53] <ar4chne> do you need to go to sleep?
+[23:54] <asparagi> yes, but i have to put this report out on friday, so i'm not going to
+[23:54] <ar4chne> I think we can probably come up with a 1.1.3 list via email
+[23:54] <asparagi> attack graphs are always better when you invent them when you're really tired
+[23:54] <asparagi> ;)
+[23:54] <ar4chne> hrm...you'll think a lot better once you rest
+[23:54] Action: Dymaxion grins.
+[23:54] <ar4chne> ;P
+[23:54] <ar4chne> alright, well, I'm going to crash anyway
+[23:55] <asparagi> ok
+[23:55] <Dymaxion> Shall I start a 1.1.3 wishlist on email?
+[23:55] <asparagi> good night!
+[23:55] <ar4chne> I don't think I'm contribing a lot
+[23:55] <asparagi> you go
+[23:55] <ar4chne> and I have an 8am meeting tomorrow :/
+[23:55] <Dymaxion> 'night
+[23:55] <Dymaxion> aww
+[23:55] <ar4chne> laters
+[23:55] <asparagi> this is important.. we are reconfiguring the mind meld device so it works for you too
+[23:56] <asparagi> it just takes a while
+[23:56] <asparagi> see you later!
+[23:56] <asparagi> dym, will you be online for a bit, or are you off to bed as well?
+[23:56] <Dymaxion> yeah, I'll be up
+[23:57] <asparagi> k, i'll hang out here for a bit
+[23:57] <asparagi> i've been feeling starved for theory/idea-bouncing recently
+[23:57] Action: Dymaxion nods
+[23:57] <asparagi> it's hard to get attack graphs generated without it
+[23:57] <Dymaxion> yeah
+[23:57] <Dymaxion> no good theory partners at work?
+[23:58] <asparagi> not yet
+[23:58] <asparagi> everybody's too busy
+[00:00] --- Thu Feb 23 2006
+[00:01] Action: Dymaxion nods
+[00:01] <Dymaxion> yeah... I still haven't even found time to give all the guys at work a trike demo
+[00:16] <Dymaxion> Ok, I've got a basic start of a 1.2.0 (xml format will change, probably) feature list together
+[00:17] <asparagi> you go
+[00:18] <asparagi> you can now change the names of threats.  as long as you want them to change to "String Morph".
+[00:18] <Dymaxion> lol
+[00:19] <asparagi> hey, at least no one will be able to tell that sorting by exposure is meaningless
+[00:19] <asparagi> ;)
+[00:21] Action: Dymaxion grins.
+[00:21] <Dymaxion> So, do we want to touch the risk model for the last 1x release?
+[00:24] <asparagi> i dunno
+[00:24] Action: Dymaxion fires it off without that in it
+[00:24] <asparagi> the right way to do it is to skim response planning
+[00:24] <Dymaxion> er?
+[00:25] <asparagi> well, when calculating the response cost, you want to know which line items contribute
+[00:26] <asparagi> because then when threat A immediately leads to threats B & C, you only count cleanup action 1 once, even though it is required for both B & C according to your incident response plan
+[00:26] <asparagi> so you need an interface for that
+[00:26] Action: Dymaxion nods
+[00:27] <asparagi> i fixed the naming bug
+[00:29] <Dymaxion> yay!
+[00:30] <Dymaxion> That sounds like that's going to be a pretty heavyweight change.
+[00:30] <asparagi> yes, i think fixing the risk model will be pretty heavyweight
+[00:31] <Dymaxion> Given that the set of types of contributing line items is likely to change violently, I vote we hold off on that; it's heavyweight new functionality which won't port well.
+[00:31] <asparagi> yah
+[00:31] <asparagi> well, actually i think it will port well
+[00:31] <asparagi> but the interface probably won't
+[00:31] <asparagi> just the data model
+[00:31] <Dymaxion> hrm
+[00:31] <Dymaxion> ok
+[00:32] <Dymaxion> how hard will it be to put a quick and dirty UI on it?
+[00:32] <Dymaxion> If the data model will port, I'm much more willing to consider it, you know?
+[00:32] <asparagi> i don't know.  let's do a quick & dirty data model & then see
+[00:32] <Dymaxion> That's the code that I care about
+[00:32] <Dymaxion> ok, that sounds reasonable.
+[00:33] <asparagi> it kind of depends on whether the data model lends itself to easy presentation or not
+[00:33] <asparagi> i have some notes in my palm pilot
+[00:33] <asparagi> i might ask toby
+[00:33] Action: Dymaxion nods
+[00:33] <asparagi> what he thinks of it as a model
+[00:34] <asparagi> and maybe a couple other people from work
+[00:34] <Dymaxion> yeah, I'd like to hear some feedback from him, as he was pretty critical (for good reason) of our previous risk model.
+[00:34] <Dymaxion> So, to go tangential for a second
+[00:34] Action: asparagi zooms off into the outer reaches of the concept sphere
+[00:35] <Dymaxion> It occurs to me that different parties can have different recovery costs; i.e., the risk model for a customer and a merchant for the same system would look very different.
+[00:35] <asparagi> yes, yes indeedy
+[00:35] <asparagi> that is a thing i like about the new model
+[00:35] <Dymaxion> While I'm not sure that we need to explicitly support having multiple overlapped risk models, it pleases me that our theory is now capable of understanding them.
+[00:36] <Dymaxion> In fact, I really really like that idea, and think that we maybe should implement it, even if it's not a high priority
+[00:36] <Dymaxion> It shouldn't be too much extra work, and I think it could be really useful some times.
+[00:36] <asparagi> we always sort of knew the asset value depended on "to whom", now we express it well
+[00:37] <Dymaxion> I like things that encourage risk analysis for the risk footprint to people other than $MegaCorp
+[00:41] <asparagi> well, one way to implement it might be to put the risk stuff in a separate file
+[00:42] <asparagi> i.e. here's the threat model, here's your risk model
+[00:42] <Dymaxion> I don't think we want to do that because then you run into versioning issues
+[00:42] <Dymaxion> But I think only having one active at a time is very fair
+[00:42] <Dymaxion> and you could just swap between them
+[00:43] <asparagi> i know i'm dreaming, but if vendors published their threat models then IT departments could just plug in their own response & other cost stuff
+[00:43] <Dymaxion> that would kick ass
+[00:44] <Dymaxion> Doesn't have to be vendor provided -- you could have an osvdb style threat model repository for products.
+[00:45] <asparagi> interestingly, the common criteria folks apparently have several published security targets, which are sort of like the requirements stuff we are generating threats from
+[00:45] <asparagi> sort of
+[00:45] <Dymaxion> huh
+[00:45] <Dymaxion> url?
+[00:47] <asparagi> whoops, got terms wrong. i was thinking of "protection profile"
+[00:47] <asparagi> http://niap.nist.gov/cc-scheme/pp/index.html
+[00:49] <Dymaxion> huh, cool.
+[00:49] <Dymaxion> is that in our biblio?
+[00:50] <asparagi> probably not...
+[00:50] <Dymaxion> I'll add it
+[00:50] <asparagi> at one point previously, i at least thought octave and cc were the same, but they aren't
+[00:50] <asparagi> cc is much closer to what we are doing
+[00:50] <Dymaxion> yeah, me too, I think
+[00:50] Action: Dymaxion nods
+[00:51] <asparagi> it's a little complicated. i'm not sure i grok it.
+[00:51] <asparagi> but worth another look as we spin up for v2
+[00:51] <Dymaxion> yeah
+[00:52] <Dymaxion> I really want to just bury myself in papers for a month or two.
+[00:52] <asparagi> if we could interact meaningfully with it, we would have a huge audience all of a sudden
+[00:52] <Dymaxion> silly work, expecting me to show up
+[00:52] <Dymaxion> yeah
+[00:52] <asparagi> yeah, i think it's about time for something like that
+[00:53] <asparagi> oh, we should also look at something called clark-wilson
+[00:53] <asparagi> it is like biba or bell-lapadula, but less onerous
+[00:53] <Dymaxion> cool
+[00:54] Action: Dymaxion needs to chase papers on those two as well
+[00:54] <asparagi> right. another thing we need to work on is our scalability/sticking models together for large projects
+[00:55] <asparagi> maybe some kind of tool support for that..
+[00:55] Action: Dymaxion nods
+[00:55] <Dymaxion> I'm curious to see how/if 2 changes out exponential growth problem
+[00:55] <asparagi> yah...
+[00:56] <Dymaxion> One way to do it may be to leverage the whole external interactor thing
+[00:56] <asparagi> but we will still have a model integration problem because of organizational issues
+[00:56] <asparagi> that would be one way to split it up
+[00:56] <Dymaxion> and basically say "this is an actor in the system.  it takes these actions which have these security properties"
+[00:57] <asparagi> but interestingly, apparently people do not always organize around DFD element breakdowns
+[00:57] <Dymaxion> and you don't look inside the black box when you're modeling the other system(s), once you've established that that interface is correct
+[00:57] <Dymaxion> yeah
+[00:57] <asparagi> e.g. feature set organization
+[00:57] <asparagi> we've seen this before
+[00:57] <Dymaxion> see, one of the problems there is that they're trying to partition security in a way which is unrealistic
+[00:57] <Dymaxion> i.e., they're screwed
+[00:58] <asparagi> i think i am concluding that having the threat model organization fight with the business organization is unscalable
+[00:58] <Dymaxion> yeah
+[00:58] <asparagi> i agree, but we need to address it anyway because in reality, it is apparently going to happen
+[00:59] <asparagi> ok. so for better partitioning, my top-level stubs for DoS are:
+[00:59] <Dymaxion> but the business organization is always going to lose to the security realities organization; I'd say that spending too much time trying to cater to the business organization as to how we support partitioning is liable to compromise our representation of security reality.
+[00:59] <asparagi> before
+[00:59] <asparagi> no
+[00:59] <asparagi> er, now
+[00:59] <asparagi> and after
+[00:59] <Dymaxion> I agree it sucks and I really want to figure out a way around it, but.
+[00:59] Action: Dymaxion nods
+[00:59] <asparagi> but "now" is a poor word
+[01:00] <asparagi> got a better one?
+[01:00] <asparagi> yah, i want to find a way to make it possible for each business organization to punch in what it knows and have a picture of security reality become clear
+[01:01] <Dymaxion> yeah
+[01:01] <Dymaxion> that sounds like a workflow problem, not a modeling problem
+[01:02] <Dymaxion> "simultaneous"?
+[01:03] <asparagi> i think it's a workflow problem we should consider for potential modeling implications
+[01:04] <Dymaxion> hrm.
+[01:04] <asparagi> before action occurs
+[01:04] <asparagi> as action occurs
+[01:04] <asparagi> after action occurs
+[01:04] <asparagi> ?
+[01:05] <Dymaxion> I think "fuzz" plus multi-user support and maybe some versioning support will go a long way towards making it fix itself
+[01:05] <Dymaxion> yeah
+[01:05] <asparagi> precede each w/ "deny service"
+[01:05] <Dymaxion> (plus some "how to do a multi-organization threat model" docs and practice)
+[01:05] Action: Dymaxion nods
+[01:06] <asparagi> yeah, certainly we could add those features & see how it does then
+[01:06] <asparagi> wow, i can't get over mike saying trike was actually usable
+[01:06] <Dymaxion> I think recognizing that it's a workflow problem that we need to support is a big step there, though
+[01:06] Action: Dymaxion grins.
+[01:06] <Dymaxion> Yeah -- our first satisfied(ish) external(ish) user. :-)
+[01:07] <asparagi> well, and he so hated it initially, i think it's a good indicator
+[01:10] <asparagi> time-based partition works poorly for elv
+[01:10] <Dymaxion> yeah
+[01:11] <asparagi> i'm having trouble coming up with one
+[01:12] <asparagi> i suppose there's always
+[01:12] <asparagi> subvert existing mechanism
+[01:12] <asparagi> do something else
+[01:12] <asparagi> but i don't like "do something else"
+[01:12] <asparagi> it's a little hard to break down further
+[01:14] <Dymaxion> yeah
+[01:17] <asparagi> maybe a layer-based approach?
+[01:17] <Dymaxion> how so?
+[01:18] <asparagi> e.g. subvert business layer, accomplish directly on implementation?
+[01:18] <asparagi> poor phrasing..
+[01:19] <asparagi> subvert business layer
+[01:19] Action: Dymaxion nods
+[01:19] <asparagi> subvert implementation
+[01:19] <asparagi> subvert business rules....
+[01:19] Action: Dymaxion nods
+[01:19] <Dymaxion> brb
+[01:20] <asparagi> k
+[01:23] <asparagi> erg.  i'm fading. i need to sleep.
+[01:27] <Dymaxion> bak
+[01:27] <Dymaxion> ok
+[01:28] <asparagi> DoS
+[01:28] <asparagi> deny service before action occurs
+[01:28] <asparagi> 	appropriate implementation attacks
+[01:28] <asparagi> 	appropriate business logic attacks
+[01:28] <asparagi> deny service as action occurs
+[01:28] <asparagi> 	appropriate implementation attacks
+[01:28] <asparagi> 	appropriate business logic attacks
+[01:28] <asparagi> deny service after action occurs
+[01:28] <asparagi> 	appropriate implementation attacks
+[01:29] <asparagi> 	appropriate business logic attacks
+[01:29] <asparagi> Elv
+[01:29] <asparagi> subvert intended system behavior
+[01:29] <asparagi> accomplish action directly, outside intended system behavior
+[01:29] <asparagi> 	appropriate implementation attacks
+[01:29] <asparagi> ?
+[01:29] <Dymaxion> looks good
+[01:29] <asparagi> ok. i'm going to sleep
+[01:29] <asparagi> see you later
+[01:30] <Dymaxion> sleep well
+[01:31] <asparagi> you too
+[01:31] Action: Dymaxion firehoses stuff into the bibliography

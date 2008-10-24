@@ -1,0 +1,19 @@
+<!--#include file="toorcon2007vars.shtml" -->
+<!--#include file="talkHeader.shtml" -->
+
+<p>
+From the conference website:
+<blockquote>
+<p>
+Brenda will present a simple, uniform model for expressing both intended behavior and security problems in terms of privilege. The model, which is a work in progress for the Trike development team, applies at any point during the development process, from requirements to a deployed implementation. This model could be used to automatically combine simple attacks with intended system behavior to achieve more complicated attack goals, replacing the effort-intensive tree-based portion of traditional threat modeling techniques.
+</p>
+</blockquote>
+</p>
+
+<div id="contenthdr">Slides</div>
+
+<p>
+<a href="privilege-centric_security_analysis.pdf">Privilege-Centric Security Analysis</a>
+</p>
+
+<!--#include file="footer.shtml" -->

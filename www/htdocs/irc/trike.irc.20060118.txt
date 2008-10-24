@@ -1,0 +1,406 @@
+[21:35] <ar4chne> lo
+[21:51] <asparagi> alloo!
+[21:55] <ar4chne> alo :)
+[21:55] <ar4chne> I haven't managed to get ahold of paul
+[21:55] <ar4chne> not sure what's up
+[21:55] <ar4chne> and did you get a test msg from the trike mailing list?
+[21:56] Action: asparagi goes to check mail
+[21:58] <asparagi> i don't see one, unfortunately
+[21:58] <ar4chne> fsckfsck
+[21:58] <ar4chne> I keep getting them, and you guys are listed as members
+[21:59] <asparagi> just called paul; e will be in front of irc soon
+[22:00] <ar4chne> asparagi@hhhh.org is your email addy, right?
+[22:00] <asparagi> it seems very strange.  have you traced through all the aliases to see whether it is calling mailman?
+[22:00] <asparagi> yes, that's me
+[22:00] <ar4chne> yes, it's calling mailman
+[22:00] <ar4chne> I'm getting the mail messages
+[22:01] <asparagi> damp.
+[22:01] <ar4chne> and they're signed on the bottom by the mailman pro
+[22:01] <ar4chne> g
+[22:02] Action: Dymaxion gets in
+[22:02] <asparagi> wow, that was quick
+[22:03] <Dymaxion> dunno why I didn't get see that voicemail notification.
+[22:03] <Dymaxion> yeah, I was just about to get onto 5s, so I was close to my place.
+[22:03] <ar4chne> this is pissing me off
+[22:03] <asparagi> so, legal update.  i am good to go, and will have the final papers signed by 1/31.
+[22:03] <asparagi> paul?
+[22:04] <Dymaxion> IOA are being their usual selves, no change there.
+[22:04] <Dymaxion> New company is completely cool.
+[22:04] <asparagi> awesome.
+[22:04] <Dymaxion> Trike will be in my exhibit A equivalent for them, and they're specifically adding language to the contract for the case where I'm working on it on company time, with the results being assigned back to me.
+[22:05] <asparagi> wow.  that is cool.
+[22:05] <ar4chne> nice, dym
+[22:05] <asparagi> what's up with the cansecwest talk ara mentioned on list?
+[22:06] <ar4chne> did you guys get anything now?
+[22:06] <Dymaxion> so, they extended their CFP until the end of the month, dunno how many slots they've got open.
+[22:06] <asparagi> i just got 2 emails from mailman!
+[22:06] <Dymaxion> I'm thinking of submitting something, if I can get it together.
+[22:06] <asparagi> woo!
+[22:06] <ar4chne> fscking thing
+[22:06] <asparagi> oh, cool.  got ideas?  (want some?)
+[22:06] <Dymaxion> yay!
+[22:06] <ar4chne> it's only accepting local mail
+[22:06] <Dymaxion> I did too
+[22:07] <asparagi> ohhhh.
+[22:07] <ar4chne> so I had to change your mail addresses to local ones
+[22:07] <Dymaxion> weird
+[22:07] <ar4chne> which then get aliased back externally
+[22:07] Action: asparagi snorts
+[22:07] <ar4chne> oh, well...it's conquored....and trike@octotrike.org is active :)
+[22:07] <asparagi> ahh, the recalcitrance of everyday objects
+[22:07] <asparagi> will you update the web site?
+[22:07] <ar4chne> which page?
+[22:08] <asparagi> oh, and can we put the web site on the agenda?
+[22:08] <asparagi> contact or whatever
+[22:08] <asparagi> oh, nevermind
+[22:08] <asparagi> we never said trike@hhhh.org on the new site, did we?
+[22:08] <ar4chne> trike-contact is an alias for trike
+[22:08] <ar4chne> in case we want to split it out in the future
+[22:08] <asparagi> mike's on there, too, right?
+[22:08] <ar4chne> nopers
+[22:09] <ar4chne> I don't have an addy for him
+[22:10] <asparagi> oh.  try dd@ghettohackers.net.  that's the last one i have for him
+[22:10] <Dymaxion> yeah, that should work.
+[22:10] <ar4chne> oki
+[22:10] <Dymaxion> asp: you have talk ideas, you sai?
+[22:10] <Dymaxion> said, even
+[22:10] <asparagi> well, there's ye olde talk idea list
+[22:11] <asparagi> is attack taxonomy on that list?
+[22:11] <Dymaxion> I don't think I have a copy of it right now
+[22:11] Action: asparagi will find it
+[22:12] <asparagi> should i check it into svn, maybe?
+[22:12] <Dymaxion> sounds good
+[22:12] <Dymaxion> under talks, perhaps?
+[22:12] <ar4chne> oki, should be done
+[22:13] <ar4chne> yay! \o/
+[22:13] <ar4chne> sorry that took so long, guys
+[22:13] <ar4chne> it was driving me batty
+[22:13] <Dymaxion> woot!
+[22:13] <ar4chne> because it worked for me & h1k
+[22:13] <Dymaxion> np... mailman can be a complete pita
+[22:13] <ar4chne> but then I realized that we both had local addy's
+[22:13] <Dymaxion> weird bug, though
+[22:13] <Dymaxion> Will we be able to make announce lists work?
+[22:14] <ar4chne> no idea
+[22:14] <ar4chne> I say we burn that bridge when we get hardware
+[22:14] <Dymaxion> cool
+[22:17] <asparagi> go ara!
+[22:18] <asparagi> update svn and you should have talks/ideas.txt
+[22:18] <asparagi> it turns out a bunch of stuff was handwritten, so i didn't type in all the details of each idea
+[22:18] <asparagi> lemme know if i should snag something else out of the files
+[22:19] <asparagi> nobody was joining our existing announce list anyway
+[22:19] <asparagi> well, not nobody.  but i think it has 3 users or so.
+[22:20] <asparagi> most of whom we know personally, iirc
+[22:20] Action: Dymaxion nods
+[22:20] <Dymaxion> got it
+[22:21] <Dymaxion> I'm thinking that although it's a little floppy right now, I'd like to talk about the attack three chaining stuff that we're doing with the attack stubs.
+[22:21] <asparagi> when would you present?
+[22:21] <Dymaxion> It's new, hasn't really been talked about explicitly in detail in public, and represents a real change in how attack trees are built, which is something that people do actually do, outside of our stuff.
+[22:22] Action: asparagi hopes someday they will be able to do it in our stuff, too
+[22:22] <Dymaxion> april 5-7 is the con
+[22:22] Action: Dymaxion grins.
+[22:22] <ar4chne> hmmm...dont' we want to wait til we have a tool to do it before we release?
+[22:22] <asparagi> plenty of time!
+[22:22] <Dymaxion> I dunno... it would be nice, yeah, but OTOH, I think we've got time to get two releases out by then. ;-)
+[22:23] <asparagi> i suppose there is something to be said for having a reference implementation
+[22:23] <asparagi> you are smoking something very funny
+[22:23] <ar4chne> seems like that's really pushing it
+[22:23] <asparagi> i am, um, a little busy at work
+[22:23] <Dymaxion> yeah, I'm kidding
+[22:24] <Dymaxion> seriously, I'm not too worried about talking about it without tool support.
+[22:24] <Dymaxion> it'd be nice, but I think it'll be ok without it.
+[22:24] <asparagi> so, what do you think about doing a data model only implementation?
+[22:25] <asparagi> i feel like we got a lot of good stuff out of doing the threat generation implementation, that helped threat generation be better.
+[22:25] <Dymaxion> very useful to me, and still something that I could show, as a demo only
+[22:25] <Dymaxion> yeah, exactly.
+[22:25] <ar4chne> I dunno...i'd hate to see us / you talk about it and have someone snipe it out from underneath us
+[22:26] <asparagi> so far people haven't exactly been paying close attention to our talks.  :/
+[22:26] <asparagi> but that idea in particular is very catchy, i agree
+[22:26] <asparagi> i'm just being pessimistic today, i'll try to knock it off
+[22:27] Action: Dymaxion grins.
+[22:27] <Dymaxion> I think it'd be ok.
+[22:27] <Dymaxion> It's a complicated enough idea that it's not going to be something that someone can turn around and knock out over night without copying larger parts of our system, which makes it even more complicated.
+[22:28] <ar4chne> would you want to give it by yourself, or would you like to have 2 babes on stage w/ you?
+[22:28] <asparagi> i had some new coworkers ask me about some attack tree stuff & mentioned that idea & they seemed pretty interested.  i think a lot of the other ideas we've had were less immediately useful without the whole system
+[22:28] <asparagi> whoa, i don't have the mind meld device tonight
+[22:28] <Dymaxion> hrm... it may be that people get that more, yes... I think without the rest of the system, though, less useful
+[22:28] Action: Dymaxion grins.
+[22:29] <Dymaxion> I'm up for either giving it by myself or with others...
+[22:29] <Dymaxion> I'm certainly willing to drive making it happen, because I'm the one who wants to talk there.
+[22:29] <asparagi> oh.  there are 2 things we could call attack chaining.  one is constructing the attack graph out of attack tree stubs
+[22:30] <asparagi> the other is putting multiple working attacks together, in capabilities-like fashion
+[22:30] <Dymaxion> yes; the first is what I'm thinking of.
+[22:30] <asparagi> they are not exactly the same, at least not yet
+[22:30] <ar4chne> well :) I'd liek to see the talk, and I think the only way I'd get to afford it is if I helped give it
+[22:30] <Dymaxion> The second is way cooler, but a lot harder.
+[22:30] <asparagi> hee hee
+[22:30] Action: Dymaxion grins.
+[22:31] <Dymaxion> Cool by me
+[22:31] <asparagi> i guess i feel about the same.  except i probably don't have time to go.
+[22:31] <Dymaxion> :-(
+[22:32] <asparagi> although that is a less likely time for me to be completely hammered
+[22:32] <Dymaxion> We'll make sure to tape it, if we get in.
+[22:32] <asparagi> when's the submission deadline?
+[22:33] <ar4chne> oh, you have to go aspa...it's just a weekend in like 3 months
+[22:33] <ar4chne> surely you can plan that far ahead, if we even get in
+[22:33] Action: asparagi laughs
+[22:33] <Dymaxion> the end of the month, nominally, but that's been extended, so the sooner the better.
+[22:34] <ar4chne> the end of jan?
+[22:34] <Dymaxion> yeah
+[22:37] <asparagi> tell ya what.  i don't have time to do more than review the application y'all send in, but if either i can get work to send me or you put me on there to run the demo, i'll come.
+[22:37] <Dymaxion> ok, sounds good to me.
+[22:37] <ar4chne> :) awesome
+[22:37] <ar4chne> you've put so much work into it, I don't think I could go on if you weren't there
+[22:37] <asparagi> in any case, i have a lot of demo advice which i will feel compelled to dispense sometime near the end of february
+[22:37] <ar4chne> it just wouldn't feel right
+[22:38] Action: Dymaxion grins re: demo advice
+[22:38] <asparagi> naw, just grab the mind meld device & channel me ;)
+[22:38] <Dymaxion> ar: it'll be ok -- I really want us all to be there too, but it's still worth doing regardless
+[22:40] <asparagi> ok.  so, web site, balloon help, or xml?  i have about 1.25 hours before i must sleep
+[22:40] <Dymaxion> balloon help should be quick, right?
+[22:41] <ar4chne> do you guys think we should expand into 2 weekly sessions?
+[22:41] <asparagi> hope so
+[22:41] <Dymaxion> I'd really like to, but I don't think I have time right now.
+[22:41] <ar4chne> since we've effectively shortened this one?
+[22:41] <asparagi> oo.  that might be good, at least till we ship
+[22:42] <asparagi> yah, sorry. :(  my nights are really early now
+[22:42] <ar4chne> :) no worries; mine are too
+[22:42] <Dymaxion> My life is going to be a mess until I'm out of IOA.
+[22:42] <asparagi> oh, yah.
+[22:42] <ar4chne> that's why I figured quantity > length might be of benefit
+[22:42] <Dymaxion> Sorry I was running so late
+[22:42] <Dymaxion> yeah
+[22:43] <Dymaxion> if you guys want to, or people want to push random stuff at irc, I can try to monitor the channel more closely as often as I can
+[22:43] <asparagi> hmm.  what if we met online only, no phone or in person, 1.5 hours, 2x per week? 
+[22:43] <ar4chne> that sounds good to me
+[22:43] <asparagi> oh. that might work. just use irc as a holding device for unanswered issues
+[22:43] <ar4chne> I'm mon irc most nights anyways
+[22:44] <ar4chne> and I'm hoping to have the irc logs posted by today
+[22:44] <asparagi> i haven't got access to irc during the day yet.  i don't think i am going to
+[22:44] <ar4chne> so that we can access them online
+[22:44] <asparagi> ooo.  :)
+[22:45] <Dymaxion> the problem for me is that there's so much stuff going on right now that tends to eat my nights randomly, so I often end up not being around unexpectedly when the time isn't blocked out.
+[22:45] <Dymaxion> If unanswered stuff hits irc or email, I will respond, and if I'm around, I'll jump in.
+[22:46] <asparagi>  i move we keep this meeting in its shortened version, and go asynchronous with everything else, as paul suggests.  i'll try to check for open stuff most nights.
+[22:47] <asparagi> (in the irc logs & on our shiny new list)
+[22:47] <Dymaxion> cool
+[22:47] <asparagi> S?
+[22:48] <ar4chne> sounds good; altho if you want a more structured time for the 2nd meeting, it would help me promise to be around
+[22:49] <asparagi> Paul, how do you feel about S & B having a second scheduled meeting per week, that you can drop in on or not?
+[22:49] <Dymaxion> fine by me
+[22:50] <asparagi> ara, when do you like?  everything after 7pm on weeknights is pretty equivalent to me
+[22:52] <ar4chne> same here
+[22:52] <ar4chne> maybe monday?
+[22:53] <ar4chne> or we could do wednesday thrus
+[22:55] <asparagi> wednesday thurs would be good for me, but not tomorrow
+[22:55] <asparagi> so start next week?
+[22:57] <ar4chne> yeah, sounds fine :)
+[22:57] <asparagi> ok. so, balloon help
+[22:57] <asparagi> the real problem is that polygonmorph looks lousy
+[22:57] <asparagi> (i.e. jaggy)
+[22:58] <asparagi> this is not fixable by 1/31 given everything else
+[22:58] Action: Dymaxion nods.
+[22:58] <Dymaxion> Can we make them all squares?
+[22:59] <asparagi> so, there are 3 places we could do a workaround: balloonmorph, handmorph, or every morph that we intend to use balloon help
+[23:00] <Dymaxion> so, not having to override every time would be nice.
+[23:00] <Dymaxion> unless we shove our own subclass in there.
+[23:00] <Dymaxion> Is there any balloon help in the system right now, with the programming facilities turned off?
+[23:00] <asparagi> oh.  i was going to describe the +s & -s of each place, but the answer is suddenly very clear: add a preference for square balloon help, and modify balloonmorph
+[23:00] <Dymaxion> ok. :-)
+[23:00] Action: asparagi checks
+[23:01] <Dymaxion> if there wasn't, we could do it wherever, but if there is, it should look as consistent as possible.  Ditto if we're likely to roll in components later which come with balloon help.
+[23:02] <asparagi> that would be no, there is no balloon help when programmer facilities are turned off
+[23:02] <Dymaxion> so we do have the freedom to do whatever.
+[23:02] <Dymaxion> the way you described sounds best, though, unless it's going to mess stuff up./
+[23:03] <asparagi> that seems bad.  i would think that for trike, balloon help would be most needed when people have programmer facilities turned off
+[23:03] <asparagi> oh
+[23:03] <asparagi> wow, my head is full.  i checked the wrong box.
+[23:03] <asparagi> when balloon help is off, balloon help is off.
+[23:04] <Dymaxion> oh, you mean that turning off programmer facilities disables balloon help?  (or not, as the case may be)
+[23:04] <asparagi> when programmer facilities is off, balloon help is whatever you set it to
+[23:04] <Dymaxion> ok
+[23:04] <asparagi> i think i can add the preference without messing anything up.
+[23:04] <Dymaxion> cool
+[23:04] <Dymaxion> sounds like a plan
+[23:05] <asparagi> so, we have web site & xml left
+[23:05] <Dymaxion> what did you want to talk about on the web site?
+[23:07] <asparagi> Craig suggested that we move the octotrike.org and everything in that column to the left hand side.  he thinks it is good for people to see an octopus first, because it will make them smile.  did we try that layout?
+[23:09] <Dymaxion> hrm.
+[23:09] <asparagi> he also suggested that we move the tabs, so they hug the right, if we do this.  and he thinks everything on a page should be the same length, so the layout looks more deliberate
+[23:09] <asparagi> i don't know whether i like these ideas, but i wanted to pass them along.
+[23:09] <Dymaxion> making all the tabs the same length with be cool by me.
+[23:10] <Dymaxion> I kind of like the column on the right, but I'm a wacky left-hander, so what do I know. :-)
+[23:10] <asparagi> no, he was saying vertically the same length, i.e. the news/download/octopus thing is the same length as the text in the middle
+[23:11] <asparagi> although i see no way to achieve this, given the different lengths of our content.
+[23:11] <Dymaxion> yeah, I can't see how that could work.
+[23:11] <Dymaxion> btw, right now if I click on the tabs, I'm getting blank pages.
+[23:12] <asparagi> i think it is great that someone is giving us comments (maybe ara is trying something out for us) that aren't "dude, update your web site, it looks stupid".  we have come a long way if people are talking about details like column order and length of columns
+[23:12] <asparagi> :)
+[23:13] <Dymaxion> yup :-)
+[23:13] <asparagi> hm, the tabs aren't blank for me
+[23:14] <Dymaxion> works now
+[23:14] <Dymaxion> wtf?
+[23:14] <asparagi> i bet ara is playing.
+[23:14] <ar4chne> cought!
+[23:14] <ar4chne> *cough* sorry :)
+[23:14] Action: Dymaxion grins.
+[23:14] Action: asparagi laughs
+[23:14] <Dymaxion> np, I was just suddenly worried. :-)
+[23:15] <ar4chne> I had an error on my global page
+[23:15] <asparagi> what do you think about those ideas?
+[23:15] <ar4chne> how what are you guys wanting?
+[23:15] <ar4chne> the news column on the left and the tabs on the right?
+[23:15] <ar4chne> gimme 3 shakes
+[23:15] <asparagi> yah, to see if it looks good or not
+[23:18] <ar4chne> ok
+[23:18] <ar4chne> I don't really like it, tho
+[23:18] <Dymaxion> eww
+[23:19] <asparagi> ewww
+[23:19] <ar4chne> :D my thoughts exactly
+[23:19] <asparagi> well, we tested that. :)
+[23:19] <asparagi> thanks.
+[23:19] <Dymaxion> the boxes aren't nearly well enough defined for the left-column thing to work, and it massively deprioritizes the actual content and the navigation tabs for the logo
+[23:19] Action: Dymaxion grins.
+[23:19] <ar4chne> ok, all better!
+[23:20] <Dymaxion> I am curious what it would look like with all the tabs the same width, but that's a tiny tweak.
+[23:20] <asparagi> ahh.
+[23:20] <ar4chne> hmmm...I'm hesitant to do that
+[23:20] <asparagi> that's much better.
+[23:20] <ar4chne> because the text could potentially wind up being too wide
+[23:20] <ar4chne> for whatever width I set
+[23:20] <ar4chne> but gimme a few
+[23:21] <Dymaxion> actually, one other tweak would be to make the left margin between the content and the frame border be the same as the gutter between the two columns -- it looks a little bit too close to the left edge right now.
+[23:21] <Dymaxion> Again, nitpick
+[23:22] <Dymaxion> and yeah, as there's no good way to make the tab width be the same for all tabs based on the longest string, I know we run that risk.
+[23:22] <ar4chne> ok, dunno how to do it off the top of my head
+[23:22] <Dymaxion> np
+[23:22] <ar4chne> do what?
+[23:22] <ar4chne> it's exactly the same
+[23:22] <ar4chne> 10px
+[23:22] <Dymaxion> hrm
+[23:23] <asparagi> so, i am thinking of driving up the weekend of 1/29 to do final trike push.  can we plan to do trike for several hours on saturday afternoon?
+[23:23] <Dymaxion> look at the distance between the the ends of the <hr> and the content
+[23:23] <asparagi> i'd like to do stuff like os x testing sometime that weekend
+[23:23] <ar4chne> Dymaxion: I dunno what you're talking about
+[23:23] <ar4chne> asparagi: that sounds good
+[23:23] <Dymaxion> that should work for me; I'm planning on my last day being the 27th.
+[23:23] <asparagi> great.
+[23:24] <ar4chne> and by website we meant fiddle with content, not the appearance, I thought
+[23:24] <Dymaxion> Fair enough, I'll stop nitpicking. :-)
+[23:24] <ar4chne> well, i honestly don't know what you mean
+[23:24] <asparagi> i wanted to pass on those suggestions so we could try them, but we can do content
+[23:25] <Dymaxion> I'll show you some time when we're both in front of the same browser
+[23:25] <ar4chne> ok
+[23:25] <asparagi> or, i am ready to move on to xml if you guys like that better...
+[23:25] <Dymaxion> do we have specific content bits to poke at?
+[23:26] <asparagi> i didn't do anything new.  is there anything that anybody has which we could review?
+[23:26] <asparagi> or suggestions for the desired content list?
+[23:26] <ar4chne> I thihnk i'd prefer to do the xml stuffs
+[23:26] <Dymaxion> I don't have anything there
+[23:26] <ar4chne> we need to get crackin on that if we plan on getting it done anytime soon
+[23:26] <Dymaxion> xml, then?
+[23:26] <asparagi> ok. xml.
+[23:26] Action: Dymaxion nods.
+[23:26] <ar4chne> otherwise, I'd say work on stuffs for the release
+[23:27] <asparagi> xml is the critical path item for the release
+[23:27] <asparagi> i think
+[23:27] <asparagi> does anybody remember where our current draft is?
+[23:27] <ar4chne> oh, I thought I remembered we'd chucked it for now...I could be on crack
+[23:27] <ar4chne> probably am
+[23:27] <asparagi> oh.  wow.  i.e. no file output?
+[23:27] <ar4chne> oh, that was for the jan 4th release we were trying to push, huh?
+[23:28] <Dymaxion> I've got it on the web... hang on and I'll check it in.
+[23:28] <asparagi> oh, yeah.  that sounds right
+[23:28] <ar4chne> well, if we go sans files, what else is there?
+[23:28] <asparagi> there's the Show Stopping Bug, corruption of the rules trees
+[23:28] <asparagi> there's a bunch of finicky appearance stuff
+[23:29] <asparagi> and there's a silly bug somewhere (20 min, probably) to get attack tree edits working the same way the rules trees do
+[23:29] <asparagi> and a little content to add
+[23:29] <asparagi> pretty small
+[23:29] <Dymaxion> src/trike/trike.xml checked in.
+[23:30] Action: Dymaxion nods.
+[23:30] <Dymaxion> We should probably do XML last, but I'd really like to see it in this release if we can do it.
+[23:32] <asparagi> well, i think we should try to get the file defined.  most everything else i can work on without realtime input in my copious spare time
+[23:32] Action: Dymaxion nods.
+[23:32] <Dymaxion> Sounds good, then.
+[23:32] <asparagi> wow, stuff in the glossary. awesome :)
+[23:33] <Dymaxion> yeah, it's just a dump from the paper, but it's a start
+[23:33] <asparagi> so i guess we were at action
+[23:34] <Dymaxion> yes
+[23:36] <asparagi> i can't remember which side i was on in the great typed or untyped element debate, but i think something like <knownActors><reference id="XXX" /><reference id="XXX" /></knownActors> would look just fine
+[23:36] <asparagi> (paul, can you be updater again?)
+[23:36] <Dymaxion> yes, will do
+[23:37] <asparagi> i also can't remember what the resolution of the typed or untyped debate was.  did we reach a conclusion?
+[23:37] <Dymaxion> hrm
+[23:37] <Dymaxion> I don't actually remember... I meant to write it down at the time.
+[23:38] <Dymaxion> I think I'm pretty willing to go either way at this point.
+[23:39] <asparagi> i think right now i'm in favor of untyped, with type being connoted by the containing element.
+[23:39] <asparagi> ara?
+[23:41] <asparagi> oh, somebody should read the xsd/xml stuff before we publish the .xsd, to make sure we are getting as much power as we can from automatic validators.  that would be worth typed references
+[23:41] <asparagi> or untyped, whichever could actually be checked
+[23:41] <Dymaxion> hrm
+[23:42] <ar4chne> :) I'm good with that; that's the way I wanted it
+[23:42] <Dymaxion> ok, I'll update it
+[23:42] <asparagi> awesome. apparently time has caused your good sense to trickle into everyone else's brain
+[23:43] <asparagi> so for rules.  because of the optimizer, we are going to end up with references in the rules.
+[23:43] <asparagi> because of that, i'm not sure they should be defined in the actions.
+[23:43] <ar4chne> haha :D
+[23:44] <Dymaxion> done
+[23:44] <asparagi> (is that something you suggested last time, too?)
+[23:44] <Dymaxion> hrm, yeah, stated like that, a seperate (flat?) rule set makes sense.
+[23:46] <asparagi> i think it will be easier, in most cases, to read in things without forward references.  but i'm not sure we can dictate that in an xsd.  paul, can you remember?
+[23:46] <Dymaxion> no idea, sorry
+[23:47] <Dymaxion> I'd be suprised.
+[23:47] <asparagi> oh.  i think i just remembered one of the other options: <knownActors><actor reference="XXXX">
+[23:47] <Dymaxion> The idea being, though, that we'd specify that the flat ordering must not create forward references?
+[23:47] <asparagi> can i change my mind and like that one better?
+[23:48] <asparagi> yeah.
+[23:48] <Dymaxion> (is that even always possible?)
+[23:48] <asparagi> no, probably not.
+[23:48] <Dymaxion> Oooh... I like that a lot, actually.
+[23:49] <ar4chne> works
+[23:49] <asparagi> so for squeak, i think eventually that dang xsd factory i keep not working on has to deal with forward references, because they are allowed in .xsds.  i think.
+[23:50] <asparagi> i remember writing a bunch of forward reference code, and usually i do that for a reason..
+[23:50] Action: Dymaxion nods.
+[23:50] <asparagi> so i could just recycle however i did that
+[23:51] <Dymaxion> ok, so, if we allow forward references, then we could just have a flat list of rules
+[23:51] <asparagi> but if we allow forward references we might be making it hard for other people to parse
+[23:51] <Dymaxion> do we want to switch to the alternative that brenda stated above re: knownactors?
+[23:51] <Dymaxion> it doesn't seem like it would be too hard to do, really.
+[23:52] <asparagi> i thought we got an ooh from you and a works from S, so i think we should switch
+[23:52] <asparagi> unless i misassigned correspondences
+[23:53] <Dymaxion> ok, doing
+[23:53] <asparagi> so rules wise, i think <rules> should be a sibling of <actions>.
+[23:53] <Dymaxion> yes
+[23:53] <asparagi> and maybe before it.
+[23:55] <asparagi> then we get to the type thing.
+[23:55] <asparagi> as in, <andRule> or <rule type="and"]
+[23:55] <asparagi> er, >
+[23:56] <Dymaxion> ok, committed that bit
+[23:57] <Dymaxion> hrm
+[23:57] <Dymaxion> I prefer a type tag, but I dunno...
+[23:58] <asparagi> it seems like there is trouble both ways.  <rule reference=""> is a nice parallel thing; it is dorky for the action to need a different element based on rule subtype
+[23:59] <asparagi> but <rule type="text"> shouldn't have children, where <rule type="and"> should
+[23:59] <asparagi> that seems weird.
+[23:59] Action: Dymaxion nods
+[23:59] <asparagi> crap, it's 10pm.
+[23:59] <asparagi> i have to sleep.
+[00:00] --- Thu Jan 19 2006
+[00:00] <asparagi> i am so tired.
+[00:00] <asparagi> i love my job, but i need to learn how to do impossible things in 40 hours/wk
+[00:00] <Dymaxion> well, we got a couple things sorted, at least.  I'll add some comments in as to what we're dealing with right now and commit that.
+[00:01] <ar4chne> hehe, nite aspa
+[00:01] <asparagi> i think you should comment type= in the rule thing, like we have for action id=
+[00:01] <asparagi> er, action verb=
+[00:01] <asparagi> good night :)
+[00:01] <Dymaxion> Oh, right, that's what that was
+[00:02] <asparagi> yah. let's do xml file first next week, unless we decide to cut the feature instead
+[00:03] <asparagi> i'll check logs for any more conversation, gnight
+[00:06] <Dymaxion> committing the last update now
+[00:32] Action: Dymaxion waves at the passing h1kari
+[00:36] <ar4chne> http://www.octotrike.org/irc.html
+[00:36] <ar4chne> done, I think
+[00:37] <ar4chne> http://www.octotrike.org/irc.html?v=20051231
+[00:37] <ar4chne> gnite
+[01:08] <Dymaxion> woot!
+[01:08] <Dymaxion> At some point, it would be cool if we could make the bot detect days on which there's no traffic and not post an entry for them

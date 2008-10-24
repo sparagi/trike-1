@@ -1,0 +1,4 @@
+<!--#set var="pageTitle" value="$venueName Presentation" -->
+<!--#include file="header.shtml" -->
+
+<div id="contenthdr"><!--#echo var="talkName" --></div>

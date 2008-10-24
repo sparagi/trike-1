@@ -1,0 +1,123 @@
+[16:11] <asparagi> i'm now "home" in beaverton, or.  this rv park will be home until the end of january.  ish.
+[16:19] <Dymaxion> whoo!
+[16:19] <Dymaxion> do you have bandwidth there?
+[16:35] <ar4chne> yay!
+[16:37] <asparagi> i have very strong GPRS signal.  i am thinking i will find a coffee shop when i want to upload code
+[16:37] <Dymaxion> Ok, cool.
+[16:38] <Dymaxion> Didn't know if you had wifi there or not.
+[17:09] <asparagi> oh my goodness gracious... :) http://minnow.cc.gatech.edu/squeak/786
+[17:13] <ar4chne> wow, :D
+[17:13] <ar4chne> that looks very promising
+[17:15] <asparagi> i just tried it.  it worked like a charm -- i'm going to have to kill it from windows
+[17:16] <asparagi> damn, that is The Shit.
+[17:17] <asparagi> now all i have to do is figure out how to put together an enable & disable UI.  :)
+[17:19] <asparagi> and of course ned wrote it.  i swear, all the good stuff was written by ned, craig or maybe colin
+[17:20] <asparagi> don't tell any other squeak ppl i said that, though :)
+[17:39] Action: Dymaxion grins.
+[17:39] <Dymaxion> Woo!
+[17:50] <ar4chne> so we jus thave to figure out how to add a 'quit' button / menu option?
+[17:56] <Dymaxion> well, we also want to have a way of turning the debugger and halos and world menu back on, for our own use.
+[17:59] <asparagi> there's an operational checkbox, for turning stuff off & on
+[17:59] <asparagi> but turning stuff off is a little weird.  it has a confirmation dialog & a prompt for a file name
+[18:00] <asparagi> i think i am going to copy the rest of it, and remove that behavior
+[18:04] <asparagi> well.  i think the less offensive squeakishness item has been accomplished
+[18:06] <ar4chne> :D :D :D
+[18:06] <ar4chne> that was like, one of the biggest things
+[18:06] <ar4chne> you're rocking, aspa
+[18:06] <ar4chne> good job ^^
+[18:07] <asparagi> i am really happy i asked google about disabling halos...
+[18:07] Action: Dymaxion grins.
+[18:07] <asparagi> so, for the quit button/thing
+[18:07] <Dymaxion> See, sometimes google does know stuff about squeak. :-)
+[18:08] <asparagi> where do we want to put that?
+[18:08] <Dymaxion> Do we still want to do the "replace the debugger with an email" thing?
+[18:08] <asparagi> yes
+[18:10] <Dymaxion> Can we make killing the program via the OS-window decorations do the right thing?
+[18:11] <asparagi> maybe....?
+[18:12] <asparagi> i guess if someone makes Squeak full screen (such that those aren't available), they will probably know how to exit
+[18:13] <Dymaxion> Our best bet is to try that and then add something on the preferences screen... maybe change the title so it makes more sense.
+[18:13] Action: Dymaxion nods.
+[19:20] <asparagi> grrrr...
+[19:20] <asparagi> there are a bunch of stupid highlighting problems still
+[19:21] <asparagi> i would like to propose that we turn off mouseover highlighting on the tabs.  it getting turned on was an accidental side effect.
+[19:22] <asparagi> instead, i'd like to see 3 mouse cursors used consistently in our interface, to show feedback
+[19:22] <asparagi> specifically, when you should click, a hand
+[19:22] <asparagi> when you should type, a text cursor
+[19:22] <asparagi> and otherwise, a normal arrow
+[19:23] <asparagi> what do y'all think?
+[19:24] <asparagi> if we wanted to get really fancy we could use the color of the hand to indicate which buttons you could press, but i suspect only diehard squeakers would understand
+[19:24] <asparagi> actually a hand says drag me more than click me
+[19:32] <Dymaxion> I like the idea of just using mouse curors and turning off hover effects... they're annoying.
+[19:33] <Dymaxion> I think we'd be better off putting a small "context menu" graphic next to the cursor to indicate that you can right click.
+[19:33] <Dymaxion> We should use an "X" cursor for areas that are inactive.
+[19:34] <asparagi> here is what i was working on: 
+[19:34] <asparagi> desired cursor:
+[19:34] <asparagi> 	text cursor over text fields
+[19:34] <asparagi> 	hand with forefinger up over buttons
+[19:34] <asparagi> 	hand with all fingers up over things you should grab
+[19:34] <asparagi> 	arrow by default
+[19:34] <Dymaxion> hrm, ok, that works.
+[19:34] <Dymaxion> And add a context menu over things that have them?
+[19:34] <asparagi> i think using a standard cursor for inactive areas would be better because people will wonder what the x means
+[19:34] <Dymaxion> yeah
+[19:35] <Dymaxion> sounds good
+[19:35] <asparagi> well.. eventually you could, for example, enter text in an actor name field, drag it to change the order, or right click to get the context menu
+[19:36] <Dymaxion> hrm.
+[19:36] <asparagi> in the tree widget thingummy, you right click to expand or collapse multiple things
+[19:36] <Dymaxion> so, we need an order of precedence, I guess.
+[19:36] <asparagi> which is bad, actually, right click doing multiple things in different parts of the interface
+[19:36] <asparagi> the interface looks kind of frankenstein right now, too
+[19:37] <asparagi> the tabs are a different style from the radio button things on the assets page
+[19:37] <Dymaxion> it seems like the typing cursor should always win, and right click should always bring up a menu.  The right click on tree behaviour is pretty weird.
+[19:37] <Dymaxion> yeah
+[19:37] <Dymaxion> can we edit the sprites for all of that stuff easily?
+[19:38] <asparagi> i feel like we could get to an interface that is pretty slick but i dunno how long it will take
+[19:38] <asparagi> d.t. sprites?
+[19:38] <Dymaxion> the graphics, in whatever the hell form they are
+[19:38] <asparagi> oh. 
+[19:39] <asparagi> i don't know
+[19:39] <asparagi> i mean, i think stuff like the tabs & the radio buttons are drawn
+[19:39] <Dymaxion> ah, ok.
+[19:39] <Dymaxion> Well, can we edit the drawing instructions?
+[19:40] <asparagi> and i dunno about the cursor -- i know the host cursor is faster & i don't know whether Squeak can change that
+[19:40] <asparagi> oh, sure, it's just code
+[19:40] <asparagi> we can edit anything
+[19:40] <asparagi> it would be polite to subclass, of course :)
+[19:41] <asparagi> so do we want the context menu graphic thing for when there's a menu?
+[19:41] Action: Dymaxion grins.
+[19:41] <Dymaxion> I think so, yes.
+[19:42] <Dymaxion> But not when there are other right-click functions.... no really good way to handle those.
+[19:42] <asparagi> ok. so over an actor, we'd have a text cursor with a context menu offset
+[19:42] <asparagi> er, an actor name
+[19:42] <Dymaxion> yes
+[19:42] <asparagi> we would have no cue that you can drag it (you can't now anyway)
+[19:43] <asparagi> over a slider bar, we would have a hand with all fingers up
+[19:43] <Dymaxion> Yeah... I'm not sure how to deal with that part -- I think we need to sit down and think about it.
+[19:43] <asparagi> over a threat model tab we'd have a hand with forefinger up and a context menu offset
+[19:44] <asparagi> (that's where save-this-model goes)
+[19:44] <asparagi> over the radio button for in scope, it'd just be a hand with forefinger up
+[19:45] <Dymaxion> yup
+[19:45] <asparagi> i wonder if we can right click on anything we can't left click on
+[19:45] <Dymaxion> blank areas around the elements
+[19:46] <asparagi> what would right clicking do?
+[19:46] <asparagi> what if we just use the one forefinger hand for both clicking & dragging for now, since dragging is only scroll bars, and revisit when we can drag more stuff?
+[19:47] <Dymaxion> hrm.. still doesn't solve dragging text-editable elements?
+[19:48] <asparagi> we can't actually do that right now, so..
+[19:48] <asparagi> (and we won't be able to for this release)
+[19:48] <Dymaxion> ok
+[19:48] <asparagi> (no dragging nothin')
+[19:48] <Dymaxion> we'll fix it when we break it.
+[19:48] <Dymaxion> :-)
+[19:49] <asparagi> so what would right click do in blank areas around elements?
+[19:49] <Dymaxion> nothing, same as right clicking on something without a context menu?
+[19:50] <asparagi> oh, good :)
+[19:51] <asparagi> i misinterpreted something you said earlier
+[19:51] <Dymaxion> sorry
+[19:51] Action: Dymaxion is only paying half attention, working as well. :-)
+[19:51] <asparagi> now to find out how possible this is....
+[19:54] <asparagi> looks tricky.
+[19:54] <asparagi> i think i am going to give up on the existing buttons
+[19:57] <Dymaxion> at least we won't break button now when we change stuff?
+[19:57] Action: Dymaxion grins.
+[20:01] <asparagi> yah....
+[00:00] --- Fri Dec 23 2005

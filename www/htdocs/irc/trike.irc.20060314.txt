@@ -1,0 +1,737 @@
+[18:47] <ar4chne> trike still on for tonght?
+[19:01] <Dymaxion> yup!
+[19:01] <Dymaxion> see you here at 7:30
+[20:43] <ar4chne> oki!
+[21:11] Action: Dymaxion looks around
+[21:13] <ar4chne> wee
+[21:15] <ar4chne> how's the day, dym?
+[21:18] <Dymaxion> ok
+[21:18] <ar4chne> have you talked to brenda tonight?
+[21:19] <Dymaxion> yesterday, not tonight, though
+[21:21] Action: Dymaxion finishes dinner
+[21:21] <Dymaxion> yay!
+[21:21] <Dymaxion> Did you get your report done?
+[21:21] <asparagi> hiya!
+[21:21] <asparagi> yes, i did.
+[21:22] <asparagi> it wasn't even bad
+[21:22] <Dymaxion> woo!
+[21:22] <Dymaxion> ar: how was your day?
+[21:22] <ar4chne> it was there ^^
+[21:22] <ar4chne> I feel like I accomplished oodles
+[21:23] <ar4chne> and nothing at all :)
+[21:23] Action: Dymaxion grins
+[21:23] <ar4chne> asparagi: was that your big report?
+[21:24] Action: Dymaxion blinks
+[21:25] <Dymaxion> I just got my new flash disk in the mail, and it came with some crufty software on it, so the first thing I did was to format it.
+[21:25] <Dymaxion> It took < 2 seconds to format a 2GB drive.
+[21:26] <ar4chne> wow
+[21:26] Action: Dymaxion nods
+[21:26] <Dymaxion> I knew it was supposed to be fast and all, but
+[21:26] <ar4chne> :)
+[21:27] <ar4chne> oh, btw...congrats guys on the v1 adoption :)
+[21:27] <ar4chne> that was awesome to see ^^
+[21:28] <asparagi> ok, sorry, i had to get food. now i'm really here
+[21:28] <asparagi> i had 2 big reports. this was the 2nd one
+[21:28] <asparagi> now my life doesn't suck
+[21:29] <ar4chne> yay, for !sucking
+[21:29] <ar4chne> so in the mails that passed about the v1 stuffs, it was suggested that we start convos w/ the ACE team
+[21:29] <ar4chne> and also that we post v1's limitations to the site
+[21:30] <ar4chne> with some hopeful tidbit that corrections are pending at some undefined future point
+[21:30] <Dymaxion> yes
+[21:30] <asparagi> i'm cool if someone else starts the convo w/ ACE but i don't want to talk to them personally
+[21:30] <ar4chne> everything else I agree with, except for the fact that if we're fixing bugs that are in the v1 branch anyway, I don't see how it would hurt us to push just a fixer release
+[21:31] <ar4chne> because we've already agreed to only fix bugs that traverse into v2
+[21:31] <Dymaxion> I haven't had time to call Akshay; I'll try to do that tomorrow.
+[21:31] <ar4chne> akshay rox ^^
+[21:31] <ar4chne> who else is on the ace team?
+[21:31] <Dymaxion> I'm also meeting with J. D. Meier on unrelated business tomorrow; I doubt trike will come up, but I'll let you know if it does.
+[21:32] <Dymaxion> Talah and Ahmed are the people we need to talk to, Sean to a slightly smaller degree
+[21:32] <Dymaxion> Neither Akshay or J.D. are on ACE
+[21:32] <ar4chne> ah, gotcha
+[21:32] Action: ar4chne isn't sure what exactly the ace team is
+[21:33] <asparagi> oh, who's akshay working for, then?
+[21:33] <Dymaxion> JD is SWI, Akshay is MSC
+[21:33] <Dymaxion> MS consulting
+[21:33] <asparagi> ahh
+[21:33] Action: ar4chne doesn't know mucch about ms internals
+[21:33] <ar4chne> except I have a few other friends on the swi team
+[21:33] Action: asparagi wishes she knew less
+[21:34] <Dymaxion> ACE team is a group that does security work for line of business applications -- internal stuff inside MS, basically.
+[21:34] <Dymaxion> Oops. :-)
+[21:35] <asparagi> well, about pushing v1 releases, let's see when we have code in hand
+[21:35] <Dymaxion> Sounds good
+[21:35] <asparagi> mostly i don't want us to lose our bleeding edge rep
+[21:35] <ar4chne> we have a rep?
+[21:35] Action: Dymaxion grins
+[21:35] <ar4chne> :)
+[21:36] <asparagi> yah, we're an industry-standard threat modeling methodology
+[21:36] <asparagi> didn't you get the memo? ;)
+[21:36] Action: Dymaxion . o O ( God help this industry )
+[21:36] <ar4chne> heehee
+[21:36] Action: asparagi laughs
+[21:36] <asparagi> k. so, posting v1 limits to the site
+[21:38] <asparagi> we should probably write it up a llttle more publically-consumable than paul already sent out
+[21:38] <Dymaxion> Yeah
+[21:39] <asparagi> writing doesn't really feel like a good group project
+[21:40] <Dymaxion> I'll take a stab at it
+[21:40] <asparagi> i think maybe we have a weirdness in our work flow.  we have allocated all our Trike time for meetings when only part of our task list benefits from synchrony
+[21:40] <asparagi> awesome
+[21:40] <ar4chne> oki, then what else is on the agenhda?
+[21:40] <asparagi> i'll try not to get too meta
+[21:41] <asparagi> well, is this the theory meeting or the tool meeting?
+[21:41] <Dymaxion> This is the tool meeting
+[21:41] <ar4chne> tool
+[21:41] <asparagi> ok.
+[21:41] <asparagi> so let's do a little tool planning
+[21:42] <asparagi> like, we should write the canonical list of support libraries we know we need
+[21:42] <asparagi> then we can identify candidates, or write them or whatever
+[21:42] Action: Dymaxion nods
+[21:42] <asparagi> also, we should get synced up a little on what this puppy is going to look like
+[21:43] <asparagi> that should help identify what ui library support we need
+[21:43] <ar4chne> so, I've been thinking
+[21:43] <ar4chne> and it seems that we're going to end up doing a lot calculations / comparisons
+[21:43] <ar4chne> right?
+[21:43] <ar4chne> and that seems to be what slowed us down w/ the v1 tool, wasn't it?
+[21:43] <asparagi> i think we should go for a little while working on components & let the theory get further before we settle on feature list for v2.0.0
+[21:43] <asparagi> yes
+[21:44] <ar4chne> I vote we export some stuff to clibs
+[21:44] <ar4chne> for speed
+[21:44] <asparagi> hmm
+[21:44] <asparagi> i think that particular problem was a stupidity problem vs. a Squeak problem
+[21:44] <Dymaxion> I think we should do that when/if we've found real speed problems and exhausted our easy profiling options
+[21:45] <asparagi> the algorithm was very inefficient & it was being invoked many unnecessary times
+[21:45] <Dymaxion> Having everything in squeak is a big deal while we're still in code-churn
+[21:46] <ar4chne> oki
+[21:46] <asparagi> i could see exporting some stuff to C at some point... i'm not totally against it.  but yah, if we let it float a little that'd be nice imo
+[21:47] <asparagi> toolwise, i think our major needed libraries are:
+[21:47] <asparagi> - SOAP
+[21:48] <asparagi> - XML/XSD
+[21:48] <asparagi> - gesture recognition
+[21:48] <asparagi> - structured drawing
+[21:48] <asparagi> - tabbed UI framework
+[21:48] <asparagi> does that sound like it?
+[21:49] <Dymaxion> That's everything i know about
+[21:49] <Dymaxion> Well, graphs
+[21:49] <asparagi> yah... graphs
+[21:49] <asparagi> ara, can we mind meld you about the UI?
+[21:49] <ar4chne> how so?
+[21:50] <ar4chne> its pretty straightforward, no?
+[21:51] <asparagi> well, way before v1 we were talking about a very pen-friendly, diagram-based UI
+[21:51] <ar4chne> yeah, you guys've mentioned it
+[21:51] <asparagi> ok..
+[21:51] <ar4chne> the only thing I would caution is that not everyone has pens :)
+[21:51] <ar4chne> so I think we should have drag / dropable drawing components
+[21:51] <Dymaxion> Yeah; we want it to be mouseable as well
+[21:51] <asparagi> yes, it has to be keyboard & mouse friendly too
+[21:52] <asparagi> so the way it should feel is that you're just sketching notes on paper, except the paper is smart & sort of carries your ideas forward
+[21:52] <ar4chne> omfg...I'm going to kill my cat
+[21:53] <asparagi> it should let you do things that are inconsistent, but flag them as inconsistent
+[21:53] <ar4chne> :( she just ruined one of my favorite scarves pulling the sequins off
+[21:53] <asparagi> suck!
+[21:53] <ar4chne> how it has holes :(
+[21:53] <asparagi> :(
+[21:53] <asparagi> bad kitey
+[21:53] <asparagi> er, kitty
+[21:53] <Dymaxion> suck!
+[21:54] <asparagi> i think it might be beneficial to try getting the UI up sooner in the process this time
+[21:54] <asparagi> i think we are well-positioned to do that because we can reuse stuff from v1
+[21:54] <Dymaxion> Yeah, that doesn't sound like a horrible idea
+[21:55] <Dymaxion> A lot of our bug fix delay has been for UI stuff, too
+[21:55] <asparagi> yah.  it'd be good to get it some more run time
+[21:57] <ar4chne> hehe, I feel like we're a little unfocused atm
+[21:57] <asparagi> yup
+[21:57] <asparagi> sorr
+[21:57] <ar4chne> so, basic components
+[21:57] <asparagi> i was trying to figure out how we should approach the libraries
+[21:57] <ar4chne> some sort of workspace for the drawing
+[21:57] <asparagi> yes
+[21:58] <ar4chne> some sort of dragable widget thing that gets converted to a drawing component
+[21:58] <ar4chne> still need better balloons for the balloon help (;
+[21:58] Action: Dymaxion grins.
+[21:58] <Dymaxion> Is there anything on the library list that we don't have a strong candidate for?
+[21:58] <asparagi> we need to do some searching for BookMorph clones & see whether we want to keep Spiral, the one I wrote, or whether someone else has a better one for our purposes
+[21:59] <Dymaxion> Ok
+[21:59] <asparagi> the draggable widget thing will come from Connectors, which is a gorgeous library for structured drawing
+[21:59] <Dymaxion> If there are docs, I can offer my opinion, but I doubt there are
+[22:00] <asparagi> here's what I translated our list into:
+[22:00] <asparagi> Graphs  SOAP on Flow  XSD Class Factory  Genie  Connectors  stick with Spiral or combine w/ other BookMorph reimplementation?
+[22:00] <asparagi> erg.
+[22:00] <asparagi> damn newlines
+[22:00] <ar4chne> what is SOAP?
+[22:00] <asparagi> Graphs
+[22:00] <asparagi> SOAP on Flow
+[22:00] <asparagi> XSD Class Factory
+[22:00] <asparagi> Genie
+[22:00] <asparagi> Connectors
+[22:00] <asparagi> stick with Spiral or combine w/ other BookMorph reimplementation?
+[22:00] <ar4chne> do you mean like simple object access protocol, or sthing else?
+[22:00] <Dymaxion> yeah, that
+[22:00] <asparagi> yes,
+[22:00] <ar4chne> ok
+[22:01] <Dymaxion> That's how we're looking at having stuff talk to trike
+[22:01] <ar4chne> ah
+[22:01] <ar4chne> eww
+[22:01] <ar4chne> k
+[22:01] <asparagi> so  there's a SOAP implementation, but it's ass
+[22:01] <asparagi> do you  have other protocol ideas?
+[22:01] <asparagi> i would be happy to swit ch
+[22:01] <Dymaxion> definitely
+[22:01] <Dymaxion> More than happy, even
+[22:01] <asparagi> esp. since as i said, the existing SOAP implementation is ass
+[22:02] <ar4chne> hmmm...lemme research a bit
+[22:02] <asparagi> so we will need to write tne
+[22:02] <ar4chne> :) so that I can give an intelligent response
+[22:02] <ar4chne> instead of just 'ick'
+[22:02] <asparagi> there is a decent XML-RPC implementation
+[22:02] Action: Dymaxion nods
+[22:02] <ar4chne> because all my experience w/ soap before has been 'ick'
+[22:02] <asparagi> awesome.  you are in charge of networking protocol
+[22:02] <Dymaxion> Why were we looking at soap instead of xmlrpc?
+[22:02] <Dymaxion> (just curious, I can't rememeber)
+[22:03] <ar4chne> hmmm...xml-rpc wouldn't be bad; since we already have our xml structure put together
+[22:03] <asparagi> i think it was more full-featured & better supported across dev env
+[22:03] <asparagi> because it's all trendy now
+[22:03] <Dymaxion> Huh, ok
+[22:03] <ar4chne> google does it!  everyone should!@#$!
+[22:03] <asparagi> xml-rpc would be way easier, i think it was mike who wanted soap
+[22:03] Action: Dymaxion throws crockery
+[22:03] Action: Dymaxion nods
+[22:03] <Dymaxion> I vote easy
+[22:03] <asparagi> google uses soap?
+[22:03] <ar4chne> maybe we should post a question to mike?
+[22:04] <Dymaxion> Let people who want to interop do the work
+[22:04] <ar4chne> http://www.google.com/apis/
+[22:04] <asparagi> i mean, so do i every morning, but..
+[22:04] <asparagi> ;)
+[22:04] <Dymaxion> hehe
+[22:04] <ar4chne> hmm...anyone know what wsdl is?
+[22:04] <asparagi> yah, let's post our intention to use xml-rpc & ask mike to make any violent objections now
+[22:05] <Dymaxion> web services discover language
+[22:05] <Dymaxion> it's a protocol for exchanging information about the protocol you support
+[22:05] <Dymaxion> er, discovery
+[22:05] <ar4chne> ah, gotcha
+[22:05] <asparagi> it's how you find out about a soap interface
+[22:05] <asparagi> i almost said soup interface
+[22:06] <Dymaxion> Close enough
+[22:06] <asparagi> if someone else makes a list of bookmorph clones or other leads on tabbed interfaces, i can take a stab at evaluating them
+[22:06] Action: Dymaxion . o O ( throw in fourty outsourced developers, stir for a six week product cycle, serve chilled to an uninterested public )
+[22:06] <Dymaxion> Where should I start looking?
+[22:07] <ar4chne> and what should I be doing?
+[22:07] <ar4chne> besides twiddling?
+[22:07] <asparagi> the squeak swiki? google?
+[22:07] <Dymaxion> ok.  I'll poke
+[22:07] <ar4chne> ooh, we should codename v2 to 'twiddles'
+[22:07] <asparagi> :)
+[22:07] <asparagi> well, lessee
+[22:07] <ar4chne> and we can be all "yes, twiddles is coming along nicely"
+[22:07] <Dymaxion> hehe
+[22:08] <asparagi> an important task is to gather all of these libraries & try to get them all installed into the same recent squeak image
+[22:09] <asparagi> it sounds kind of awful, but if you want to work with me on that we could probably get your squeak SkillZ ramped right up
+[22:09] <ar4chne> oh, another option would be proprietary header, ja?
+[22:09] <asparagi> the other alternative is probably dev work carrying the half-written XSD Class Factory forward
+[22:09] <asparagi> proprietary header?
+[22:10] <asparagi> vs. twiddles?
+[22:10] <asparagi> or XML-RPC?
+[22:10] <asparagi> or ?
+[22:10] <Dymaxion> proprietary header vs. twiddles, fight!
+[22:11] <ar4chne> ok, here's a relevant question
+[22:11] <ar4chne> do we want a stateful or stateless protocol?
+[22:11] <ar4chne> what exactly is the point of the communication?
+[22:11] <asparagi> stateless
+[22:11] <asparagi> we will have a server with the canonical version of the model & one or more clients sending it changes
+[22:12] <asparagi> it should send updates to the clients as the model changes
+[22:12] <Dymaxion> Will we ever need transactions?
+[22:12] <asparagi> oh.
+[22:12] <asparagi> yes, probably
+[22:12] <Dymaxion> Do we want to do them ourselves or have the protocol handle them?
+[22:12] <ar4chne> so we're going to need some sort of pki?
+[22:12] <asparagi> e.g. i completely disassemble the model but don't want others to see the intermediate stages
+[22:12] <asparagi> eeeeee
+[22:13] <Dymaxion> no, transactions like database transactions
+[22:13] <asparagi> pki
+[22:13] <Dymaxion> we'll need an auth model... god I hope we don't need pki
+[22:13] <asparagi> that is a good point, we need some seriously configurable auth
+[22:13] <Dymaxion> add auth library to the list
+[22:13] <asparagi> i don't really want to deal with transactions but i don't see how we can avoid it
+[22:14] <Dymaxion> we don't want to write that
+[22:14] <Dymaxion> is there a squeak corba orb?
+[22:14] <Dymaxion> fifty million ton hammer, but.
+[22:14] <asparagi> i dunno
+[22:14] <Dymaxion> Might be another option
+[22:15] <Dymaxion> It'll make the C++ people happy, fsvo happy, but it'll make life painful for everyone else.  OTOH, it may get us things like transactions for free
+[22:15] <asparagi> it sounds kind of heavyweight, i.e. if there is an implementation it will be spotty
+[22:15] <Dymaxion> yeah
+[22:15] <asparagi> well, it seems like what we put in a transaction is seriously app-dependent
+[22:16] <Dymaxion> yeah
+[22:16] <asparagi> so how could an external library help?
+[22:16] <Dymaxion> Well, it provides support for transactions as a concept very easily, etc.
+[22:16] <asparagi> i see
+[22:17] <Dymaxion> It may even just let us declare the model as synchronized objects or something, and then just wave a magic wand
+[22:17] <asparagi> oh. squeakmap is another place to look for bookmorph clones
+[22:17] <Dymaxion> I've never gotten too close to it, though
+[22:17] <asparagi> eee
+[22:17] <ar4chne> ok, what would a transaction consist of?
+[22:17] <asparagi> it sounds sharp
+[22:17] <ar4chne> like, we want the ability to rollback changes?
+[22:17] <asparagi> several changes to the model at once
+[22:17] <Dymaxion> probably
+[22:17] <asparagi> oh yeah
+[22:17] <asparagi> definitely
+[22:18] <Dymaxion> deleting an actor, say, and fixing up all the rules to make things pretty.
+[22:18] <asparagi> yah
+[22:18] <ar4chne> so semaphores / mutexes or some locking mechanism?
+[22:18] <Dymaxion> Yeah
+[22:18] <asparagi> altho there's also the ? of how smart we should expect the client to be
+[22:18] <ar4chne> not very
+[22:19] <asparagi> maybe the client should be totally dumb and when you delete the actor, the server fixes all the rules automagically & sends everybody update notices
+[22:19] <Dymaxion> hrm.
+[22:19] <asparagi> i guess it needs to be both push & pull
+[22:19] <asparagi> what do y'all think about just using SSL certs for mutual auth?
+[22:20] <Dymaxion> Definitely not a bad start; I think that's probably good enough, really.
+[22:20] <ar4chne> well, I def think we should ssl the comm
+[22:20] <Dymaxion> Auth is a nice-to-have that we can work on once we've shipped 2.
+[22:20] <ar4chne> because otherwise you'll be sending info about vulns all over
+[22:20] <ar4chne> in readable format
+[22:20] <asparagi> i think we should have it from the beginning
+[22:20] <ar4chne> but you're still going to need an auth mechanism
+[22:20] <Dymaxion> oh, we have to have some kind of auth
+[22:21] <ar4chne> because otherwise anyone can make changes
+[22:21] <Dymaxion> I meant supporting more complicated auth stuff than basic ssl certs
+[22:21] <asparagi> oh, ok
+[22:21] <asparagi> so, SSL for authentication but we still need authorization on top of that
+[22:21] <asparagi> i'm thinking per-model, read & write
+[22:22] <Dymaxion> yeah
+[22:22] <asparagi> do we need something more granular than that?
+[22:22] <Dymaxion> I don't think so
+[22:22] <Dymaxion> models are too integrated for it to be very meaningful
+[22:22] <asparagi> mmm, yah, ok
+[22:23] Action: Dymaxion fends off a cat
+[22:24] <Dymaxion> If we ever get composite models working, we might revisit that question, but I'm not too inclined too
+[22:24] <asparagi> wow, my cats are being little angels tonight
+[22:24] Action: Dymaxion grins.
+[22:24] <Dymaxion> This one just wants a lap.
+[22:24] <asparagi> must be the kitten
+[22:24] <Dymaxion> nope
+[22:25] <Dymaxion> Ok, so what libraries need identification other than network and UI?
+[22:26] <asparagi> well, now we have SSL to deal with
+[22:26] <asparagi> last I checked there wasn't an implementation
+[22:26] <ar4chne> ok, so do we think we're going to need complex data to push / pull ot the server?
+[22:26] <asparagi> yes
+[22:27] <Dymaxion> right; we'll need to figure out using an external implementation
+[22:27] <asparagi> maybe an openssl plugin
+[22:27] <asparagi> ?
+[22:27] Action: Dymaxion nods
+[22:28] <ar4chne> you guys still think that the pretty graphix lib is going to be worth the headache we're about to embark upon with the auth / xml stuff?
+[22:28] <asparagi> so, the complicated content will tend to come from the server to the client
+[22:28] Action: asparagi shrugs
+[22:28] <ar4chne> like...in c it's a simple problem...been solved many times over
+[22:28] <Dymaxion> https://lists.wisc.edu/read/messages?id=183375
+[22:29] <asparagi> what would we need to do to get a cross-platform structured drawing editor which does gesture recognition?
+[22:29] <asparagi> huh
+[22:29] <asparagi> or we could just use someone else's
+[22:29] <ar4chne> and for osx / linux?
+[22:29] <asparagi> of course i don't exactly want it as a dll
+[22:30] <Dymaxion> ar: working on it
+[22:31] <Dymaxion> http://people.squeakfoundation.org/proj/msh-crypto
+[22:32] <asparagi> wow, and it even mentions spoon
+[22:32] <asparagi> it has to be an active project
+[22:32] Action: Dymaxion nods
+[22:32] <asparagi> hey, and i'd lay odds that msh, whose initials i've never seen before, is Matt Hamrick
+[22:32] <asparagi> do we trust him to write crypto?
+[22:33] <asparagi> ooh, i'm right.
+[22:33] <Dymaxion> I don't think I know him
+[22:34] <asparagi> i have met him a couple of times.  i am under the impression based on the reactions of the people i was with that he is a Name
+[22:35] <Dymaxion> cool
+[22:36] Action: Dymaxion doesn't have the appropriate plugin to be able to actually view the project page
+[22:36] <asparagi> it's the squeak plugip
+[22:36] <Dymaxion> yeah
+[22:36] <asparagi> i'm frightened
+[22:36] <asparagi> :)
+[22:37] <ar4chne> ok, so not to be cranky...but .net is relatively xplatform
+[22:37] <ar4chne> we _could_ switch to c#
+[22:37] <Dymaxion> So, it looks like we do or may soon have options for ssl
+[22:37] <ar4chne> and wxwidgets doesn't have a horrible drawing lib
+[22:37] <asparagi> and it has a gesture recognizer and structured drawing library?
+[22:38] <Dymaxion> ...and the debugging tools we've been using?
+[22:38] <asparagi> that's not what you were saying when you were fighting with it for captain...
+[22:38] <Dymaxion> er, rather, something equivalent
+[22:38] <asparagi> i don't think i really care, at this moment
+[22:38] <ar4chne> yes, but I've seen us fighting squeak bugs too
+[22:39] <asparagi> i don't think i'm too likely to write any code in .NET, but that's not a particularly good reason for the project not to use it
+[22:39] <ar4chne> 3j's coming
+[22:39] <Dymaxion> e?
+[22:39] <Dymaxion> er, er?
+[22:40] <ar4chne> :)
+[22:40] <asparagi> you're psychic..
+[22:40] <_3ricj> fucking irc server doesn't like '3ricj' as a handle. 
+[22:40] <Dymaxion> heh
+[22:40] <asparagi> so, who would write trike if it were in C#?  show of hands
+[22:40] <ar4chne> can't start with a letter
+[22:41] <ar4chne> s/letter/number/
+[22:41] <ar4chne> I think
+[22:41] <ar4chne> asparagi: don't be angry
+[22:41] <asparagi> no, i'm not.
+[22:41] <ar4chne> is there no other language you'd consider?
+[22:41] <asparagi> it was a serious question
+[22:41] <asparagi> lisp would be next on my list
+[22:41] <asparagi> but it's not that high at this point
+[22:42] <asparagi> python, maybe
+[22:42] <Dymaxion> I'd be really torn.  I've really loathed the c# dev work I've done.  I'd be more inclined to go off and try to write it in python
+[22:42] <_3ricj> I'd be very tempted to write it in ruby on rails. 
+[22:42] <_3ricj> but I'm just a tourist. 
+[22:42] <asparagi> isn't that a web thing?
+[22:42] <_3ricj> yup
+[22:42] <Dymaxion> heh
+[22:42] <ar4chne> I've never done python
+[22:43] <asparagi> i don't think the web can do what we need it to..
+[22:43] <ar4chne> OCaml?
+[22:43] <asparagi> haven't looked at it
+[22:43] <asparagi> i'd at least look
+[22:43] <_3ricj> crap, I join my first #trike meeting, and ya'll are talking about what to write it in!?!?!?!?!   holly fuck people. 
+[22:43] <ar4chne> 3j, watch the logs, plz
+[22:43] <ar4chne> :P
+[22:43] <asparagi> what did you want us to be talking about?
+[22:43] <Dymaxion> I'd think about OCaml, but the UI support isn't there
+[22:44] <_3ricj> asparagi, are you getting my msgs? 
+[22:44] <ar4chne> I dunno, guys...c/c++ or c# would be good in a lot of ways
+[22:44] <asparagi> nope
+[22:44] <asparagi> i don't think wxWidgets gets us remotely close to what i wanted to see for the ui
+[22:44] <Dymaxion> If you're not a registered user, you can't msg people by default here
+[22:45] <Dymaxion> They had a nasty spambot problem for a while
+[22:45] <asparagi> i could probably cope with C
+[22:45] <_3ricj> neat.  an IRC server where you can't message people. 
+[22:45] <Dymaxion> And just write out own UI library?
+[22:45] <asparagi> hmm
+[22:45] <ar4chne> then why not go c++ and have it be 1/2 there?
+[22:46] <asparagi> i forgot about that momentarily
+[22:46] <_3ricj> before I duck out:   I can't do 10pm asparagi, as I'm watching a film with pablos.  Gets out at 11pm. 
+[22:46] <asparagi> ok
+[22:46] <asparagi> i'll be asleep.  try me tomorrow.  happy film
+[22:47] <asparagi> ok.  let's look around for some cross-platform structured drawing libraries & gesture recognition
+[22:47] <ar4chne> c# has really good tablet and drawing support 
+[22:48] <Dymaxion> how much of that is avilable cross platform?
+[22:48] <asparagi> does it do structured drawing, or just drawing?
+[22:48] <ar4chne> no idea
+[22:48] <_3ricj> would it be bad and/or unwelcomed if I voice some of my thoughts on the matter?   
+[22:49] <Dymaxion> there's all the ink stuff, but I don't know about anything other than visio to get structured drawing
+[22:49] <Dymaxion> no
+[22:49] <ar4chne> I do know that wxwidgets has support for drag and drop
+[22:49] <ar4chne> and iirc, the pen support is really just a wrapper for mouse events
+[22:49] <ar4chne> so it's not hard to implement
+[22:49] <asparagi> go ahead, 3j, we're just talking... more thoughts are fine
+[22:50] <asparagi> http://www.manageability.org/blog/stuff/open-source-structured-graphics-libraries-in-java/view
+[22:51] <asparagi> GEF sounds sort of like Connectors.  This is the kind of thing I am looking for
+[22:51] <ar4chne> so what about *cringe* java?
+[22:51] <ar4chne> I hate it as a lang, but at least I know it
+[22:51] <ar4chne> and feel I could contribute more
+[22:52] <asparagi> http://www.nwoods.com/
+[22:53] <Dymaxion> commercial
+[22:53] <asparagi> oh.
+[22:53] <Dymaxion> yeah, very not free, it looks like
+[22:53] <asparagi> that's funny, it didn't even occur to me to check for that.  i forgot that not all software is free
+[22:53] <asparagi> maybe i am spacy tonight
+[22:53] <ar4chne> oh, you can embed python into ocaml
+[22:54] <Dymaxion> er, maybe it might be... it's hard to tell if they're only selling support or what
+[22:54] <ar4chne> and it has bindings for lots of stuff...gtk, gnome, opengl
+[22:54] <Dymaxion> I
+[22:54] <_3ricj> I think trike, if 'structured drawing and gesture recognition' is a requirement, it should be rethought.  I mean....  it just smells like scope creep like mad to me.  Yes, it would be sexy, and cool to build a cool UI - - but I think the real value is something which functions well regardless of UI artifacts.   The UI is just a input method to the 'real work' which trike is really ideal for - -   When you boil it down, it's all just ent
+[22:55] <Dymaxion> er, I'm pretty confident about python, but OCaml would be new to all of us
+[22:55] <asparagi> i guess how i feel about language is that i don't really care.   i am personally not that likely to do a lot of dev work in languages other than squeak.  lisp & python are languages i might dabble in
+[22:55] <asparagi> 3j, you got cut off at "it's all just ent"
+[22:56] <Dymaxion> 3ric: there's no non-graphical way to use the business rules system.  This makes structured drawing a requirement, as far as I can see it.
+[22:56] <_3ricj> entries in a database.  No fruity  object database is required, just a simple set of tables would likely work.   If I was going to interact with trike  -- I'd want:  a network interface with a simple API (rpc/soap/whatever), with a few options for frontend data input.   It's an IO tool - - stuff goes in, processed stuff comes out.    Now is where I get flamed, but that's ok.  I'm not vested in trike... so it really doesn't matter to me 
+[22:56] <asparagi> and you may not be aware that v1 is totally dead, and v2 is totally diagram-based
+[22:56] <Dymaxion> Having it for DFDs is something we might be able to work around, at the expense of usibility
+[22:56] <_3ricj> diagrams?  wow, yuckie. 
+[22:56] Action: asparagi shrugs
+[22:57] <_3ricj> they are hard to type in. 
+[22:57] <ar4chne> ok, wait
+[22:57] <ar4chne> so, 3j has a good point
+[22:57] <ar4chne> what if the 'server' component is completely gui free?
+[22:57] <ar4chne> I mean, it'd have to be
+[22:57] <asparagi> yes, that's the plan
+[22:57] <ar4chne> then we could write several clients
+[22:57] <ar4chne> in whatever the hell langs
+[22:57] <asparagi> yes, we could indeedd
+[22:57] <ar4chne> that handle the drawing portion
+[22:58] <ar4chne> so, a squeak client
+[22:58] <ar4chne> that talks to a c / c++ server
+[22:58] <ar4chne> over some protocol
+[22:58] Action: asparagi shrugs
+[22:58] <ar4chne> aspa, think about it...that would fix about all the problems
+[22:58] <ar4chne> the auth part would be done by the server anyway
+[22:58] <asparagi> sure.  as long as someone else is committing to write that engine, i'm totally hip with it
+[22:58] <Dymaxion> it would?  We still need to have crypto support on the client
+[22:58] <ar4chne> and that's been well handled in c / c++ for a long time
+[22:59] <asparagi> i just don't want to deal with the primitive dev tools
+[22:59] <Dymaxion> it'll make half of it easer, yes
+[22:59] <asparagi> i got spoiled & i don't want to go back
+[22:59] <Dymaxion> and we still need the network libs on the client
+[23:00] <ar4chne> well, you'd need ssl support on the client
+[23:00] <ar4chne> and something that would talk whatever protocol we agree on
+[23:00] <asparagi> we need that anyway.
+[23:00] <ar4chne> jepp
+[23:00] <Dymaxion> what does it buy us?
+[23:00] <ar4chne> stability in the server
+[23:00] <Dymaxion> easier integration to other authentication systems
+[23:01] <asparagi> potentially better adoption because it's in a familiar language
+[23:01] <Dymaxion> but the client isn't, so I don't know if that'll really make a difference
+[23:01] <ar4chne> flexibility
+[23:01] <Dymaxion> how so?
+[23:01] <ar4chne> sure it will; if we post the format for the protocol
+[23:01] <asparagi> i don't think server stability or flexibility are likely to be better in C
+[23:01] <ar4chne> anyone that doesn't like our client can write their own :)
+[23:01] Action: Dymaxion nods
+[23:01] <Dymaxion> We can do that anyway
+[23:01] <ar4chne> just look at silc
+[23:01] <ar4chne> or irc
+[23:02] <Dymaxion> yeah; a protocol definition is something we have to do anyway, once we've got a stable protocol, because that's how we're intending to support interop in general.
+[23:02] <ar4chne> exactly ^^
+[23:03] <Dymaxion> so what are we getting by moving to C for the server?
+[23:03] <ar4chne> isn't that what we were just talking about?
+[23:03] <Dymaxion> no
+[23:03] <ar4chne> oh...what?
+[23:03] <Dymaxion> The only thing that I've heard is that we'll get better library support for things like external auth if our server is in C.
+[23:04] <asparagi> i think the biggest thing we get is more willingness for companies to install a service in a familiar language
+[23:04] <ar4chne> and speed and stability
+[23:04] <ar4chne> and comfort
+[23:04] <Dymaxion> Until someone else writes a client, better adoption due to language stuff isn't relevant, and that's as likely to happen with a documented protocol regardless of the server language
+[23:04] <asparagi> there is frequently more resistance to weird for servers than clients
+[23:04] <ar4chne> exactly...comfort
+[23:05] <asparagi> i don't think speed & stability are fair comparisons
+[23:05] <ar4chne> honestly...squeak is so beta, I wouldn't want to have a vm running services on a box that I was worried about
+[23:05] <ar4chne> especially something that is chugging sensative information
+[23:05] <Dymaxion> I don't buy stability, and I think we haven't really demonstrated that speed is an issue with squeak any more than with C; we've got algorithmic issues for speed right now, not language ones.
+[23:05] <asparagi> if you implemented the exact same algorithms we had in v1 in C, they would still be painfully slow
+[23:05] <asparagi> it was an algorithmic problem
+[23:06] <ar4chne> yes, I know
+[23:06] <_3ricj> aspa point on 'companies willingness' - - thinking about what folks use today:  It's office, it's a w2k3 server, it's visio.  Making integration clean with that kind of platform will get you a large customer base, and likely more contributers. 
+[23:06] <ar4chne> but c is faster than any vm could be, is all I'm saying
+[23:06] <ar4chne> I didn't intend any remark upon the algorithm
+[23:06] <Dymaxion> so moving to C right now for speed is a premature optimization, basically
+[23:07] <_3ricj> speed is almost completely irrelevant.  
+[23:07] <ar4chne> and I don't see how you can't buy stability; I hadn't been able to run an image for weeks before we released
+[23:07] <Dymaxion> 3ric: yeah, that's the idea behind the xml-rpc or what have you interface.
+[23:07] <asparagi> you hadn't been able to build an image with the build processor that I wrote and still haven't tested on OS X
+[23:08] <asparagi> this is even more likely to happen in C because differences between platforms are larger
+[23:08] <ar4chne> even not using the build script, I kept crashing
+[23:08] <asparagi> ok, i was unaware of that
+[23:08] <asparagi> you have had no trouble with the released build?
+[23:08] <ar4chne> *sigh* I guess, guys, that really I just feel like I'm not adding anything useful
+[23:08] <ar4chne> no, the release was fine
+[23:09] Action: _3ricj must duck out for a movie.  I hope I didn't cause too much chaos here.   Just remember, we are all friends here, right?  right?  /me ducks the flinging poo aimed at his head. 
+[23:09] Action: asparagi shrugs
+[23:09] <asparagi> i really don't care what anyone else writes in
+[23:09] <asparagi> see you later, 3j
+[23:10] <_3ricj> adios
+[23:10] <asparagi> so, steph, basically it seems like you aren't interested in writing in squeak
+[23:10] <ar4chne> I didn't say that; I just said that I'm not sure it's justified
+[23:11] <asparagi> is that pretty accurate, it's not just ramp up, it's lack of interest?
+[23:11] <asparagi> oh, ok
+[23:11] <ar4chne> especially since it keeps crashing on my fscking box
+[23:11] <asparagi> well, i don't think it particularly is justified
+[23:11] <asparagi> i'm sorry it's crashing for you & i wish i were there to help debug
+[23:11] <asparagi> there is probably some stupid little thing
+[23:12] <asparagi> i guess what really happened is that i wrote 3 projects in a row in perl, in the distant past
+[23:12] <asparagi> each time there was a good reason
+[23:12] <asparagi> for choosing perl
+[23:13] <asparagi> once, the project was a supposedly incremental version of an existing perl program
+[23:13] <asparagi> the second time, there were a bunch of juicy libraries on CPAN that looked like just what we needed
+[23:14] <asparagi> the third time, perl was the only common language of the dev team
+[23:15] <asparagi> every time, it was a huge pain to write in, and the first two times, we ended up having to completely rewrite the very libraries/code that made us use perl to begin with
+[23:16] <asparagi> so basically, at this point for me as a programmer it is all about the development experience.  you are going to fight with bugs and lousy half-implemented libraries and all kinds of problems no matter what you do
+[23:16] <asparagi> so you may as well do it with a good set of tools, that doesn't drive you completely crazy
+[23:16] <ar4chne> :/ it sort of drives me crazy 
+[23:17] <asparagi> it seems like the problem here is
+[23:17] <asparagi> yes.
+[23:17] <ar4chne> I dont' know them and they keep crashing at this point
+[23:17] <asparagi> that the set of tools i like & trust is driving you crazy
+[23:17] <asparagi> so.  we could try to fix it in several ways.
+[23:18] <asparagi> divide up the work in some way that everybody can use tools they like
+[23:18] <asparagi> or, all agree on a set of tools
+[23:19] <asparagi> i guess that's really it.  everything else is just variations
+[23:19] <asparagi> it seems like we are having some trouble with both options
+[23:19] <ar4chne> I'm sorry, aspa
+[23:19] <asparagi> i'm not really sure how to proceed
+[23:19] <ar4chne> I didn't mean to cause an argument
+[23:20] <ar4chne> or derail us
+[23:20] <Dymaxion> it's ok
+[23:20] <ar4chne> it's just I feel like I spend a _lot_ of time twiddling my fingers
+[23:20] <Dymaxion> we need to figure this out and put it behind us once and for all
+[23:20] <asparagi> i feel bad for not spending more time earlier getting your tools working & helping you learn them
+[23:20] <Dymaxion> And if we need to be doing something different so you feel more productive, then the sooner the better.
+[23:20] <ar4chne> and it's not that I'm not willing to learn, it just seems like the learning is going to take a long time
+[23:20] <ar4chne> so I'm not sure how helpful I'm going to be
+[23:21] <asparagi> some of -that- is also probably that i may be benevolent, but i'm apparently not good
+[23:21] <asparagi> :)
+[23:21] <ar4chne> and i'm kinda running out of infrastructure stuff to do
+[23:21] <ar4chne> and I hate writing docs
+[23:21] <ar4chne> soo...I dunno :/
+[23:21] <Dymaxion> ar: I know we talked about doing some dev work together some time soon; I think that would still be a good idea
+[23:22] <asparagi> yes.  and really we wanted you for your potential to make more direct contributions to the project
+[23:22] <asparagi> it wasn't supposed to be a support role
+[23:22] <Dymaxion> you've got more of the language than I do, but the tools seem to make more sense to me; maybe we can cross-polinate
+[23:22] <Dymaxion> definitely
+[23:22] <asparagi> :(
+[23:23] <asparagi> i'm sorry, i just don't know what to do.   i feel like the thing that would make it all better would be for me to say I want to write it in C++ or something, but i really don't
+[23:23] <ar4chne> well, then what about the dual langs idea?
+[23:23] <ar4chne> that's still very viable
+[23:23] <asparagi> i don't mind it at all
+[23:23] <ar4chne> server / client components
+[23:24] <ar4chne> I know you think that writing a server in c and making it xplatform is hard, but it's really not
+[23:24] <asparagi> i think we were getting the red herring of it being about language strengths
+[23:24] <Dymaxion> would a weekend in portland to try to get the two of us more up to speed in the environment be useful?
+[23:24] <asparagi> well, i'm not the one who's going to be doing that part, so i don't really care :)
+[23:24] <ar4chne> :) everyone wants plausability for their desires, aspa
+[23:25] <asparagi> you don't need it, as far as i'm concerned
+[23:25] <asparagi> i know my desire to use genie & connectors is just error #2 all over again
+[23:26] <asparagi> paul, are you against a language difference between client & server for developer comfort reasons?
+[23:27] <Dymaxion> I would prefer them to be in the same language; it seems like that would reduce complexity over all
+[23:27] <ar4chne> oh, another benefit..is that it'll really force us to get the interoperability right ^^
+[23:27] <Dymaxion> I'm not dead set against having them in different languages, though
+[23:27] <ar4chne> hmmm...you know what would be cool?
+[23:27] <asparagi> it would definitely force us to get interop right
+[23:27] <ar4chne> if we did write the server in c...if it were based on c libs
+[23:28] <ar4chne> that the client could also use
+[23:28] <ar4chne> in a stand-alone mode
+[23:28] <ar4chne> that would be clean
+[23:28] <Dymaxion> One of my concerns is about not having the kind of dev lifecycle that I've gotten used to in squeak for the server, which I think may be a big deal
+[23:28] Action: Dymaxion nods
+[23:28] Action: asparagi shrugs
+[23:29] <Dymaxion> We were kind of thinking that standalone mode would just mean running a local server; the thought was that the server would be pretty lightweight
+[23:29] <ar4chne> true
+[23:29] <asparagi> i think i'd rather implement only one interface to the server for the client
+[23:29] <Dymaxion> yeah, exactly
+[23:30] <ar4chne> k
+[23:30] <asparagi> so, i guess if we split the languages, my big concern is that we won't be able to be as exploratory with the engine
+[23:30] <Dymaxion> yeah
+[23:30] <Dymaxion> that's sort of what I was trying to say up above
+[23:30] <asparagi> this could be good
+[23:31] <Dymaxion> part of it, anyway
+[23:31] <asparagi> i certainly think i was a little too experimental in the past
+[23:31] <Dymaxion> yeah
+[23:31] <asparagi> but right at the beginning of v2 we need to try a lot of different stuff in the server
+[23:32] <ar4chne> or we could design it really well, and then implement it?
+[23:32] <asparagi> so i guess i can be comfortable if ara or dym & ara are comfortable that we could be that flexible
+[23:32] <asparagi> hmm, that's an option
+[23:33] <asparagi> go for the heavyweight dev cycle instead of the more rapid prototyping type thing
+[23:33] <Dymaxion> big up front design for a widely exploratory project sounds like a bad idea
+[23:34] <asparagi> well, the other language doesn't have to be as brittle as C
+[23:34] <Dymaxion> we have no way of knowing if our methodology choices are remotely workable until we try them; we've seen this a bunch of times over
+[23:34] Action: Dymaxion nods
+[23:34] <asparagi> maybe there are other languages that ara would like that would be prototype-friendly
+[23:34] <asparagi> ok, here's another idea
+[23:34] <ar4chne> like what?
+[23:35] <asparagi> well, C# for example strikes me as more agile than C
+[23:35] <Dymaxion> yeah
+[23:35] <asparagi> less to keep track of
+[23:35] <asparagi> i don't know what your favorite languages are.. 
+[23:36] <ar4chne> c# more agile in what fashion?
+[23:36] <Dymaxion> more agile that C; more able to deal with massive design changes
+[23:36] <asparagi> so the other idea is, write a prototype server in Squeak & a basic client in something else
+[23:36] <ar4chne> how so?
+[23:37] <ar4chne> just because it's oop?
+[23:37] <ar4chne> it
+[23:37] <ar4chne> s/it//
+[23:37] <ar4chne> hmmm..that doens't work with your gui ideas, aspa
+[23:37] <asparagi> then when we have the engine settled down, re-implement it in a different language before release
+[23:37] <Dymaxion> mostly that it's garbage collected, actually; oop is part of it too, though
+[23:38] <ar4chne> ...
+[23:38] <asparagi> by that time the Squeak ui could be up
+[23:38] <ar4chne> guys...garbage collection sucks...total control makes for low mem use
+[23:38] <asparagi> :)
+[23:38] <Dymaxion> ...
+[23:39] <ar4chne> like, seriously...one of the major drawbacks of .net is that it turns everything instantly hoggy
+[23:39] <asparagi> low memory use is not as important to me as ease of implementation and maintenance
+[23:39] <asparagi> there is that
+[23:39] <asparagi> i just picked C# because you suggested it earlier
+[23:39] <asparagi> i can make arguments for other language suggestions, too
+[23:40] <ar4chne> hmmm...just because I know they implemented a nice gui stuffs
+[23:40] <ar4chne> but if we don't need that, then I don't think we gain anything over...say...c++
+[23:40] <ar4chne> or perl, for that matter
+[23:40] <ar4chne> prototyping would be easy
+[23:40] <ar4chne> or ruby
+[23:40] <ar4chne> altho, ruby is a bit slow
+[23:41] <asparagi> sure, any of those seem fine
+[23:42] <ar4chne> and I don't think it's very ideal to create a server in squeak
+[23:42] <ar4chne> and then just port it to give me something to do :)
+[23:42] <ar4chne> if it's done, it's done...no?
+[23:43] <asparagi> well, if we're not going to ship it we would potentially be more sloppy than if we were going to throw it out
+[23:43] <asparagi> er, make that sentence make sense
+[23:44] <ar4chne> and subsequently spend a lot more time trying to find / fix bugs
+[23:44] <ar4chne> just to test the implementation
+[23:44] <asparagi> sure
+[23:44] <ar4chne> I dunno, just seems redundant
+[23:44] <asparagi> i dunno, i'm just trying to explore the possibilities
+[23:44] <asparagi> "plan to throw one away, you will anyhow" and all that
+[23:45] <ar4chne> I'm not shooting you down :P just trying to be upfront with thoughts about it
+[23:45] <asparagi> if you can be our rapid prototyper for the server i am happy with that as a solution
+[23:45] <ar4chne> sure
+[23:46] <ar4chne> we can try it at least
+[23:46] <asparagi> we will need to really keep on the interop thing from the beginnning
+[23:46] <asparagi> but i think it could work
+[23:46] <ar4chne> dym?
+[23:47] <Dymaxion> I'm still very concerned about not having the kind of flexibility and tools that I've gotten used to on the server side
+[23:47] <Dymaxion> I'm willing to try it though, I guess
+[23:47] <ar4chne> well, what would make you happy?
+[23:48] <Dymaxion> I don't really know
+[23:48] Action: Dymaxion sighs
+[23:48] <Dymaxion> I guess I'm just frustrated about having this conversation...
+[23:48] <Dymaxion> it feels like I've had it a lot of times before
+[23:48] <ar4chne> then we can keep going with squeak *shrug*
+[23:49] <asparagi> well, if we are going to keep going with squeak we need to get your tool issues sorted out pronto
+[23:49] <asparagi> that seems like a major issue
+[23:49] <ar4chne> I suppose
+[23:50] <Dymaxion> blah
+[23:50] <asparagi> :(
+[23:50] <ar4chne> I won't really have time to sit down for a long session for a week or so tho
+[23:50] <Dymaxion> I also don't want to derail stuff if that's going to be a workable solution for everyone else
+[23:50] <ar4chne> it's fine, both aspa and y ou are happy with squeak
+[23:50] <ar4chne> *shrugs* I threw in my argument and you guys are a majority
+[23:51] <asparagi> well, i think if we got to a really workable solution it would make us all sit up & go ooh..
+[23:51] Action: Dymaxion nods
+[23:51] <asparagi> is there anything we can do to help you be more comfy with squeak?
+[23:51] <ar4chne> no
+[23:51] <ar4chne> I thinkit's just somethig I'm going to have to work through
+[23:52] <asparagi> :(
+[23:52] <ar4chne> it's unfamiliar
+[23:53] <asparagi> how is the weekend of the 18th or 25th for you guys? i could drive up & get my stuff & we could spend a day getting the tool problems straightened out at least
+[23:53] <asparagi> then it could just be unfamiliar vs. broken
+[23:53] <ar4chne> *shrug* the release works fine
+[23:53] <ar4chne> so it's not broken atm
+[23:54] <Dymaxion> 18th works for me
+[23:54] <ar4chne> or at least until you change something
+[23:54] <ar4chne> can't
+[23:54] <ar4chne> I _need_ to get my apt cleaned
+[23:54] <ar4chne> it's driving me batty
+[23:54] <ar4chne> and sunday the 26th I'm going to texas
+[23:54] <asparagi> yah.  like we would do for development?  :)
+[23:54] <asparagi> texas!
+[23:54] <ar4chne> yeah, dallas
+[23:54] <asparagi> god bless texas
+[23:54] <asparagi> er...
+[23:54] <asparagi> :)
+[23:55] <ar4chne> s/bless/let be consumed in a giant ball of vegetarianism/
+[23:55] <asparagi> hee hee
+[23:55] <ar4chne> there's never anything to eat in the midwest :/
+[23:55] <Dymaxion> hehe
+[23:55] <asparagi> i know a good blues bar in dallas
+[23:55] <ar4chne> and then the weekend after that is cansec, I think
+[23:56] <asparagi> no, there's one more before cansec, but i'm busy
+[23:56] <ar4chne> err...no, the weekend of the 1st might work
+[23:56] <ar4chne> oh
+[23:56] <ar4chne> well then the _next_ one is cansec
+[23:56] <asparagi> i'm just going to go to fry's & buy a mac mini
+[23:56] <asparagi> then i'm going to debug the build process on a mac
+[23:56] <asparagi> hopefully they still have some powerpc ones left
+[23:57] <ar4chne> ebay
+[23:57] <asparagi> ooh, and i bet they're cheap right now too
+[23:57] <ar4chne> ja, not too bad
+[23:58] <asparagi> ok.   it's 10 pm.  i think we should all go sleep
+[23:58] <ar4chne> ite
+[23:58] Action: Dymaxion nods
+[23:58] <asparagi> i'm sorry this wasn't very satisfying as a conflict resolution
+[23:58] <ar4chne> gnite, guys
+[23:58] <Dymaxion> 'night
+[23:58] <asparagi> night.  see y'all tomorrow
+[00:00] --- Wed Mar 15 2006

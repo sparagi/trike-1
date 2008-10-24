@@ -1,0 +1,48 @@
+[20:33] <asparagi> okay, investigation reveals that no, we cannot easily make the OS buttons do the right thing
+[20:33] <asparagi> (it would require changing the VM
+[20:33] <asparagi> )
+[20:51] <Dymaxion> blah
+[20:56] <asparagi> do we even like tabs?
+[20:56] <asparagi> i think tabs kind of suck
+[20:56] <asparagi> maybe we need something else
+[21:49] <ar4chne> 4did you see it?! :D
+[21:50] <ar4chne> and by 'it' I mean the house you were planning on looking at
+[21:51] <asparagi> i did... :)
+[21:52] <asparagi> it looks pretty good.  it's bigger than the pictures.   i bumped into the current owners.
+[21:52] <asparagi> apparently the shop is the way it is because he is a cabinet maker.
+[21:54] <asparagi> the shop is gorgeous inside, but it's OSB and has no siding, so i am worried about its long-term water resistance.  the house also has some siding issues -- this one kind of siding is really sensitive to water damage if it isn't kept painted adequately, so at least one wall's worth of siding will need to be replaced.
+[21:54] <asparagi> gorgeous for a nice, shoppy value of gorgeous
+[21:55] <asparagi> it's wired for a home theater system, and still has some of the built-in speakers, but all the wiring is kind of weird because  they didn't put any plates on it -- it's just wires coming through a little hole in the plaster.  there are a bunch of little things like that
+[21:56] <asparagi> on the plus side, there are lots of well-laid-out, well-built cabinets in the whole house, so i would need to buy less furniture, and i will never be frustrated by the cheap drawer slides
+[21:57] <asparagi> i would have stained them vs. painted, but i agree painted goes better with the house
+[21:58] <ar4chne> :)
+[21:58] <ar4chne> going to make an offer?
+[21:58] <asparagi> the rv parking looks awesome -- basically there's a big gravel drive (45'?) going next to the house to get back to the shop.  he said it's graded & like 12" of gravel because they were driving trucks back there for the shop
+[21:59] <asparagi> i haven't decided yet
+[21:59] <ar4chne> oh, nice
+[21:59] <asparagi> i am having this oh-my-god-do-i-REALLY-want-to-own-a-house-again feeling
+[22:00] <asparagi> and there's a place to see on monday which hasn't been listed yet.  it has no shop, but apparently the yard is enormous and the interior is gorgeous
+[22:00] <asparagi> i imagine when i see it i will think to myself: well-worn is better than gorgeous, for me
+[22:01] <asparagi> then i will probably make an offer on this place
+[22:04] <ar4chne> heeh :)
+[22:04] <ar4chne> you seem like you really desire a large yard?
+[22:05] <asparagi> i'm not sure..  if the place doesn't have a shop yet, then ys
+[22:05] <asparagi> i could imagine growing some vegetables, or getting a dog, if i still feel excited about either of those things in a couple of years
+[22:06] <asparagi> and i'm planning to park in the back yard, if possible, so i can feel like i'm in a pleasant surrounding when i'm in the van
+[22:07] <asparagi> this trailer park spot has a yard a little smaller than the van, so i'm feeling kind of cramped right now.
+[22:07] <asparagi> i suppose i shouldn't go too large or the maintenance will annoy me
+[22:09] <asparagi> but if i had a big yard i could use my shop to build giant killer robots, or this 60' diameter icosahedron-based thing i'd like to put together for burning man sometime.  i wonder if the neighbors will want me to get building permits for my tent.... :)
+[22:10] <asparagi> so, what do you think about tabs?
+[22:13] <asparagi> i guess your log uploading script must be working -- w00t!
+[22:53] Action: Dymaxion grins re: houses.
+[22:53] <Dymaxion> You don't need building permits for temporary structures.
+[23:00] <asparagi> yes, i'm aware.. i just have this feeling that a 30' high temporary structure which takes months to debug might cause some uproar and an attempt to better define the word temporary.
+[23:12] <Dymaxion> maybe... hard to say though, really.
+[23:12] <Dymaxion> probably depends on the neighborhood.
+[23:14] <Dymaxion> I think tabs certainly aren't a bad start for the UI right now, and while I think we might want to play with it later, I don't think we should mess with it right now.
+[23:29] <asparagi> i have developed an extreme loathing for tabs
+[23:30] <asparagi> if only Squeak had a working set of widgets
+[23:30] <asparagi> i have found 4 incomplete projects to that effect
+[23:31] <asparagi> the current Morphic stuff (broken), something called Prefab (incomplete, out of date documentation), Tweak (incomplete, insufficiently documented) and ToolBuilder (insufficiently documented, at least)
+[23:36] <asparagi> well, i'm off to do something else for a while -- night all!
+[00:00] --- Sat Dec 24 2005

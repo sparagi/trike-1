@@ -1,0 +1,6 @@
+<!--#set var="venueName" value="ShmooCon 2005" -->
+<!--#set var="venueURL" value="http://shmoocon.org/2005"-->
+<!--#set var="talkName" value="Trike's Automatic Threat Generation" -->
+<!--#set var="talkDate" value="2005/02/06" -->
+<!--#set var="talkURL" value="shmoocon2005.shtml" -->
+<!--#set var="pageDescription" value="The first public appearance of Trike, c/o Brenda's ill-fated February 2005 talk & demo." -->
