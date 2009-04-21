@@ -1,0 +1,6 @@
+<!--#set var="venueName" value="MiniMetricon 3.5" -->
+<!--#set var="venueURL" value="http://www.securitymetrics.org/"-->
+<!--#set var="talkName" value="Attack Resistance Score" -->
+<!--#set var="talkDate" value="2000/04/20" -->
+<!--#set var="talkURL" value="metricon2009.shtml" -->
+<!--#set var="pageDescription" value="Brenda's April 2009 discussion of an aggregate measure for a system's effectiveness at thwarting attacks." -->
