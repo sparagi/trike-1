@@ -3,10 +3,12 @@
 <!--#include file="header.shtml" -->
 
 <div id="contenthdr">Released Trike Prototypes</div>
-<p>You can <a href="https://sourceforge.net/project/showfiles.php?group_id=239449&package_id=291181">download publicly released versions of Trike from SourceForge</a>.</p>
+<p>You can <a href="https://sourceforge.net/project/showfiles.php?group_id=239449&package_id=291181">download publicly released Squeak versions of Trike from SourceForge</a>.</p>
 
 <div id="contenthdr">Development Versions of Trike</div>
-<p>You can <a href="http://trike.wiki.sourceforge.net/Development+Environment">get current development versions of Trike from SqueakSource</a> until SqueakSVN is ready for us to move to SourceForge.</p>
+<p>You can <a href="http://trike.wiki.sourceforge.net/Development+Environment">get current Squeak development versions of Trike from SqueakSource</a> until SqueakSVN is ready for us to move to SourceForge.</p>
+
+<p>Since it is taking us a long time to get a revised Squeak version out, try <a href="http://trike.svn.sourceforge.net/viewvc/trike/trunk/src/Trike.xlsx">this  spreadsheet</a> instead of the old release.</p>
 
 <div id="contenthdr">Now What?</div>
 

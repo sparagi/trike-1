@@ -16,7 +16,8 @@
 			</div>
 			<p>
 			<a href="http://sourceforge.net/project/showfiles.php?group_id=239449">Releases</a><br>
-			<a href="http://trike.wiki.sourceforge.net/Development+Environment">Bleeding Edge</a>
+			<a href="http://trike.svn.sourceforge.net/viewvc/trike/trunk/src/Trike.xlsx">Current Spreadsheet</a><br>
+			<a href="http://trike.wiki.sourceforge.net/Development+Environment">Bleeding Edge Squeak</a>
 			</p>
 		</div>
 
