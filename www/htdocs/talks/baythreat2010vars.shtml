@@ -1,0 +1,6 @@
+<!--#set var="venueName" value="BayThreat 2010" -->
+<!--#set var="venueURL" value="http://www.baythreat.org/"-->
+<!--#set var="talkName" value="HAZOP Analysis Using This Funky Spreadsheet I Made in My Back Yard" -->
+<!--#set var="talkDate" value="2010/12/11" -->
+<!--#set var="talkURL" value="baythreat2010.shtml" -->
+<!--#set var="pageDescription" value="A well-received how-to, focusing on using the first release candidate Trike spreadsheet to perform HAZOP analysis." -->

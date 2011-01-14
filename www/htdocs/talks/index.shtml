@@ -9,6 +9,9 @@ We have no talks about Trike scheduled in the near future.
 
 <div id="contenthdr">Past Talks</div>
 <dl>
+  <!--#include file="baythreat2010vars.shtml" -->
+  <!--#include file="pastTalkEntry.shtml" -->
+
   <!--#include file="minimetricon2009vars.shtml" -->
   <!--#include file="pastTalkEntry.shtml" -->
 
