@@ -1,0 +1,26 @@
+<!--#include file="bsidesPDX2011vars.shtml" -->
+<!--#include file="talkHeader.shtml" -->
+
+<p>
+<blockquote>
+<p>
+Most secure development life cycles advocate creating a threat model at design time and updating it as development progresses.  Following this advice alone, you will do unnecessary work and receive substantially less benefit than your threat model could provide.  Instead, start your threat model at requirements time and use it to select and configure all remaining application-specific secure development activities.  Depending on your situation, this could allow you to:
+<ul>
+<li>Skip or absorb some typically recommended analysis steps (e.g. risk assessment)</li>
+<li>Look only for what matters during other analysis (e.g. code review and security testing)</li>
+<li>Build your application more safely (e.g. centralizing the things that would most help the application's security, protecting 3rd party components)</li>
+</ul>
+</p>
+<p>
+Attendees will learn what to put into a threat model when, what to get out of a threat model when, and how a threat model should control and feed information to other secure development practices.  Those using Agile development styles will particularly benefit, since a threat model-driven secure development lifecycle is phase-agnostic.
+</p>
+</blockquote>
+</p>
+
+<div id="contenthdr">Slides</div>
+
+<p>
+<a href="Trike-BsidesPDX-2011.pdf"><!--#echo var="talkName" --></a> 
+</p>
+
+<!--#include file="footer.shtml" -->

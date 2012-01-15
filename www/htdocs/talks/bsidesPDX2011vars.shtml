@@ -1,0 +1,6 @@
+<!--#set var="venueName" value="B-Sides Portland 2011" -->
+<!--#set var="venueURL" value="http://bit.ly/BsidesPDX"-->
+<!--#set var="talkName" value="Driving Secure Development Using a Threat Model" -->
+<!--#set var="talkDate" value="2011/10/06" -->
+<!--#set var="talkURL" value="bsidesPDX2011.shtml" -->
+<!--#set var="pageDescription" value="Threat modeling should not be a one-time activity within a secure development lifecycle.  This talk provides an overview of how Trike, or any other threat modeling methodology, can reduce work by guiding secure development activities." -->
