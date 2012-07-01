@@ -1,0 +1,24 @@
+<!--#include file="mozilla20120227vars.shtml" -->
+<!--#include file="talkHeader.shtml" -->
+
+<p>
+<blockquote>
+<p>
+We've talked about bits and pieces we've changed, but it's been quite a while since any of us gave a talk about the overall current state of the Trike methodology.  So, this is it!  An introductory talk about what we're up to, for people at least casually familiar with threat modeling.
+</p>
+</blockquote>
+</p>
+
+<div id="contenthdr">Slides</div>
+
+<p>
+<a href="Trike-Mozilla-20120227.pdf"><!--#echo var="talkName" --></a> 
+</p>
+
+<div id="contenthdr">Video</div>
+
+<p>
+<a href="Trike-Mozilla-20120227.pdf">Mozilla hosted and kindly took professional video</a>, so you can watch the talk yourself.  Thanks to Al Billings and Mozilla!
+</p>
+
+<!--#include file="footer.shtml" -->

@@ -4,11 +4,14 @@
 
 <div id="contenthdr">Upcoming Talks</div>
 <p>
-We have no talks about Trike scheduled in the near future.
+We have no public talks about Trike scheduled in the near future.
 </p>
 
 <div id="contenthdr">Past Talks</div>
 <dl>
+  <!--#include file="mozilla20120227.shtml" -->
+  <!--#include file="pastTalkEntry.shtml" -->
+
   <!--#include file="bsidesPDX2011vars.shtml" -->
   <!--#include file="pastTalkEntry.shtml" -->
 

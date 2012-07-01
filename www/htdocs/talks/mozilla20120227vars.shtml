@@ -1,0 +1,6 @@
+<!--#set var="venueName" value="Mozilla" -->
+<!--#set var="venueURL" value="http://blog.mozilla.com/security/2012/02/28/brenda-larcom-presentation-on-threat-modeling-using-trike/"-->
+<!--#set var="talkName" value="Threat Modeling Using Trike" -->
+<!--#set var="talkDate" value="2012/02/27" -->
+<!--#set var="talkURL" value="mozilla20110227.shtml" -->
+<!--#set var="pageDescription" value="This talk is an overview of the current Trike methodology and future plans." -->
