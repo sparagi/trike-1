@@ -5,9 +5,8 @@
 <p>
 You can reach the Trike contributors via 
 <ul>
-<li>our <a href="https://sourceforge.net/tracker/?group_id=239449">Trackers</a> (for bug reports, patches, feature requests and support requests)
-<li>the <a href="https://sourceforge.net/mailarchive/forum.php?forum_name=trike-devel">trike-devel</a> mailing list at  lists.sourceforge.net and
-<li>the <a href="irc/">#trike</a> irc channel on irc.freenode.net.
+<li>our <a href="https://sourceforge.net/apps/trac/trike/report">ticket system</a> (for bug reports, patches, feature requests and support requests) and
+<li>the <a href="https://sourceforge.net/mailarchive/forum.php?forum_name=trike-devel">trike-devel</a> mailing list at lists.sourceforge.net.
 </ul>
 </p>
 

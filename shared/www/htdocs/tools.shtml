@@ -2,27 +2,36 @@
 <!--#set var="pageDescription" value="Download, installation, use & versioning information for the Trike tool." -->
 <!--#include file="header.shtml" -->
 
-<div id="contenthdr">Released Trike Prototypes</div>
-<p>You can <a href="https://sourceforge.net/project/showfiles.php?group_id=239449&package_id=291181">download publicly released Squeak versions of Trike from SourceForge</a>.</p>
+<p>There are two implementations of Trike.  One is a spreadsheet, and the other is a standalone desktop tool.  We have big plans for the latter (read more <a href="#standalone">below</a>), but unless you are a Trike or Smalltalk developer, you want the spreadsheet.
 
-<div id="contenthdr">Development Versions of Trike</div>
-<p>You can <a href="http://trike.wiki.sourceforge.net/Development+Environment">get current Squeak development versions of Trike from SqueakSource</a> until SqueakSVN is ready for us to move to SourceForge.</p>
+<div id="contenthdr"><a name="spreadsheet">Spreadsheet</a></div>
 
-<p>Since it is taking us a long time to get a revised Squeak version out, try <a href="http://trike.svn.sourceforge.net/viewvc/trike/trunk/src/Trike.xlsx">this  spreadsheet</a> instead of the old release.</p>
+<p>Almost everyone who is currently using Trike to create threat models of actual systems is using the spreadsheet.  It is most compatible with Excel 2011 (yes, for Mac), but users have also reported success with other versions of Excel.  Unfortunately, it does not work with OpenOffice.</p>
+	
+<p>If you are just getting started, you will want to <a href="https://sourceforge.net/projects/trike/files/trike/1.5.06/">download the latest publicly released Trike spreadsheet and help file</a>.
+</p>
+	
+<p>If you would like to be one of our alpha testers, or are seeing a bug someone has reported, you may want to try:
+	<ul>
+	<li><a href="https://sourceforge.net/apps/trac/trike/browser/spreadsheet/trunk/src/Trike.xlsx">the latest development version of the Trike spreadsheet</a></li>
+	<li><a href="https://sourceforge.net/apps/trac/trike/browser/spreadsheet/trunk/docs/help/TrikeHelp.xlsx">the latest development version of the Trike help file</a></li>
+    <li><a href="https://sourceforge.net/apps/trac/trike/wiki/Spreadsheet%20Help">the latest work-in-progress spreadsheet help</a> on the wiki, since we are trying to move away from putting help in a spreadsheet</li>
+	</ul>
+</p>
 
-<div id="contenthdr">Now What?</div>
+<p>All versions of the spreadsheet are using Trike methodology version 1.5, which is an interim methodology bridging the very large gap between version 1 and version 2.</p>
+	
+<p>If you are seeing a bug no one has reported in any version of the spreadsheet, please take the time to <a href="contact.shtml">let us know</a> so we can fix it for you.</p>
 
-<p>Now that you have Trike, here are some places to look for more information about what it's good for and how to use it.
-<ul>
-<li><a href="/faq">FAQ</a>
-<li><a href="http://trike.wiki.sourceforge.net/">wiki</a> (you'll find the largest quantity of information here)
-<li><a href="https://sourceforge.net/mail/?group_id=239449">mailing lists</a>
-<li><a href="/irc">IRC</a>
-<li><a href="/talks">talks</a> and <a href="papers">papers</a>
-</ul>
+<div id="contenthdr"><a name="standalone">Standalone Tool</a></div>
 
-<p>
-Please <a href="https://sourceforge.net/tracker/?group_id=239449">report bugs and request features</a>!
+<p>If you started following Trike back in the dawn of time, you probably saw or played our standalone desktop tool.  This tool was written in Smalltalk, specifically Squeak.  It implements methodology version 1, which is now fairly outdated.  It is mildly buggy and does not implement file import or export.  We are not maintaining it in any way.  We mention it here mostly for historical reasons, but also because some of us got used to reading its style of intended actions grid.  If you want to look at its code or play with it yourself, you will need to <a href="https://sourceforge.net/projects/trike/files/trike/1.1.2a/">download Trike 1.1.2a for your OS</a>.  If your OS is not listed, you will need to download the generic files and supply your own <a href="http://www.squeak.org/">Squeak</a> VM for your OS. 
+</p>
+
+<p>The future of Trike is also a standalone desktop tool written in Smalltalk.  It will implement methodology version 2.  It will do file import and export, likely using an XML-based file format, and peer to peer collaboration.  It is in the pre-alpha stage.  We have a design and threat model, and are in the process of moving our code base from SqueakSource and our laptops (bad us), where it has been living, to SourceForge.  If you want to play, you will soon be able to:
+	<ul>
+	<li>follow these <a href="http://trike.wiki.sourceforge.net/Development+Environment">instructions for setting up a Trike development environment</a> and likely</li>
+	<li><a href="/contact.shtml">contact us</a> or poke around elsewhere on <a href="http://trike.wiki.sourceforge.net/">the Trike wiki</a></li>
 </p>
 
 <!--#include file="footer.shtml" -->

@@ -16,9 +16,9 @@
 	</div>
 	<div id="nbr">
 
-<a class="nbritem" href="/papers"> Papers</a><a class="nbritem" href="/talks"> Talks</a><a class="nbritem" href="/tools.shtml"> Tools</a><a class="nbritem" href="/faq"> FAQ</a><a class="nbritem" href="/irc"> IRC</a><a class="nbritem" href="/contact.shtml"> Contact</a>
+<a class="nbritem" href="/home.shtml"> Home</a><a class="nbritem" href="/docs.shtml"> Docs</a><a class="nbritem" href="/tools.shtml"> Tools</a><a class="nbritem" href="/papers"> Papers</a><a class="nbritem" href="/talks"> Talks</a><a class="nbritem" href="/contact.shtml"> Contact</a>
 	</div>
-	<table class="main"
+	<table class="main"ß
 			cellspacing="0">
 
 	<tr><td id="content">

@@ -15,9 +15,8 @@
 				Download
 			</div>
 			<p>
-			<a href="http://sourceforge.net/project/showfiles.php?group_id=239449">Releases</a><br>
-			<a href="http://trike.svn.sourceforge.net/viewvc/trike/trunk/src/Trike.xlsx">Current Spreadsheet</a><br>
-			<a href="http://trike.wiki.sourceforge.net/Development+Environment">Bleeding Edge Squeak</a>
+			<a href="/tools.shtml#standalone">Standalone Tool</a><br>
+			<a href="/tools.shtml#spreadsheet">Spreadsheet</a><br>
 			</p>
 		</div>
 
@@ -26,16 +25,14 @@
 		News
 	</div>
 	<p>
-<b>22 Dec 2010</b><br>
-The first fully functional <a href="http://trike.svn.sourceforge.net/viewvc/trike/trunk/src/Trike.xlsx">spreadsheet</a> is available.
+<b>1 Jul 2012</b><br>
+First official spreadsheet release, <a href="https://sourceforge.net/projects/trike/files/trike/1.5.06/">1.5.06</a>.
 </p>
 	<p>
-<b>03 Jan 2011</b><br>
-Slides from <a href="/talks/baythreat2010.shtml">Brenda's talk at BayThreat 2010</a> are available.
+<b>1 Jul 2012</b><br>
+New SVN and web site organization to support parallel development of the standalone and spreadsheet tools.
 </p>
-
 </div>
-
 
 		<div id="contentbox">
 			<div id="contentboxhdr">
@@ -44,11 +41,12 @@ Slides from <a href="/talks/baythreat2010.shtml">Brenda's talk at BayThreat 2010
 			<p>
 			<a href="http://sourceforge.net/projects/trike/"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=239449&amp;type=7" width="210" height="62" border="0" alt="SourceForge.net Logo" /></a>
 			</p>
+			
 		</div>
 	</td></tr></table>
 
 	<div id="ftr">
-Copyright © 2004-2008 Brenda Larcom, Eleanor Saitta, and Stephanie Smith. Copyright © 2009-2011 Brenda Larcom and Eleanor Saitta. All rights reserved.
+Copyright © 2004-2008 Brenda Larcom, Eleanor Saitta, and Stephanie Smith. Copyright © 2009-2012 Brenda Larcom and Eleanor Saitta. All rights reserved.
 	</div>
 </div>
 </body>

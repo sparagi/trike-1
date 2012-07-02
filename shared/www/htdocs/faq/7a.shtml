@@ -1,5 +1,5 @@
  <p>
- A Trike version number has 4 parts:
+ In theory, a Trike version number has 4 parts:
  </p>
  <ul>
  <li>a methodology version number, indicating which version of the
@@ -7,22 +7,19 @@
  <li>a major tool version number; changes in this number indicate changes
  in the native file format such that older versions of the tool will
  not be able to read the default file format written by this tool</li>
-
  <li>a minor tool version number; changes in this number indicate bug
  fixes or other changes which do not impact the native file format</li>
  <li>possibly, a letter indicating quality:
- <ul>
- <li>a - alpha</li>
- <li>b - beta</li>
-
- <li>no letter - production release</li>
- </ul></li>
-
+   <ul>
+   <li>a - alpha</li>
+   <li>b - beta</li>
+   <li>no letter - production release</li>
+   </ul></li>
  </ul>
 
  <p>
- For example, our next planned release will be named 1.2.0a:
- methodology version 1, tool version 2.0, approximately alpha quality.
+ For example, our next planned release will be named 2.0.0a:
+ methodology version 2, tool version 0.0, approximately alpha quality.
  </p>
 
  <p>

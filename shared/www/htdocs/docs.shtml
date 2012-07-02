@@ -1,0 +1,35 @@
+<!--#set var="pageTitle" value="Docs" -->
+<!--#set var="pageDescription" value="Documentation for the Trike methodology, the Trike tools, and the Trike project." -->
+<!--#include file="header.shtml" -->
+
+<div id="contenthdr">Theory</div>
+<p>Documentation about what goes into a Trike threat model, how to construct one in general, and why it works is available from:
+	<ul> 
+    <li><a href="/papers/Trike_v1_Methodology_Document-draft.pdf">the Trike v1 white paper</a></li>
+    <li>the help spreadsheet for <a href="tools.shtml#spreadsheet">the version 1.5 Trike implementation</a>
+	<li><a href="https://sourceforge.net/apps/trac/trike/wiki/Methodology">the methodology page on the Trike wiki</a> and</li>
+    <li>many of our <a href="/talks">talks</a>
+	</ul>
+</p>
+
+<div id="contenthdr">Tool-Specific</div>
+<p>Documentation regarding how to use specific versions of Trike to construct threat models is available from:
+	<ul>
+    <li>the help spreadsheet for <a href="tools.shtml#spreadsheet">the version 1.5 Trike implementation</a>
+	<li><a href="https://sourceforge.net/apps/trac/trike/wiki/Spreadsheet%20Help">the latest work-in-progress spreadsheet help</a> on the wiki</li> and
+	<li>some of our more recent <a href="/talks">talks</a>
+	</ul>
+</p>
+
+<p>As the v2 tool gets closer to release, we expect to post help for it on the wiki.</p>
+
+<div id="contenthdr">The Project</div>
+
+<p>Documentation about the project overall is available from:
+<ul>
+<li><a href="/faq">the Trike FAQ</a> and
+<li><a href="http://trike.wiki.sourceforge.net/">the Trike wiki</a>
+</ul>
+</p>
+
+<!--#include file="footer.shtml" -->
