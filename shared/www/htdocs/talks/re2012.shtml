@@ -1,0 +1,20 @@
+<!--#include file="re2012vars.shtml" -->
+<!--#include file="talkHeader.shtml" -->
+
+<p>
+<blockquote>
+<p>
+Security requirements are even more challenging to elicit and specify than most non-functional requirements, due to intelligent post-deployment attackers who change the rules after the product has been shipped, stakeholders' differing definitions of security, the lack of widely accepted scales and pre-deployment meters, security experts' tendency to focus on security technology rather than the goals that motivate it, and the inherent difficulties of describing a negative.
+</p>
+
+<p>
+In this interactive tutorial, participants learn a structure for specifying high-level security requirements, and a method for eliciting these security objectives. After a brief introduction to security objectives, participants construct a simple example from start to finish. Participants define attackers, balance stakeholders' conflicting security needs, choose a useful level of abstraction for modeling high-level security goals, generate threats to prioritize, and prioritize the negative security outcomes that really matter. The tutorial concludes with a brief discussion of how to use security objectives, and how to integrate security objectives into an Agile development lifecycle.
+</p>
+
+<p>
+Tools and examples used in the tutorial are free and open source (and will be available below by the beginning of the conference); participants may wish to bring a laptop with Excel 2010 or later.
+</p>
+</blockquote>
+</p>
+
+<!--#include file="footer.shtml" -->

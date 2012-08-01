@@ -3,13 +3,18 @@
 <!--#include file="header.shtml" -->
 
 <div id="contenthdr">Upcoming Talks</div>
-<p>
+<dl>
+  <!--#include file="re2012vars.shtml" -->
+  <!--#include file="pastTalkEntry.shtml" -->
+</dl>
+
+<!--<p>
 We have no public talks about Trike scheduled in the near future.
-</p>
+</p>-->
 
 <div id="contenthdr">Past Talks</div>
 <dl>
-  <!--#include file="mozilla20120227.shtml" -->
+  <!--#include file="mozilla20120227vars.shtml" -->
   <!--#include file="pastTalkEntry.shtml" -->
 
   <!--#include file="bsidesPDX2011vars.shtml" -->
