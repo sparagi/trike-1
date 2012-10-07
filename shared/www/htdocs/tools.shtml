@@ -8,7 +8,7 @@
 
 <p>Almost everyone who is currently using Trike to create threat models of actual systems is using the spreadsheet.  It is most compatible with Excel 2011 (yes, for Mac), but users have also reported success with other versions of Excel.  Unfortunately, it does not work with OpenOffice.</p>
 	
-<p>If you are just getting started, you will want to <a href="https://sourceforge.net/projects/trike/files/trike/1.5.06/">download the latest publicly released Trike spreadsheet and help file</a>.
+<p>If you are just getting started, you will want to <a href="http://sourceforge.net/projects/trike/files/latest/download?source=files">download the latest publicly released Trike spreadsheet and help file</a>.
 </p>
 	
 <p>If you would like to be one of our alpha testers, or are seeing a bug someone has reported, you may want to try:
